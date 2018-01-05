@@ -20,14 +20,11 @@ public class Movement : MonoBehaviour
 	void Update ()
     {
         //transform.position += new Vector3(0, -9.81f, 0) * Time.deltaTime
-
-        transform.forward = _camera.transform.forward;
-        transform.rotation = _camera.transform.rotation;
-
+        
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        float xpos = (horizontal * character._speed) * transform.forward.magnitude;
+        float xpos = (horizontal * character._speed);
         float zpos = vertical * character._speed;
 
         Vector3 forward = (new Vector3(0, 0, zpos) * Time.deltaTime);

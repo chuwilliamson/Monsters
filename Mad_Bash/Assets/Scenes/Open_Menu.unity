@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 1925817016}
-  mouseSensitivity: 100
+  mouseSensitivity: 50
 --- !u!1 &841396659
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +332,7 @@ MonoBehaviour:
   health: 0
   brave: 0
   weight: 0
+  fear: 0
 --- !u!23 &1925817018
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -346,7 +347,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1c100617069a6c1418b913ee6ac7396f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
