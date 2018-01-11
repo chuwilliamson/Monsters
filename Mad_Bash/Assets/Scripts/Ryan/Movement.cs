@@ -15,27 +15,33 @@ public class Movement : MonoBehaviour
     { 
         transform.position = new Vector3(0, 0, 0);
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    void Move()
     {
-        //transform.position += new Vector3(0, -9.81f, 0) * Time.deltaTime
-        
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
 
-        float xpos = (horizontal * character._speed);
-        float zpos = vertical * character._speed;
+        horizontal = Input.GetAxis("Horizontal") * character._speed;
+        vertical = Input.GetAxis("Vertical") * character._speed;
 
-        Vector3 forward = (new Vector3(0, 0, zpos) * Time.deltaTime);
+        horizontal *= Time.deltaTime;
+        vertical *= Time.deltaTime;
+
+        Vector3 forward = (new Vector3(0, 0, vertical));
 
         Vector3 sprint = (forward * 3);
-        
+
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
         {
             transform.position += sprint;
         }
 
-        transform.position += new Vector3(xpos, 0, zpos) * Time.deltaTime; 
+        transform.Translate(horizontal, 0, vertical);
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+        //transform.position += new Vector3(0, -9.81f, 0) * Time.deltaTime;
+
+        Move();
     }
 }

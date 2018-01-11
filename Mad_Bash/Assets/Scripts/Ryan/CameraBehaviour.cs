@@ -26,15 +26,14 @@ public class CameraBehaviour : MonoBehaviour
     {
         //transform.position = character.transform.position + new Vector3(0,2,-5);
 
-       character.transform.rotation = transform.rotation;
+        character.transform.rotation = transform.rotation;
+        
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
 
+        rotY += mouseX * mouseSensitivity * Time.deltaTime;
 
-       float mouseX = Input.GetAxis("Mouse X");
-       float mouseY = Input.GetAxis("Mouse Y");
-
-       rotY += mouseX * mouseSensitivity * Time.deltaTime;
-
-       rotX -= mouseY * mouseSensitivity * Time.deltaTime;
+        rotX -= mouseY * mouseSensitivity * Time.deltaTime;
 
 
         rotX = Mathf.Clamp(rotX, -25, 25);
@@ -44,13 +43,18 @@ public class CameraBehaviour : MonoBehaviour
 
         transform.position = character.transform.position + new Vector3(0, 2.5f, -5);
 
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.JoystickButton9))
+        {
+            transform.forward = character.transform.forward;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Joystick1Button6) || Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.F))
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
 
-        if(Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKeyUp(KeyCode.Joystick1Button6) || Input.GetKeyUp(KeyCode.Joystick1Button1) || Input.GetKeyUp(KeyCode.F))
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
