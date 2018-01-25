@@ -43,18 +43,14 @@ public class CameraBehaviour : MonoBehaviour
 
         transform.position = character.transform.position + new Vector3(0, 2.5f, -5);
 
-        if (Input.GetKey(KeyCode.JoystickButton9))
-        {
-            transform.forward = character.transform.forward;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Joystick1Button6) || Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.JoystickButton6) || Input.GetKeyDown(KeyCode.F))
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            
         }
 
-        if (Input.GetKeyUp(KeyCode.Joystick1Button6) || Input.GetKeyUp(KeyCode.Joystick1Button1) || Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKeyUp(KeyCode.JoystickButton6) || Input.GetKeyUp(KeyCode.F))
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

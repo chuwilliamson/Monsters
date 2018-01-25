@@ -7,8 +7,8 @@ public class Movement : MonoBehaviour
     public CharacterInfo character;
     public GameObject _camera;
 
-    float horizontal = 1;
-    float vertical = 1;
+    float horizontal;
+    float vertical;
 
 	// Use this for initialization
 	void Start ()
@@ -27,9 +27,9 @@ public class Movement : MonoBehaviour
 
         Vector3 forward = (new Vector3(0, 0, vertical));
 
-        Vector3 sprint = (forward * 3);
+        Vector3 sprint = forward * 3;
 
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.LeftShift) && vertical >= .01f || (Input.GetKey(KeyCode.JoystickButton7) && vertical >= .01f))
         {
             transform.position += sprint;
         }
