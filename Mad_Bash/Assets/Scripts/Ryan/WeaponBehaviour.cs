@@ -8,8 +8,9 @@ public class WeaponBehaviour : MonoBehaviour
     public Weapon weapon;
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        
 	}
 	
 	// Update is called once per frame

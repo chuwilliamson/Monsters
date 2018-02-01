@@ -2,7 +2,7 @@
 
 namespace Ryan
 {
-    interface Item
+    public interface Item
     {
         Transform transform { get; set; }
         bool Pickup { get; set; }

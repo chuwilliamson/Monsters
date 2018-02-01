@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     { 
-        transform.position = new Vector3(0, 0, 0);
+        //transform.position = new Vector3(0, 0, 0);
     }
 
     void Move()
@@ -25,13 +25,11 @@ public class Movement : MonoBehaviour
         horizontal *= Time.deltaTime;
         vertical *= Time.deltaTime;
 
-        Vector3 forward = (new Vector3(0, 0, vertical));
-
-        Vector3 sprint = forward * 3;
+        Vector3 sprint = transform.forward;
 
         if (Input.GetKey(KeyCode.LeftShift) && vertical >= .01f || (Input.GetKey(KeyCode.JoystickButton7) && vertical >= .01f))
         {
-            transform.position += sprint;
+            transform.position += (sprint / 3);
         }
 
         transform.Translate(horizontal, 0, vertical);
@@ -40,8 +38,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        //transform.position += new Vector3(0, -9.81f, 0) * Time.deltaTime;
-
         Move();
     }
 }

@@ -1,21 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Ryan;
 using UnityEngine;
-using Ryan;
-using Jeremy;
 
 
 public class Player : MonoBehaviour
 {
-    Ryan.Weapon weapon;
-    Ryan.Consumable help;
-    Ryan.Distraction distract;
-    Ryan.KeyItems keyItem;
+    public Weapon weapon;
+    public Animator dooropener;
+    public GameObject Door;
+    Consumable help;
+    Distraction distract;
+    KeyItems keyItem;
     Ryan.Item item;
     
     public CharacterInfo character;
 
-    protected bool paused;
 
     public int level, xp, intellegence, power;
     public float speed, health, brave, weight, fear;
@@ -34,26 +32,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnApplicationPause(bool pause)
+    public void DoorControl()
     {
-        pause = true;
-        paused = pause;
-    }
-
-    void Pause()
-    {
+        if (Input.GetButtonDown("Interact") && Vector3.Distance(transform.position, Door.transform.position) < 3)
+            dooropener.SetTrigger("open");
 
     }
 
-    void PickUp()
-    {
-        if (Input.GetButton("Fire1"))
-            item.Pickup = true;
 
-        if (item.Pickup == true)
-        {
-            item.transform.position = transform.position;
-        }
+    void ItemPickUp()
+    {
+        if (Input.GetButtonDown("Interact") && Vector3.Distance(transform.position, weapon.item.transform.position) < 2)
+            weapon.item.transform.position = transform.position;
     }
     
     void Update()
@@ -69,7 +59,7 @@ public class Player : MonoBehaviour
         fear = character._fear;
 
         IsDead();
-        PickUp();
-
+        DoorControl();
+        ItemPickUp();
     }
 }
