@@ -1,10 +1,9 @@
 ﻿using Ryan;
 using UnityEngine;
 
-
 public class Player : MonoBehaviour
 {
-    public Weapon weapon;
+    Weapon weapon;
     public Animator dooropener;
     public GameObject Door;
     Consumable help;
@@ -13,7 +12,6 @@ public class Player : MonoBehaviour
     Ryan.Item item;
     
     public CharacterInfo character;
-
 
     public int level, xp, intellegence, power;
     public float speed, health, brave, weight, fear;

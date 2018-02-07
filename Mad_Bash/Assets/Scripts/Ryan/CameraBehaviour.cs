@@ -24,13 +24,7 @@ public class CameraBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        float transX = transform.rotation.x;
-        float transY = transform.rotation.y;
-        float transZ = transform.rotation.z;
-        float transW = transform.rotation.w;
-
-        character.transform.rotation = new Quaternion(transY, transX, transZ, transW);
-        //transform.position = character.transform.position + new Vector3(0,2,-5);
+        character.transform.rotation = transform.localRotation;
         
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
@@ -46,8 +40,8 @@ public class CameraBehaviour : MonoBehaviour
         
         transform.rotation = Quaternion.Euler(rotX, rotY, 0.0f);
 
-        transform.position = character.transform.position /*+ new Vector3(0, 2.5f, -5)*/;
-        
+        transform.position = character.transform.position /*+ new Vector3(0, 2.5f, 0)*/;
+
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
             Cursor.lockState = CursorLockMode.None;
