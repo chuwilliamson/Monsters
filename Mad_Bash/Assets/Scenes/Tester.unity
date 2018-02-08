@@ -211,7 +211,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 157915985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -658, y: 319.5, z: 0}
+  m_LocalPosition: {x: -658, y: 309.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 145178742}
@@ -271,7 +271,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Test
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -880,7 +880,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 901952341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 658, y: 319.5, z: 0}
+  m_LocalPosition: {x: 658, y: 309.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 157915986}
@@ -974,9 +974,9 @@ GameObject:
   - component: {fileID: 1925817020}
   - component: {fileID: 1925817019}
   - component: {fileID: 1925817018}
+  - component: {fileID: 1925817023}
   - component: {fileID: 1925817022}
   - component: {fileID: 1925817017}
-  - component: {fileID: 1925817023}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -995,14 +995,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d2c9ec64a79954d8029ff51125a14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 07bf94aa6173a1c42974f1eee351fec5, type: 2}
-  dooropener: {fileID: 1613761292}
-  Door: {fileID: 1613761291}
-  character: {fileID: 11400000, guid: 5aba6e2c0c49d864eb909205fe4ba7dd, type: 2}
+  runaway: {fileID: 0}
+  character: {fileID: 11400000, guid: 5786813072eef3945b6c1bee6ec241e5, type: 2}
   level: 0
   xp: 0
   intellegence: 0
   power: 0
+  levelpoint: 0
   speed: 0
   health: 0
   brave: 0
@@ -1067,12 +1066,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1925817016}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 0.5, z: -0.56604016}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 2126530358}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1925817022
 MonoBehaviour:
@@ -1085,8 +1084,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803013075aa8bac448f9e84aed7d6ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 5aba6e2c0c49d864eb909205fe4ba7dd, type: 2}
+  character: {fileID: 11400000, guid: 5786813072eef3945b6c1bee6ec241e5, type: 2}
   _camera: {fileID: 540487710}
+  Door: {fileID: 1613761291}
+  dooropener: {fileID: 1613761292}
 --- !u!54 &1925817023
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1268,4 +1269,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2126530356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2126530358}
+  - component: {fileID: 2126530357}
+  m_Layer: 0
+  m_Name: PlayerAnimator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &2126530357
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2126530356}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ececf43b6cce924bae0e57bd0546f8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!4 &2126530358
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2126530356}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.29, y: 0.345, z: -0.56604016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1925817021}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
