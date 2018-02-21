@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
 
     LoadSceneMode loadScene;
     
-
     public CharacterInfo character;
 
     public int level, xp, intellegence, power, levelpoint;
