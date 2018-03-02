@@ -1,4 +1,4 @@
-﻿using Ryan;
+﻿
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -65,9 +65,10 @@ public class Player : MonoBehaviour
             }
         }
     }
-
+    
     void Stats()
     {
+        //ToDo: seperate this into another script
         level = character._level;
         xp = character._xp;
         intellegence = character._int;
