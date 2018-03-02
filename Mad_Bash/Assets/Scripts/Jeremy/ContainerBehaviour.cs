@@ -2,8 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptables/ContainerBehaviour")]
-public class ContainerBehaviour : ScriptableObject 
-{
 
+public class ContainerBehaviour : MonoBehaviour
+{
+    public Container contents;
+
+    public void AddItem(Item item)
+    {
+        contents.AddContent(item);
+    }
+
+    public void RemoveItem(Item item)
+    {
+        contents.RemoveContent(item);
+    }
+
+    public void TransferItem(Item item, Container destination)
+    {
+        destination.AddContent(item);
+        contents.RemoveContent(item);
+    }
 }

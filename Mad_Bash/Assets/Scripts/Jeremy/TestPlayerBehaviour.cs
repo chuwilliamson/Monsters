@@ -7,7 +7,6 @@ public class TestPlayerBehaviour : MonoBehaviour
     public Container inventory;
     public int health;
 
-
     public void TakeItem(Object obj)
     {
         inventory.AddContent(obj);
