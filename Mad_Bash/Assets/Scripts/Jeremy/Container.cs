@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptables/Container")]
+[CreateAssetMenu(menuName = "Container")]
 public class Container : ScriptableObject, IContainer
-{
+{       
     public List<Object> contents;
-    public int sizeLimit;
+    public int sizeLimit;    
 
     public void AddContent(Object obj)
     {
@@ -30,11 +30,5 @@ public class Container : ScriptableObject, IContainer
         {
             throw new System.Exception("Object not in list");
         }
-    }
-
-    public void TransferContent(Object obj, Container container)
-    {
-        container.AddContent(obj);
-        this.RemoveContent(obj);
     }
 }
