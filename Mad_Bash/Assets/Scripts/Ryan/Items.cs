@@ -83,18 +83,4 @@ namespace Ryan
             set { bool pickup = value; }
         }
     }
-
-    //class Items : ScriptableObject
-    //{
-    //    public enum Item
-    //    {
-    //        pipe, 
-    //        rock,
-    //        key,
-    //        roomKey,
-    //        twoXfour,
-    //        bottle,
-    //        knife
-    //    }
-    //}
 }
