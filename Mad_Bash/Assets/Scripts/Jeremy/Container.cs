@@ -2,63 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Jeremy
+[CreateAssetMenu(menuName = "Scriptables/Container")]
+public class Container : ScriptableObject, IContainer
 {
-    public struct Pos
-    {
-        public int x;
-        public int y;
-    }
+    public List<Object> contents;
+    public int sizeLimit;
 
-    public class ContainerSlot
+    public void AddContent(Object obj)
     {
-        // fields
-        public Pos position;
-
-        // methods
-        public ContainerSlot(int posX, int posY)
+        if (contents.Count < sizeLimit)
         {
-            position.x = posX;
-            position.y = posY;
+            contents.Add(obj);
+        }
+        else
+        {
+            throw new System.Exception("Container is full");
         }
     }
 
-    public class Container
+    public void RemoveContent(Object obj)
     {
-        // fields
-        public int width;
-        public int length;
-        public List<ContainerSlot> slots;
-        public List<Item> contents;
-
-        // methods
-        public Container(int w, int l)
+        if (contents.Contains(obj))
         {
-            width = w;
-            length = l;
-            slots = new List<ContainerSlot>();
-            contents = new List<Item>();
-
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < length; j++)
-                {
-                    slots.Add(new ContainerSlot(i, j));
-                }
-            }
-        }        
+            contents.Remove(obj);
+        }
+        else
+        {
+            throw new System.Exception("Object not in list");
+        }
     }
 
-    public class Item
+    public void TransferContent(Object obj, Container container)
     {
-        // fields
-        public string name;
-
-        // methods
-        public Item()
-        {
-
-        }
+        container.AddContent(obj);
+        this.RemoveContent(obj);
     }
 }
-
