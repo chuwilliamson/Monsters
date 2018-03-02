@@ -17,9 +17,13 @@ public class Movement : MonoBehaviour
         h *= Time.deltaTime;
         v *= Time.deltaTime;
 
-        Vector3 sprint = transform.forward;
+        float sprint = character._speed * .0005f;
 
         transform.Translate(h, 0, v);
+
+        if (Input.GetButton("Sprint") && v >= .01f)
+            transform.Translate(h, 0, (v + sprint));
+
     }
 
     // Update is called once per frame
