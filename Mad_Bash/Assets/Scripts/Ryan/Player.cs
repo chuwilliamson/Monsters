@@ -4,12 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    Weapon weapon;
-    Consumable help;
-    Distraction distract;
-    KeyItems keyItem;
     Item item;
     public Animation runaway;
+    public Container inventory;
 
     LoadSceneMode loadScene;
     
@@ -19,6 +16,12 @@ public class Player : MonoBehaviour
     public float speed, health, brave, weight, fear;
 
     bool dead = false, possible = false;
+
+
+    public void PickUpItem(Object obj)
+    {
+        inventory.AddContent(obj);
+    }
 
     void IsDead()
     {
@@ -113,12 +116,6 @@ public class Player : MonoBehaviour
             character._bravness = 100;
     }
 
-    void ItemPickUp()
-    {
-        if (Input.GetButtonDown("Interact") && Vector3.Distance(transform.position, weapon.item.transform.position) < 2)
-            weapon.item.transform.position = transform.position;
-    }
-
     void Start()
     {
         character._level = 1;
@@ -132,6 +129,5 @@ public class Player : MonoBehaviour
         Stats();
         Afraid();
         IsDead();
-        ItemPickUp();
     }
 }
