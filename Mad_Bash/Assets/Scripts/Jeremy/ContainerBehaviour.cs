@@ -5,21 +5,27 @@ using UnityEngine;
 
 public class ContainerBehaviour : MonoBehaviour
 {
-    public Container contents;
+    public Container container;
+
+    public List<Item> GetItems()
+    {
+        List<Item> items = new List<Item>();
+
+        foreach (Object obj in container.contents)
+        {
+            items.Add(obj as Item);
+        }
+
+        return items;
+    }
 
     public void AddItem(Item item)
     {
-        contents.AddContent(item);
+        container.AddContent(item);
     }
 
     public void RemoveItem(Item item)
     {
-        contents.RemoveContent(item);
-    }
-
-    public void TransferItem(Item item, Container destination)
-    {
-        destination.AddContent(item);
-        contents.RemoveContent(item);
+        container.RemoveContent(item);
     }
 }
