@@ -211,7 +211,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 157915985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -658, y: 309.5, z: 0}
+  m_LocalPosition: {x: -218, y: 309.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 145178742}
@@ -314,18 +314,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1528121653348208, guid: 485b32e617342824791fee37fe13fa4b,
     type: 2}
   m_PrefabInternal: {fileID: 1479070476}
---- !u!114 &180920511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 180920506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93e144ecef6358545a297ee8283a452a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 07bf94aa6173a1c42974f1eee351fec5, type: 2}
 --- !u!54 &180920512
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -880,7 +868,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 901952341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 658, y: 309.5, z: 0}
+  m_LocalPosition: {x: 218, y: 309.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 157915986}
@@ -944,11 +932,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1722087753390914, guid: 4bbc29c976198604480603fbe9cc42be,
     type: 2}
   m_PrefabInternal: {fileID: 455421705}
---- !u!95 &1613761292 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95884261125274352, guid: 4bbc29c976198604480603fbe9cc42be,
-    type: 2}
-  m_PrefabInternal: {fileID: 455421705}
 --- !u!111 &1613761293
 Animation:
   m_ObjectHideFlags: 0
@@ -996,6 +979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runaway: {fileID: 0}
+  inventory: {fileID: 0}
   character: {fileID: 11400000, guid: 5786813072eef3945b6c1bee6ec241e5, type: 2}
   level: 0
   xp: 0
@@ -1067,7 +1051,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1925817016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2126530358}
@@ -1085,9 +1069,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 5786813072eef3945b6c1bee6ec241e5, type: 2}
-  _camera: {fileID: 540487710}
-  Door: {fileID: 1613761291}
-  dooropener: {fileID: 1613761292}
 --- !u!54 &1925817023
 Rigidbody:
   m_ObjectHideFlags: 0
