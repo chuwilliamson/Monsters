@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class CameraBehaviour : MonoBehaviour
 {
-    public GameObject character;
+    public GameObject player;
 
     public float mouseSensitivity = 100;
 
     float rotX;
     float rotY;
 
+    Vector3 offsetX;
+    Vector3 offsetY;
+
     private void Start()
     {
+        offsetX = new Vector3(player.transform.position.x, player.transform.position.y + 8, player.transform.position.z + 7);
+        offsetY = new Vector3(0, 0, player.transform.position.z + 7);
+
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -21,37 +28,40 @@ public class CameraBehaviour : MonoBehaviour
         rotX = rot.x;
     }
 
-    // Update is called once per frame
     void Update ()
     {
-        character.transform.rotation = transform.localRotation;
+        player.transform.rotation = transform.rotation;
         
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        rotY += mouseX * mouseSensitivity * Time.deltaTime;
+        rotY += mouseX /** mouseSensitivity * Time.deltaTime*/;
 
-        rotX -= mouseY * mouseSensitivity * Time.deltaTime;
+        rotX -= mouseY /** mouseSensitivity * Time.deltaTime*/;
 
-        rotX = Mathf.Clamp(rotX, -25, 25);
+        //rotX = Mathf.Clamp(rotX, -25, 25);
 
-        float moveCRX = character.transform.rotation.x + rotX;
-        float moveCRY = character.transform.rotation.y + rotY;
-        
-        transform.rotation = Quaternion.Euler(rotX, rotY, 0.0f);
+        offsetX = Quaternion.AngleAxis(-mouseX, Vector3.up) * offsetX;
+        offsetY = Quaternion.AngleAxis(-mouseY, Vector3.right) * offsetY;
 
-        transform.position = character.transform.position /*+ new Vector3(0, 2.5f, 0)*/;
+        transform.position = player.transform.position + (offsetX + offsetY);
+        transform.LookAt(player.transform.position);
 
-        if (Input.GetKeyDown(KeyCode.RightShift))
+        if (Input.GetButtonDown(""))
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.RightShift))
+        if (Input.GetButtonUp(""))
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+        }
+
+        if(Input.GetButton(""))
+        {
+            transform.rotation = player.transform.rotation;
         }
     }
 }
