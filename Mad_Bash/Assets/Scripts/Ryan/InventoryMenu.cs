@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class InventoryMenu : MonoBehaviour
 {
-    public Canvas canvas;
-
     void OpenInventory()
     {
         if (Input.GetButton("OpenMenu"))
