@@ -6,7 +6,14 @@ using UnityEngine;
 [CreateAssetMenu]
 public class CharacterInfo : ScriptableObject
 {
-    public int _level = 1, _xp = 0, _pow, _int;
+    public float BraveLevel;
+    public int XP = 0;
+    public int Strength;
 
-    public float _speed, _bravness, _presence, _health, _fear = 0; 
+    public float Speed;
+    public float Sneak;
+    public float Health;
+    public float Fear = 0;
+
+    public FloatVariable SmallSpeed;
 }

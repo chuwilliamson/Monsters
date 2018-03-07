@@ -14,10 +14,12 @@ public class CameraBehaviour : MonoBehaviour
     Vector3 offsetX;
     Vector3 offsetY;
 
+    public float height = 1, distance;
+
     private void Start()
     {
-        offsetX = new Vector3(player.transform.position.x, player.transform.position.y + 8, player.transform.position.z + 7);
-        offsetY = new Vector3(0, 0, player.transform.position.z + 7);
+        offsetX = new Vector3(0, height, distance);
+        offsetY = new Vector3(0, 0, distance);
 
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -32,19 +34,19 @@ public class CameraBehaviour : MonoBehaviour
     {
         player.transform.rotation = transform.rotation;
         
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
 
-        rotY += mouseX /** mouseSensitivity * Time.deltaTime*/;
+        rotY += mouseX * mouseSensitivity * Time.deltaTime;
 
-        rotX -= mouseY /** mouseSensitivity * Time.deltaTime*/;
+        rotX -= mouseY * mouseSensitivity * Time.deltaTime;
 
-        //rotX = Mathf.Clamp(rotX, -25, 25);
+        rotX = Mathf.Clamp(rotX, -25, 25);
 
-        offsetX = Quaternion.AngleAxis(-mouseX, Vector3.up) * offsetX;
-        offsetY = Quaternion.AngleAxis(-mouseY, Vector3.right) * offsetY;
+        offsetX = Quaternion.AngleAxis(rotY, Vector3.up) * offsetX;
+        offsetY = Quaternion.AngleAxis(rotX, Vector3.right) * offsetY;
 
-        transform.position = player.transform.position + (offsetX + offsetY);
+        transform.position = player.transform.position + offsetX;
         transform.LookAt(player.transform.position);
 
         if (Input.GetButtonDown(""))

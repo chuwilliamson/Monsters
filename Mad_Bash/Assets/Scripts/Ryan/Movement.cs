@@ -11,13 +11,13 @@ public class Movement : MonoBehaviour
         
     void Move()
     {
-        h = Input.GetAxis("Horizontal") * player._speed;
-        v = Input.GetAxis("Vertical") * player._speed;
+        h = Input.GetAxis("Horizontal") * player.Speed;
+        v = Input.GetAxis("Vertical") * player.Speed;
 
         h *= Time.deltaTime;
         v *= Time.deltaTime;
 
-        float sprint = player._speed * .0005f;
+        float sprint = player.Speed * .0005f;
 
         transform.Translate(h, 0, v);
 
