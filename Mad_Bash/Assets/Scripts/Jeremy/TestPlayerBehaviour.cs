@@ -33,29 +33,16 @@ public class TestPlayerBehaviour : MonoBehaviour
         var collidedwith = args[1];
         if (collidedwith != gameObject)
             return;
+
         if (sender != null)
-        {            
-            var container = sender.GetComponent<ContainerBehaviour>();
+        {
+            var containerBehaviour = sender.GetComponent<ContainerBehaviour>();
+            var items = containerBehaviour.Container.contents;
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                var contents = container.GetItems();
-
-                Debug.Log("Before Contents");
-                foreach (Item item in contents)
-                {
-                    Debug.Log(item.name);                    
-                }
-
-                inventory.AddContent(contents[2]);
-                container.RemoveItem(contents[2]);
-                Debug.Log("Taken " + contents[2].Name + " from " + sender.name);
-
-                Debug.Log("After Contents");
-                foreach (Item item in contents)
-                {
-                    Debug.Log(item.name);
-                }
+                containerBehaviour.Open();
+                Debug.Log("open");
             }            
         }
     }

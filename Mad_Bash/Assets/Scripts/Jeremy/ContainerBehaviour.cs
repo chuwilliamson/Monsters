@@ -5,27 +5,40 @@ using UnityEngine;
 
 public class ContainerBehaviour : MonoBehaviour
 {
-    public Container container;
+    public Container container_config;
+    [SerializeField]
+    private Container container_runtime;
 
-    public List<Item> GetItems()
+    private GameEventArgs LootBoxOpened;
+    private GameEventArgs LootBoxClosed;
+
+    private void Start()
     {
-        List<Item> items = new List<Item>();
+        container_runtime = Instantiate(container_config);
+    }
 
-        foreach (Object obj in container.contents)
-        {
-            items.Add(obj as Item);
-        }
+    public void Open()
+    {
+        LootBoxOpened.Raise(container_runtime);
+    }
 
-        return items;
+    public void Close()
+    {
+        LootBoxClosed.Raise(container_runtime);
+    }
+
+    public Container Container
+    {
+        get { return container_runtime; }
     }
 
     public void AddItem(Item item)
     {
-        container.AddContent(item);
+        container_runtime.AddContent(item);
     }
 
     public void RemoveItem(Item item)
     {
-        container.RemoveContent(item);
+        container_runtime.RemoveContent(item);
     }
 }
