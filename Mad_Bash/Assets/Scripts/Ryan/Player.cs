@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     void IsDead()
     {
-        if (character._health <= 0)
+        if (character.Health <= 0)
             dead = true;
 
         if (dead == true)
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
             power = 0;
             speed = 0;
 
-            character._health = 0;
+            character.Health = 0;
 
             SceneManager.LoadScene("SafeHouse");
         }
@@ -35,17 +35,17 @@ public class Player : MonoBehaviour
     {
         bool toAfraid = false;
         
-        if (character._fear >= character._bravness)
+        if (character.Fear >= character.BraveLevel)
         {
             toAfraid = true;
-            character._fear = 100;
+            character.Fear = 100;
         }
 
         if(toAfraid == true)
         {
             //runaway.SetTrigger("Run");
             SceneManager.LoadScene("SafeHouse");
-            if (character._fear == 0)
+            if (character.Fear == 0)
             {
                 toAfraid = false;
             }
@@ -55,51 +55,49 @@ public class Player : MonoBehaviour
     void Stats()
     {
         //ToDo: seperate this into another script
-        level = character._level;
-        xp = character._xp;
-        intellegence = character._int;
-        power = character._pow;
-        speed = character._speed;
-        health = character._health;
-        brave = character._bravness;
-        weight = character._presence;
-        fear = character._fear;
+        xp = character.XP;
+        power = character.Strength;
+        speed = character.Speed;
+        health = character.Health;
+        brave = character.BraveLevel;
+        weight = character.Sneak;
+        fear = character.Fear;
 
         if (xp >= 200)
         {
-            character._xp = 0;
-            character._level++;
+            character.XP = 0;
+            character.BraveLevel++;
             //levelpoint++;
         }
         
-        if (level == 1)
-            character._bravness = 10;
-        if (level == 2)
-            character._bravness = 20;
-        if (level == 3)
-            character._bravness = 30;
-        if (level == 4)
-            character._bravness = 40;
-        if (level == 5)
-            character._bravness = 50;
-        if (level == 6)
-            character._bravness = 60;
-        if (level == 7)
-            character._bravness = 70;
-        if (level == 8)
-            character._bravness = 80;
-        if (level == 9)
-            character._bravness = 90;
-        if (level == 10)
-            character._bravness = 100;
+        if (brave == 1)
+            character.BraveLevel = 10;
+        if (brave == 2)
+            character.BraveLevel = 20;
+        if (brave == 3)
+            character.BraveLevel = 30;
+        if (brave == 4)
+            character.BraveLevel = 40;
+        if (brave == 5)
+            character.BraveLevel = 50;
+        if (brave == 6)
+            character.BraveLevel = 60;
+        if (brave == 7)
+            character.BraveLevel = 70;
+        if (brave == 8)
+            character.BraveLevel = 80;
+        if (brave == 9)
+            character.BraveLevel = 90;
+        if (brave == 10)
+            character.BraveLevel = 100;
     }
 
     void Start()
     {
-        character._level = 1;
-        character._xp = 0;
-        character._health = 100;
-        character._fear = 0;
+        character.BraveLevel = 1;
+        character.XP = 0;
+        character.Health = 100;
+        character.Fear = 0;
     }
 
     void Update()
