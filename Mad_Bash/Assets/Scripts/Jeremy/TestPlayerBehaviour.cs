@@ -37,7 +37,6 @@ public class TestPlayerBehaviour : MonoBehaviour
         if (sender != null)
         {
             var containerBehaviour = sender.GetComponent<ContainerBehaviour>();
-            var items = containerBehaviour.Container.contents;
 
             if (Input.GetKeyDown(KeyCode.F))
             {

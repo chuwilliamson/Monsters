@@ -15,7 +15,7 @@ public class UI_ContainerBehaviour : MonoBehaviour
     public void OnLootBoxOpened(UnityEngine.Object[] args)
     {
         _dropdown.ClearOptions();
-        var sender = args[0] as ContainerBehaviour;
+        var sender = args[0] as Container;
         if(sender == null)
             return;
 
@@ -24,7 +24,7 @@ public class UI_ContainerBehaviour : MonoBehaviour
 
         // unpack objects as items
         var items = new List<Item>();
-        sender.Container.contents.ForEach(obj => items.Add(obj as Item));
+        sender.contents.ForEach(obj => items.Add(obj as Item));        
 
         // add those items to dropdown
         items.ForEach(i => optionDataList.Add(new Dropdown.OptionData(i.Name)));

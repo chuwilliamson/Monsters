@@ -194,7 +194,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 98291627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 585.5, y: 279, z: 0}
+  m_LocalPosition: {x: 585.5, y: 122.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1911335097}
@@ -763,8 +763,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container_config: {fileID: 11400000, guid: 415cd010986070344a6ace9101ace8ab, type: 2}
   container_runtime: {fileID: 0}
-  LootBoxOpened: {fileID: 0}
-  LootBoxClosed: {fileID: 0}
+  LootBoxOpened: {fileID: 11400000, guid: cd85eaa30890f08429c7276d6db8c3c0, type: 2}
+  LootBoxClosed: {fileID: 11400000, guid: 2242269ea33aea6448676e579ef3288d, type: 2}
 --- !u!114 &734426642
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,12 +4,14 @@ using UnityEngine;
 
 
 public class ContainerBehaviour : MonoBehaviour
-{
+{      
     public Container container_config;
     [SerializeField]
     private Container container_runtime;
 
+    [SerializeField]
     private GameEventArgs LootBoxOpened;
+    [SerializeField]
     private GameEventArgs LootBoxClosed;
 
     private void Start()
