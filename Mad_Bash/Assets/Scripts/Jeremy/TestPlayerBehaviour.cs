@@ -4,35 +4,50 @@ using UnityEngine;
 
 public class TestPlayerBehaviour : MonoBehaviour
 {
-    public Container inventory;
+    // fields
     public int health;
 
-    public void TakeItem(Object obj)
+    // properties
+    [SerializeField]
+    private ContainerBehaviour inventory;
+
+    // methods
+    public void OpenInventory()
     {
-        inventory.AddContent(obj);
+        inventory.Open();
+        Debug.Log("opened " + inventory.name);
     }
 
-    public void DropItem(Object obj)
+    public void OpenContainer(UnityEngine.Object[] args)
     {
-        inventory.RemoveContent(obj);
-    }
-
-    public void TakeDamage()
-    {
-        health -= 10;
-        Debug.Log("took damage");
-    }
-
-    public void TakeDamage(UnityEngine.Object[] args)
-    {
-        var sender = args[0];
+        var sender = args[0] as GameObject;
         var collidedwith = args[1];
         if (collidedwith != gameObject)
             return;
-        if(sender != null)
+
+        if (sender != null)
         {
-            Debug.Log("taking damage from " + collidedwith.name);
-            TakeDamage();
+            var containerBehaviour = sender.GetComponent<ContainerBehaviour>();
+
+            if (Input.GetButtonDown("ViewButton"))
+            {
+                containerBehaviour.Open();
+                Debug.Log("opened " + containerBehaviour.name);
+            }
+        }
+    }
+
+    // Unity methods
+    private void Start()
+    {
+        inventory = GetComponentInChildren<ContainerBehaviour>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("ViewButton"))
+        {
+            OpenInventory();
         }
     }
 }
