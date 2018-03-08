@@ -4,27 +4,18 @@ using UnityEngine;
 
 public class TestPlayerBehaviour : MonoBehaviour
 {
-    public Container inventory;
-    public Item itemInHand;
+    // fields
     public int health;
 
-    public void TakeDamage()
-    {
-        health -= 10;
-        Debug.Log("took damage");
-    }
+    // properties
+    [SerializeField]
+    private ContainerBehaviour inventory;
 
-    public void TakeDamage(UnityEngine.Object[] args)
+    // methods
+    public void OpenInventory()
     {
-        var sender = args[0];
-        var collidedwith = args[1];
-        if (collidedwith != gameObject)
-            return;
-        if(sender != null)
-        {
-            Debug.Log("taking damage from " + collidedwith.name);
-            TakeDamage();
-        }
+        inventory.Open();
+        Debug.Log("opened " + inventory.name);
     }
 
     public void OpenContainer(UnityEngine.Object[] args)
@@ -38,11 +29,25 @@ public class TestPlayerBehaviour : MonoBehaviour
         {
             var containerBehaviour = sender.GetComponent<ContainerBehaviour>();
 
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetButtonDown("ViewButton"))
             {
                 containerBehaviour.Open();
-                Debug.Log("open");
-            }            
+                Debug.Log("opened " + containerBehaviour.name);
+            }
+        }
+    }
+
+    // Unity methods
+    private void Start()
+    {
+        inventory = GetComponentInChildren<ContainerBehaviour>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("ViewButton"))
+        {
+            OpenInventory();
         }
     }
 }

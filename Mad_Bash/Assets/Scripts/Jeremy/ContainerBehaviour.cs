@@ -15,10 +15,12 @@ public class ContainerBehaviour : MonoBehaviour
             get { return _data; }
         }
         
-        public void Init(Container container)
+        public ContainerEventData Init(Container container)
         {
             _data = new List<Item>();
             container.contents.ForEach(o => _data.Add(o as Item));
+
+            return this;
         }
     }
 
@@ -27,9 +29,9 @@ public class ContainerBehaviour : MonoBehaviour
     [SerializeField]
     private Container container_runtime;
     [SerializeField]
-    private GameEventArgs LootBoxOpened;
+    private GameEventArgs ContainerOpened;
     [SerializeField]
-    private GameEventArgs LootBoxClosed;
+    private GameEventArgs ContainerClosed;
 
     // properties
     public Container Container
@@ -40,9 +42,8 @@ public class ContainerBehaviour : MonoBehaviour
     // methods
     public void Open()
     {
-        var data = ScriptableObject.CreateInstance<ContainerEventData>();
-        data.Init(container_runtime);        
-        LootBoxOpened.Raise(data);
+        var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
+        ContainerOpened.Raise(data);
     }
 
     public void AddItem(Item item)
@@ -58,7 +59,6 @@ public class ContainerBehaviour : MonoBehaviour
     // Unity methods
     private void Start()
     {
-
         container_runtime = Instantiate(container_config);
     }
 }
