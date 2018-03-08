@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public CharacterInfo character;
+    public CharacterInfo player;
 
     float h;
     float v;
         
     void Move()
     {
-        h = Input.GetAxis("Horizontal") * character._speed;
-        v = Input.GetAxis("Vertical") * character._speed;
+        h = Input.GetAxis("Horizontal") * player.Speed;
+        v = Input.GetAxis("Vertical") * player.Speed;
 
         h *= Time.deltaTime;
         v *= Time.deltaTime;
 
-        float sprint = character._speed * .0005f;
+        float sprint = player.Speed * .0005f;
 
         transform.Translate(h, 0, v);
 
