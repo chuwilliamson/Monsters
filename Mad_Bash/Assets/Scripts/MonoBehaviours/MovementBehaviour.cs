@@ -14,17 +14,17 @@ public class MovementBehaviour : MonoBehaviour
         
     void Move()
     {
-        h = Input.GetAxis("Horizontal") * (player.Speed * .5f);
-        v = Input.GetAxis("Vertical") * (player.Speed * .5f);
+        h = Input.GetAxis("LeftHorizontal") * (player.Speed * .5f);
+        v = Input.GetAxis("LeftVertical") * (player.Speed * .5f);
 
         h *= Time.deltaTime;
         v *= Time.deltaTime;
 
         float sprint = player.Speed * .005f;
         
-        transform.Translate(-h, 0, v);
+        transform.Translate(h, 0, -v);
 
-        if (Input.GetButton("Sprint") && v >= .01f)
+        if (Input.GetButton("RightBumper") && v >= .01f)
             transform.Translate(-h, 0, (v + sprint));
 
     }
