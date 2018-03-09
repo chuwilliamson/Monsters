@@ -18,25 +18,6 @@ public class TestPlayerBehaviour : MonoBehaviour
         Debug.Log("opened " + inventory.name);
     }
 
-    public void OpenContainer(UnityEngine.Object[] args)
-    {
-        var sender = args[0] as GameObject;
-        var collidedwith = args[1];
-        if (collidedwith != gameObject)
-            return;
-
-        if (sender != null)
-        {
-            var containerBehaviour = sender.GetComponent<ContainerBehaviour>();
-
-            if (Input.GetButtonDown("Interact"))
-            {
-                containerBehaviour.Open();
-                Debug.Log("opened " + containerBehaviour.name);
-            }
-        }
-    }
-
     // Unity methods
     private void Start()
     {
@@ -49,5 +30,29 @@ public class TestPlayerBehaviour : MonoBehaviour
         {
             OpenInventory();
         }
+
+        if (currentInteractable != null)
+        {
+            if (Input.GetButtonDown("A Button"))
+            {
+                currentInteractable.Interact(currentInteractable);
+            }
+        }
+    }
+
+    // Interaction System Implementation
+    public IInteractable currentInteractable;
+
+    public void Interaction_Set(IInteractable interactable)
+    {
+        if (currentInteractable != null)
+            return;
+
+        currentInteractable = interactable;
+    }
+
+    public void Interaction_Release()
+    {
+        currentInteractable = null;
     }
 }
