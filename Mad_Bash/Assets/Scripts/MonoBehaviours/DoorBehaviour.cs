@@ -11,7 +11,7 @@ public class DoorBehaviour : MonoBehaviour
 
     void Open()
     {
-        if(Input.GetButtonDown("Interact") && Vector3.Distance(player.transform.position, transform.position) < 3)
+        if(Input.GetButtonDown("A Button") && Vector3.Distance(player.transform.position, transform.position) < 3)
             dooropener.SetTrigger("open");
     }
 

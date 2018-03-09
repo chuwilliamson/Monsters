@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    Item item;
     public Animation runaway;
     
     LoadSceneMode loadScene;
@@ -16,43 +15,6 @@ public class PlayerBehaviour : MonoBehaviour
     public float speed, health, brave, weight, fear;
 
     bool dead = false, possible = false;    
-
-    void IsDead()
-    {
-        if (character.Health <= 0)
-            dead = true;
-
-        if (dead == true)
-        {
-            power = 0;
-            speed = 0;
-
-            character.Health = 0;
-
-            SceneManager.LoadScene("SafeHouse");
-        }
-    }
-
-    void Afraid()
-    {
-        bool toAfraid = false;
-        
-        if (character.Fear >= character.BraveLevel)
-        {
-            toAfraid = true;
-            character.Fear = 100;
-        }
-
-        if(toAfraid == true)
-        {
-            //runaway.SetTrigger("Run");
-            SceneManager.LoadScene("SafeHouse");
-            if (character.Fear == 0)
-            {
-                toAfraid = false;
-            }
-        }
-    }
     
     void Stats()
     {
@@ -103,10 +65,8 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     void Update()
-    {       
+    {
         Stats();
-        Afraid();
-        IsDead();
     }
 
 }
