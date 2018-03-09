@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+//Ryan
+
+public class PlayerBehaviour : MonoBehaviour
 {
     Item item;
     public Animation runaway;

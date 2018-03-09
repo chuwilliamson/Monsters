@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+
+//Ryan
+
+public class MovementBehaviour : MonoBehaviour
 {
     public CharacterInfo player;
 
@@ -11,18 +14,18 @@ public class Movement : MonoBehaviour
         
     void Move()
     {
-        h = Input.GetAxis("Horizontal") * player.Speed;
-        v = Input.GetAxis("Vertical") * player.Speed;
+        h = Input.GetAxis("Horizontal") * (player.Speed * .5f);
+        v = Input.GetAxis("Vertical") * (player.Speed * .5f);
 
         h *= Time.deltaTime;
         v *= Time.deltaTime;
 
-        float sprint = player.Speed * .0005f;
-
-        transform.Translate(h, 0, v);
+        float sprint = player.Speed * .005f;
+        
+        transform.Translate(-h, 0, v);
 
         if (Input.GetButton("Sprint") && v >= .01f)
-            transform.Translate(h, 0, (v + sprint));
+            transform.Translate(-h, 0, (v + sprint));
 
     }
 
