@@ -22,7 +22,7 @@ public class MovementBehaviour : MonoBehaviour
 
         float sprint = player.Speed * .005f;
         
-        transform.Translate(h, 0, -v);
+        transform.Translate(h, 0, v);
 
         if (Input.GetButton("RightBumper") && v >= .01f)
             transform.Translate(-h, 0, (v + sprint));
