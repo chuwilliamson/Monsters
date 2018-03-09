@@ -17,7 +17,6 @@ public class UI_ContainerBehaviour : MonoBehaviour
         _dropdown.Hide();
     }
 
-
     // methods
     public void OnContainerOpened(UnityEngine.Object[] args)
     {        
