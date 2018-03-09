@@ -39,8 +39,7 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable
 
     // methods       
     public void Open()
-    {
-        Debug.Log("Container Opened");
+    {        
         var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
         ContainerOpened.Raise(data);
     }

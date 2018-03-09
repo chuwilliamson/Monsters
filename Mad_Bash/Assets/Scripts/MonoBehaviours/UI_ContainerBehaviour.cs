@@ -7,7 +7,7 @@ public class UI_ContainerBehaviour : MonoBehaviour
 {
     // fields
     private Dropdown _dropdown;
-    private bool opened;
+    private bool opened = false;
 
     // Unity methods
     private void Start()
@@ -18,7 +18,7 @@ public class UI_ContainerBehaviour : MonoBehaviour
 
     // methods
     public void OnContainerOpened(UnityEngine.Object[] args)
-    {        
+    {
         _dropdown.ClearOptions();
         var sender = args[0] as ContainerBehaviour.ContainerEventData;
         if(sender == null)
@@ -52,6 +52,7 @@ public class UI_ContainerBehaviour : MonoBehaviour
 
     public void OnContainerClosed()
     {
+        //Debug.Log("Container Closed");
         _dropdown.ClearOptions();
         opened = false;
         _dropdown.Hide();
@@ -61,7 +62,7 @@ public class UI_ContainerBehaviour : MonoBehaviour
     {
         if (opened != false)
         {
-            if (Input.GetButtonDown("Cancel"))
+            if (Input.GetButtonDown("B Button"))
             {
                 OnContainerClosed();
             }
