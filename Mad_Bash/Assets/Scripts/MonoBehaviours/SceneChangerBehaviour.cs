@@ -5,7 +5,7 @@ using UnityEngine;
 
 //Ryan
 
-public class SceneChangerehaviour : MonoBehaviour
+public class SceneChangerBehaviour : MonoBehaviour
 {
     public void ChangeScene(string name)
     {

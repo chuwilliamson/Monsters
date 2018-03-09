@@ -14,7 +14,7 @@ public class PauseBehaviour : MonoBehaviour
 
     public void Paused()
     {
-        if (Input.GetButton("PauseMenu"))
+        if (Input.GetButton("MenuButton"))
         {
             paused = true;
             canvas.enabled = true;
