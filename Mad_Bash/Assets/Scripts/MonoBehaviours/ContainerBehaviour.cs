@@ -37,12 +37,12 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable
         get { return container_runtime; }
     }
 
-    // methods
-    public void Iteract()
+    // methods   
+    public void Interact(object token)
     {
         throw new System.NotImplementedException();
-    }
 
+    }
     public void Open()
     {
         var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
@@ -64,4 +64,6 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable
     {
         container_runtime = Instantiate(container_config);
     }
+
+   
 }
