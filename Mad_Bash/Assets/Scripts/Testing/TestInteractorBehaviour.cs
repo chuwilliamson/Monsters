@@ -25,7 +25,7 @@ public class TestInteractorBehaviour : MonoBehaviour, IInteractor
         {
             if (Input.GetButtonDown("Interact"))
             {
-                currentInteractable.Interact(this.tag);
+                currentInteractable.Interact(currentInteractable);
             }
         }
     }
