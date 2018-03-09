@@ -29,7 +29,7 @@ public class TestPlayerBehaviour : MonoBehaviour
         {
             var containerBehaviour = sender.GetComponent<ContainerBehaviour>();
 
-            if (Input.GetButtonDown("ViewButton"))
+            if (Input.GetButtonDown("Interact"))
             {
                 containerBehaviour.Open();
                 Debug.Log("opened " + containerBehaviour.name);

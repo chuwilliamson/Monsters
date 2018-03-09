@@ -1,10 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
-
-public class ContainerBehaviour : MonoBehaviour
+public class ContainerBehaviour : MonoBehaviour, IInteractable
 {      
     public class ContainerEventData : ScriptableObject
     {       
@@ -40,6 +38,11 @@ public class ContainerBehaviour : MonoBehaviour
     }
 
     // methods
+    public void Iteract()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public void Open()
     {
         var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
