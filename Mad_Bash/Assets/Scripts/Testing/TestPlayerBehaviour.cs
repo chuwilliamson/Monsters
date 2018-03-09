@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestPlayerBehaviour : MonoBehaviour
+public class TestPlayerBehaviour : MonoBehaviour, IInteractor
 {
     // fields
     public int health;
 
     // properties
     [SerializeField]
-    private ContainerBehaviour inventory;
+    private InventoryBehaviour inventory;
 
     // methods
     public void OpenInventory()
@@ -21,7 +21,7 @@ public class TestPlayerBehaviour : MonoBehaviour
     // Unity methods
     private void Start()
     {
-        inventory = GetComponentInChildren<ContainerBehaviour>();
+        inventory = GetComponentInChildren<InventoryBehaviour>();
     }
 
     private void Update()
