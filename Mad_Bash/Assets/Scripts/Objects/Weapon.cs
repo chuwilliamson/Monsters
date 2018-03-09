@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ryan
+
 [CreateAssetMenu]
 public class Weapon : Item, IExecutable
 {
