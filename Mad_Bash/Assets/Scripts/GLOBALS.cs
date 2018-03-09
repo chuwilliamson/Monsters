@@ -15,3 +15,8 @@ public interface IExecutable
 {
     void Execute();
 }
+
+public interface IInteractable
+{
+    void Iteract();
+}

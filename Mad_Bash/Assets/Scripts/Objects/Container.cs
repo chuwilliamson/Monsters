@@ -6,7 +6,7 @@ using UnityEngine;
 public class Container : ScriptableObject, IContainer
 {       
     public List<Object> contents;
-    public int sizeLimit;    
+    public int sizeLimit;
 
     public void AddContent(Object obj)
     {
