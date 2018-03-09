@@ -33,7 +33,4 @@ public class TestInteractableBehaviour : MonoBehaviour, IInteractable
             Interactor = null;
         }
     }
-
-    // will be implemented by interactable
-    public virtual void Interaction(object token) { }
 }

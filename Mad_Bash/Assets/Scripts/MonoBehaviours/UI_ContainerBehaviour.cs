@@ -38,7 +38,7 @@ public class UI_ContainerBehaviour : MonoBehaviour
     public void OnInventoryOpened(UnityEngine.Object[] args)
     {
         _dropdown.ClearOptions();
-        var sender = args[0] as InventoryBehaviour.ContainerEventData;
+        var sender = args[0] as ContainerBehaviour.ContainerEventData;
         if (sender == null)
             return;
 

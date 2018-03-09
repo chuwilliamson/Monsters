@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 268768218}
   - component: {fileID: 268768217}
   m_Layer: 0
-  m_Name: Test Container
+  m_Name: Test Container 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,10 +500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26aaf92b0c9a27b47b6248d98fa4fbfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interactor: {fileID: 0}
-  Interaction_Set: {fileID: 11400000, guid: c8872184dd428074b97c0d90b3a362b5, type: 2}
-  Interaction_Release: {fileID: 11400000, guid: 3ac1c496fcf427c4bafbf19ca269277a,
-    type: 2}
   container_config: {fileID: 11400000, guid: 415cd010986070344a6ace9101ace8ab, type: 2}
   container_runtime: {fileID: 0}
   ContainerOpened: {fileID: 11400000, guid: cd85eaa30890f08429c7276d6db8c3c0, type: 2}
@@ -1574,50 +1570,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 996025627}
---- !u!1 &1014666895
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1014666897}
-  - component: {fileID: 1014666896}
-  m_Layer: 0
-  m_Name: Test Inventory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1014666896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1014666895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a87ed40530dceee4ca64eb8f438ddc95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory_config: {fileID: 11400000, guid: 735344f6039947f498a44702c52354ee, type: 2}
-  inventory_runtime: {fileID: 0}
-  InventoryOpened: {fileID: 11400000, guid: 5a9115ed5f7e0694fab7ef034e37cffb, type: 2}
-  InventoryClosed: {fileID: 11400000, guid: eec7bafacd3b29a458110b82be3d91ca, type: 2}
---- !u!4 &1014666897
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1014666895}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.27, y: -1.71, z: 0.74}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1041232303}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1019507608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,7 +1587,7 @@ GameObject:
   - component: {fileID: 1019507610}
   - component: {fileID: 1019507609}
   m_Layer: 0
-  m_Name: Test Container (1)
+  m_Name: Test Container 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1652,10 +1604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26aaf92b0c9a27b47b6248d98fa4fbfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interactor: {fileID: 0}
-  Interaction_Set: {fileID: 11400000, guid: c8872184dd428074b97c0d90b3a362b5, type: 2}
-  Interaction_Release: {fileID: 11400000, guid: 3ac1c496fcf427c4bafbf19ca269277a,
-    type: 2}
   container_config: {fileID: 11400000, guid: 03051be1141207648a67e544422bc973, type: 2}
   container_runtime: {fileID: 0}
   ContainerOpened: {fileID: 11400000, guid: cd85eaa30890f08429c7276d6db8c3c0, type: 2}
@@ -1824,6 +1772,7 @@ GameObject:
   - component: {fileID: 1041232304}
   - component: {fileID: 1041232306}
   - component: {fileID: 1041232307}
+  - component: {fileID: 1041232305}
   m_Layer: 0
   m_Name: Test Player Interactor
   m_TagString: Player
@@ -1893,8 +1842,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.27, y: 1.71, z: -0.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1014666897}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1913,6 +1861,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1041232305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041232299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26aaf92b0c9a27b47b6248d98fa4fbfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  container_config: {fileID: 11400000, guid: 735344f6039947f498a44702c52354ee, type: 2}
+  container_runtime: {fileID: 0}
+  ContainerOpened: {fileID: 11400000, guid: 5a9115ed5f7e0694fab7ef034e37cffb, type: 2}
+  ContainerClosed: {fileID: 11400000, guid: eec7bafacd3b29a458110b82be3d91ca, type: 2}
+  Interactor: {fileID: 0}
+  Interaction_Set: {fileID: 0}
+  Interaction_Release: {fileID: 0}
 --- !u!114 &1041232306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2451,7 +2417,7 @@ GameObject:
   - component: {fileID: 1625147004}
   - component: {fileID: 1625147006}
   m_Layer: 0
-  m_Name: Test Interactable
+  m_Name: Test Interactable 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2556,7 +2522,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f4c34aff29097994a81204aa21e5bef5, type: 2}
+  - {fileID: 2100000, guid: 156af21beb96de247969acb489168e23, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

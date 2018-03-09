@@ -9,7 +9,7 @@ public class TestPlayerBehaviour : MonoBehaviour, IInteractor
 
     // properties
     [SerializeField]
-    private InventoryBehaviour inventory;
+    private ContainerBehaviour inventory;
 
     // methods
     public void OpenInventory()
@@ -21,7 +21,7 @@ public class TestPlayerBehaviour : MonoBehaviour, IInteractor
     // Unity methods
     private void Start()
     {
-        inventory = GetComponentInChildren<InventoryBehaviour>();
+        inventory = GetComponentInChildren<ContainerBehaviour>();
     }
 
     private void Update()
