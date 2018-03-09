@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class SceneChanger : MonoBehaviour
+//Ryan
+
+public class SceneChangerehaviour : MonoBehaviour
 {
     public void ChangeScene(string name)
     {

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Ryan
+
 public class MovementBehaviour : MonoBehaviour
 {
     public CharacterInfo player;
@@ -17,12 +20,12 @@ public class MovementBehaviour : MonoBehaviour
         h *= Time.deltaTime;
         v *= Time.deltaTime;
 
-        float sprint = player.Speed * .0005f;
+        float sprint = player.Speed * .005f;
         
-        transform.Translate(h, 0, v);
+        transform.Translate(-h, 0, v);
 
         if (Input.GetButton("Sprint") && v >= .01f)
-            transform.Translate(h, 0, (v + sprint));
+            transform.Translate(-h, 0, (v + sprint));
 
     }
 
