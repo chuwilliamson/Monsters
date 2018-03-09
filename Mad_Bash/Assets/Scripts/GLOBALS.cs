@@ -16,7 +16,13 @@ public interface IExecutable
     void Execute();
 }
 
+public interface IInteractor
+{
+    void Interaction_Set(IInteractable interactable);
+    void Interaction_Release();
+}
+
 public interface IInteractable
 {
-    void Iteract();
+    void Interact(object token);
 }

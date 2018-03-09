@@ -7,19 +7,18 @@ public class UI_ContainerBehaviour : MonoBehaviour
 {
     // fields
     private Dropdown _dropdown;
+    private bool opened = false;
 
     // Unity methods
     private void Start()
     {
         _dropdown = GetComponent<Dropdown>();
         _dropdown.ClearOptions();
-
-        _dropdown.Hide();
     }
 
     // methods
     public void OnContainerOpened(UnityEngine.Object[] args)
-    {        
+    {
         _dropdown.ClearOptions();
         var sender = args[0] as ContainerBehaviour.ContainerEventData;
         if(sender == null)
@@ -32,6 +31,7 @@ public class UI_ContainerBehaviour : MonoBehaviour
         sender.Data.ForEach(i => optionDataList.Add(new Dropdown.OptionData(i.Name)));
         _dropdown.AddOptions(optionDataList);
 
+        opened = true;
         _dropdown.Show();
     }
 
@@ -48,12 +48,24 @@ public class UI_ContainerBehaviour : MonoBehaviour
         // add those items to dropdown
         sender.Data.ForEach(i => optionDataList.Add(new Dropdown.OptionData(i.Name)));
         _dropdown.AddOptions(optionDataList);
-
-        _dropdown.Show();
     }
 
     public void OnContainerClosed()
     {
+        //Debug.Log("Container Closed");
+        _dropdown.ClearOptions();
+        opened = false;
         _dropdown.Hide();
-    }    
+    }
+
+    private void Update()
+    {
+        if (opened != false)
+        {
+            if (Input.GetButtonDown("B Button"))
+            {
+                OnContainerClosed();
+            }
+        }
+    }
 }
