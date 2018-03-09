@@ -37,7 +37,7 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable
         get { return container_runtime; }
     }
 
-    // methods       
+    // methods
     public void Open()
     {        
         var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
@@ -60,7 +60,7 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable
         container_runtime = Instantiate(container_config);
     }
 
-    // Interaction System Implementation
+    // =========== Interaction System Implementation
     public GameObject Interactor;
     [SerializeField]
     private GameEventArgs Interaction_Set;
