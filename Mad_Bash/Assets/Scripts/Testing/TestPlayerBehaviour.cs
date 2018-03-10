@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class TestPlayerBehaviour : MonoBehaviour, IInteractor
 {
-    // fields
-    public int health;
-
     // properties
     [SerializeField]
     private ContainerBehaviour inventory;
@@ -21,7 +18,7 @@ public class TestPlayerBehaviour : MonoBehaviour, IInteractor
     // Unity methods
     private void Start()
     {
-        inventory = GetComponentInChildren<ContainerBehaviour>();
+        inventory = GetComponent<ContainerBehaviour>();        
     }
 
     private void Update()
@@ -35,12 +32,23 @@ public class TestPlayerBehaviour : MonoBehaviour, IInteractor
         {
             if (Input.GetButtonDown("A Button"))
             {
-                currentInteractable.Interact(currentInteractable);
+                BeginInteraction();
             }
         }
     }
 
-    // Interaction System Implementation
+    public void BeginInteraction()
+    {
+        GetComponent<MovementBehaviour>().enabled = false;
+        currentInteractable.Interact(currentInteractable);
+    }
+
+    public void EndInteraction()
+    {
+        GetComponent<MovementBehaviour>().enabled = true;        
+    }
+
+    // =========== Interaction System Implementation
     public IInteractable currentInteractable;
 
     public void Interaction_Set(IInteractable interactable)
@@ -54,5 +62,6 @@ public class TestPlayerBehaviour : MonoBehaviour, IInteractor
     public void Interaction_Release()
     {
         currentInteractable = null;
+        
     }
 }

@@ -20,7 +20,7 @@ public class UI_ContainerBehaviour : MonoBehaviour
     public void OnContainerOpened(UnityEngine.Object[] args)
     {
         _dropdown.ClearOptions();
-        var sender = args[0] as ContainerBehaviour.ContainerEventData;
+        var sender = args[0] as ContainerEventData;
         if(sender == null)
             return;
 
@@ -38,7 +38,7 @@ public class UI_ContainerBehaviour : MonoBehaviour
     public void OnInventoryOpened(UnityEngine.Object[] args)
     {
         _dropdown.ClearOptions();
-        var sender = args[0] as ContainerBehaviour.ContainerEventData;
+        var sender = args[0] as ContainerEventData;
         if (sender == null)
             return;
 

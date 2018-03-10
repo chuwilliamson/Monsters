@@ -2,26 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ContainerBehaviour : MonoBehaviour, IInteractable
+public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
 {      
-    public class ContainerEventData : ScriptableObject
-    {       
-        private List<Item> _data;
-
-        public List<Item> Data
-        {
-            get { return _data; }
-        }
-        
-        public ContainerEventData Init(Container container)
-        {
-            _data = new List<Item>();
-            container.contents.ForEach(o => _data.Add(o as Item));
-
-            return this;
-        }
-    }
-
+   
     // fields
     public Container container_config;
     [SerializeField]
@@ -36,23 +19,24 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable
     {
         get { return container_runtime; }
     }
-
+    public GameEventArgs InteractionBegin;
+    public GameEventArgs InteractionEnded;
     // methods
     public void Open()
     {        
-        var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
-        ContainerOpened.Raise(data);
+        
     }
 
-    public void AddItem(Item item)
+    public void AddContent(Object obj)
     {
-        container_runtime.AddContent(item);
+        container_runtime.AddContent((Item)obj);
     }
 
-    public void RemoveItem(Item item)
+    public void RemoveContent(Object obj)
     {
-        container_runtime.RemoveContent(item);
+        container_runtime.RemoveContent((Item)obj);
     }
+    
 
     // Unity methods
     private void Start()
@@ -66,12 +50,7 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable
     private GameEventArgs Interaction_Set;
     [SerializeField]
     private GameEventArgs Interaction_Release;
-
-    public void Interact(object token)
-    {
-        Debug.Log("Interact has been called with token of " + token.ToString());
-        Open();
-    }
+    bool opened = false;
 
     public void SetInteraction(params Object[] args)
     {
@@ -79,16 +58,40 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable
         Interactor = (GameObject)args[1];
         Interactor.GetComponent<IInteractor>().Interaction_Set(this);
         Interaction_Set.Raise(gameObject, Interactor);
+
     }
+
+
+    public void Interact(object token)
+    {
+        
+        if (opened)
+        {
+            //close it
+            opened = false;
+            InteractionEnded.Raise(gameObject);
+            
+        }
+        else
+        {
+            //open it
+            opened = true;
+            var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
+            InteractionBegin.Raise(gameObject);            
+        }
+    }
+
 
     public void EndInteraction(params Object[] args)
     {
         Debug.Log("Interaction End");
         if (args[0] == gameObject && Interactor != null)
         {
-            Interaction_Release.Raise(gameObject, Interactor);
             Interactor.GetComponent<IInteractor>().Interaction_Release();
+            Interaction_Release.Raise(gameObject, Interactor);
             Interactor = null;
         }
     }
+
+
 }
