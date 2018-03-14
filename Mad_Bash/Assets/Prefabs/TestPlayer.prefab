@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 114144874889036686}
   - component: {fileID: 54570106933209618}
   - component: {fileID: 143650449523354494}
+  - component: {fileID: 114116972109085094}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Player
@@ -447,6 +448,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114116972109085094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447878241937722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81eaa281609c56c4f94bad134abb9d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fear: {fileID: 0}
+  character: {fileID: 0}
+  runaway: {fileID: 0}
 --- !u!114 &114133917036960380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -472,7 +487,7 @@ MonoBehaviour:
   Horizontal: {fileID: 11400000, guid: 2b050df389501684eb65f97cc4289f5a, type: 2}
   Vertical: {fileID: 11400000, guid: 251217d9983736d45a1057bb0ba57844, type: 2}
   Jump: {fileID: 0}
-  character: {fileID: 11400000, guid: 5aba6e2c0c49d864eb909205fe4ba7dd, type: 2}
+  character: {fileID: 11400000, guid: 5786813072eef3945b6c1bee6ec241e5, type: 2}
   gravity: 20
   targetDir: {x: 0, y: 0, z: 0}
 --- !u!114 &114201121706426498
@@ -687,7 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803013075aa8bac448f9e84aed7d6ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 11400000, guid: 5aba6e2c0c49d864eb909205fe4ba7dd, type: 2}
+  player: {fileID: 11400000, guid: 5786813072eef3945b6c1bee6ec241e5, type: 2}
 --- !u!114 &114809494208963046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -804,7 +819,7 @@ CharacterController:
   m_GameObject: {fileID: 1447878241937722}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5
