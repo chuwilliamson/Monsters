@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Ryan
-
-public class MovementBehaviour : MonoBehaviour
+public class PlayerMovementBehaviour : MonoBehaviour
 {
     public float speed;
 
@@ -30,7 +28,7 @@ public class MovementBehaviour : MonoBehaviour
         v *= Time.deltaTime;
 
         float sprint = speed * .005f;
-        
+
         transform.Translate(h, 0, v);
 
         if (Input.GetButton("RightBumper") && v >= .01f)
