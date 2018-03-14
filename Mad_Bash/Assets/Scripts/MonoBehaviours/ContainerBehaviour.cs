@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
-{      
-   
+{  
     // fields
     public Container container_config;
     [SerializeField]
@@ -24,8 +23,20 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
 
     // methods
     public void Open()
-    {        
-        
+    {
+        if (opened)
+        {
+            //close it
+            opened = false;
+            InteractionEnded.Raise(gameObject);
+        }
+        else
+        {
+            //open it
+            opened = true;
+            var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
+            InteractionBegin.Raise(gameObject);
+        }
     }
 
     public void AddContent(Object obj)
@@ -36,8 +47,7 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
     public void RemoveContent(Object obj)
     {
         container_runtime.RemoveContent((Item)obj);
-    }
-    
+    }    
 
     // Unity methods
     private void Start()
@@ -51,6 +61,8 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
     private GameEventArgs Interaction_Set;
     [SerializeField]
     private GameEventArgs Interaction_Release;
+
+    [SerializeField]
     bool opened = false;
 
     public void SetInteraction(params Object[] args)
@@ -59,9 +71,7 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
         Interactor = (GameObject)args[1];
         Interactor.GetComponent<IInteractor>().Interaction_Set(this);
         Interaction_Set.Raise(gameObject, Interactor);
-
     }
-
 
     public void Interact(object token)
     {
@@ -71,7 +81,6 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
             //close it
             opened = false;
             InteractionEnded.Raise(gameObject);
-            
         }
         else
         {
@@ -81,7 +90,6 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
             InteractionBegin.Raise(gameObject);            
         }
     }
-
 
     public void EndInteraction(params Object[] args)
     {
@@ -93,6 +101,4 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
             Interactor = null;
         }
     }
-
-
 }

@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class PlayerMovementBehaviour : MonoBehaviour
 {
-    public float speed;
-
-    private void Start()
-    {
-        speed = GetComponent<CharacterInformation>().Speed.Value;
-    }
+    [SerializeField]
+    private float speed;
 
     void Update()
     {
@@ -18,6 +14,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     void Move()
     {
+        speed = GetComponent<PlayerObjectBehaviour>().CharacterInfo.Speed.Value;
         float h = 0;
         float v = 0;
 
