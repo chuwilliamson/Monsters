@@ -20,11 +20,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         //ToDo: seperate this into another script
         xp = character.XP;
-        power = character.Strength;
-        speed = character.Speed;
-        health = character.Health;
         brave = character.BraveLevel;
-        weight = character.Sneak;
         fear = character.Fear;
 
         if (xp >= 200)
