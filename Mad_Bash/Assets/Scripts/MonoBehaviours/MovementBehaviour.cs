@@ -10,7 +10,7 @@ public class MovementBehaviour : MonoBehaviour
 
     private void Start()
     {
-        speed = GetComponent<CharacterInfo>().Speed.Value;
+        speed = GetComponent<CharacterInfo>().SmallSpeed.Value;
     }
 
     void Update()
