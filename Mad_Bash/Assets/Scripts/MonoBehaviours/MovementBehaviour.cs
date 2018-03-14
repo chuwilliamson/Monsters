@@ -2,36 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 //Ryan
 
 public class MovementBehaviour : MonoBehaviour
 {
-    public CharacterInfo player;
+    public float speed;
 
-    float h;
-    float v;
-        
+    private void Start()
+    {
+        speed = GetComponent<CharacterInfo>().Speed.Value;
+    }
+
+    void Update()
+    {
+        Move();
+    }
+
     void Move()
     {
-        h = Input.GetAxis("LeftHorizontal") * (player.Speed * .5f);
-        v = Input.GetAxis("LeftVertical") * (player.Speed * .5f);
+        float h = 0;
+        float v = 0;
+
+        h = Input.GetAxis("LeftHorizontal") * (speed * .5f);
+        v = Input.GetAxis("LeftVertical") * (speed * .5f);
 
         h *= Time.deltaTime;
         v *= Time.deltaTime;
 
-        float sprint = player.Speed * .005f;
+        float sprint = speed * .005f;
         
         transform.Translate(h, 0, v);
 
         if (Input.GetButton("RightBumper") && v >= .01f)
             transform.Translate(h, 0, (v + sprint));
-
-    }
-
-    // Update is called once per frame
-    void Update ()
-    {
-        Move();
     }
 }

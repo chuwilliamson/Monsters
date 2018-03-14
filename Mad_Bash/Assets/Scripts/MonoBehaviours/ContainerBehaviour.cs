@@ -21,6 +21,7 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
     }
     public GameEventArgs InteractionBegin;
     public GameEventArgs InteractionEnded;
+
     // methods
     public void Open()
     {        
