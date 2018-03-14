@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestPlayerBehaviour : MonoBehaviour
+public class TestPlayerBehaviour : MonoBehaviour, IInteractor
 {
-    // fields
-    public int health;
-
     // properties
     [SerializeField]
     private ContainerBehaviour inventory;
@@ -18,29 +15,10 @@ public class TestPlayerBehaviour : MonoBehaviour
         Debug.Log("opened " + inventory.name);
     }
 
-    public void OpenContainer(UnityEngine.Object[] args)
-    {
-        var sender = args[0] as GameObject;
-        var collidedwith = args[1];
-        if (collidedwith != gameObject)
-            return;
-
-        if (sender != null)
-        {
-            var containerBehaviour = sender.GetComponent<ContainerBehaviour>();
-
-            if (Input.GetButtonDown("Interact"))
-            {
-                containerBehaviour.Open();
-                Debug.Log("opened " + containerBehaviour.name);
-            }
-        }
-    }
-
     // Unity methods
     private void Start()
     {
-        inventory = GetComponentInChildren<ContainerBehaviour>();
+        inventory = GetComponent<ContainerBehaviour>();        
     }
 
     private void Update()
@@ -49,5 +27,41 @@ public class TestPlayerBehaviour : MonoBehaviour
         {
             OpenInventory();
         }
+
+        if (currentInteractable != null)
+        {
+            if (Input.GetButtonDown("A Button"))
+            {
+                BeginInteraction();
+            }
+        }
+    }
+
+    public void BeginInteraction()
+    {
+        GetComponent<MovementBehaviour>().enabled = false;
+        currentInteractable.Interact(currentInteractable);
+    }
+
+    public void EndInteraction()
+    {
+        GetComponent<MovementBehaviour>().enabled = true;        
+    }
+
+    // =========== Interaction System Implementation
+    public IInteractable currentInteractable;
+
+    public void Interaction_Set(IInteractable interactable)
+    {
+        if (currentInteractable != null)
+            return;
+
+        currentInteractable = interactable;
+    }
+
+    public void Interaction_Release()
+    {
+        currentInteractable = null;
+        
     }
 }
