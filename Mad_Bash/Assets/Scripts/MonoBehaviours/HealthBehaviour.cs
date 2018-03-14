@@ -9,10 +9,11 @@ public class HealthBehaviour : MonoBehaviour
     public Slider HP;
     public CharacterInfo character;
 
-    public int power;
-    public float speed;
-        
-    bool dead = false, possible = false;
+    int power;
+    float speed;
+
+    bool dead = false;
+    bool possible = false;
 
     void IsDead()
     {

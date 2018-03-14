@@ -10,20 +10,17 @@ public class PauseBehaviour : MonoBehaviour
 
     GUI.WindowFunction pauseMenu;
     Rect MainMenu;
-    bool paused = false;
 
     public void Paused()
     {
         if (Input.GetButton("MenuButton"))
         {
-            paused = true;
             canvas.enabled = true;
             Time.timeScale = 0.0f;
         }
     } 
     public void Continue()
     {
-        paused = false;
         canvas.enabled = !canvas.enabled;
         Time.timeScale = 1.0f;
     }
