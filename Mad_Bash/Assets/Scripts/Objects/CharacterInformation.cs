@@ -8,7 +8,7 @@ public class CharacterInformation : ScriptableObject
 {
     public StringVariable Name;
 
-    public IntegerVariable BraveLevel;
+    public IntegerVariable BraveryLevel;
     public IntegerVariable XP;
 
     public FloatVariable Strength;
