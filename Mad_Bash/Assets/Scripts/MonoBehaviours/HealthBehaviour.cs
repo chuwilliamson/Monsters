@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HealthBehaviour : MonoBehaviour
 {
     public Slider HP;
-    public CharacterInfo character;
+    public CharacterInformation character;
 
     int power;
     float speed;
@@ -17,7 +17,7 @@ public class HealthBehaviour : MonoBehaviour
 
     void IsDead()
     {
-        if (character.Health <= 0)
+        if (character.Health.Value <= 0)
             dead = true;
 
         if (dead == true)
@@ -25,21 +25,16 @@ public class HealthBehaviour : MonoBehaviour
             power = 0;
             speed = 0;
 
-            character.Health = 0;
+            character.Health.Value = 0;
 
             SceneManager.LoadScene("2.SafeHouse");
         }
     }
-    // Use this for initialization
-    void Start ()
-    {
-        character.Health = 100;
-	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        HP.value = character.Health;
+        HP.value = character.Health.Value;
         HP.maxValue = 100;
         HP.minValue = 0;
 

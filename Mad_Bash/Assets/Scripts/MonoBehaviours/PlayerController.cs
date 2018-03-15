@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public StringVariable Horizontal;
     public StringVariable Vertical;
     public StringVariable Jump;
-    public CharacterInfo character;
+    public CharacterInformation character;
     public float gravity = 20.0F;
 
     private Vector3 moveDirection;
@@ -39,6 +39,6 @@ public class PlayerController : MonoBehaviour
             moveDirection = targetDir;
         }
 
-        controller.SimpleMove(moveDirection * character.Speed);
+        controller.SimpleMove(moveDirection * character.Speed.Value);
     }
 }

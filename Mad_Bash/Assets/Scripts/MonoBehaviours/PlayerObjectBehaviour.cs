@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerObjectBehaviour : MonoBehaviour
 {
-    public CharacterInfo characterInfo_config;
+    public CharacterInformation characterInfo_config;
     [SerializeField]
-    private CharacterInfo characterInfo_runtime;
+    private CharacterInformation characterInfo_runtime;
 
 
-    public CharacterInfo CharacterInfo
+    public CharacterInformation CharacterInfo
     {
         get { return characterInfo_runtime; }        
     }
@@ -18,7 +18,7 @@ public class PlayerObjectBehaviour : MonoBehaviour
     {
         if (characterInfo_config == null)
         {
-            characterInfo_config = Resources.Load("ScriptableObjects/Characters/PlayerConfig") as CharacterInfo;
+            characterInfo_config = Resources.Load("ScriptableObjects/Characters/PlayerConfig") as CharacterInformation;
         }        
 
         characterInfo_runtime = Instantiate(characterInfo_config);
