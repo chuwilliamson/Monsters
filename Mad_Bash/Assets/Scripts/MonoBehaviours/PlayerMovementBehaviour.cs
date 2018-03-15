@@ -4,34 +4,46 @@ using UnityEngine;
 
 public class PlayerMovementBehaviour : MonoBehaviour
 {
-    public float speed;
+    [SerializeField]
+    private float characterSpeed;    
+    public float speedModifer;
+    public GameObject _camera;
+    public GameObject _model;
 
-    private void Start()
+    private void Update()
     {
-        speed = GetComponent<CharacterInformation>().Speed.Value;
-    }
+        // set speed modifer based on character speed stat
+        characterSpeed = GetComponent<PlayerObjectBehaviour>().CharacterInfo.Speed.Value;
 
-    void Update()
-    {
-        Move();
-    }
+        // get input
+        float h = Input.GetAxis("LeftHorizontal");
+        float v = Input.GetAxis("LeftVertical");
 
-    void Move()
-    {
-        float h = 0;
-        float v = 0;
+        // make input vector out of input
+        Vector3 input = new Vector3(h, 0, v) * Time.deltaTime;
+        Vector3 camForward = new Vector3(_camera.transform.forward.x, 0, _camera.transform.forward.z); ;
+        Vector3 translation = Vector3.zero;
 
-        h = Input.GetAxis("LeftHorizontal") * (speed * .5f);
-        v = Input.GetAxis("LeftVertical") * (speed * .5f);
+        // check to see if any input vector was given
+        if (input != Vector3.zero)
+        {
+            // add respect to camera's forward vector           
+            transform.forward = camForward;
 
-        h *= Time.deltaTime;
-        v *= Time.deltaTime;
+            // apply modifiers to translation vector
+            translation = input * characterSpeed * speedModifer;            
 
-        float sprint = speed * .005f;
+            // apply translation vector to objects transform
+            transform.Translate(translation);
 
-        transform.Translate(h, 0, v);
-
-        if (Input.GetButton("RightBumper") && v >= .01f)
-            transform.Translate(h, 0, (v + sprint));
+            // model must face in direction of the player objects translation vector            
+            _model.transform.forward = input.normalized;
+        }
+        Debug.Log("\n\n\n\n\n");
+        Debug.Log("Input Vector: " + input.normalized.ToString());
+        Debug.Log("Translation Vector: " + translation.normalized.ToString());
+        Debug.Log("Model Forward: " + _model.transform.forward.ToString());        
+        Debug.Log("Camera Forward: " + camForward.ToString());
+        Debug.Log("\n\n\n\n\n");
     }
 }

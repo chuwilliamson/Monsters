@@ -2,28 +2,59 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Ryan and Jeremy 
-//will need to be commented with every function
-
-
-public class InventoryBehaviour : MonoBehaviour
+public class InventoryBehaviour : MonoBehaviour, IContainer
 {
-    public Canvas canvas;
-    
+    // fields
+    public Container container_config;
+    [SerializeField]
+    private Container container_runtime;
+    [SerializeField]
+    private GameEventArgs InventoryOpen;
+    [SerializeField]
+    private GameEventArgs InventoryClose;
 
-    //this is just to open up the menu to mess around with the players items
-    public void OpenInventory()
+    // properties
+    public Container Container
     {
-        if (Input.GetButton("ViewButton"))
-        {
-            canvas.enabled = true;
-            Time.timeScale = 0.0f;
-        }
+        get { return container_runtime; }
     }
 
-    // Update is called once per frame
-    void Update()
+    // methods
+    public void AddContent(Object obj)
     {
-        OpenInventory();
+        container_runtime.AddContent((Item)obj);
+    }
+
+    public void RemoveContent(Object obj)
+    {
+        container_runtime.RemoveContent((Item)obj);
+    }
+
+    // Unity methods
+    private void Start()
+    {
+        container_runtime = Instantiate(container_config);
+    }
+
+    [SerializeField]
+    private bool opened = false;
+    private void Update()
+    {
+        if (Input.GetButtonDown("ViewButton"))
+        {
+            if (opened)
+            {
+                //close it
+                opened = false;
+                InventoryClose.Raise(gameObject);
+            }
+            else
+            {
+                //open it
+                opened = true;
+                var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
+                InventoryOpen.Raise(gameObject);
+            }
+        }
     }
 }

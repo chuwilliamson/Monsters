@@ -2,25 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerObjectBehaviour : MonoBehaviour
+public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
 {
-    public CharacterInfo characterInfo_config;
+    public CharacterInformation characterInfo_config;
     [SerializeField]
-    private CharacterInfo characterInfo_runtime;
-
-
-    public CharacterInfo CharacterInfo
+    private CharacterInformation characterInfo_runtime;
+    public CharacterInformation CharacterInfo
     {
         get { return characterInfo_runtime; }        
     }
 
+    // Unity methods
     private void Start()
     {
         if (characterInfo_config == null)
         {
-            characterInfo_config = Resources.Load("ScriptableObjects/Characters/PlayerConfig") as CharacterInfo;
-        }        
+            characterInfo_config = Resources.Load("ScriptableObjects/Characters/PlayerConfig") as CharacterInformation;
+        }   
 
         characterInfo_runtime = Instantiate(characterInfo_config);
+    }
+
+    private void Update()
+    {
+        if (currentInteractable != null)
+        {
+            if (Input.GetButtonDown("A Button"))
+            {
+                currentInteractable.Interact(currentInteractable);
+            }
+        }
+    }
+
+    // ========== Interaction System ==========
+    public IInteractable currentInteractable;
+
+    public void Interaction_Set(IInteractable interactable)
+    {
+        if (currentInteractable != null)
+            return;
+
+        currentInteractable = interactable;
+    }
+
+    public void Interaction_Release()
+    {
+        currentInteractable = null;
     }
 }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestInteractorBehaviour : MonoBehaviour, IInteractor
+public abstract class TestInteractorBehaviour : MonoBehaviour, IInteractor
 {
     public IInteractable currentInteractable;
 
-    public void Interaction_Set(IInteractable interactable)
+    public virtual void Interaction_Set(IInteractable interactable)
     {
         if (currentInteractable != null)
             return;
@@ -14,12 +14,12 @@ public class TestInteractorBehaviour : MonoBehaviour, IInteractor
         currentInteractable = interactable;
     }
 
-    public void Interaction_Release()
+    public virtual void Interaction_Release()
     {
         currentInteractable = null;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if (currentInteractable != null)
         {
