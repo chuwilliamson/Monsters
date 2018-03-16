@@ -29,7 +29,7 @@ public class StatsBehaviour : MonoBehaviour
         character.Sneak.Value = sneak;
         character.Health.Value = health;
         character.XP.Value = xp;
-        character.BraveLevel.Value = brave;
+        character.BraveryLevel.Value = brave;
     }
 
     void LevelingUp()
@@ -42,7 +42,7 @@ public class StatsBehaviour : MonoBehaviour
         }
 
         if (brave == brave++)
-            character.BraveLevel.Value += 10;
+            character.BraveryLevel.Value += 10;
     }
 
     void UsingLevelPoint()
