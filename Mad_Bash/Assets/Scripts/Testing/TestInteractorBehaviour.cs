@@ -6,7 +6,7 @@ public abstract class TestInteractorBehaviour : MonoBehaviour, IInteractor
 {
     public IInteractable currentInteractable;
 
-    public virtual void Interaction_Set(IInteractable interactable)
+    public void Interaction_Set(IInteractable interactable)
     {
         if (currentInteractable != null)
             return;
@@ -14,12 +14,12 @@ public abstract class TestInteractorBehaviour : MonoBehaviour, IInteractor
         currentInteractable = interactable;
     }
 
-    public virtual void Interaction_Release()
+    public void Interaction_Release()
     {
         currentInteractable = null;
     }
 
-    public virtual void Update()
+    public void Update()
     {
         if (currentInteractable != null)
         {
