@@ -8,8 +8,10 @@ public class PlayerController : MonoBehaviour
 {
     public StringVariable Horizontal;
     public StringVariable Vertical;
-    public StringVariable Jump;
-    public CharacterInformation character;
+
+    [SerializeField]
+    private CharacterInformation character;
+
     public float gravity = 20.0F;
 
     private Vector3 moveDirection;
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        character = GetComponent<PlayerObjectBehaviour>().CharacterInfo;
+
         if (controller.isGrounded)
         {
             var h = Input.GetAxis(Horizontal.Value);
