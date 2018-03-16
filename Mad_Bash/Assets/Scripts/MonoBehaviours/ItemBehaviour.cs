@@ -36,11 +36,6 @@ public class ItemBehaviour : MonoBehaviour, IInteractable
     private bool opened = false;
     public void Interact(object token)
     {
-        var tokenarray = (object[])token;
-        var item = tokenarray[0] as GameObject;
-        var player = tokenarray[1] as GameObject;
-        player.GetComponent<IContainer>().AddContent(item_runtime);
-
         if (opened)
         {
             //close it
@@ -50,8 +45,13 @@ public class ItemBehaviour : MonoBehaviour, IInteractable
         else
         {
             //open it
-            opened = true;
+            opened = true;            
             Interaction_Start.Raise(gameObject);
+
+            var tokenarray = (object[])token;
+            var item = tokenarray[0] as GameObject;
+            var player = tokenarray[1] as GameObject;
+            player.GetComponent<IContainer>().AddContent(item_runtime);
         }
     }
 
