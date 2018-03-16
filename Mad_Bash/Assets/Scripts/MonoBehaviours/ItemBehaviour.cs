@@ -56,16 +56,14 @@ public class ItemBehaviour : MonoBehaviour, IInteractable
     }
 
     public void SetInteractor(params Object[] args)
-    {
-        Debug.Log("Interaction Set");
+    {        
         Interactor = (GameObject)args[1];
         Interactor.GetComponent<IInteractor>().Interaction_Set(this);
         Interactor_Set.Raise(gameObject, Interactor);
     }
 
     public void ReleaseInteractor(params Object[] args)
-    {
-        Debug.Log("Interaction End");
+    {   
         if (args[0] == gameObject && Interactor != null)
         {
             Interactor.GetComponent<IInteractor>().Interaction_Release();
