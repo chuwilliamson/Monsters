@@ -49,6 +49,6 @@ public class PlayerMovementBehaviour : MonoBehaviour
         Vector3 translation = input * Time.deltaTime;
 
         // apply translation vector to objects transform
-        transform.Translate(translation);
+        transform.Translate(translation * speedModifer);
     }
 }
