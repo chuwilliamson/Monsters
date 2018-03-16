@@ -2,48 +2,57 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// Facehead
+
 public class PlayerMovementBehaviour : MonoBehaviour
 {
     [SerializeField]
-    private float characterSpeed;    
+    private StringVariable xAxis;
+    [SerializeField]
+    private StringVariable yAxis;
+
+    [SerializeField]
+    private float characterSpeedLevel;    
     public float speedModifer;
     public GameObject _camera;
     public GameObject _model;
 
     private void Update()
     {
-        // set speed modifer based on character speed stat
-        characterSpeed = GetComponent<PlayerObjectBehaviour>().CharacterInfo.Speed.Value;
+        // get input        
+        float y = Input.GetAxis(yAxis.Value);
+        float x = Input.GetAxis(xAxis.Value);
 
-        // get input
-        float h = Input.GetAxis("LeftHorizontal");
-        float v = Input.GetAxis("LeftVertical");
-
-        // make input vector out of input
-        Vector3 input = new Vector3(h, 0, v) * Time.deltaTime;
-        Vector3 camForward = new Vector3(_camera.transform.forward.x, 0, _camera.transform.forward.z); ;
-        Vector3 translation = Vector3.zero;
-
-        // check to see if any input vector was given
+        // make input vector with respect to delta time     
+        Vector3 input = new Vector3(y, 0, x) * Time.deltaTime;
+        
+        // check for 0 input
         if (input != Vector3.zero)
         {
-            // add respect to camera's forward vector           
-            transform.forward = camForward;
+            // get characters speed level
+            characterSpeedLevel = GetComponent<PlayerObjectBehaviour>().CharacterInfo.Speed.Value;
 
-            // apply modifiers to translation vector
-            translation = input * characterSpeed * speedModifer;            
+            // get camera's forward vector
+            Vector3 camForward = new Vector3(_camera.transform.forward.x, 0, _camera.transform.forward.z);
+
+            // calculate translation direction with respect to camera's forward
+            Vector3 translation = (input + camForward).normalized;
+
+            Debug.Log("\n\n\n\n\n");
+            Debug.Log("Input Vector: " + input.normalized.ToString());
+            Debug.Log("Camera Forward: " + camForward.ToString());            
+            Debug.Log("Translation Vector Direction: " + translation.ToString());
+            
+            // calculate coeffiect to use to modify translation vector
+            float translationModifer = characterSpeedLevel * speedModifer;
 
             // apply translation vector to objects transform
-            transform.Translate(translation);
+            transform.Translate(translation * translationModifer);
 
             // model must face in direction of the player objects translation vector            
             _model.transform.forward = input.normalized;
+            Debug.Log("Model Forward: " + _model.transform.forward.ToString());
+            Debug.Log("\n\n\n\n\n");
         }
-        Debug.Log("\n\n\n\n\n");
-        Debug.Log("Input Vector: " + input.normalized.ToString());
-        Debug.Log("Translation Vector: " + translation.normalized.ToString());
-        Debug.Log("Model Forward: " + _model.transform.forward.ToString());        
-        Debug.Log("Camera Forward: " + camForward.ToString());
-        Debug.Log("\n\n\n\n\n");
     }
 }

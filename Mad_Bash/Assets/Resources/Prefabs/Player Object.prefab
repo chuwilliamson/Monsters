@@ -123,7 +123,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4276877130338788}
   - component: {fileID: 114105798051903268}
-  - component: {fileID: 114293814680079188}
   m_Layer: 0
   m_Name: CM FreeLook1
   m_TagString: Untagged
@@ -231,7 +230,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1578710823233816}
-  m_LocalRotation: {x: 0.34042522, y: 5.397429e-10, z: 0.0000012526947, w: 0.9402716}
+  m_LocalRotation: {x: 0.34042555, y: -0.00000050084844, z: 0.0000013459662, w: 0.9402715}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -245,7 +244,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1894612640831208}
-  m_LocalRotation: {x: 0.34042528, y: 0.0000005864653, z: 0.00000028559242, w: 0.9402716}
+  m_LocalRotation: {x: 0.3404259, y: -0.00000019987681, z: 0.0000005476235, w: 0.9402714}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -286,7 +285,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1554138520389004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.4999998, z: -3.0000002}
+  m_LocalPosition: {x: 0, y: 2.5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4162354538178984}
@@ -314,7 +313,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349593263327006}
-  m_LocalRotation: {x: 0.34042516, y: -0.0000023786204, z: 0.0000041588337, w: 0.9402717}
+  m_LocalRotation: {x: 0.34042555, y: -0.0000014128456, z: 0.0000037397863, w: 0.9402715}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -483,9 +482,9 @@ MonoBehaviour:
     m_MaxSpeed: 300
     m_AccelTime: 0.1
     m_DecelTime: 0.1
-    m_InputAxisName: RightHorizontal
+    m_InputAxisName: Mouse X
     m_InputAxisValue: 0
-    m_InvertAxis: 1
+    m_InvertAxis: 0
   m_LegacyRadius: 3.4028235e+38
   m_LegacyHeightOffset: 3.4028235e+38
   m_LegacyHeadingBias: 3.4028235e+38
@@ -544,7 +543,7 @@ MonoBehaviour:
     m_MaxSpeed: 2
     m_AccelTime: 0.2
     m_DecelTime: 0.1
-    m_InputAxisName: RightVertical
+    m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
     m_InvertAxis: 0
   m_XAxis:
@@ -552,9 +551,9 @@ MonoBehaviour:
     m_MaxSpeed: 300
     m_AccelTime: 0.1
     m_DecelTime: 0.1
-    m_InputAxisName: RightHorizontal
+    m_InputAxisName: Mouse X
     m_InputAxisValue: 0
-    m_InvertAxis: 1
+    m_InvertAxis: 0
   m_Heading:
     m_HeadingDefinition: 2
     m_VelocityFilterStrength: 4
@@ -590,29 +589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114293814680079188
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1554138520389004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CollideAgainst:
-    serializedVersion: 2
-    m_Bits: 1
-  m_IgnoreTag: 
-  m_MinimumDistanceFromTarget: 0.1
-  m_AvoidObstacles: 1
-  m_DistanceLimit: 0
-  m_CameraRadius: 0.1
-  m_Strategy: 1
-  m_MaximumEffort: 4
-  m_Damping: 0
-  m_OptimalTargetDistance: 0
 --- !u!114 &114293885017847720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -682,9 +658,9 @@ MonoBehaviour:
     m_MaxSpeed: 300
     m_AccelTime: 0.1
     m_DecelTime: 0.1
-    m_InputAxisName: RightHorizontal
+    m_InputAxisName: Mouse X
     m_InputAxisValue: 0
-    m_InvertAxis: 1
+    m_InvertAxis: 0
   m_LegacyRadius: 3.4028235e+38
   m_LegacyHeightOffset: 3.4028235e+38
   m_LegacyHeadingBias: 3.4028235e+38
@@ -711,8 +687,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dba524ad84a9074fa5dcdb3438c5b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSpeed: 0
-  speedModifer: 0
+  xAxis: {fileID: 11400000, guid: c8be8d43117fe6047825fa977a175fc1, type: 2}
+  yAxis: {fileID: 11400000, guid: 6884f425c3cd1eb4d862a82fb595a33b, type: 2}
+  characterSpeedLevel: 0
+  speedModifer: 1
   _camera: {fileID: 0}
   _model: {fileID: 1260326675688232}
 --- !u!114 &114653021474543458
@@ -863,9 +841,9 @@ MonoBehaviour:
     m_MaxSpeed: 300
     m_AccelTime: 0.1
     m_DecelTime: 0.1
-    m_InputAxisName: RightHorizontal
+    m_InputAxisName: Mouse X
     m_InputAxisValue: 0
-    m_InvertAxis: 1
+    m_InvertAxis: 0
   m_LegacyRadius: 3.4028235e+38
   m_LegacyHeightOffset: 3.4028235e+38
   m_LegacyHeadingBias: 3.4028235e+38
