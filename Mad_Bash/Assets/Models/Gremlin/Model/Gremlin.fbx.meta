@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 2920c84b6976d094ba8c5eb741969995
+guid: 03e02dd8166ce1547a3d9738d9bbaf1f
 timeCreated: 1520034309
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: ControlRig
     100002: Gremlin
@@ -1886,10 +1886,17 @@ ModelImporter:
     13700004: Gremlin_R_Eye
     13700006: Gremlin_Skin
     13700008: Gremlin_Tongue
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gremlin_Texture
+    second: {fileID: 2100000, guid: d9515a735d5d2434989bff47eb193724, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -1902,6 +1909,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
