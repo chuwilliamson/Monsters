@@ -17,7 +17,7 @@ public class FearBeaviour : MonoBehaviour
 
         character.Fear.Value += 1;
 
-        if (character.Fear.Value >= character.BraveLevel.Value)
+        if (character.Fear.Value >= character.BraveryLevel.Value)
         {
             toAfraid = true;
             character.Fear.Value = 100;
@@ -38,7 +38,7 @@ public class FearBeaviour : MonoBehaviour
 	void Update ()
     {
         fear.value = character.Fear.Value;
-        fear.maxValue = character.BraveLevel.Value;
+        fear.maxValue = character.BraveryLevel.Value;
         fear.minValue = 0;
         
         Afraid();	
