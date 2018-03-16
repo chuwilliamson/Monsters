@@ -1,40 +1,64 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-//Ryan and Jeremy 
-//will need to be commented with every function
-
-
-public class InventoryBehaviour : MonoBehaviour
+public class InventoryBehaviour : MonoBehaviour , IContainer
 {
-    public Canvas canvas;
-    public GameEventArgs ButtonClickEvent;
-    
+    // fields
+    public Container container_config;
+    [SerializeField]
+    private Container container_runtime;
 
-    //this is just to open up the menu to mess around with the players items
-    public void OpenInventory()
+    [SerializeField]
+    private GameEventArgs Inventory_Open;
+    [SerializeField]
+    private GameEventArgs Inventory_Close;
+
+    // properties
+    public Container Container
     {
-        if (Input.GetButton("ViewButton"))
-        {
-            canvas.enabled = true;
-            Time.timeScale = 0.0f;
-        }
+        get { return container_runtime; }
+    }    
+
+    // Unity methods
+    private void Start()
+    {
+        container_runtime = Instantiate(container_config);
     }
 
-    void Inventory()
+    private void Update()
     {
-        if (canvas.enabled == true)
-        {
-            Instantiate(canvas);
-
-        }
+        if (Input.GetButtonDown("ViewButton"))
+            Open();
     }
 
-    // Update is called once per frame
-    void Update()
+    // methods
+    public void AddContent(Object obj)
     {
-        OpenInventory();
+        container_runtime.AddContent((Item)obj);
+    }
+
+    public void RemoveContent(Object obj)
+    {
+        container_runtime.RemoveContent((Item)obj);
+    }
+
+    [SerializeField]
+    private bool opened = false;
+    private void Open()
+    {
+        if (opened)
+        {
+            //close it
+            opened = false;
+            Inventory_Close.Raise(gameObject);
+        }
+        else
+        {
+            //open it
+            opened = true;
+            var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
+            Inventory_Open.Raise(gameObject);
+        }
     }
 }

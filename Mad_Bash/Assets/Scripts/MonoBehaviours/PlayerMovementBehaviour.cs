@@ -34,21 +34,19 @@ public class PlayerMovementBehaviour : MonoBehaviour
         // get input vector with respect to delta time
         float x = Input.GetAxis(xAxis.Value); // horizontal
         float y = Input.GetAxis(yAxis.Value); // vertical
-        Vector3 input = new Vector3(x, 0, y) * Time.deltaTime;
+        Vector3 input = new Vector3(x, 0, y);
 
         // check for 0 input
         if (input == Vector3.zero)
             return;
 
-        Debug.Log("Input given");
-        Debug.Log(input.ToString());
-
         // get camera's forward vector
         Vector3 camForward = new Vector3(_camera.transform.forward.x, 0, _camera.transform.forward.z);
 
-        // calculate translation direction with respect to camera's forward
-        Vector3 translation = input - camForward;
-        Debug.Log(translation.ToString());
+        // face trasnform in direction of camera
+        transform.forward = camForward;
+
+        Vector3 translation = input * Time.deltaTime;
 
         // apply translation vector to objects transform
         transform.Translate(translation);
