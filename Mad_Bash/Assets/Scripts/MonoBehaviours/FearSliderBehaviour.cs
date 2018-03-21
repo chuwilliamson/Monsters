@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class HealthSliderBehaviour : MonoBehaviour
+public class FearSliderBehaviour : MonoBehaviour
 {
     [SerializeField]
     private CharacterInformation character;
 
     [SerializeField]
-    private Slider Health;
+    private Slider Fear;
 
 	// Use this for initialization
 	void Start ()
     {
-        Health.minValue = 0.0f;
-        Health.maxValue = character.Health.Value;
-    }
+        Fear.minValue = 0;
+        Fear.maxValue = character.BraveryLevel.Value;
+	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-	    Health.value = character.Health.Value;
-    }
+        Fear.value = character.Fear.Value;	
+	}
 }
