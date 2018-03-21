@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private CharacterInformation character;
+    [SerializeField]
+    private float speedModifer = 1;
 
     public float gravity = 20.0F;
 
@@ -43,6 +45,6 @@ public class PlayerController : MonoBehaviour
             moveDirection = targetDir;
         }
 
-        controller.SimpleMove(moveDirection * character.Speed.Value);
+        controller.SimpleMove(moveDirection * character.Speed.Value * speedModifer);
     }
 }

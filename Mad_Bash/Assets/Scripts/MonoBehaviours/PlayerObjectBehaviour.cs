@@ -32,7 +32,7 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
     {
         if (currentInteractable != null)
         {
-            if (Input.GetButtonDown("Interact"))
+            if (Input.GetButtonDown("A Button"))
             {
                 currentInteractable.Interact(currentInteractable);
             }

@@ -48,10 +48,10 @@ public class ItemBehaviour : MonoBehaviour, IInteractable
             opened = true;            
             Interaction_Start.Raise(gameObject);
 
-            var tokenarray = (object[])token;
-            var item = tokenarray[0] as GameObject;
-            var player = tokenarray[1] as GameObject;
-            player.GetComponent<IContainer>().AddContent(item_runtime);
+            //var tokenarray = (object[])token;
+            //var item = tokenarray[0] as GameObject;
+            //var player = tokenarray[1] as GameObject;
+            //player.GetComponent<IContainer>().AddContent(item_runtime);
         }
     }
 
