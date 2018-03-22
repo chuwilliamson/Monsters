@@ -10,8 +10,11 @@ public class TestInteractableBehaviour : MonoBehaviour, IInteractable
     [SerializeField]
     private GameEventArgs Interaction_Release;
 
+    public virtual void Interaction(object token) { }
+
     public void Interact(object token)
-    {   
+    {
+        Interaction(token);
         Debug.Log("Interact has been called with token of " + token.ToString());
     }
         

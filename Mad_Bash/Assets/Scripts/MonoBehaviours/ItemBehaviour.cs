@@ -31,28 +31,14 @@ public class ItemBehaviour : MonoBehaviour, IInteractable
     private GameEventArgs Interaction_Start;
     [SerializeField]
     private GameEventArgs Interaction_End;
-
     [SerializeField]
-    private bool opened = false;
+    private GameEventArgs Item_PickUp;
+
+
     public void Interact(object token)
     {
-        if (opened)
-        {
-            //close it
-            opened = false;
-            Interaction_End.Raise(gameObject);
-        }
-        else
-        {
-            //open it
-            opened = true;            
-            Interaction_Start.Raise(gameObject);
-
-            //var tokenarray = (object[])token;
-            //var item = tokenarray[0] as GameObject;
-            //var player = tokenarray[1] as GameObject;
-            //player.GetComponent<IContainer>().AddContent(item_runtime);
-        }
+        Interaction_Start.Raise(item_runtime);
+        Item_PickUp.Raise(item_runtime);
     }
 
     public void SetInteractor(params Object[] args)

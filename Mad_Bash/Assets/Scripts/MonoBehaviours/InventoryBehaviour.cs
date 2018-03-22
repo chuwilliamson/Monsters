@@ -12,7 +12,7 @@ public class InventoryBehaviour : MonoBehaviour , IContainer
     [SerializeField]
     private GameEventArgs Inventory_Open;
     [SerializeField]
-    private GameEventArgs Inventory_Close;
+    private GameEventArgs Inventory_Close;       
 
     // properties
     public Container Container
@@ -41,6 +41,13 @@ public class InventoryBehaviour : MonoBehaviour , IContainer
     public void RemoveContent(Object obj)
     {
         container_runtime.RemoveContent((Item)obj);
+    }
+
+    public void OnItemPickUp(params Object[] args)
+    {
+        var item = args[0] as Item;
+        Debug.Log(item.Name);
+        container_runtime.AddContent(item);
     }
 
     [SerializeField]
