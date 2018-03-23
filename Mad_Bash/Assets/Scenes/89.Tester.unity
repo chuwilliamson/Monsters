@@ -286,7 +286,7 @@ Transform:
   m_LocalScale: {x: 498.6, y: 5, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &455421705
 Prefab:
@@ -460,12 +460,12 @@ Prefab:
     - target: {fileID: 224499685451580334, guid: c4f8c724516521c4b8fbc1730eef6f19,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -76.625
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224159143787565670, guid: c4f8c724516521c4b8fbc1730eef6f19,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -77.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224792457062667706, guid: c4f8c724516521c4b8fbc1730eef6f19,
         type: 2}
@@ -585,7 +585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonCLickEvent: {fileID: 11400000, guid: aa9c5bbb212c3cf4abf7d41153e40fc9, type: 2}
-  canvas: {fileID: 1696628660}
+  puase: {fileID: 1696628660}
+  inventory: {fileID: 0}
 --- !u!1 &841396659
 GameObject:
   m_ObjectHideFlags: 0
