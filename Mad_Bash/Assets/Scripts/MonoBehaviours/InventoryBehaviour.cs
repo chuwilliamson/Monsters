@@ -45,8 +45,8 @@ public class InventoryBehaviour : MonoBehaviour , IContainer
 
     public void OnItemPickUp(params Object[] args)
     {
-        var item = args[0] as Item;
-        Debug.Log(item.Name);
+        var item = args[1] as Item;
+        Debug.Log("Added " + item.Name + " to inventory");
         container_runtime.AddContent(item);
     }
 

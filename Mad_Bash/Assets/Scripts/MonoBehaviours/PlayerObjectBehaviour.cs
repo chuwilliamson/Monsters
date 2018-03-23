@@ -8,10 +8,13 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
     public CharacterInformation characterInfo_config;
     [SerializeField]
     private CharacterInformation characterInfo_runtime;
-    
+    [SerializeField]
+    private GameEventArgs Interaction_Start;
     [SerializeField]
     private GameEventArgs Interaction_End;
+    [SerializeField]
     public IInteractable currentInteractable;
+    public GameObject currentInteractable_GO;
     [SerializeField]
     private bool interacting = false;
 
@@ -36,26 +39,47 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
     {
         if (currentInteractable != null)
         {
-            if (interacting != true)
+            if (interacting)
             {
-                if (Input.GetButtonDown("A Button"))
+                if (Input.GetButtonDown("B Button"))
                 {
-                    interacting = true;
-                    currentInteractable.Interact(this);                    
+                    Interaction_End.Raise(this, currentInteractable_GO);
                 }
             }
             else
             {
-                if (Input.GetButtonDown("B Button"))
-                {
-                    interacting = false;
-                    Interaction_End.Raise();
+                if (Input.GetButtonDown("A Button"))
+                {   
+                    Interaction_Start.Raise(this, currentInteractable_GO);
                 }
             }
         }
     }
 
     // methods
+    public void OnInteractionStart()
+    {
+        if (currentInteractable == null)
+            return;
+
+        Debug.Log("Interaction start");
+        interacting = true;
+        currentInteractable.Interact(this);
+    }
+
+    public void OnInteractionEnd()
+    {
+        Debug.Log("Interaction end");
+        interacting = false;
+    }
+
+    public void OnInteractorSet(params Object[] args)
+    {
+        if ((GameObject)args[1] != gameObject)
+            return;
+        currentInteractable_GO = args[0] as GameObject;
+    }
+
     public void Interaction_Set(IInteractable interactable)
     {
         if (currentInteractable != null)
@@ -66,6 +90,10 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
 
     public void Interaction_Release()
     {
+        currentInteractable_GO = null;
         currentInteractable = null;
+
+        if (interacting)
+            Interaction_End.Raise(this, currentInteractable_GO);
     }
 }
