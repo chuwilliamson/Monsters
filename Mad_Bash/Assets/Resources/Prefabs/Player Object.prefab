@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 143351948627988056}
   - component: {fileID: 114300480187189750}
   - component: {fileID: 114083411230894158}
+  - component: {fileID: 114538817022562042}
   m_Layer: 0
   m_Name: Player Object
   m_TagString: Player
@@ -232,7 +233,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1578710823233816}
-  m_LocalRotation: {x: 0.049813606, y: -0.0000008734384, z: 0.000001139998, w: 0.99875855}
+  m_LocalRotation: {x: 0.049813684, y: -0.00000087343835, z: 0.0000011400001, w: 0.99875855}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -246,7 +247,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1894612640831208}
-  m_LocalRotation: {x: 0.049813606, y: -0.00000035165218, z: 0.0000004649608, w: 0.99875855}
+  m_LocalRotation: {x: 0.049813684, y: -0.0000003516526, z: 0.000000464961, w: 0.99875855}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -315,7 +316,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349593263327006}
-  m_LocalRotation: {x: 0.049813636, y: -0.000002447156, z: 0.0000031612406, w: 0.99875855}
+  m_LocalRotation: {x: 0.049813684, y: -0.0000024471585, z: 0.0000031612415, w: 0.99875855}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -505,6 +506,8 @@ MonoBehaviour:
   characterInfo_config: {fileID: 11400000, guid: 7b86c6ddf3c8ffd4cb7fa7ba44ed5df5,
     type: 2}
   characterInfo_runtime: {fileID: 0}
+  Interaction_End: {fileID: 11400000, guid: 7e5caafb76601ad4e8871a708a6bbe00, type: 2}
+  interacting: 0
 --- !u!114 &114105798051903268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -701,6 +704,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114538817022562042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100538198187748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d590a09daa76a594fa438e3ce70cf30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 7e5caafb76601ad4e8871a708a6bbe00, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114083411230894158}
+        m_MethodName: OnInteractionEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114653021474543458
 MonoBehaviour:
   m_ObjectHideFlags: 1

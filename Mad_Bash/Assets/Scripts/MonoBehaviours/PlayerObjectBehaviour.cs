@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
 {
     // fields 
-    public IInteractable currentInteractable;
-
     public CharacterInformation characterInfo_config;
     [SerializeField]
     private CharacterInformation characterInfo_runtime;
+    
+    [SerializeField]
+    private GameEventArgs Interaction_End;
+    public IInteractable currentInteractable;
+    [SerializeField]
+    private bool interacting = false;
 
     // properties
     public CharacterInformation CharacterInfo
@@ -32,9 +36,21 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
     {
         if (currentInteractable != null)
         {
-            if (Input.GetButtonDown("A Button"))
+            if (interacting != true)
             {
-                currentInteractable.Interact(this);
+                if (Input.GetButtonDown("A Button"))
+                {
+                    interacting = true;
+                    currentInteractable.Interact(this);                    
+                }
+            }
+            else
+            {
+                if (Input.GetButtonDown("B Button"))
+                {
+                    interacting = false;
+                    Interaction_End.Raise();
+                }
             }
         }
     }

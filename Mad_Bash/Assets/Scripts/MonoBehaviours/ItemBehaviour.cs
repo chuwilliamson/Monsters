@@ -12,7 +12,7 @@ public class ItemBehaviour : MonoBehaviour, IInteractable
     // properties
     public Item Item
     {
-        get { return Item; }
+        get { return item_runtime; }
     }
 
     // Unity methods
@@ -28,17 +28,13 @@ public class ItemBehaviour : MonoBehaviour, IInteractable
     [SerializeField]
     private GameEventArgs Interactor_Release;
     [SerializeField]
-    private GameEventArgs Interaction_Start;
-    [SerializeField]
-    private GameEventArgs Interaction_End;
+    private GameEventArgs Interaction_Start;    
     [SerializeField]
     private GameEventArgs Item_PickUp;
-
-
+   
     public void Interact(object token)
     {
-        Interaction_Start.Raise(item_runtime);
-        Item_PickUp.Raise(item_runtime);
+        Interaction_Start.Raise(this);
     }
 
     public void SetInteractor(params Object[] args)
@@ -56,5 +52,10 @@ public class ItemBehaviour : MonoBehaviour, IInteractable
             Interactor_Release.Raise(gameObject, Interactor);
             Interactor = null;
         }
+    }
+
+    public void OnItemPickup(params Object[] args)
+    {
+        Destroy(gameObject);
     }
 }

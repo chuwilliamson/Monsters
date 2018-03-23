@@ -39,26 +39,26 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
     [SerializeField]
     private GameEventArgs Interactor_Release;
     [SerializeField]
-    private GameEventArgs Interaction_Start;
+    private GameEventArgs ContiainerOpen;
     [SerializeField]
-    private GameEventArgs Interaction_End;
+    private GameEventArgs ContainerClose;
 
     [SerializeField]
-    private bool opened = false;
+    private bool interacting = false;
     public void Interact(object token)
     {
-        if (opened)
+        if (interacting)
         {
             //close it
-            opened = false;
-            Interaction_End.Raise(gameObject);
+            interacting = false;
+            ContainerClose.Raise(gameObject);
         }
         else
         {
             //open it
-            opened = true;
+            interacting = true;
             var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
-            Interaction_Start.Raise(gameObject);
+            ContiainerOpen.Raise(data, gameObject);
         }
     }
 
