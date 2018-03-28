@@ -24,6 +24,6 @@ public class UI_ContainerBehaviour : UI_EventBehaviour
              contentsText += i.Name + "\n";
         }
 
-        UI_InteractionMenu.GetComponentInChildren<Text>().text = contentsText;
+
     }
 }

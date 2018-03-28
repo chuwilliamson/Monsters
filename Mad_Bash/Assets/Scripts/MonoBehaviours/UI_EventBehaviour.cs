@@ -1,59 +1,58 @@
-﻿using System.Linq;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
-public class UI_EventBehaviour : MonoBehaviour
+
+public class UI_EventBehaviour : MonoBehaviour, IInteractionSetHandler, IInteractionReleaseHandler, IInteractionBeginHandler,IInteractionEndHandler
 {
-    // fields
-    [SerializeField]
-    private GameObject parent;
+    public GameEventArgs SubmitButtonClicked;
     [SerializeField]
     public GameObject UI_InteractionPrompt;
     [SerializeField]
-    public GameObject UI_InteractionMenu;
+    public UnityEngine.UI.Button SubmitButton;
 
-    // Unity methods
-    private void Start()
-    {   
+    private void OnEnable()
+    {
+        HidePrompt();   
+    }
+
+    private void OnDisable()
+    {
+        HidePrompt();
+    }
+
+    public void OnInteractionSet(Object[] args)
+    {
+        ShowPrompt();
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(SubmitButton.gameObject);
+        SubmitButton.onClick.AddListener(()=> { SubmitButtonClicked.Raise(this); });
+
+
+    }
+    
+    public void OnInteractionRelease(Object[] args)
+    {
+        HidePrompt();
+    }
+
+    public void OnInteractionBegin(Object[] args)
+    {
+        HidePrompt();
+    }
+
+    public void OnInteractionEnd(Object[] args)
+    {
+        ShowPrompt();
+    }
+
+
+    private void HidePrompt()
+    {
         UI_InteractionPrompt.SetActive(false);
-        UI_InteractionMenu.SetActive(false);
     }
 
-    private void Update()
+    private void ShowPrompt()
     {
-        UI_InteractionPrompt.transform.rotation = Camera.main.transform.rotation;
-    }
-
-    // methods
-    public void OnInteractionStart(params Object[] args)
-    {
-        if (parent != (GameObject)args[1])
-            return;
-        UI_InteractionPrompt.SetActive(false);
-        UI_InteractionMenu.SetActive(true);
-    }
-
-    public void OnInteractionEnd(params Object[] args)
-    {
-        if (parent != (GameObject)args[1])
-            return;
         UI_InteractionPrompt.SetActive(true);
-        UI_InteractionMenu.SetActive(false);
     }
 
-    public void OnInteractorSet(params Object[] args)
-    {
-        if (parent != (GameObject)args[0])
-            return;
-        UI_InteractionPrompt.SetActive(true);
-    }
-
-    public void OnInteractorRelease(params Object[] args)
-    {
-        if (parent != (GameObject)args[0])
-            return;
-        UI_InteractionPrompt.SetActive(false);
-        UI_InteractionMenu.SetActive(false);
-    }    
 }
+

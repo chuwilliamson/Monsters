@@ -20,6 +20,7 @@ public interface IExecutable
 public interface IInteractor
 {
     void Interaction_Set(IInteractable interactable);
+    void Interaction_Release(IInteractable interactable);
     void Interaction_Release();
 }
 
