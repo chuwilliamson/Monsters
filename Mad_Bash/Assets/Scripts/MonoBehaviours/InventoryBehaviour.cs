@@ -65,7 +65,7 @@ public class InventoryBehaviour : MonoBehaviour , IContainer
             //open it
             opened = true;
             var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
-            Inventory_Open.Raise(gameObject);
+            Inventory_Open.Raise(data);
         }
     }
 }
