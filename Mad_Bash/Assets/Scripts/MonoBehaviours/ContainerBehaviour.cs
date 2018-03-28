@@ -30,8 +30,8 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
     public void RemoveContent(Object obj)
     {
         container_runtime.RemoveContent((Item)obj);
-    }   
-
+    }
+    
     // =========== Interaction System Implementation
     public GameObject Interactor;
     [SerializeField]
@@ -39,31 +39,20 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
     [SerializeField]
     private GameEventArgs Interactor_Release;
     [SerializeField]
-    private GameEventArgs Interaction_Start;
-    [SerializeField]
-    private GameEventArgs Interaction_End;
+    private GameEventArgs containerOpen;
 
-    [SerializeField]
-    private bool opened = false;
     public void Interact(object token)
     {
-        if (opened)
-        {
-            //close it
-            opened = false;
-            Interaction_End.Raise(gameObject);
-        }
-        else
-        {
-            //open it
-            opened = true;
-            var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
-            Interaction_Start.Raise(gameObject);
-        }
+        Debug.Log("Interact called");
+        var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
+        containerOpen.Raise(data);
     }
 
     public void SetInteractor(params Object[] args)
-    {   
+    {
+        if ((GameObject)args[0] != gameObject)
+            return;
+        Debug.Log("Interactor Set");
         Interactor = (GameObject)args[1];
         Interactor.GetComponent<IInteractor>().Interaction_Set(this);
         Interactor_Set.Raise(gameObject, Interactor);
@@ -73,9 +62,15 @@ public class ContainerBehaviour : MonoBehaviour, IInteractable, IContainer
     {
         if (args[0] == gameObject && Interactor != null)
         {
+            Debug.Log("Interactor Release");
             Interactor.GetComponent<IInteractor>().Interaction_Release();
             Interactor_Release.Raise(gameObject, Interactor);
             Interactor = null;
         }
+    }
+
+    public void OnContainerOpen()
+    { 
+        
     }
 }

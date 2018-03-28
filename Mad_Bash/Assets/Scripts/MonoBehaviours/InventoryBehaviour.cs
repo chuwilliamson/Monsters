@@ -12,7 +12,7 @@ public class InventoryBehaviour : MonoBehaviour , IContainer
     [SerializeField]
     private GameEventArgs Inventory_Open;
     [SerializeField]
-    private GameEventArgs Inventory_Close;
+    private GameEventArgs Inventory_Close;       
 
     // properties
     public Container Container
@@ -43,6 +43,13 @@ public class InventoryBehaviour : MonoBehaviour , IContainer
         container_runtime.RemoveContent((Item)obj);
     }
 
+    public void OnItemPickUp(params Object[] args)
+    {
+        var item = args[1] as Item;
+        Debug.Log("Added " + item.Name + " to inventory");
+        container_runtime.AddContent(item);
+    }
+
     [SerializeField]
     private bool opened = false;
     private void Open()
@@ -58,7 +65,7 @@ public class InventoryBehaviour : MonoBehaviour , IContainer
             //open it
             opened = true;
             var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
-            Inventory_Open.Raise(gameObject);
+            Inventory_Open.Raise(data);
         }
     }
 }

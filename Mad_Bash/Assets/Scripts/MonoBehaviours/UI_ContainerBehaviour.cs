@@ -1,81 +1,29 @@
-﻿using System.Linq;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_ContainerBehaviour : MonoBehaviour
+public class UI_ContainerBehaviour : UI_EventBehaviour
 {
-    // fields
-    private Dropdown _dropdown;
-    private bool opened = false;
+    [SerializeField]
+    private List<Item> containerContents = new List<Item>();
 
-    // Unity methods
-    private void Start()
+    public void OnContainerOpen(params Object[] args)
     {
-        _dropdown = GetComponent<Dropdown>();
-        _dropdown.ClearOptions();
-    }
+        containerContents = new List<Item>();
+        string contentsText = "";
 
-    // methods
-    public void OnContainerOpened(UnityEngine.Object[] args)
-    {
-        _dropdown.ClearOptions();
-        var sender = args[0] as ContainerEventData;
-        if(sender == null)
-            return;
-
-        // make new option data list to populate dropdown
-        var optionDataList = new List<Dropdown.OptionData>();
-
-        // add those items to dropdown
-        sender.Data.ForEach(i => optionDataList.Add(new Dropdown.OptionData(i.Name)));
-        _dropdown.AddOptions(optionDataList);
-
-        opened = true;
-        _dropdown.Show();
-    }
-
-    public void OnInventoryOpened(UnityEngine.Object[] args)
-    {
-        _dropdown.ClearOptions();
-        var sender = args[0] as ContainerEventData;
-        if (sender == null)
-            return;
-
-        // make new option data list to populate dropdown
-        var optionDataList = new List<Dropdown.OptionData>();
-
-        // add those items to dropdown
-        sender.Data.ForEach(i => optionDataList.Add(new Dropdown.OptionData(i.Name)));
-        _dropdown.AddOptions(optionDataList);
-
-        opened = true;
-        _dropdown.Show();
-    }
-
-    public void OnContainerClosed()
-    {        
-        _dropdown.ClearOptions();
-        opened = false;
-        _dropdown.Hide();
-    }
-
-    public void OnInventoryClosed()
-    {        
-        _dropdown.ClearOptions();
-        opened = false;
-        _dropdown.Hide();
-    }
-
-    private void Update()
-    {
-        if (opened != false)
+        var data = args[0] as ContainerEventData;
+        foreach (Item i in data.Data)
         {
-            if (Input.GetButtonDown("B Button"))
-            {
-                OnContainerClosed();
-                OnInventoryClosed();
-            }
+            containerContents.Add(i);
         }
+
+        foreach (Item i in containerContents)
+        {
+             contentsText += i.Name + "\n";
+        }
+
+        UI_InteractionMenu.GetComponentInChildren<Text>().text = contentsText;
     }
 }
