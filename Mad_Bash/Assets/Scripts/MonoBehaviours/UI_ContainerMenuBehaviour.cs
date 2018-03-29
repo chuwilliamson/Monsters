@@ -14,7 +14,6 @@ public class UI_ContainerMenuBehaviour : MonoBehaviour
     private List<Item> containerContents = new List<Item>();
 
     // Unity methods
-
     private void OnEnable()
     {   
         ContainerMenu.SetActive(false);
