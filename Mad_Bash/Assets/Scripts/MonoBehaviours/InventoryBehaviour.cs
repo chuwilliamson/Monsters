@@ -32,8 +32,8 @@ public class InventoryBehaviour : MonoBehaviour , IContainer
 
     private void Update()
     {
-        if (Input.GetButtonDown("ViewButton"))
-            Open();
+        //if (Input.GetButtonDown("ViewButton"))
+        //    Open();
     }
 
     // methods
