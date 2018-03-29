@@ -10,9 +10,13 @@ public class InventoryBehaviour : MonoBehaviour , IContainer
     private Container container_runtime;
 
     [SerializeField]
-    private GameEventArgs Inventory_Open;
+    private GameEventArgs Inventory_Opened;
     [SerializeField]
-    private GameEventArgs Inventory_Close;       
+    private GameEventArgs Inventory_Closed;
+    [SerializeField]
+    private GameEventArgs Item_Added;
+    [SerializeField]
+    private GameEventArgs Item_Removed;
 
     // properties
     public Container Container
@@ -33,21 +37,30 @@ public class InventoryBehaviour : MonoBehaviour , IContainer
     }
 
     // methods
-    public void AddContent(Object obj)
+    public bool AddContent(Object obj)
     {
-        container_runtime.AddContent((Item)obj);
+        bool result = container_runtime.AddContent((Item)obj);
+        return result;
     }
 
-    public void RemoveContent(Object obj)
+    public bool RemoveContent(Object obj)
     {
-        container_runtime.RemoveContent((Item)obj);
+        bool result = container_runtime.RemoveContent((Item)obj);
+        return result;
     }
 
     public void OnItemPickUp(params Object[] args)
     {
+        var sender = args[0] as GameObject;
         var item = args[1] as Item;
-        Debug.Log("Added " + item.Name + " to inventory");
-        container_runtime.AddContent(item);
+        if (sender == null)
+            return;
+        
+        if (container_runtime.AddContent(item) == true)
+        {
+            Debug.Log("Added " + item.Name + " to inventory");
+            Item_Added.Raise(sender, item);
+        }   
     }
 
     [SerializeField]
@@ -58,14 +71,14 @@ public class InventoryBehaviour : MonoBehaviour , IContainer
         {
             //close it
             opened = false;
-            Inventory_Close.Raise(gameObject);
+            Inventory_Closed.Raise(gameObject);
         }
         else
         {
             //open it
             opened = true;
             var data = ScriptableObject.CreateInstance<ContainerEventData>().Init(container_runtime);
-            Inventory_Open.Raise(data);
+            Inventory_Opened.Raise(data);
         }
     }
 }

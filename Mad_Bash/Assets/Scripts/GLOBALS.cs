@@ -3,8 +3,8 @@ using UnityEngine;
 
 public interface IContainer
 {
-    void AddContent(Object obj);
-    void RemoveContent(Object obj);
+    bool AddContent(Object obj);
+    bool RemoveContent(Object obj);
 }
 
 public interface IConsumeable
@@ -21,7 +21,6 @@ public interface IInteractor
 {
     void Interaction_Set(IInteractable interactable);
     void Interaction_Release(IInteractable interactable);
-    void Interaction_Release();
 }
 
 public interface IInteractable

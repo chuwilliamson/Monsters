@@ -8,27 +8,31 @@ public class Container : ScriptableObject, IContainer
     public List<Object> contents;
     public int sizeLimit;
 
-    public void AddContent(Object obj)
+    public bool AddContent(Object obj)
     {
         if (contents.Count < sizeLimit)
         {
             contents.Add(obj);
+            return true;
         }
         else
         {
-            throw new System.Exception("Container is full");
+            Debug.Log("Container is full");
+            return false;
         }
     }
 
-    public void RemoveContent(Object obj)
+    public bool RemoveContent(Object obj)
     {
         if (contents.Contains(obj))
         {
             contents.Remove(obj);
+            return true;
         }
         else
         {
-            throw new System.Exception("Object not in list");
+            Debug.Log("Object not in list");
+            return false;
         }
     }
 }
