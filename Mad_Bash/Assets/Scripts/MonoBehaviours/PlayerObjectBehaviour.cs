@@ -76,7 +76,7 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
 
     public void OnSubmitButtonClicked(Object[] args)
     {
-        var sender = args[0] as UI_EventBehaviour;
+        var sender = args[0] as UI_InteractionPromptBehaviour;
         if (sender == null)
             return;
 

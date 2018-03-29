@@ -8,6 +8,8 @@ public class ContainerBehaviour : MonoBehaviour, IContainer
     public Container container_config;
     [SerializeField]
     private Container container_runtime;
+    [SerializeField]
+    private GameEventArgs Container_Open;
 
     // properties
     public Container Container
@@ -32,5 +34,12 @@ public class ContainerBehaviour : MonoBehaviour, IContainer
     {
         bool result = container_runtime.RemoveContent((Item)obj);
         return result;
+    }
+
+    public void InteractionReponse(Object[] args)
+    {
+        var container_data = new ContainerEventData();
+        container_data.Init(container_runtime);
+        Container_Open.Raise(gameObject, container_data);
     }
 }
