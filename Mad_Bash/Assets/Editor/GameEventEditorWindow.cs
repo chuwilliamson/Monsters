@@ -54,7 +54,7 @@ public class GameEventEditorWindow : EditorWindow
         foreach (var Event in GameEvents)
         {
             EditorGUILayout.BeginHorizontal();
-            var listeners = Event.listeners.Select(x => x.gameObject).ToList();
+            var listeners = Event.listeners.Select(x => ((MonoBehaviour)x).gameObject).ToList();
             EditorGUILayout.ObjectField(Event, typeof(GameEventArgs), false, GUILayout.Width(250));
             if (GUILayout.Button("Raise", GUILayout.Width(250)))
             {

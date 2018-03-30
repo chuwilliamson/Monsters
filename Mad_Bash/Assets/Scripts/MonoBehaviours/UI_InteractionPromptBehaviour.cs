@@ -2,26 +2,24 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UI_InteractionPromptBehaviour : MonoBehaviour, IInteractionSetHandler, IInteractionReleaseHandler, IInteractionBeginHandler,IInteractionEndHandler
+
+public class UI_InteractionPromptBehaviour : MonoBehaviour, IInteractionSetHandler, IInteractionReleaseHandler, IInteractionBeginHandler, IInteractionEndHandler, ICancelHandler
 {
     // fields    
     [SerializeField]
     private GameObject interactionPromptCanvas;
     [SerializeField]
     private GameObject SubmitButton;
-    [SerializeField]
-    private GameObject CancelButton;
+
+    //private GameObject CancelButton;
     [SerializeField]
     private GameEventArgs SubmitButtonClicked;
-    [SerializeField]
-    private GameEventArgs CancelButtonClicked;
-
     // Unity methods
+
     private void OnEnable()
     {
-        interactionPromptCanvas.SetActive(false);
-        SubmitButton.SetActive(false);
-        CancelButton.SetActive(false);
+        HidePrompt();
+ 
     }
 
     private void OnDisable()
@@ -32,44 +30,31 @@ public class UI_InteractionPromptBehaviour : MonoBehaviour, IInteractionSetHandl
     // methods
     private void HidePrompt()
     {
-        interactionPromptCanvas.SetActive(false);
-        SubmitButton.SetActive(false);
-        CancelButton.SetActive(true);
+        interactionPromptCanvas.SetActive(false); 
     }
 
     private void ShowPrompt()
     {
-        interactionPromptCanvas.SetActive(true);
-        SubmitButton.SetActive(true);
-        CancelButton.SetActive(false);
+        interactionPromptCanvas.SetActive(true); 
+        EventSystem.current.SetSelectedGameObject(SubmitButton);
     }
-
-    public void SubmitButtonResponse()
-    {
-        Debug.Log("SubmitButtonResponse");
-        SubmitButtonClicked.Raise(this);
-        HidePrompt();
-    }
-
-    public void CancelButtonResponse()
-    {
-        Debug.Log("CancelButtonResponse");
-        CancelButtonClicked.Raise(this);
-        ShowPrompt();
-    }
+ 
+ 
 
     public void OnInteractionSet(Object[] args)
     {
         Debug.Log("OnInteractionSet");
         ShowPrompt();
+        EventSystem.current.SetSelectedGameObject(SubmitButton); 
+            
     }
-    
+
     public void OnInteractionRelease(Object[] args)
     {
         Debug.Log("OnInteractionRelease");
-        interactionPromptCanvas.SetActive(false);
-        SubmitButton.SetActive(false);
-        CancelButton.SetActive(false);
+        HidePrompt();
+        
+ 
     }
 
     public void OnInteractionBegin(Object[] args)
@@ -82,5 +67,13 @@ public class UI_InteractionPromptBehaviour : MonoBehaviour, IInteractionSetHandl
     {
         Debug.Log("OnInteractionEnd");
         ShowPrompt();
-    }    
+    }
+
+    public void OnCancel(BaseEventData eventData)
+    {
+        Debug.Log("cancel");
+
+        HidePrompt();
+
+    }
 }
