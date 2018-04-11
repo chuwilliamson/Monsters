@@ -29,4 +29,9 @@ public abstract class TestInteractorBehaviour : MonoBehaviour, IInteractor
             }
         }
     }
+
+    public void Interaction_Release(IInteractable interactable)
+    {
+        throw new System.NotImplementedException();
+    }
 }

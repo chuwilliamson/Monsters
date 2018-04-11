@@ -13,7 +13,7 @@ public class PhysicsTriggerListener : MonoBehaviour
     GameEventArgs onStay;
 
     public StringVariable ListenerTag;
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag(ListenerTag.Value))

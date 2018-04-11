@@ -1,0 +1,85 @@
+﻿using UnityEngine;
+public interface IInteractionSetHandler
+{
+    void OnInteractionSet(Object[] args);
+}
+public interface IInteractionReleaseHandler
+{
+    void OnInteractionRelease(Object[] args);
+}
+public interface IInteractionBeginHandler
+{
+    void OnInteractionBegin(Object[] args);  
+}
+
+public interface IInteractionEndHandler
+{
+    void OnInteractionEnd(Object[] args);
+}
+
+public interface IPhysicsTriggerEnterHandler
+{
+    void OnPhysicsTriggerEnter(Object[] args);
+}
+public interface IPhysicsTriggerExitHandler
+{
+    void OnPhysicsTriggerExit(Object[] args);
+}
+
+[RequireComponent(typeof(PhysicsTriggerListener))]
+public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTriggerEnterHandler, IPhysicsTriggerExitHandler
+{
+    public GameEventArgs InteractionSet;
+    public GameEventArgs InteractionBegin;
+    public GameEventArgs InteractionEnd;
+    public GameEventArgs InteractionReleased;
+    public IInteractor interactor;
+    public GameObject interactorGameObject;
+    public GameEventArgsResponse Response;
+
+
+    public void Interact(object token)
+    {
+        InteractableBeginInteraction(token as GameObject);          
+    }
+
+    public void InteractableBeginInteraction(Object token)
+    {
+        InteractionBegin.Raise(token);
+        Response.Invoke(new Object[] { this, interactorGameObject, token });
+    }
+
+
+    /// <summary>
+    /// This will be executed by interactors or the concrete behaviour they are interacting with
+    /// </summary>
+    public void InteractableEndInteraction()
+    {
+        InteractionEnd.Raise(gameObject, interactorGameObject);
+    }
+
+    public void OnPhysicsTriggerEnter(Object[] args)
+    {
+        var sender = args[0] as GameObject;
+        var actor = args[1] as GameObject;
+        if (sender == null)
+            return;
+        interactorGameObject = actor;
+        interactor = interactorGameObject.GetComponent<IInteractor>();
+        interactor.Interaction_Set(this);
+        InteractionSet.Raise(gameObject, actor);
+    }
+    
+    public void OnPhysicsTriggerExit(Object[] args)
+    {
+        var sender = args[0] as GameObject;
+        var actor = args[1] as GameObject;
+        if (sender == null)
+            return;
+
+        interactor.Interaction_Release(this);
+        interactorGameObject = null;
+        interactor = null;
+        InteractionReleased.Raise(gameObject, actor);
+    }
+}
