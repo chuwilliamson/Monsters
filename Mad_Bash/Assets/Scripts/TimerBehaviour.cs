@@ -22,7 +22,7 @@ public class TimeElapsed
 public class TimerBehaviour : MonoBehaviour
 {
     public bool Timing;
-    public float speed = 1;
+    public float timerScale = 1;
     public float timePassed = 0;
 
     [SerializeField]
@@ -58,7 +58,7 @@ public class TimerBehaviour : MonoBehaviour
 
         if (Timing == true)
         {
-            timePassed += Time.deltaTime * speed;
+            timePassed += Time.deltaTime * timerScale;
 
             /*===== This block of code is to be used for raw float values =====*/
 
