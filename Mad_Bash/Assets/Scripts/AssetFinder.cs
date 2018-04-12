@@ -15,12 +15,14 @@ public class AssetFinder : EditorWindow
     List<GameObject> objs = new List<GameObject>();
     Vector2 pos;
     Editor GOEditor;
+
     [MenuItem("JeremyTools/AssetFinder")]
     static void Init()
     {
         var w = EditorWindow.CreateInstance<AssetFinder>();
         w.Show();
     }
+
     private void OnGUI()
     {        
         targetFolder = EditorGUILayout.TextField("target folder", targetFolder);
