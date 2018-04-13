@@ -40,7 +40,7 @@ public class GameStartState : IState
 
     public void UpdateState(IContext context)
     {
-        if (PlayerInput.PAUSEGAME)
+        if (Input.GetButtonDown("MenuButton"))
             context.ChangeState(new GameRunningState());
         if (((GameContext)context).PauseButtonClicked)
             context.ChangeState(new GamePausedState());
@@ -57,7 +57,7 @@ public class GameRunningState : IState
 
     public void UpdateState(IContext context)
     {
-        if (PlayerInput.PAUSEGAME)
+        if (Input.GetButtonDown("MenuButton"))
             context.ChangeState(new GamePausedState());
         if (((GameContext)context).PauseButtonClicked)
             context.ChangeState(new GamePausedState());
@@ -75,7 +75,7 @@ public class GamePausedState : IState
 
     public void UpdateState(IContext context)
     {
-        if (PlayerInput.PAUSEGAME)
+        if (Input.GetButtonDown("MenuButton"))
             context.ChangeState(new GameRunningState());
     }
 
