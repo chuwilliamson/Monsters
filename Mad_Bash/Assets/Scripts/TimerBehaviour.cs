@@ -40,8 +40,7 @@ public class TimerBehaviour : MonoBehaviour
         Debug.Log("Seconds: " + _timestamp.Seconds.ToString());
         Debug.Log("Minutes: " + _timestamp.Minutes.ToString());
         Debug.Log("Hours: " + _timestamp.Hours.ToString());
-
-        /*===== Tester Code =====*/
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (Timing == true)
@@ -54,19 +53,14 @@ public class TimerBehaviour : MonoBehaviour
             }
         }
 
-        //===== Tester Code =====
-        //if (Input.GetKeyDown(KeyCode.T))
-        //{
-        //    ClearConsole();
-        //    Debug.Log("Seconds: " + _timestamp.Seconds.ToString());
-        //    Debug.Log("Minutes: " + _timestamp.Minutes.ToString());
-        //    Debug.Log("Hours: " + _timestamp.Hours.ToString());
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ResetTimer();
+        }
 
         if (Timing == true)
         {
             timePassed += Time.deltaTime * timerScale;
-
             _timestamp.Seconds = timePassed;
             _timestamp.Minutes = timePassed / 60;
             _timestamp.Hours = timePassed / 3600;
