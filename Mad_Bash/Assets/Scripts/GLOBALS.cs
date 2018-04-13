@@ -28,6 +28,18 @@ public interface IInteractable
     void Interact(object token);
 }
 
+public interface IState
+{
+    void OnEnter();
+    void UpdateState(IContext context);
+    void OnExit();
+}
+
+public interface IContext
+{
+    void ChangeState(IState next);
+}
+
 public class ContainerEventData : ScriptableObject
 {
     private List<Item> _data;

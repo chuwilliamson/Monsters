@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Reflection;
 
 public class TimeElapsed
 {
@@ -35,6 +36,11 @@ public class TimerBehaviour : MonoBehaviour
 
     private void Update()
     {
+        ClearConsole();
+        Debug.Log("Seconds: " + _timestamp.Seconds.ToString());
+        Debug.Log("Minutes: " + _timestamp.Minutes.ToString());
+        Debug.Log("Hours: " + _timestamp.Hours.ToString());
+
         /*===== Tester Code =====*/
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -48,29 +54,22 @@ public class TimerBehaviour : MonoBehaviour
             }
         }
 
-        /*===== Tester Code =====*/
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Debug.Log("Seconds: " + _timestamp.Seconds.ToString());
-            Debug.Log("Minutes: " + _timestamp.Minutes.ToString());
-            Debug.Log("Hours: " + _timestamp.Hours.ToString());
-        }
+        //===== Tester Code =====
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    ClearConsole();
+        //    Debug.Log("Seconds: " + _timestamp.Seconds.ToString());
+        //    Debug.Log("Minutes: " + _timestamp.Minutes.ToString());
+        //    Debug.Log("Hours: " + _timestamp.Hours.ToString());
+        //}
 
         if (Timing == true)
         {
             timePassed += Time.deltaTime * timerScale;
 
-            /*===== This block of code is to be used for raw float values =====*/
-
             _timestamp.Seconds = timePassed;
             _timestamp.Minutes = timePassed / 60;
             _timestamp.Hours = timePassed / 3600;
-
-            /*===== This block of code is to be used for a "00:00:00" =====*/
-
-            //_timestamp.Hours = Mathf.Floor((theTime % 216000) / 3600);
-            //_timestamp.Minutes = Mathf.Floor((theTime % 3600) / 60);
-            //_timestamp.Seconds = (theTime % 60);
         }
     }
 
@@ -94,5 +93,13 @@ public class TimerBehaviour : MonoBehaviour
     public TimeElapsed GetTime()
     {
         return _timestamp;
+    }
+
+    public static void ClearConsole()
+    {
+        var assembly = Assembly.GetAssembly(typeof(UnityEditor.SceneView));
+        var type = assembly.GetType("UnityEditor.LogEntries");
+        var method = type.GetMethod("Clear");
+        method.Invoke(new object(), null);
     }
 }
