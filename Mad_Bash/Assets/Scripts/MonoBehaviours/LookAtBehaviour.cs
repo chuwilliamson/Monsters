@@ -7,6 +7,6 @@ public class LookAtBehaviour : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        transform.LookAt(Camera.main.transform);		
+        transform.rotation = Camera.main.transform.rotation;		
 	}
 }
