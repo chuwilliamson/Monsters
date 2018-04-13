@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class GameEventArgsListener : MonoBehaviour
+
+public class GameEventArgsListener : MonoBehaviour, IListener
 {
     public GameEventArgs Event;
     public Object Sender;
@@ -20,5 +21,15 @@ public class GameEventArgsListener : MonoBehaviour
     {
         if (Sender == null || Sender == args[0])
             Response.Invoke(args);
+    }
+
+    public void Subscribe()
+    {
+        Event.RegisterListener(this);
+    }
+
+    public void Unsubscribe()
+    {
+        Event.UnregisterListener(this);
     }
 }

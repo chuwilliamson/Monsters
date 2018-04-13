@@ -15,24 +15,12 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
     [SerializeField]
     public IInteractable currentInteractable;
     public GameObject currentInteractable_GO;
+
     // properties
     public CharacterInformation CharacterInfo
     {
         get { return characterInfo_runtime; }
-    }
-
-    [SerializeField]
-    private bool interacting = false;
-
-    public void OnSubmitButtonClicked(Object[] args)
-    {
-        var sender = args[0] as UI_EventBehaviour;
-        if (sender == null)
-            return;
-        currentInteractable.Interact(null);
-    }
-
-
+    }        
 
     // Unity methods
     private void Start()
@@ -45,25 +33,53 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
         characterInfo_runtime = Instantiate(characterInfo_config);
     }
 
-
+    // methods
     public void Interaction_Set(IInteractable interactable)
     {
         if (currentInteractable != null)
             return;
-
+       
         currentInteractable = interactable;
     }
 
-    public void Interaction_Release()
+    public void Interaction_Release(IInteractable interactable)
     {
+        if (interactable != currentInteractable)
+            return;        
+        
+        currentInteractable_GO = null;
+        currentInteractable = null;
+        
+        Interaction_End.Raise(this, currentInteractable_GO);
+    }
+
+    public void OnInteractionSet(Object[] args)
+    {
+        var sender = args[0] as GameObject;
+        if (sender == null)
+            return;
+
+        currentInteractable_GO = args[0] as GameObject;
+    }
+
+    public void OnInteractionReleased(Object[] args)
+    {
+        var sender = args[0] as GameObject;
+        if (sender != currentInteractable_GO)
+            return;
+
         currentInteractable_GO = null;
         currentInteractable = null;
 
         Interaction_End.Raise(this, currentInteractable_GO);
     }
 
-    public void Interaction_Release(IInteractable interactable)
+    public void OnSubmitButtonClicked(Object[] args)
     {
-        throw new System.NotImplementedException();
+        var sender = args[0] as UI_InteractionPromptBehaviour;
+        if (sender == null)
+            return;
+
+        currentInteractable.Interact(null);
     }
 }

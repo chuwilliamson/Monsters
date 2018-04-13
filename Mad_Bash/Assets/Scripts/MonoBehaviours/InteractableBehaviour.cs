@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
+
 public interface IInteractionSetHandler
 {
     void OnInteractionSet(Object[] args);
 }
+
 public interface IInteractionReleaseHandler
 {
     void OnInteractionRelease(Object[] args);
 }
+
 public interface IInteractionBeginHandler
 {
     void OnInteractionBegin(Object[] args);  
@@ -21,6 +24,7 @@ public interface IPhysicsTriggerEnterHandler
 {
     void OnPhysicsTriggerEnter(Object[] args);
 }
+
 public interface IPhysicsTriggerExitHandler
 {
     void OnPhysicsTriggerExit(Object[] args);
@@ -29,14 +33,13 @@ public interface IPhysicsTriggerExitHandler
 [RequireComponent(typeof(PhysicsTriggerListener))]
 public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTriggerEnterHandler, IPhysicsTriggerExitHandler
 {
+    public IInteractor interactor;
+    public GameObject interactorGameObject;
+    public GameEventArgsResponse Response;
     public GameEventArgs InteractionSet;
     public GameEventArgs InteractionBegin;
     public GameEventArgs InteractionEnd;
     public GameEventArgs InteractionReleased;
-    public IInteractor interactor;
-    public GameObject interactorGameObject;
-    public GameEventArgsResponse Response;
-
 
     public void Interact(object token)
     {
@@ -49,13 +52,14 @@ public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTrigg
         Response.Invoke(new Object[] { this, interactorGameObject, token });
     }
 
-
-    /// <summary>
-    /// This will be executed by interactors or the concrete behaviour they are interacting with
-    /// </summary>
     public void InteractableEndInteraction()
     {
         InteractionEnd.Raise(gameObject, interactorGameObject);
+    }
+
+    public void InteractableReleaseInteraction()
+    {
+        InteractionReleased.Raise(gameObject, interactorGameObject);
     }
 
     public void OnPhysicsTriggerEnter(Object[] args)
@@ -64,6 +68,7 @@ public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTrigg
         var actor = args[1] as GameObject;
         if (sender == null)
             return;
+
         interactorGameObject = actor;
         interactor = interactorGameObject.GetComponent<IInteractor>();
         interactor.Interaction_Set(this);
@@ -76,7 +81,7 @@ public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTrigg
         var actor = args[1] as GameObject;
         if (sender == null)
             return;
-
+        
         interactor.Interaction_Release(this);
         interactorGameObject = null;
         interactor = null;
