@@ -30,9 +30,9 @@ public interface IInteractable
 
 public interface IState
 {
-    void OnEnter();
+    void OnEnter(IContext context);
     void UpdateState(IContext context);
-    void OnExit();
+    void OnExit(IContext context);
 }
 
 public interface IContext

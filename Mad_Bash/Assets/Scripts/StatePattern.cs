@@ -19,10 +19,10 @@ public class GameContext : ScriptableObject, IContext
     /// <param name="next"></param>
     public void ChangeState(IState next)
     {
-        Current.OnExit();
+        Current.OnExit(this);
         Current = next;
         CurrentStateName = Current.ToString();
-        Current.OnEnter();
+        Current.OnEnter(this);
     }
 
     public void UpdateContext()
@@ -33,9 +33,14 @@ public class GameContext : ScriptableObject, IContext
 
 public class GameStartState : IState
 {
-    public void OnEnter()
+    public void OnEnter(IContext context)
     {
-        Debug.Log("enter " + ToString());
+        throw new System.NotImplementedException();
+    }
+
+    public void OnExit(IContext context)
+    {
+        throw new System.NotImplementedException();
     }
 
     public void UpdateState(IContext context)
@@ -46,13 +51,13 @@ public class GameStartState : IState
             context.ChangeState(new GamePausedState());
     }
 
-    public void OnExit() { }
+    
 }
 
 public class GameRunningState : IState
 {
 
-    public void OnEnter()
+    public void OnEnter(IContext context)
     { Debug.Log("enter " + ToString()); }
 
     public void UpdateState(IContext context)
@@ -63,12 +68,12 @@ public class GameRunningState : IState
             context.ChangeState(new GamePausedState());
     }
 
-    public void OnExit() { }
+    public void OnExit(IContext context) { }
 }
 
 public class GamePausedState : IState
 {
-    public void OnEnter()
+    public void OnEnter(IContext context)
     {
         Debug.Log("enter " + ToString());
     }
@@ -79,7 +84,7 @@ public class GamePausedState : IState
             context.ChangeState(new GameRunningState());
     }
 
-    public void OnExit()
+    public void OnExit(IContext context)
     {
 
     }

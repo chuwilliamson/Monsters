@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
-public class ButtonPressSequence : MonoBehaviour, IContext
+[CreateAssetMenu(menuName = "ButtonSequenceContext")]
+public class ButtonPressContext : ScriptableObject, IContext
 {
     public List<IState> buttons;
     IState currentState;
-    public ButtonPressContext context;
+
     public StringVariable Info;
     public StringVariable Timer;
     public StringVariable TimerPressed;
@@ -23,35 +23,28 @@ public class ButtonPressSequence : MonoBehaviour, IContext
 
     public float IntervalStart = 1;
 
-    private void Start()
+    private void OnEnable()
     {
         buttons = new List<IState>() { XState, YState, AState, BState };
         currentState = buttons[0];
         currentState.OnEnter(this);
     }
 
-    private void Update()
+    public void UpdateContext()
     {
-        if (context == null)
+        if (turncount >= 3)
         {
-
-
-            if (turncount >= 3)
-            {
-                Debug.Log("Result" + PassOrFail());
-                turncount = 0;
-                return;
-            }
-
-            currentState.UpdateState(this);
+            Debug.Log("Result" + PassOrFail());
+            turncount = 0;
+            return;
         }
-        else
-            context.UpdateContext();
+
+        currentState.UpdateState(this);
     }
 
     public void ChangeState(IState next)
     {
-        if(stateTransitionInterval <= 0)
+        if (stateTransitionInterval <= 0)
         {
 
             PassOrFail();
@@ -68,7 +61,7 @@ public class ButtonPressSequence : MonoBehaviour, IContext
                 stateTransitionInterval = 0;
             Interval.Value = stateTransitionInterval.ToString();
         }
-        
+
     }
 
     public bool PassOrFail()
@@ -77,7 +70,8 @@ public class ButtonPressSequence : MonoBehaviour, IContext
         foreach (ButtonPressObject b in buttons)
             totalScore += b.Score;
         win = (totalScore >= passingScore);
-        
+
         return win;
     }
+
 }
