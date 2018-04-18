@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4da8c1ca9e4152b42b0806c945f3126b
-timeCreated: 1524078070
+guid: 2863a54f5d80b3145afffe34dccd7784
+timeCreated: 1524080409
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -11,2016 +11,350 @@ ModelImporter:
     100006: BackHair
     100008: Body
     100010: BottomTeeth
-    100012: ControlRig
-    100014: EyeBrows
-    100016: Face
-    100018: FrontHair
-    100020: Glasses
-    100022: Hairband
-    100024: Hairband 1
-    100026: Head_Jaw_Ctrl
-    100028: Head_Jaw_Ctrl_RestPoseGrp
-    100030: Head_Jaw_CtrlGrp
-    100032: Head_JawEndJnt
-    100034: Head_JawEndSHJnt
-    100036: Head_JawJnt
-    100038: Head_JawSHJnt
-    100040: Head_Master_CtrlScaleGrp
-    100042: Head_ScaleGrp
-    100044: Head_TopJnt
-    100046: Head_TopSHJnt
-    100048: HeadGrp
-    100050: Hood
-    100052: Hoodie
-    100054: joint1
-    100056: joint10
-    100058: joint11
-    100060: joint12
-    100062: joint13
-    100064: joint14
-    100066: joint15
-    100068: joint16
-    100070: joint17
-    100072: joint18
-    100074: joint19
-    100076: joint2
-    100078: joint20
-    100080: joint21
-    100082: joint22
-    100084: joint23
-    100086: joint24
-    100088: joint25
-    100090: joint26
-    100092: joint27
-    100094: joint28
-    100096: joint29
-    100098: joint3
-    100100: joint30
-    100102: joint31
-    100104: joint32
-    100106: joint33
-    100108: joint34
-    100110: joint35
-    100112: joint36
-    100114: joint37
-    100116: joint38
-    100118: joint39
-    100120: joint4
-    100122: joint40
-    100124: joint41
-    100126: joint42
-    100128: joint43
-    100130: joint44
-    100132: joint45
-    100134: joint46
-    100136: joint47
-    100138: joint48
-    100140: joint49
-    100142: joint5
-    100144: joint50
-    100146: joint51
-    100148: joint52
-    100150: joint53
-    100152: joint54
-    100154: joint55
-    100156: joint56
-    100158: joint57
-    100160: joint58
-    100162: joint59
-    100164: joint6
-    100166: joint60
-    100168: joint61
-    100170: joint7
-    100172: joint8
-    100174: joint9
-    100176: l_Arm_Clavicle_Ctrl
-    100178: l_Arm_Clavicle_Ctrl_RestPoseGrp
-    100180: l_Arm_Clavicle_CtrlGrp
-    100182: l_Arm_ClavicleJnt
-    100184: l_Arm_ClavicleSHJnt
-    100186: l_Arm_ElbowFk_Ctrl
-    100188: l_Arm_ElbowFk_Ctrl_RestPoseGrp
-    100190: l_Arm_ElbowFk_CtrlGrp
-    100192: l_Arm_ElbowIk_Ctrl
-    100194: l_Arm_ElbowIk_Ctrl_RestPoseGrp
-    100196: l_Arm_ElbowIk_Ctrl_WristLctr
-    100198: l_Arm_ElbowIk_CtrlGrp
-    100200: l_Arm_ElbowIkLockLctr
-    100202: l_Arm_ElbowJnt
-    100204: l_Arm_ElbowJntFk
-    100206: l_Arm_ElbowJntFkGrp1
-    100208: l_Arm_ElbowJntFkGrp2
-    100210: l_Arm_ElbowJntIk
-    100212: l_Arm_ElbowSHJnt
-    100214: l_Arm_LimbLengthEndLctr
-    100216: l_Arm_LimbLengthOriginLctr
-    100218: l_Arm_LimbLengthSoftLctr
-    100220: l_Arm_ScaleGrp
-    100222: l_Arm_ShoulderFk_Ctrl
-    100224: l_Arm_ShoulderFk_Ctrl_RestPoseGrp
-    100226: l_Arm_ShoulderFk_CtrlGrp
-    100228: l_Arm_ShoulderFk_CtrlGrp2
-    100230: l_Arm_ShoulderIkLockLctr
-    100232: l_Arm_ShoulderJnt
-    100234: l_Arm_ShoulderJntFk
-    100236: l_Arm_ShoulderJntIk
-    100238: l_Arm_ShoulderSHJnt
-    100240: l_Arm_Switch_Ctrl
-    100242: l_Arm_Switch_CtrlGrp
-    100244: l_Arm_WristIk_Ctrl
-    100246: l_Arm_WristIk_Ctrl_RestPoseGrp
-    100248: l_Arm_WristIk_CtrlGrp
-    100250: l_Arm_WristIkLockLctr
-    100252: l_Arm_WristJnt
-    100254: l_Arm_WristJntFk
-    100256: l_Arm_WristJntFkGrp1
-    100258: l_Arm_WristJntFkGrp2
-    100260: l_Arm_WristJntGrp1
-    100262: l_Arm_WristJntGrp2
-    100264: l_Arm_WristJntIk
-    100266: l_Arm_WristPivot_Ctrl
-    100268: l_Arm_WristPivot_Ctrl_RestPoseGrp
-    100270: l_Arm_WristPivot_CtrlGrp
-    100272: l_Arm_WristPivot_Lctr
-    100274: l_Arm_WristSHJnt
-    100276: l_ArmGrp
-    100278: l_Eye_01_Ctrl
-    100280: l_Eye_01_Ctrl_RestPoseGrp
-    100282: l_Eye_01Grp1
-    100284: l_Eye_01Grp2
-    100286: l_Eye_01Jnt
-    100288: l_Eye_01SHJnt
-    100290: l_Eye_Master_Ctrl
-    100292: l_Eye_Master_Ctrl_RestPoseGrp
-    100294: l_Eye_Master_CtrlGrp
-    100296: l_Eye_ScaleGrp
-    100298: l_EyeGrp
-    100300: l_Finger_01_01_Ctrl
-    100302: l_Finger_01_01_Ctrl_RestPoseGrp
-    100304: l_Finger_01_01_CtrlGrp
-    100306: l_Finger_01_01_CtrlSdkGrp
-    100308: l_Finger_01_01_Spline_Ctrl
-    100310: l_Finger_01_01_Spline_Ctrl_RestPoseGrp
-    100312: l_Finger_01_01_Spline_CtrlGrp
-    100314: l_Finger_01_01_Spline_CtrlGrp2
-    100316: l_Finger_01_01Jnt
-    100318: l_Finger_01_01JntFk
-    100320: l_Finger_01_01JntIk
-    100322: l_Finger_01_01SHJnt
-    100324: l_Finger_01_02_Ctrl
-    100326: l_Finger_01_02_Ctrl_RestPoseGrp
-    100328: l_Finger_01_02_CtrlGrp
-    100330: l_Finger_01_02_CtrlSdkGrp
-    100332: l_Finger_01_02Jnt
-    100334: l_Finger_01_02JntFk
-    100336: l_Finger_01_02JntIk
-    100338: l_Finger_01_02SHJnt
-    100340: l_Finger_01_03_Ctrl
-    100342: l_Finger_01_03_Ctrl_RestPoseGrp
-    100344: l_Finger_01_03_CtrlGrp
-    100346: l_Finger_01_03_CtrlSdkGrp
-    100348: l_Finger_01_03Jnt
-    100350: l_Finger_01_03JntFk
-    100352: l_Finger_01_03JntIk
-    100354: l_Finger_01_03SHJnt
-    100356: l_Finger_01_04_Ctrl
-    100358: l_Finger_01_04_Ctrl_RestPoseGrp
-    100360: l_Finger_01_04_CtrlGrp
-    100362: l_Finger_01_04_CtrlSdkGrp
-    100364: l_Finger_01_04Jnt
-    100366: l_Finger_01_04JntFk
-    100368: l_Finger_01_04JntIk
-    100370: l_Finger_01_04SHJnt
-    100372: l_Finger_01_SplineCurve
-    100374: l_Finger_01_SplineCurve2Clstr
-    100376: l_Finger_01_SplineCurve3Clstr
-    100378: l_Finger_01_SplineCurveEndClstr
-    100380: l_Finger_01_SplineCurveStartClstr
-    100382: l_Finger_01JntFkGrp
-    100384: l_Finger_01JntFkGrp2
-    100386: l_Finger_01JntGrp
-    100388: l_Finger_01JntGrp2
-    100390: l_Finger_01JntIkGrp
-    100392: l_Finger_01JntIkGrp2
-    100394: l_Finger_02_01_Ctrl
-    100396: l_Finger_02_01_Ctrl_RestPoseGrp
-    100398: l_Finger_02_01_CtrlGrp
-    100400: l_Finger_02_01_CtrlOffsetGrp
-    100402: l_Finger_02_01_CtrlSdkGrp
-    100404: l_Finger_02_01_Spline_Ctrl
-    100406: l_Finger_02_01_Spline_Ctrl_RestPoseGrp
-    100408: l_Finger_02_01_Spline_CtrlGrp
-    100410: l_Finger_02_01_Spline_CtrlGrp2
-    100412: l_Finger_02_01_Spline_CtrlOffsetGrp
-    100414: l_Finger_02_01Jnt
-    100416: l_Finger_02_01JntFk
-    100418: l_Finger_02_01JntIk
-    100420: l_Finger_02_01SHJnt
-    100422: l_Finger_02_02_Ctrl
-    100424: l_Finger_02_02_Ctrl_RestPoseGrp
-    100426: l_Finger_02_02_CtrlGrp
-    100428: l_Finger_02_02_CtrlOffsetGrp
-    100430: l_Finger_02_02_CtrlSdkGrp
-    100432: l_Finger_02_02Jnt
-    100434: l_Finger_02_02JntFk
-    100436: l_Finger_02_02JntIk
-    100438: l_Finger_02_02SHJnt
-    100440: l_Finger_02_03_Ctrl
-    100442: l_Finger_02_03_Ctrl_RestPoseGrp
-    100444: l_Finger_02_03_CtrlGrp
-    100446: l_Finger_02_03_CtrlOffsetGrp
-    100448: l_Finger_02_03_CtrlSdkGrp
-    100450: l_Finger_02_03Jnt
-    100452: l_Finger_02_03JntFk
-    100454: l_Finger_02_03JntIk
-    100456: l_Finger_02_03SHJnt
-    100458: l_Finger_02_04_Ctrl
-    100460: l_Finger_02_04_Ctrl_RestPoseGrp
-    100462: l_Finger_02_04_CtrlGrp
-    100464: l_Finger_02_04_CtrlOffsetGrp
-    100466: l_Finger_02_04_CtrlSdkGrp
-    100468: l_Finger_02_04Jnt
-    100470: l_Finger_02_04JntFk
-    100472: l_Finger_02_04JntIk
-    100474: l_Finger_02_04SHJnt
-    100476: l_Finger_02_SplineCurve
-    100478: l_Finger_02_SplineCurve2Clstr
-    100480: l_Finger_02_SplineCurve3Clstr
-    100482: l_Finger_02_SplineCurveEndClstr
-    100484: l_Finger_02_SplineCurveStartClstr
-    100486: l_Finger_02JntFkGrp
-    100488: l_Finger_02JntFkGrp2
-    100490: l_Finger_02JntGrp
-    100492: l_Finger_02JntGrp2
-    100494: l_Finger_02JntIkGrp
-    100496: l_Finger_02JntIkGrp2
-    100498: l_Finger_03_01_Ctrl
-    100500: l_Finger_03_01_Ctrl_RestPoseGrp
-    100502: l_Finger_03_01_CtrlGrp
-    100504: l_Finger_03_01_CtrlOffsetGrp
-    100506: l_Finger_03_01_CtrlSdkGrp
-    100508: l_Finger_03_01_Spline_Ctrl
-    100510: l_Finger_03_01_Spline_Ctrl_RestPoseGrp
-    100512: l_Finger_03_01_Spline_CtrlGrp
-    100514: l_Finger_03_01_Spline_CtrlGrp2
-    100516: l_Finger_03_01_Spline_CtrlOffsetGrp
-    100518: l_Finger_03_01Jnt
-    100520: l_Finger_03_01JntFk
-    100522: l_Finger_03_01JntIk
-    100524: l_Finger_03_01SHJnt
-    100526: l_Finger_03_02_Ctrl
-    100528: l_Finger_03_02_Ctrl_RestPoseGrp
-    100530: l_Finger_03_02_CtrlGrp
-    100532: l_Finger_03_02_CtrlOffsetGrp
-    100534: l_Finger_03_02_CtrlSdkGrp
-    100536: l_Finger_03_02Jnt
-    100538: l_Finger_03_02JntFk
-    100540: l_Finger_03_02JntIk
-    100542: l_Finger_03_02SHJnt
-    100544: l_Finger_03_03_Ctrl
-    100546: l_Finger_03_03_Ctrl_RestPoseGrp
-    100548: l_Finger_03_03_CtrlGrp
-    100550: l_Finger_03_03_CtrlOffsetGrp
-    100552: l_Finger_03_03_CtrlSdkGrp
-    100554: l_Finger_03_03Jnt
-    100556: l_Finger_03_03JntFk
-    100558: l_Finger_03_03JntIk
-    100560: l_Finger_03_03SHJnt
-    100562: l_Finger_03_04_Ctrl
-    100564: l_Finger_03_04_Ctrl_RestPoseGrp
-    100566: l_Finger_03_04_CtrlGrp
-    100568: l_Finger_03_04_CtrlOffsetGrp
-    100570: l_Finger_03_04_CtrlSdkGrp
-    100572: l_Finger_03_04Jnt
-    100574: l_Finger_03_04JntFk
-    100576: l_Finger_03_04JntIk
-    100578: l_Finger_03_04SHJnt
-    100580: l_Finger_03_SplineCurve
-    100582: l_Finger_03_SplineCurve2Clstr
-    100584: l_Finger_03_SplineCurve3Clstr
-    100586: l_Finger_03_SplineCurveEndClstr
-    100588: l_Finger_03_SplineCurveStartClstr
-    100590: l_Finger_03JntFkGrp
-    100592: l_Finger_03JntFkGrp2
-    100594: l_Finger_03JntGrp
-    100596: l_Finger_03JntGrp2
-    100598: l_Finger_03JntIkGrp
-    100600: l_Finger_03JntIkGrp2
-    100602: l_Finger_04_01_Ctrl
-    100604: l_Finger_04_01_Ctrl_RestPoseGrp
-    100606: l_Finger_04_01_CtrlGrp
-    100608: l_Finger_04_01_CtrlSdkGrp
-    100610: l_Finger_04_01_Spline_Ctrl
-    100612: l_Finger_04_01_Spline_Ctrl_RestPoseGrp
-    100614: l_Finger_04_01_Spline_CtrlGrp
-    100616: l_Finger_04_01_Spline_CtrlGrp2
-    100618: l_Finger_04_01Jnt
-    100620: l_Finger_04_01JntFk
-    100622: l_Finger_04_01JntIk
-    100624: l_Finger_04_01SHJnt
-    100626: l_Finger_04_02_Ctrl
-    100628: l_Finger_04_02_Ctrl_RestPoseGrp
-    100630: l_Finger_04_02_CtrlGrp
-    100632: l_Finger_04_02_CtrlSdkGrp
-    100634: l_Finger_04_02Jnt
-    100636: l_Finger_04_02JntFk
-    100638: l_Finger_04_02JntIk
-    100640: l_Finger_04_02SHJnt
-    100642: l_Finger_04_03_Ctrl
-    100644: l_Finger_04_03_Ctrl_RestPoseGrp
-    100646: l_Finger_04_03_CtrlGrp
-    100648: l_Finger_04_03_CtrlSdkGrp
-    100650: l_Finger_04_03Jnt
-    100652: l_Finger_04_03JntFk
-    100654: l_Finger_04_03JntIk
-    100656: l_Finger_04_03SHJnt
-    100658: l_Finger_04_04_Ctrl
-    100660: l_Finger_04_04_Ctrl_RestPoseGrp
-    100662: l_Finger_04_04_CtrlGrp
-    100664: l_Finger_04_04_CtrlSdkGrp
-    100666: l_Finger_04_04Jnt
-    100668: l_Finger_04_04JntFk
-    100670: l_Finger_04_04JntIk
-    100672: l_Finger_04_04SHJnt
-    100674: l_Finger_04_SplineCurve
-    100676: l_Finger_04_SplineCurve2Clstr
-    100678: l_Finger_04_SplineCurve3Clstr
-    100680: l_Finger_04_SplineCurveEndClstr
-    100682: l_Finger_04_SplineCurveStartClstr
-    100684: l_Finger_04JntFkGrp
-    100686: l_Finger_04JntFkGrp2
-    100688: l_Finger_04JntGrp
-    100690: l_Finger_04JntGrp2
-    100692: l_Finger_04JntIkGrp
-    100694: l_Finger_04JntIkGrp2
-    100696: l_Finger_curveNodesGrp
-    100698: l_Finger_extraCurveNodesGrp
-    100700: l_Finger_MainChain_CtrlGrp
-    100702: l_Finger_Master_Ctrl
-    100704: l_Finger_Master_CtrlGrp
-    100706: l_Finger_ScaleGrp
-    100708: l_FingerGrp
-    100710: l_Leg_AnkleFk_Ctrl
-    100712: l_Leg_AnkleFk_Ctrl_RestPoseGrp
-    100714: l_Leg_AnkleFk_CtrlGrp
-    100716: l_Leg_AnkleIkLockLctr
-    100718: l_Leg_AnkleJnt
-    100720: l_Leg_AnkleJntFk
-    100722: l_Leg_AnkleJntFkGrp1
-    100724: l_Leg_AnkleJntFkGrp2
-    100726: l_Leg_AnkleJntIk
-    100728: l_Leg_AnkleSHJnt
-    100730: l_Leg_BallFk_Ctrl
-    100732: l_Leg_BallFk_Ctrl_RestPoseGrp
-    100734: l_Leg_BallFk_CtrlGrp
-    100736: l_Leg_BallIk_Ctrl
-    100738: l_Leg_BallIk_Ctrl_RestPoseGrp
-    100740: l_Leg_BallIk_CtrlGrp
-    100742: l_Leg_BallIk_CtrlSdkGrp
-    100744: l_Leg_BallJnt
-    100746: l_Leg_BallJntFk
-    100748: l_Leg_BallJntIk
-    100750: l_Leg_BallSHJnt
-    100752: l_Leg_FootIk_Ctrl
-    100754: l_Leg_FootIk_Ctrl_RestPoseGrp
-    100756: l_Leg_FootIk_CtrlGrp
-    100758: l_Leg_FootPivot_Ctrl
-    100760: l_Leg_FootPivot_Ctrl_RestPoseGrp
-    100762: l_Leg_FootPivot_CtrlGrp
-    100764: l_Leg_HeelIk_Ctrl
-    100766: l_Leg_HeelIk_Ctrl_RestPoseGrp
-    100768: l_Leg_HeelIk_CtrlGrp
-    100770: l_Leg_HeelIk_CtrlSdkGrp
-    100772: l_Leg_HipFk_Ctrl
-    100774: l_Leg_HipFk_Ctrl_RestPoseGrp
-    100776: l_Leg_HipFk_CtrlGrp
-    100778: l_Leg_HipIkLockLctr
-    100780: l_Leg_HipJnt
-    100782: l_Leg_HipJntFk
-    100784: l_Leg_HipJntIk
-    100786: l_Leg_HipSHJnt
-    100788: l_Leg_KneeFk_Ctrl
-    100790: l_Leg_KneeFk_Ctrl_RestPoseGrp
-    100792: l_Leg_KneeFk_CtrlGrp
-    100794: l_Leg_KneeIk_Ctrl
-    100796: l_Leg_KneeIk_Ctrl_AnkleLctr
-    100798: l_Leg_KneeIk_Ctrl_RestPoseGrp
-    100800: l_Leg_KneeIk_CtrlGrp
-    100802: l_Leg_KneeIkLockLctr
-    100804: l_Leg_KneeJnt
-    100806: l_Leg_KneeJntFk
-    100808: l_Leg_KneeJntFkGrp1
-    100810: l_Leg_KneeJntFkGrp2
-    100812: l_Leg_KneeJntIk
-    100814: l_Leg_KneeSHJnt
-    100816: l_Leg_LimbLengthEndLctr
-    100818: l_Leg_LimbLengthOriginLctr
-    100820: l_Leg_LimbLengthSoftLctr
-    100822: l_Leg_ScaleGrp
-    100824: l_Leg_Switch_Ctrl
-    100826: l_Leg_Switch_CtrlGrp
-    100828: l_Leg_ToeFk_Ctrl
-    100830: l_Leg_ToeFk_Ctrl_RestPoseGrp
-    100832: l_Leg_ToeFk_CtrlGrp
-    100834: l_Leg_ToeIk_Ctrl
-    100836: l_Leg_ToeIk_Ctrl_RestPoseGrp
-    100838: l_Leg_ToeIk_CtrlSdkGrp
-    100840: l_Leg_ToeJnt
-    100842: l_Leg_ToeJntFk
-    100844: l_Leg_ToeJntIk
-    100846: l_Leg_ToeSHJnt
-    100848: l_LegGrp
-    100850: l_LegToeIk_CtrlGrp
-    100852: l_Thumb_01_01_Ctrl
-    100854: l_Thumb_01_01_Ctrl_RestPoseGrp
-    100856: l_Thumb_01_01_CtrlGrp
-    100858: l_Thumb_01_01_CtrlSdkGrp
-    100860: l_Thumb_01_01_Spline_Ctrl
-    100862: l_Thumb_01_01_Spline_Ctrl_RestPoseGrp
-    100864: l_Thumb_01_01_Spline_CtrlGrp
-    100866: l_Thumb_01_01_Spline_CtrlGrp2
-    100868: l_Thumb_01_01Jnt
-    100870: l_Thumb_01_01JntFk
-    100872: l_Thumb_01_01JntIk
-    100874: l_Thumb_01_01SHJnt
-    100876: l_Thumb_01_02_Ctrl
-    100878: l_Thumb_01_02_Ctrl_RestPoseGrp
-    100880: l_Thumb_01_02_CtrlGrp
-    100882: l_Thumb_01_02_CtrlSdkGrp
-    100884: l_Thumb_01_02Jnt
-    100886: l_Thumb_01_02JntFk
-    100888: l_Thumb_01_02JntIk
-    100890: l_Thumb_01_02SHJnt
-    100892: l_Thumb_01_03_Ctrl
-    100894: l_Thumb_01_03_Ctrl_RestPoseGrp
-    100896: l_Thumb_01_03_CtrlGrp
-    100898: l_Thumb_01_03_CtrlSdkGrp
-    100900: l_Thumb_01_03Jnt
-    100902: l_Thumb_01_03JntFk
-    100904: l_Thumb_01_03JntIk
-    100906: l_Thumb_01_03SHJnt
-    100908: l_Thumb_01_04_Ctrl
-    100910: l_Thumb_01_04_Ctrl_RestPoseGrp
-    100912: l_Thumb_01_04_CtrlGrp
-    100914: l_Thumb_01_04_CtrlSdkGrp
-    100916: l_Thumb_01_04Jnt
-    100918: l_Thumb_01_04JntFk
-    100920: l_Thumb_01_04JntIk
-    100922: l_Thumb_01_04SHJnt
-    100924: l_Thumb_01_SplineCurve
-    100926: l_Thumb_01_SplineCurve2Clstr
-    100928: l_Thumb_01_SplineCurve3Clstr
-    100930: l_Thumb_01_SplineCurveEndClstr
-    100932: l_Thumb_01_SplineCurveStartClstr
-    100934: l_Thumb_01JntFkGrp
-    100936: l_Thumb_01JntFkGrp2
-    100938: l_Thumb_01JntGrp
-    100940: l_Thumb_01JntGrp2
-    100942: l_Thumb_01JntIkGrp
-    100944: l_Thumb_01JntIkGrp2
-    100946: l_Thumb_curveNodesGrp
-    100948: l_Thumb_extraCurveNodesGrp
-    100950: l_Thumb_MainChain_CtrlGrp
-    100952: l_Thumb_Master_Ctrl
-    100954: l_Thumb_Master_CtrlGrp
-    100956: l_Thumb_ScaleGrp
-    100958: l_ThumbGrp
-    100960: LeftBrow
-    100962: LeftEye
-    100964: LeftShoe
-    100966: MAIN_Ctrl
-    100968: MAIN_Ctrl_RestPoseGrp
-    100970: MAIN_Inner_Ctrl
-    100972: MAIN_Inner_Ctrl_RestPoseGrp
-    100974: MAIN_Offset_Ctrl
-    100976: MAIN_Offset_Ctrl_RestPoseGrp
-    100978: Neck_02Curve_Ctrl
-    100980: Neck_02Curve_Ctrl_RestPoseGrp
-    100982: Neck_02Curve_CtrlGrp
-    100984: Neck_02Jnt
-    100986: Neck_02SHJnt
-    100988: Neck_BtmAimLctr
-    100990: Neck_BtmTargetLctr
-    100992: Neck_MidIk_Ctrl
-    100994: Neck_MidIk_Ctrl_RestPoseGrp
-    100996: Neck_MidIk_CtrlGrp
-    100998: Neck_MidIk_CtrlGrp2
-    101000: Neck_Module
-    101002: Neck_ScaleGrp
-    101004: Neck_TopAimLctr
-    101006: Neck_TopIk_Ctrl
-    101008: Neck_TopIk_Ctrl_RestPoseGrp
-    101010: Neck_TopIk_CtrlGrp
-    101012: Neck_TopJnt
-    101014: Neck_TopSHJnt
-    101016: Neck_TopTargetLctr
-    101018: NeckGrp
-    101020: Pants
-    101022: polySurface1
-    101024: polySurface2
-    101026: polySurface3
-    101028: polySurface4
-    101030: polySurface5
-    101032: r_Arm_Clavicle_Ctrl
-    101034: r_Arm_Clavicle_Ctrl_RestPoseGrp
-    101036: r_Arm_Clavicle_CtrlGrp
-    101038: r_Arm_ClavicleJnt
-    101040: r_Arm_ClavicleSHJnt
-    101042: r_Arm_ElbowFk_Ctrl
-    101044: r_Arm_ElbowFk_Ctrl_RestPoseGrp
-    101046: r_Arm_ElbowFk_CtrlGrp
-    101048: r_Arm_ElbowIk_Ctrl
-    101050: r_Arm_ElbowIk_Ctrl_RestPoseGrp
-    101052: r_Arm_ElbowIk_Ctrl_WristLctr
-    101054: r_Arm_ElbowIk_CtrlGrp
-    101056: r_Arm_ElbowIkLockLctr
-    101058: r_Arm_ElbowJnt
-    101060: r_Arm_ElbowJntFk
-    101062: r_Arm_ElbowJntFkGrp1
-    101064: r_Arm_ElbowJntFkGrp2
-    101066: r_Arm_ElbowJntIk
-    101068: r_Arm_ElbowSHJnt
-    101070: r_Arm_LimbLengthEndLctr
-    101072: r_Arm_LimbLengthOriginLctr
-    101074: r_Arm_LimbLengthSoftLctr
-    101076: r_Arm_ScaleGrp
-    101078: r_Arm_ShoulderFk_Ctrl
-    101080: r_Arm_ShoulderFk_Ctrl_RestPoseGrp
-    101082: r_Arm_ShoulderFk_CtrlGrp
-    101084: r_Arm_ShoulderFk_CtrlGrp2
-    101086: r_Arm_ShoulderIkLockLctr
-    101088: r_Arm_ShoulderJnt
-    101090: r_Arm_ShoulderJntFk
-    101092: r_Arm_ShoulderJntIk
-    101094: r_Arm_ShoulderSHJnt
-    101096: r_Arm_Switch_Ctrl
-    101098: r_Arm_Switch_CtrlGrp
-    101100: r_Arm_WristIk_Ctrl
-    101102: r_Arm_WristIk_Ctrl_RestPoseGrp
-    101104: r_Arm_WristIk_CtrlGrp
-    101106: r_Arm_WristIkLockLctr
-    101108: r_Arm_WristJnt
-    101110: r_Arm_WristJntFk
-    101112: r_Arm_WristJntFkGrp1
-    101114: r_Arm_WristJntFkGrp2
-    101116: r_Arm_WristJntGrp1
-    101118: r_Arm_WristJntGrp2
-    101120: r_Arm_WristJntIk
-    101122: r_Arm_WristPivot_Ctrl
-    101124: r_Arm_WristPivot_Ctrl_RestPoseGrp
-    101126: r_Arm_WristPivot_CtrlGrp
-    101128: r_Arm_WristPivot_Lctr
-    101130: r_Arm_WristSHJnt
-    101132: r_ArmGrp
-    101134: r_Eye_01_Ctrl
-    101136: r_Eye_01_Ctrl_RestPoseGrp
-    101138: r_Eye_01Grp1
-    101140: r_Eye_01Grp2
-    101142: r_Eye_01Jnt
-    101144: r_Eye_01SHJnt
-    101146: r_Eye_Master_Ctrl
-    101148: r_Eye_Master_Ctrl_RestPoseGrp
-    101150: r_Eye_Master_CtrlGrp
-    101152: r_Eye_ScaleGrp
-    101154: r_EyeGrp
-    101156: r_Finger_01_01_Ctrl
-    101158: r_Finger_01_01_Ctrl_RestPoseGrp
-    101160: r_Finger_01_01_CtrlGrp
-    101162: r_Finger_01_01_CtrlSdkGrp
-    101164: r_Finger_01_01_Spline_Ctrl
-    101166: r_Finger_01_01_Spline_Ctrl_RestPoseGrp
-    101168: r_Finger_01_01_Spline_CtrlGrp
-    101170: r_Finger_01_01_Spline_CtrlGrp2
-    101172: r_Finger_01_01Jnt
-    101174: r_Finger_01_01JntFk
-    101176: r_Finger_01_01JntIk
-    101178: r_Finger_01_01JntIkGuide
-    101180: r_Finger_01_01SHJnt
-    101182: r_Finger_01_02_Ctrl
-    101184: r_Finger_01_02_Ctrl_RestPoseGrp
-    101186: r_Finger_01_02_CtrlGrp
-    101188: r_Finger_01_02_CtrlSdkGrp
-    101190: r_Finger_01_02Jnt
-    101192: r_Finger_01_02JntFk
-    101194: r_Finger_01_02JntIk
-    101196: r_Finger_01_02JntIkGuide
-    101198: r_Finger_01_02SHJnt
-    101200: r_Finger_01_03_Ctrl
-    101202: r_Finger_01_03_Ctrl_RestPoseGrp
-    101204: r_Finger_01_03_CtrlGrp
-    101206: r_Finger_01_03_CtrlSdkGrp
-    101208: r_Finger_01_03Jnt
-    101210: r_Finger_01_03JntFk
-    101212: r_Finger_01_03JntIk
-    101214: r_Finger_01_03JntIkGuide
-    101216: r_Finger_01_03SHJnt
-    101218: r_Finger_01_04_Ctrl
-    101220: r_Finger_01_04_Ctrl_RestPoseGrp
-    101222: r_Finger_01_04_CtrlGrp
-    101224: r_Finger_01_04_CtrlSdkGrp
-    101226: r_Finger_01_04Jnt
-    101228: r_Finger_01_04JntFk
-    101230: r_Finger_01_04JntIk
-    101232: r_Finger_01_04JntIkGuide
-    101234: r_Finger_01_04SHJnt
-    101236: r_Finger_01_SplineCurve
-    101238: r_Finger_01_SplineCurve2Clstr
-    101240: r_Finger_01_SplineCurve3Clstr
-    101242: r_Finger_01_SplineCurveEndClstr
-    101244: r_Finger_01_SplineCurveStartClstr
-    101246: r_Finger_01JntFkGrp
-    101248: r_Finger_01JntFkGrp2
-    101250: r_Finger_01JntGrp
-    101252: r_Finger_01JntGrp2
-    101254: r_Finger_01JntIkGrp
-    101256: r_Finger_01JntIkGrp2
-    101258: r_Finger_02_01_Ctrl
-    101260: r_Finger_02_01_Ctrl_RestPoseGrp
-    101262: r_Finger_02_01_CtrlGrp
-    101264: r_Finger_02_01_CtrlOffsetGrp
-    101266: r_Finger_02_01_CtrlSdkGrp
-    101268: r_Finger_02_01_Spline_Ctrl
-    101270: r_Finger_02_01_Spline_Ctrl_RestPoseGrp
-    101272: r_Finger_02_01_Spline_CtrlGrp
-    101274: r_Finger_02_01_Spline_CtrlGrp2
-    101276: r_Finger_02_01_Spline_CtrlOffsetGrp
-    101278: r_Finger_02_01Jnt
-    101280: r_Finger_02_01JntFk
-    101282: r_Finger_02_01JntIk
-    101284: r_Finger_02_01JntIkGuide
-    101286: r_Finger_02_01SHJnt
-    101288: r_Finger_02_02_Ctrl
-    101290: r_Finger_02_02_Ctrl_RestPoseGrp
-    101292: r_Finger_02_02_CtrlGrp
-    101294: r_Finger_02_02_CtrlOffsetGrp
-    101296: r_Finger_02_02_CtrlSdkGrp
-    101298: r_Finger_02_02Jnt
-    101300: r_Finger_02_02JntFk
-    101302: r_Finger_02_02JntIk
-    101304: r_Finger_02_02JntIkGuide
-    101306: r_Finger_02_02SHJnt
-    101308: r_Finger_02_03_Ctrl
-    101310: r_Finger_02_03_Ctrl_RestPoseGrp
-    101312: r_Finger_02_03_CtrlGrp
-    101314: r_Finger_02_03_CtrlOffsetGrp
-    101316: r_Finger_02_03_CtrlSdkGrp
-    101318: r_Finger_02_03Jnt
-    101320: r_Finger_02_03JntFk
-    101322: r_Finger_02_03JntIk
-    101324: r_Finger_02_03JntIkGuide
-    101326: r_Finger_02_03SHJnt
-    101328: r_Finger_02_04_Ctrl
-    101330: r_Finger_02_04_Ctrl_RestPoseGrp
-    101332: r_Finger_02_04_CtrlGrp
-    101334: r_Finger_02_04_CtrlOffsetGrp
-    101336: r_Finger_02_04_CtrlSdkGrp
-    101338: r_Finger_02_04Jnt
-    101340: r_Finger_02_04JntFk
-    101342: r_Finger_02_04JntIk
-    101344: r_Finger_02_04JntIkGuide
-    101346: r_Finger_02_04SHJnt
-    101348: r_Finger_02_SplineCurve
-    101350: r_Finger_02_SplineCurve2Clstr
-    101352: r_Finger_02_SplineCurve3Clstr
-    101354: r_Finger_02_SplineCurveEndClstr
-    101356: r_Finger_02_SplineCurveStartClstr
-    101358: r_Finger_02JntFkGrp
-    101360: r_Finger_02JntFkGrp2
-    101362: r_Finger_02JntGrp
-    101364: r_Finger_02JntGrp2
-    101366: r_Finger_02JntIkGrp
-    101368: r_Finger_02JntIkGrp2
-    101370: r_Finger_03_01_Ctrl
-    101372: r_Finger_03_01_Ctrl_RestPoseGrp
-    101374: r_Finger_03_01_CtrlGrp
-    101376: r_Finger_03_01_CtrlOffsetGrp
-    101378: r_Finger_03_01_CtrlSdkGrp
-    101380: r_Finger_03_01_Spline_Ctrl
-    101382: r_Finger_03_01_Spline_Ctrl_RestPoseGrp
-    101384: r_Finger_03_01_Spline_CtrlGrp
-    101386: r_Finger_03_01_Spline_CtrlGrp2
-    101388: r_Finger_03_01_Spline_CtrlOffsetGrp
-    101390: r_Finger_03_01Jnt
-    101392: r_Finger_03_01JntFk
-    101394: r_Finger_03_01JntIk
-    101396: r_Finger_03_01JntIkGuide
-    101398: r_Finger_03_01SHJnt
-    101400: r_Finger_03_02_Ctrl
-    101402: r_Finger_03_02_Ctrl_RestPoseGrp
-    101404: r_Finger_03_02_CtrlGrp
-    101406: r_Finger_03_02_CtrlOffsetGrp
-    101408: r_Finger_03_02_CtrlSdkGrp
-    101410: r_Finger_03_02Jnt
-    101412: r_Finger_03_02JntFk
-    101414: r_Finger_03_02JntIk
-    101416: r_Finger_03_02JntIkGuide
-    101418: r_Finger_03_02SHJnt
-    101420: r_Finger_03_03_Ctrl
-    101422: r_Finger_03_03_Ctrl_RestPoseGrp
-    101424: r_Finger_03_03_CtrlGrp
-    101426: r_Finger_03_03_CtrlOffsetGrp
-    101428: r_Finger_03_03_CtrlSdkGrp
-    101430: r_Finger_03_03Jnt
-    101432: r_Finger_03_03JntFk
-    101434: r_Finger_03_03JntIk
-    101436: r_Finger_03_03JntIkGuide
-    101438: r_Finger_03_03SHJnt
-    101440: r_Finger_03_04_Ctrl
-    101442: r_Finger_03_04_Ctrl_RestPoseGrp
-    101444: r_Finger_03_04_CtrlGrp
-    101446: r_Finger_03_04_CtrlOffsetGrp
-    101448: r_Finger_03_04_CtrlSdkGrp
-    101450: r_Finger_03_04Jnt
-    101452: r_Finger_03_04JntFk
-    101454: r_Finger_03_04JntIk
-    101456: r_Finger_03_04JntIkGuide
-    101458: r_Finger_03_04SHJnt
-    101460: r_Finger_03_SplineCurve
-    101462: r_Finger_03_SplineCurve2Clstr
-    101464: r_Finger_03_SplineCurve3Clstr
-    101466: r_Finger_03_SplineCurveEndClstr
-    101468: r_Finger_03_SplineCurveStartClstr
-    101470: r_Finger_03JntFkGrp
-    101472: r_Finger_03JntFkGrp2
-    101474: r_Finger_03JntGrp
-    101476: r_Finger_03JntGrp2
-    101478: r_Finger_03JntIkGrp
-    101480: r_Finger_03JntIkGrp2
-    101482: r_Finger_04_01_Ctrl
-    101484: r_Finger_04_01_Ctrl_RestPoseGrp
-    101486: r_Finger_04_01_CtrlGrp
-    101488: r_Finger_04_01_CtrlSdkGrp
-    101490: r_Finger_04_01_Spline_Ctrl
-    101492: r_Finger_04_01_Spline_Ctrl_RestPoseGrp
-    101494: r_Finger_04_01_Spline_CtrlGrp
-    101496: r_Finger_04_01_Spline_CtrlGrp2
-    101498: r_Finger_04_01Jnt
-    101500: r_Finger_04_01JntFk
-    101502: r_Finger_04_01JntIk
-    101504: r_Finger_04_01JntIkGuide
-    101506: r_Finger_04_01SHJnt
-    101508: r_Finger_04_02_Ctrl
-    101510: r_Finger_04_02_Ctrl_RestPoseGrp
-    101512: r_Finger_04_02_CtrlGrp
-    101514: r_Finger_04_02_CtrlSdkGrp
-    101516: r_Finger_04_02Jnt
-    101518: r_Finger_04_02JntFk
-    101520: r_Finger_04_02JntIk
-    101522: r_Finger_04_02JntIkGuide
-    101524: r_Finger_04_02SHJnt
-    101526: r_Finger_04_03_Ctrl
-    101528: r_Finger_04_03_Ctrl_RestPoseGrp
-    101530: r_Finger_04_03_CtrlGrp
-    101532: r_Finger_04_03_CtrlSdkGrp
-    101534: r_Finger_04_03Jnt
-    101536: r_Finger_04_03JntFk
-    101538: r_Finger_04_03JntIk
-    101540: r_Finger_04_03JntIkGuide
-    101542: r_Finger_04_03SHJnt
-    101544: r_Finger_04_04_Ctrl
-    101546: r_Finger_04_04_Ctrl_RestPoseGrp
-    101548: r_Finger_04_04_CtrlGrp
-    101550: r_Finger_04_04_CtrlSdkGrp
-    101552: r_Finger_04_04Jnt
-    101554: r_Finger_04_04JntFk
-    101556: r_Finger_04_04JntIk
-    101558: r_Finger_04_04JntIkGuide
-    101560: r_Finger_04_04SHJnt
-    101562: r_Finger_04_SplineCurve
-    101564: r_Finger_04_SplineCurve2Clstr
-    101566: r_Finger_04_SplineCurve3Clstr
-    101568: r_Finger_04_SplineCurveEndClstr
-    101570: r_Finger_04_SplineCurveStartClstr
-    101572: r_Finger_04JntFkGrp
-    101574: r_Finger_04JntFkGrp2
-    101576: r_Finger_04JntGrp
-    101578: r_Finger_04JntGrp2
-    101580: r_Finger_04JntIkGrp
-    101582: r_Finger_04JntIkGrp2
-    101584: r_Finger_curveNodesGrp
-    101586: r_Finger_extraCurveNodesGrp
-    101588: r_Finger_MainChain_CtrlGrp
-    101590: r_Finger_Master_Ctrl
-    101592: r_Finger_Master_CtrlGrp
-    101594: r_Finger_ScaleGrp
-    101596: r_FingerGrp
-    101598: r_Leg_AnkleFk_Ctrl
-    101600: r_Leg_AnkleFk_Ctrl_RestPoseGrp
-    101602: r_Leg_AnkleFk_CtrlGrp
-    101604: r_Leg_AnkleIkLockLctr
-    101606: r_Leg_AnkleJnt
-    101608: r_Leg_AnkleJntFk
-    101610: r_Leg_AnkleJntFkGrp1
-    101612: r_Leg_AnkleJntFkGrp2
-    101614: r_Leg_AnkleJntIk
-    101616: r_Leg_AnkleSHJnt
-    101618: r_Leg_BallFk_Ctrl
-    101620: r_Leg_BallFk_Ctrl_RestPoseGrp
-    101622: r_Leg_BallFk_CtrlGrp
-    101624: r_Leg_BallIk_Ctrl
-    101626: r_Leg_BallIk_Ctrl_RestPoseGrp
-    101628: r_Leg_BallIk_CtrlGrp
-    101630: r_Leg_BallIk_CtrlSdkGrp
-    101632: r_Leg_BallJnt
-    101634: r_Leg_BallJntFk
-    101636: r_Leg_BallJntIk
-    101638: r_Leg_BallSHJnt
-    101640: r_Leg_FootIk_Ctrl
-    101642: r_Leg_FootIk_Ctrl_RestPoseGrp
-    101644: r_Leg_FootIk_CtrlGrp
-    101646: r_Leg_FootPivot_Ctrl
-    101648: r_Leg_FootPivot_Ctrl_RestPoseGrp
-    101650: r_Leg_FootPivot_CtrlGrp
-    101652: r_Leg_HeelIk_Ctrl
-    101654: r_Leg_HeelIk_Ctrl_RestPoseGrp
-    101656: r_Leg_HeelIk_CtrlGrp
-    101658: r_Leg_HeelIk_CtrlSdkGrp
-    101660: r_Leg_HipFk_Ctrl
-    101662: r_Leg_HipFk_Ctrl_RestPoseGrp
-    101664: r_Leg_HipFk_CtrlGrp
-    101666: r_Leg_HipIkLockLctr
-    101668: r_Leg_HipJnt
-    101670: r_Leg_HipJntFk
-    101672: r_Leg_HipJntIk
-    101674: r_Leg_HipSHJnt
-    101676: r_Leg_KneeFk_Ctrl
-    101678: r_Leg_KneeFk_Ctrl_RestPoseGrp
-    101680: r_Leg_KneeFk_CtrlGrp
-    101682: r_Leg_KneeIk_Ctrl
-    101684: r_Leg_KneeIk_Ctrl_AnkleLctr
-    101686: r_Leg_KneeIk_Ctrl_RestPoseGrp
-    101688: r_Leg_KneeIk_CtrlGrp
-    101690: r_Leg_KneeIkLockLctr
-    101692: r_Leg_KneeJnt
-    101694: r_Leg_KneeJntFk
-    101696: r_Leg_KneeJntFkGrp1
-    101698: r_Leg_KneeJntFkGrp2
-    101700: r_Leg_KneeJntIk
-    101702: r_Leg_KneeSHJnt
-    101704: r_Leg_LimbLengthEndLctr
-    101706: r_Leg_LimbLengthOriginLctr
-    101708: r_Leg_LimbLengthSoftLctr
-    101710: r_Leg_ScaleGrp
-    101712: r_Leg_Switch_Ctrl
-    101714: r_Leg_Switch_CtrlGrp
-    101716: r_Leg_ToeFk_Ctrl
-    101718: r_Leg_ToeFk_Ctrl_RestPoseGrp
-    101720: r_Leg_ToeFk_CtrlGrp
-    101722: r_Leg_ToeIk_Ctrl
-    101724: r_Leg_ToeIk_Ctrl_RestPoseGrp
-    101726: r_Leg_ToeIk_CtrlSdkGrp
-    101728: r_Leg_ToeJnt
-    101730: r_Leg_ToeJntFk
-    101732: r_Leg_ToeJntIk
-    101734: r_Leg_ToeSHJnt
-    101736: r_LegGrp
-    101738: r_LegToeIk_CtrlGrp
-    101740: r_Thumb_01_01_Ctrl
-    101742: r_Thumb_01_01_Ctrl_RestPoseGrp
-    101744: r_Thumb_01_01_CtrlGrp
-    101746: r_Thumb_01_01_CtrlSdkGrp
-    101748: r_Thumb_01_01_Spline_Ctrl
-    101750: r_Thumb_01_01_Spline_Ctrl_RestPoseGrp
-    101752: r_Thumb_01_01_Spline_CtrlGrp
-    101754: r_Thumb_01_01_Spline_CtrlGrp2
-    101756: r_Thumb_01_01Jnt
-    101758: r_Thumb_01_01JntFk
-    101760: r_Thumb_01_01JntIk
-    101762: r_Thumb_01_01JntIkGuide
-    101764: r_Thumb_01_01SHJnt
-    101766: r_Thumb_01_02_Ctrl
-    101768: r_Thumb_01_02_Ctrl_RestPoseGrp
-    101770: r_Thumb_01_02_CtrlGrp
-    101772: r_Thumb_01_02_CtrlSdkGrp
-    101774: r_Thumb_01_02Jnt
-    101776: r_Thumb_01_02JntFk
-    101778: r_Thumb_01_02JntIk
-    101780: r_Thumb_01_02JntIkGuide
-    101782: r_Thumb_01_02SHJnt
-    101784: r_Thumb_01_03_Ctrl
-    101786: r_Thumb_01_03_Ctrl_RestPoseGrp
-    101788: r_Thumb_01_03_CtrlGrp
-    101790: r_Thumb_01_03_CtrlSdkGrp
-    101792: r_Thumb_01_03Jnt
-    101794: r_Thumb_01_03JntFk
-    101796: r_Thumb_01_03JntIk
-    101798: r_Thumb_01_03JntIkGuide
-    101800: r_Thumb_01_03SHJnt
-    101802: r_Thumb_01_04_Ctrl
-    101804: r_Thumb_01_04_Ctrl_RestPoseGrp
-    101806: r_Thumb_01_04_CtrlGrp
-    101808: r_Thumb_01_04_CtrlSdkGrp
-    101810: r_Thumb_01_04Jnt
-    101812: r_Thumb_01_04JntFk
-    101814: r_Thumb_01_04JntIk
-    101816: r_Thumb_01_04JntIkGuide
-    101818: r_Thumb_01_04SHJnt
-    101820: r_Thumb_01_SplineCurve
-    101822: r_Thumb_01_SplineCurve2Clstr
-    101824: r_Thumb_01_SplineCurve3Clstr
-    101826: r_Thumb_01_SplineCurveEndClstr
-    101828: r_Thumb_01_SplineCurveStartClstr
-    101830: r_Thumb_01JntFkGrp
-    101832: r_Thumb_01JntFkGrp2
-    101834: r_Thumb_01JntGrp
-    101836: r_Thumb_01JntGrp2
-    101838: r_Thumb_01JntIkGrp
-    101840: r_Thumb_01JntIkGrp2
-    101842: r_Thumb_curveNodesGrp
-    101844: r_Thumb_extraCurveNodesGrp
-    101846: r_Thumb_MainChain_CtrlGrp
-    101848: r_Thumb_Master_Ctrl
-    101850: r_Thumb_Master_CtrlGrp
-    101852: r_Thumb_ScaleGrp
-    101854: r_ThumbGrp
-    101856: RightBrow
-    101858: RightEye
-    101860: RightShoe
-    101862: ROOT_Ctrl
-    101864: ROOT_Ctrl_RestPoseGrp
-    101866: ROOT_CtrlGrp
-    101868: ROOTGrp
-    101870: ROOTJnt
-    101872: ROOTParent_CtrlGrp2
-    101874: ROOTSecondary_Ctrl
-    101876: ROOTSecondary_Ctrl_RestPoseGrp
-    101878: ROOTSHJnt
-    101880: SHJntGrp
-    101882: Shoes
-    101884: Skin
-    101886: Spine_01Curve_Ctrl
-    101888: Spine_01Curve_Ctrl_RestPoseGrp
-    101890: Spine_01Curve_CtrlGrp
-    101892: Spine_01Jnt
-    101894: Spine_01SHJnt
-    101896: Spine_02Curve_Ctrl
-    101898: Spine_02Curve_Ctrl_RestPoseGrp
-    101900: Spine_02Curve_CtrlGrp
-    101902: Spine_02Jnt
-    101904: Spine_02SHJnt
-    101906: Spine_03Curve_Ctrl
-    101908: Spine_03Curve_Ctrl_RestPoseGrp
-    101910: Spine_03Curve_CtrlGrp
-    101912: Spine_03Jnt
-    101914: Spine_03SHJnt
-    101916: Spine_04Curve_Ctrl
-    101918: Spine_04Curve_Ctrl_RestPoseGrp
-    101920: Spine_04Curve_CtrlGrp
-    101922: Spine_04Jnt
-    101924: Spine_04SHJnt
-    101926: Spine_BtmAimLctr
-    101928: Spine_BtmTargetLctr
-    101930: Spine_MidIk_Ctrl
-    101932: Spine_MidIk_Ctrl_RestPoseGrp
-    101934: Spine_MidIk_CtrlGrp
-    101936: Spine_MidIk_CtrlGrp2
-    101938: Spine_Module
-    101940: Spine_ScaleGrp
-    101942: Spine_TopAimLctr
-    101944: Spine_TopIk_Ctrl
-    101946: Spine_TopIk_Ctrl_RestPoseGrp
-    101948: Spine_TopIk_CtrlGrp
-    101950: Spine_TopJnt
-    101952: Spine_TopSHJnt
-    101954: Spine_TopTargetLctr
-    101956: SpineGrp
-    101958: Sweater
-    101960: Tongue
-    101962: TopTeeth
-    101964: transform1
+    100012: EyeBrows
+    100014: Face
+    100016: FrontHair
+    100018: Glasses
+    100020: Head_JawEndSHJnt
+    100022: Head_JawSHJnt
+    100024: Head_TopSHJnt
+    100026: Hood
+    100028: Hoodie
+    100030: joint1
+    100032: joint10
+    100034: joint11
+    100036: joint12
+    100038: joint13
+    100040: joint14
+    100042: joint15
+    100044: joint16
+    100046: joint17
+    100048: joint18
+    100050: joint19
+    100052: joint2
+    100054: joint20
+    100056: joint21
+    100058: joint22
+    100060: joint23
+    100062: joint24
+    100064: joint25
+    100066: joint26
+    100068: joint27
+    100070: joint28
+    100072: joint29
+    100074: joint3
+    100076: joint30
+    100078: joint31
+    100080: joint32
+    100082: joint33
+    100084: joint34
+    100086: joint35
+    100088: joint36
+    100090: joint37
+    100092: joint38
+    100094: joint39
+    100096: joint4
+    100098: joint40
+    100100: joint41
+    100102: joint42
+    100104: joint43
+    100106: joint44
+    100108: joint45
+    100110: joint46
+    100112: joint47
+    100114: joint48
+    100116: joint49
+    100118: joint5
+    100120: joint50
+    100122: joint51
+    100124: joint52
+    100126: joint53
+    100128: joint54
+    100130: joint55
+    100132: joint56
+    100134: joint57
+    100136: joint58
+    100138: joint59
+    100140: joint6
+    100142: joint7
+    100144: joint8
+    100146: joint9
+    100148: l_Arm_ClavicleSHJnt
+    100150: l_Arm_ElbowSHJnt
+    100152: l_Arm_ShoulderSHJnt
+    100154: l_Arm_WristSHJnt
+    100156: l_Eye_01SHJnt
+    100158: l_Finger_01_01SHJnt
+    100160: l_Finger_01_02SHJnt
+    100162: l_Finger_01_03SHJnt
+    100164: l_Finger_01_04SHJnt
+    100166: l_Finger_02_01SHJnt
+    100168: l_Finger_02_02SHJnt
+    100170: l_Finger_02_03SHJnt
+    100172: l_Finger_02_04SHJnt
+    100174: l_Finger_03_01SHJnt
+    100176: l_Finger_03_02SHJnt
+    100178: l_Finger_03_03SHJnt
+    100180: l_Finger_03_04SHJnt
+    100182: l_Finger_04_01SHJnt
+    100184: l_Finger_04_02SHJnt
+    100186: l_Finger_04_03SHJnt
+    100188: l_Finger_04_04SHJnt
+    100190: l_Leg_AnkleSHJnt
+    100192: l_Leg_BallSHJnt
+    100194: l_Leg_HipSHJnt
+    100196: l_Leg_KneeSHJnt
+    100198: l_Leg_ToeSHJnt
+    100200: l_Thumb_01_01SHJnt
+    100202: l_Thumb_01_02SHJnt
+    100204: l_Thumb_01_03SHJnt
+    100206: l_Thumb_01_04SHJnt
+    100208: LeftBrow
+    100210: LeftEye
+    100212: LeftShoe
+    100214: Neck_02SHJnt
+    100216: Neck_TopSHJnt
+    100218: Pants
+    100220: r_Arm_ClavicleSHJnt
+    100222: r_Arm_ElbowSHJnt
+    100224: r_Arm_ShoulderSHJnt
+    100226: r_Arm_WristSHJnt
+    100228: r_Eye_01SHJnt
+    100230: r_Finger_01_01SHJnt
+    100232: r_Finger_01_02SHJnt
+    100234: r_Finger_01_03SHJnt
+    100236: r_Finger_01_04SHJnt
+    100238: r_Finger_02_01SHJnt
+    100240: r_Finger_02_02SHJnt
+    100242: r_Finger_02_03SHJnt
+    100244: r_Finger_02_04SHJnt
+    100246: r_Finger_03_01SHJnt
+    100248: r_Finger_03_02SHJnt
+    100250: r_Finger_03_03SHJnt
+    100252: r_Finger_03_04SHJnt
+    100254: r_Finger_04_01SHJnt
+    100256: r_Finger_04_02SHJnt
+    100258: r_Finger_04_03SHJnt
+    100260: r_Finger_04_04SHJnt
+    100262: r_Leg_AnkleSHJnt
+    100264: r_Leg_BallSHJnt
+    100266: r_Leg_HipSHJnt
+    100268: r_Leg_KneeSHJnt
+    100270: r_Leg_ToeSHJnt
+    100272: r_Thumb_01_01SHJnt
+    100274: r_Thumb_01_02SHJnt
+    100276: r_Thumb_01_03SHJnt
+    100278: r_Thumb_01_04SHJnt
+    100280: RightBrow
+    100282: RightEye
+    100284: RightShoe
+    100286: ROOTSHJnt
+    100288: SHJntGrp
+    100290: Shoes
+    100292: Skin
+    100294: Spine_01SHJnt
+    100296: Spine_02SHJnt
+    100298: Spine_03SHJnt
+    100300: Spine_04SHJnt
+    100302: Spine_TopSHJnt
+    100304: Sweater
+    100306: Tongue
+    100308: TopTeeth
     400000: Accessories
     400002: Alyssa_Taylor1
     400004: //RootNode
     400006: BackHair
     400008: Body
     400010: BottomTeeth
-    400012: ControlRig
-    400014: EyeBrows
-    400016: Face
-    400018: FrontHair
-    400020: Glasses
-    400022: Hairband
-    400024: Hairband 1
-    400026: Head_Jaw_Ctrl
-    400028: Head_Jaw_Ctrl_RestPoseGrp
-    400030: Head_Jaw_CtrlGrp
-    400032: Head_JawEndJnt
-    400034: Head_JawEndSHJnt
-    400036: Head_JawJnt
-    400038: Head_JawSHJnt
-    400040: Head_Master_CtrlScaleGrp
-    400042: Head_ScaleGrp
-    400044: Head_TopJnt
-    400046: Head_TopSHJnt
-    400048: HeadGrp
-    400050: Hood
-    400052: Hoodie
-    400054: joint1
-    400056: joint10
-    400058: joint11
-    400060: joint12
-    400062: joint13
-    400064: joint14
-    400066: joint15
-    400068: joint16
-    400070: joint17
-    400072: joint18
-    400074: joint19
-    400076: joint2
-    400078: joint20
-    400080: joint21
-    400082: joint22
-    400084: joint23
-    400086: joint24
-    400088: joint25
-    400090: joint26
-    400092: joint27
-    400094: joint28
-    400096: joint29
-    400098: joint3
-    400100: joint30
-    400102: joint31
-    400104: joint32
-    400106: joint33
-    400108: joint34
-    400110: joint35
-    400112: joint36
-    400114: joint37
-    400116: joint38
-    400118: joint39
-    400120: joint4
-    400122: joint40
-    400124: joint41
-    400126: joint42
-    400128: joint43
-    400130: joint44
-    400132: joint45
-    400134: joint46
-    400136: joint47
-    400138: joint48
-    400140: joint49
-    400142: joint5
-    400144: joint50
-    400146: joint51
-    400148: joint52
-    400150: joint53
-    400152: joint54
-    400154: joint55
-    400156: joint56
-    400158: joint57
-    400160: joint58
-    400162: joint59
-    400164: joint6
-    400166: joint60
-    400168: joint61
-    400170: joint7
-    400172: joint8
-    400174: joint9
-    400176: l_Arm_Clavicle_Ctrl
-    400178: l_Arm_Clavicle_Ctrl_RestPoseGrp
-    400180: l_Arm_Clavicle_CtrlGrp
-    400182: l_Arm_ClavicleJnt
-    400184: l_Arm_ClavicleSHJnt
-    400186: l_Arm_ElbowFk_Ctrl
-    400188: l_Arm_ElbowFk_Ctrl_RestPoseGrp
-    400190: l_Arm_ElbowFk_CtrlGrp
-    400192: l_Arm_ElbowIk_Ctrl
-    400194: l_Arm_ElbowIk_Ctrl_RestPoseGrp
-    400196: l_Arm_ElbowIk_Ctrl_WristLctr
-    400198: l_Arm_ElbowIk_CtrlGrp
-    400200: l_Arm_ElbowIkLockLctr
-    400202: l_Arm_ElbowJnt
-    400204: l_Arm_ElbowJntFk
-    400206: l_Arm_ElbowJntFkGrp1
-    400208: l_Arm_ElbowJntFkGrp2
-    400210: l_Arm_ElbowJntIk
-    400212: l_Arm_ElbowSHJnt
-    400214: l_Arm_LimbLengthEndLctr
-    400216: l_Arm_LimbLengthOriginLctr
-    400218: l_Arm_LimbLengthSoftLctr
-    400220: l_Arm_ScaleGrp
-    400222: l_Arm_ShoulderFk_Ctrl
-    400224: l_Arm_ShoulderFk_Ctrl_RestPoseGrp
-    400226: l_Arm_ShoulderFk_CtrlGrp
-    400228: l_Arm_ShoulderFk_CtrlGrp2
-    400230: l_Arm_ShoulderIkLockLctr
-    400232: l_Arm_ShoulderJnt
-    400234: l_Arm_ShoulderJntFk
-    400236: l_Arm_ShoulderJntIk
-    400238: l_Arm_ShoulderSHJnt
-    400240: l_Arm_Switch_Ctrl
-    400242: l_Arm_Switch_CtrlGrp
-    400244: l_Arm_WristIk_Ctrl
-    400246: l_Arm_WristIk_Ctrl_RestPoseGrp
-    400248: l_Arm_WristIk_CtrlGrp
-    400250: l_Arm_WristIkLockLctr
-    400252: l_Arm_WristJnt
-    400254: l_Arm_WristJntFk
-    400256: l_Arm_WristJntFkGrp1
-    400258: l_Arm_WristJntFkGrp2
-    400260: l_Arm_WristJntGrp1
-    400262: l_Arm_WristJntGrp2
-    400264: l_Arm_WristJntIk
-    400266: l_Arm_WristPivot_Ctrl
-    400268: l_Arm_WristPivot_Ctrl_RestPoseGrp
-    400270: l_Arm_WristPivot_CtrlGrp
-    400272: l_Arm_WristPivot_Lctr
-    400274: l_Arm_WristSHJnt
-    400276: l_ArmGrp
-    400278: l_Eye_01_Ctrl
-    400280: l_Eye_01_Ctrl_RestPoseGrp
-    400282: l_Eye_01Grp1
-    400284: l_Eye_01Grp2
-    400286: l_Eye_01Jnt
-    400288: l_Eye_01SHJnt
-    400290: l_Eye_Master_Ctrl
-    400292: l_Eye_Master_Ctrl_RestPoseGrp
-    400294: l_Eye_Master_CtrlGrp
-    400296: l_Eye_ScaleGrp
-    400298: l_EyeGrp
-    400300: l_Finger_01_01_Ctrl
-    400302: l_Finger_01_01_Ctrl_RestPoseGrp
-    400304: l_Finger_01_01_CtrlGrp
-    400306: l_Finger_01_01_CtrlSdkGrp
-    400308: l_Finger_01_01_Spline_Ctrl
-    400310: l_Finger_01_01_Spline_Ctrl_RestPoseGrp
-    400312: l_Finger_01_01_Spline_CtrlGrp
-    400314: l_Finger_01_01_Spline_CtrlGrp2
-    400316: l_Finger_01_01Jnt
-    400318: l_Finger_01_01JntFk
-    400320: l_Finger_01_01JntIk
-    400322: l_Finger_01_01SHJnt
-    400324: l_Finger_01_02_Ctrl
-    400326: l_Finger_01_02_Ctrl_RestPoseGrp
-    400328: l_Finger_01_02_CtrlGrp
-    400330: l_Finger_01_02_CtrlSdkGrp
-    400332: l_Finger_01_02Jnt
-    400334: l_Finger_01_02JntFk
-    400336: l_Finger_01_02JntIk
-    400338: l_Finger_01_02SHJnt
-    400340: l_Finger_01_03_Ctrl
-    400342: l_Finger_01_03_Ctrl_RestPoseGrp
-    400344: l_Finger_01_03_CtrlGrp
-    400346: l_Finger_01_03_CtrlSdkGrp
-    400348: l_Finger_01_03Jnt
-    400350: l_Finger_01_03JntFk
-    400352: l_Finger_01_03JntIk
-    400354: l_Finger_01_03SHJnt
-    400356: l_Finger_01_04_Ctrl
-    400358: l_Finger_01_04_Ctrl_RestPoseGrp
-    400360: l_Finger_01_04_CtrlGrp
-    400362: l_Finger_01_04_CtrlSdkGrp
-    400364: l_Finger_01_04Jnt
-    400366: l_Finger_01_04JntFk
-    400368: l_Finger_01_04JntIk
-    400370: l_Finger_01_04SHJnt
-    400372: l_Finger_01_SplineCurve
-    400374: l_Finger_01_SplineCurve2Clstr
-    400376: l_Finger_01_SplineCurve3Clstr
-    400378: l_Finger_01_SplineCurveEndClstr
-    400380: l_Finger_01_SplineCurveStartClstr
-    400382: l_Finger_01JntFkGrp
-    400384: l_Finger_01JntFkGrp2
-    400386: l_Finger_01JntGrp
-    400388: l_Finger_01JntGrp2
-    400390: l_Finger_01JntIkGrp
-    400392: l_Finger_01JntIkGrp2
-    400394: l_Finger_02_01_Ctrl
-    400396: l_Finger_02_01_Ctrl_RestPoseGrp
-    400398: l_Finger_02_01_CtrlGrp
-    400400: l_Finger_02_01_CtrlOffsetGrp
-    400402: l_Finger_02_01_CtrlSdkGrp
-    400404: l_Finger_02_01_Spline_Ctrl
-    400406: l_Finger_02_01_Spline_Ctrl_RestPoseGrp
-    400408: l_Finger_02_01_Spline_CtrlGrp
-    400410: l_Finger_02_01_Spline_CtrlGrp2
-    400412: l_Finger_02_01_Spline_CtrlOffsetGrp
-    400414: l_Finger_02_01Jnt
-    400416: l_Finger_02_01JntFk
-    400418: l_Finger_02_01JntIk
-    400420: l_Finger_02_01SHJnt
-    400422: l_Finger_02_02_Ctrl
-    400424: l_Finger_02_02_Ctrl_RestPoseGrp
-    400426: l_Finger_02_02_CtrlGrp
-    400428: l_Finger_02_02_CtrlOffsetGrp
-    400430: l_Finger_02_02_CtrlSdkGrp
-    400432: l_Finger_02_02Jnt
-    400434: l_Finger_02_02JntFk
-    400436: l_Finger_02_02JntIk
-    400438: l_Finger_02_02SHJnt
-    400440: l_Finger_02_03_Ctrl
-    400442: l_Finger_02_03_Ctrl_RestPoseGrp
-    400444: l_Finger_02_03_CtrlGrp
-    400446: l_Finger_02_03_CtrlOffsetGrp
-    400448: l_Finger_02_03_CtrlSdkGrp
-    400450: l_Finger_02_03Jnt
-    400452: l_Finger_02_03JntFk
-    400454: l_Finger_02_03JntIk
-    400456: l_Finger_02_03SHJnt
-    400458: l_Finger_02_04_Ctrl
-    400460: l_Finger_02_04_Ctrl_RestPoseGrp
-    400462: l_Finger_02_04_CtrlGrp
-    400464: l_Finger_02_04_CtrlOffsetGrp
-    400466: l_Finger_02_04_CtrlSdkGrp
-    400468: l_Finger_02_04Jnt
-    400470: l_Finger_02_04JntFk
-    400472: l_Finger_02_04JntIk
-    400474: l_Finger_02_04SHJnt
-    400476: l_Finger_02_SplineCurve
-    400478: l_Finger_02_SplineCurve2Clstr
-    400480: l_Finger_02_SplineCurve3Clstr
-    400482: l_Finger_02_SplineCurveEndClstr
-    400484: l_Finger_02_SplineCurveStartClstr
-    400486: l_Finger_02JntFkGrp
-    400488: l_Finger_02JntFkGrp2
-    400490: l_Finger_02JntGrp
-    400492: l_Finger_02JntGrp2
-    400494: l_Finger_02JntIkGrp
-    400496: l_Finger_02JntIkGrp2
-    400498: l_Finger_03_01_Ctrl
-    400500: l_Finger_03_01_Ctrl_RestPoseGrp
-    400502: l_Finger_03_01_CtrlGrp
-    400504: l_Finger_03_01_CtrlOffsetGrp
-    400506: l_Finger_03_01_CtrlSdkGrp
-    400508: l_Finger_03_01_Spline_Ctrl
-    400510: l_Finger_03_01_Spline_Ctrl_RestPoseGrp
-    400512: l_Finger_03_01_Spline_CtrlGrp
-    400514: l_Finger_03_01_Spline_CtrlGrp2
-    400516: l_Finger_03_01_Spline_CtrlOffsetGrp
-    400518: l_Finger_03_01Jnt
-    400520: l_Finger_03_01JntFk
-    400522: l_Finger_03_01JntIk
-    400524: l_Finger_03_01SHJnt
-    400526: l_Finger_03_02_Ctrl
-    400528: l_Finger_03_02_Ctrl_RestPoseGrp
-    400530: l_Finger_03_02_CtrlGrp
-    400532: l_Finger_03_02_CtrlOffsetGrp
-    400534: l_Finger_03_02_CtrlSdkGrp
-    400536: l_Finger_03_02Jnt
-    400538: l_Finger_03_02JntFk
-    400540: l_Finger_03_02JntIk
-    400542: l_Finger_03_02SHJnt
-    400544: l_Finger_03_03_Ctrl
-    400546: l_Finger_03_03_Ctrl_RestPoseGrp
-    400548: l_Finger_03_03_CtrlGrp
-    400550: l_Finger_03_03_CtrlOffsetGrp
-    400552: l_Finger_03_03_CtrlSdkGrp
-    400554: l_Finger_03_03Jnt
-    400556: l_Finger_03_03JntFk
-    400558: l_Finger_03_03JntIk
-    400560: l_Finger_03_03SHJnt
-    400562: l_Finger_03_04_Ctrl
-    400564: l_Finger_03_04_Ctrl_RestPoseGrp
-    400566: l_Finger_03_04_CtrlGrp
-    400568: l_Finger_03_04_CtrlOffsetGrp
-    400570: l_Finger_03_04_CtrlSdkGrp
-    400572: l_Finger_03_04Jnt
-    400574: l_Finger_03_04JntFk
-    400576: l_Finger_03_04JntIk
-    400578: l_Finger_03_04SHJnt
-    400580: l_Finger_03_SplineCurve
-    400582: l_Finger_03_SplineCurve2Clstr
-    400584: l_Finger_03_SplineCurve3Clstr
-    400586: l_Finger_03_SplineCurveEndClstr
-    400588: l_Finger_03_SplineCurveStartClstr
-    400590: l_Finger_03JntFkGrp
-    400592: l_Finger_03JntFkGrp2
-    400594: l_Finger_03JntGrp
-    400596: l_Finger_03JntGrp2
-    400598: l_Finger_03JntIkGrp
-    400600: l_Finger_03JntIkGrp2
-    400602: l_Finger_04_01_Ctrl
-    400604: l_Finger_04_01_Ctrl_RestPoseGrp
-    400606: l_Finger_04_01_CtrlGrp
-    400608: l_Finger_04_01_CtrlSdkGrp
-    400610: l_Finger_04_01_Spline_Ctrl
-    400612: l_Finger_04_01_Spline_Ctrl_RestPoseGrp
-    400614: l_Finger_04_01_Spline_CtrlGrp
-    400616: l_Finger_04_01_Spline_CtrlGrp2
-    400618: l_Finger_04_01Jnt
-    400620: l_Finger_04_01JntFk
-    400622: l_Finger_04_01JntIk
-    400624: l_Finger_04_01SHJnt
-    400626: l_Finger_04_02_Ctrl
-    400628: l_Finger_04_02_Ctrl_RestPoseGrp
-    400630: l_Finger_04_02_CtrlGrp
-    400632: l_Finger_04_02_CtrlSdkGrp
-    400634: l_Finger_04_02Jnt
-    400636: l_Finger_04_02JntFk
-    400638: l_Finger_04_02JntIk
-    400640: l_Finger_04_02SHJnt
-    400642: l_Finger_04_03_Ctrl
-    400644: l_Finger_04_03_Ctrl_RestPoseGrp
-    400646: l_Finger_04_03_CtrlGrp
-    400648: l_Finger_04_03_CtrlSdkGrp
-    400650: l_Finger_04_03Jnt
-    400652: l_Finger_04_03JntFk
-    400654: l_Finger_04_03JntIk
-    400656: l_Finger_04_03SHJnt
-    400658: l_Finger_04_04_Ctrl
-    400660: l_Finger_04_04_Ctrl_RestPoseGrp
-    400662: l_Finger_04_04_CtrlGrp
-    400664: l_Finger_04_04_CtrlSdkGrp
-    400666: l_Finger_04_04Jnt
-    400668: l_Finger_04_04JntFk
-    400670: l_Finger_04_04JntIk
-    400672: l_Finger_04_04SHJnt
-    400674: l_Finger_04_SplineCurve
-    400676: l_Finger_04_SplineCurve2Clstr
-    400678: l_Finger_04_SplineCurve3Clstr
-    400680: l_Finger_04_SplineCurveEndClstr
-    400682: l_Finger_04_SplineCurveStartClstr
-    400684: l_Finger_04JntFkGrp
-    400686: l_Finger_04JntFkGrp2
-    400688: l_Finger_04JntGrp
-    400690: l_Finger_04JntGrp2
-    400692: l_Finger_04JntIkGrp
-    400694: l_Finger_04JntIkGrp2
-    400696: l_Finger_curveNodesGrp
-    400698: l_Finger_extraCurveNodesGrp
-    400700: l_Finger_MainChain_CtrlGrp
-    400702: l_Finger_Master_Ctrl
-    400704: l_Finger_Master_CtrlGrp
-    400706: l_Finger_ScaleGrp
-    400708: l_FingerGrp
-    400710: l_Leg_AnkleFk_Ctrl
-    400712: l_Leg_AnkleFk_Ctrl_RestPoseGrp
-    400714: l_Leg_AnkleFk_CtrlGrp
-    400716: l_Leg_AnkleIkLockLctr
-    400718: l_Leg_AnkleJnt
-    400720: l_Leg_AnkleJntFk
-    400722: l_Leg_AnkleJntFkGrp1
-    400724: l_Leg_AnkleJntFkGrp2
-    400726: l_Leg_AnkleJntIk
-    400728: l_Leg_AnkleSHJnt
-    400730: l_Leg_BallFk_Ctrl
-    400732: l_Leg_BallFk_Ctrl_RestPoseGrp
-    400734: l_Leg_BallFk_CtrlGrp
-    400736: l_Leg_BallIk_Ctrl
-    400738: l_Leg_BallIk_Ctrl_RestPoseGrp
-    400740: l_Leg_BallIk_CtrlGrp
-    400742: l_Leg_BallIk_CtrlSdkGrp
-    400744: l_Leg_BallJnt
-    400746: l_Leg_BallJntFk
-    400748: l_Leg_BallJntIk
-    400750: l_Leg_BallSHJnt
-    400752: l_Leg_FootIk_Ctrl
-    400754: l_Leg_FootIk_Ctrl_RestPoseGrp
-    400756: l_Leg_FootIk_CtrlGrp
-    400758: l_Leg_FootPivot_Ctrl
-    400760: l_Leg_FootPivot_Ctrl_RestPoseGrp
-    400762: l_Leg_FootPivot_CtrlGrp
-    400764: l_Leg_HeelIk_Ctrl
-    400766: l_Leg_HeelIk_Ctrl_RestPoseGrp
-    400768: l_Leg_HeelIk_CtrlGrp
-    400770: l_Leg_HeelIk_CtrlSdkGrp
-    400772: l_Leg_HipFk_Ctrl
-    400774: l_Leg_HipFk_Ctrl_RestPoseGrp
-    400776: l_Leg_HipFk_CtrlGrp
-    400778: l_Leg_HipIkLockLctr
-    400780: l_Leg_HipJnt
-    400782: l_Leg_HipJntFk
-    400784: l_Leg_HipJntIk
-    400786: l_Leg_HipSHJnt
-    400788: l_Leg_KneeFk_Ctrl
-    400790: l_Leg_KneeFk_Ctrl_RestPoseGrp
-    400792: l_Leg_KneeFk_CtrlGrp
-    400794: l_Leg_KneeIk_Ctrl
-    400796: l_Leg_KneeIk_Ctrl_AnkleLctr
-    400798: l_Leg_KneeIk_Ctrl_RestPoseGrp
-    400800: l_Leg_KneeIk_CtrlGrp
-    400802: l_Leg_KneeIkLockLctr
-    400804: l_Leg_KneeJnt
-    400806: l_Leg_KneeJntFk
-    400808: l_Leg_KneeJntFkGrp1
-    400810: l_Leg_KneeJntFkGrp2
-    400812: l_Leg_KneeJntIk
-    400814: l_Leg_KneeSHJnt
-    400816: l_Leg_LimbLengthEndLctr
-    400818: l_Leg_LimbLengthOriginLctr
-    400820: l_Leg_LimbLengthSoftLctr
-    400822: l_Leg_ScaleGrp
-    400824: l_Leg_Switch_Ctrl
-    400826: l_Leg_Switch_CtrlGrp
-    400828: l_Leg_ToeFk_Ctrl
-    400830: l_Leg_ToeFk_Ctrl_RestPoseGrp
-    400832: l_Leg_ToeFk_CtrlGrp
-    400834: l_Leg_ToeIk_Ctrl
-    400836: l_Leg_ToeIk_Ctrl_RestPoseGrp
-    400838: l_Leg_ToeIk_CtrlSdkGrp
-    400840: l_Leg_ToeJnt
-    400842: l_Leg_ToeJntFk
-    400844: l_Leg_ToeJntIk
-    400846: l_Leg_ToeSHJnt
-    400848: l_LegGrp
-    400850: l_LegToeIk_CtrlGrp
-    400852: l_Thumb_01_01_Ctrl
-    400854: l_Thumb_01_01_Ctrl_RestPoseGrp
-    400856: l_Thumb_01_01_CtrlGrp
-    400858: l_Thumb_01_01_CtrlSdkGrp
-    400860: l_Thumb_01_01_Spline_Ctrl
-    400862: l_Thumb_01_01_Spline_Ctrl_RestPoseGrp
-    400864: l_Thumb_01_01_Spline_CtrlGrp
-    400866: l_Thumb_01_01_Spline_CtrlGrp2
-    400868: l_Thumb_01_01Jnt
-    400870: l_Thumb_01_01JntFk
-    400872: l_Thumb_01_01JntIk
-    400874: l_Thumb_01_01SHJnt
-    400876: l_Thumb_01_02_Ctrl
-    400878: l_Thumb_01_02_Ctrl_RestPoseGrp
-    400880: l_Thumb_01_02_CtrlGrp
-    400882: l_Thumb_01_02_CtrlSdkGrp
-    400884: l_Thumb_01_02Jnt
-    400886: l_Thumb_01_02JntFk
-    400888: l_Thumb_01_02JntIk
-    400890: l_Thumb_01_02SHJnt
-    400892: l_Thumb_01_03_Ctrl
-    400894: l_Thumb_01_03_Ctrl_RestPoseGrp
-    400896: l_Thumb_01_03_CtrlGrp
-    400898: l_Thumb_01_03_CtrlSdkGrp
-    400900: l_Thumb_01_03Jnt
-    400902: l_Thumb_01_03JntFk
-    400904: l_Thumb_01_03JntIk
-    400906: l_Thumb_01_03SHJnt
-    400908: l_Thumb_01_04_Ctrl
-    400910: l_Thumb_01_04_Ctrl_RestPoseGrp
-    400912: l_Thumb_01_04_CtrlGrp
-    400914: l_Thumb_01_04_CtrlSdkGrp
-    400916: l_Thumb_01_04Jnt
-    400918: l_Thumb_01_04JntFk
-    400920: l_Thumb_01_04JntIk
-    400922: l_Thumb_01_04SHJnt
-    400924: l_Thumb_01_SplineCurve
-    400926: l_Thumb_01_SplineCurve2Clstr
-    400928: l_Thumb_01_SplineCurve3Clstr
-    400930: l_Thumb_01_SplineCurveEndClstr
-    400932: l_Thumb_01_SplineCurveStartClstr
-    400934: l_Thumb_01JntFkGrp
-    400936: l_Thumb_01JntFkGrp2
-    400938: l_Thumb_01JntGrp
-    400940: l_Thumb_01JntGrp2
-    400942: l_Thumb_01JntIkGrp
-    400944: l_Thumb_01JntIkGrp2
-    400946: l_Thumb_curveNodesGrp
-    400948: l_Thumb_extraCurveNodesGrp
-    400950: l_Thumb_MainChain_CtrlGrp
-    400952: l_Thumb_Master_Ctrl
-    400954: l_Thumb_Master_CtrlGrp
-    400956: l_Thumb_ScaleGrp
-    400958: l_ThumbGrp
-    400960: LeftBrow
-    400962: LeftEye
-    400964: LeftShoe
-    400966: MAIN_Ctrl
-    400968: MAIN_Ctrl_RestPoseGrp
-    400970: MAIN_Inner_Ctrl
-    400972: MAIN_Inner_Ctrl_RestPoseGrp
-    400974: MAIN_Offset_Ctrl
-    400976: MAIN_Offset_Ctrl_RestPoseGrp
-    400978: Neck_02Curve_Ctrl
-    400980: Neck_02Curve_Ctrl_RestPoseGrp
-    400982: Neck_02Curve_CtrlGrp
-    400984: Neck_02Jnt
-    400986: Neck_02SHJnt
-    400988: Neck_BtmAimLctr
-    400990: Neck_BtmTargetLctr
-    400992: Neck_MidIk_Ctrl
-    400994: Neck_MidIk_Ctrl_RestPoseGrp
-    400996: Neck_MidIk_CtrlGrp
-    400998: Neck_MidIk_CtrlGrp2
-    401000: Neck_Module
-    401002: Neck_ScaleGrp
-    401004: Neck_TopAimLctr
-    401006: Neck_TopIk_Ctrl
-    401008: Neck_TopIk_Ctrl_RestPoseGrp
-    401010: Neck_TopIk_CtrlGrp
-    401012: Neck_TopJnt
-    401014: Neck_TopSHJnt
-    401016: Neck_TopTargetLctr
-    401018: NeckGrp
-    401020: Pants
-    401022: polySurface1
-    401024: polySurface2
-    401026: polySurface3
-    401028: polySurface4
-    401030: polySurface5
-    401032: r_Arm_Clavicle_Ctrl
-    401034: r_Arm_Clavicle_Ctrl_RestPoseGrp
-    401036: r_Arm_Clavicle_CtrlGrp
-    401038: r_Arm_ClavicleJnt
-    401040: r_Arm_ClavicleSHJnt
-    401042: r_Arm_ElbowFk_Ctrl
-    401044: r_Arm_ElbowFk_Ctrl_RestPoseGrp
-    401046: r_Arm_ElbowFk_CtrlGrp
-    401048: r_Arm_ElbowIk_Ctrl
-    401050: r_Arm_ElbowIk_Ctrl_RestPoseGrp
-    401052: r_Arm_ElbowIk_Ctrl_WristLctr
-    401054: r_Arm_ElbowIk_CtrlGrp
-    401056: r_Arm_ElbowIkLockLctr
-    401058: r_Arm_ElbowJnt
-    401060: r_Arm_ElbowJntFk
-    401062: r_Arm_ElbowJntFkGrp1
-    401064: r_Arm_ElbowJntFkGrp2
-    401066: r_Arm_ElbowJntIk
-    401068: r_Arm_ElbowSHJnt
-    401070: r_Arm_LimbLengthEndLctr
-    401072: r_Arm_LimbLengthOriginLctr
-    401074: r_Arm_LimbLengthSoftLctr
-    401076: r_Arm_ScaleGrp
-    401078: r_Arm_ShoulderFk_Ctrl
-    401080: r_Arm_ShoulderFk_Ctrl_RestPoseGrp
-    401082: r_Arm_ShoulderFk_CtrlGrp
-    401084: r_Arm_ShoulderFk_CtrlGrp2
-    401086: r_Arm_ShoulderIkLockLctr
-    401088: r_Arm_ShoulderJnt
-    401090: r_Arm_ShoulderJntFk
-    401092: r_Arm_ShoulderJntIk
-    401094: r_Arm_ShoulderSHJnt
-    401096: r_Arm_Switch_Ctrl
-    401098: r_Arm_Switch_CtrlGrp
-    401100: r_Arm_WristIk_Ctrl
-    401102: r_Arm_WristIk_Ctrl_RestPoseGrp
-    401104: r_Arm_WristIk_CtrlGrp
-    401106: r_Arm_WristIkLockLctr
-    401108: r_Arm_WristJnt
-    401110: r_Arm_WristJntFk
-    401112: r_Arm_WristJntFkGrp1
-    401114: r_Arm_WristJntFkGrp2
-    401116: r_Arm_WristJntGrp1
-    401118: r_Arm_WristJntGrp2
-    401120: r_Arm_WristJntIk
-    401122: r_Arm_WristPivot_Ctrl
-    401124: r_Arm_WristPivot_Ctrl_RestPoseGrp
-    401126: r_Arm_WristPivot_CtrlGrp
-    401128: r_Arm_WristPivot_Lctr
-    401130: r_Arm_WristSHJnt
-    401132: r_ArmGrp
-    401134: r_Eye_01_Ctrl
-    401136: r_Eye_01_Ctrl_RestPoseGrp
-    401138: r_Eye_01Grp1
-    401140: r_Eye_01Grp2
-    401142: r_Eye_01Jnt
-    401144: r_Eye_01SHJnt
-    401146: r_Eye_Master_Ctrl
-    401148: r_Eye_Master_Ctrl_RestPoseGrp
-    401150: r_Eye_Master_CtrlGrp
-    401152: r_Eye_ScaleGrp
-    401154: r_EyeGrp
-    401156: r_Finger_01_01_Ctrl
-    401158: r_Finger_01_01_Ctrl_RestPoseGrp
-    401160: r_Finger_01_01_CtrlGrp
-    401162: r_Finger_01_01_CtrlSdkGrp
-    401164: r_Finger_01_01_Spline_Ctrl
-    401166: r_Finger_01_01_Spline_Ctrl_RestPoseGrp
-    401168: r_Finger_01_01_Spline_CtrlGrp
-    401170: r_Finger_01_01_Spline_CtrlGrp2
-    401172: r_Finger_01_01Jnt
-    401174: r_Finger_01_01JntFk
-    401176: r_Finger_01_01JntIk
-    401178: r_Finger_01_01JntIkGuide
-    401180: r_Finger_01_01SHJnt
-    401182: r_Finger_01_02_Ctrl
-    401184: r_Finger_01_02_Ctrl_RestPoseGrp
-    401186: r_Finger_01_02_CtrlGrp
-    401188: r_Finger_01_02_CtrlSdkGrp
-    401190: r_Finger_01_02Jnt
-    401192: r_Finger_01_02JntFk
-    401194: r_Finger_01_02JntIk
-    401196: r_Finger_01_02JntIkGuide
-    401198: r_Finger_01_02SHJnt
-    401200: r_Finger_01_03_Ctrl
-    401202: r_Finger_01_03_Ctrl_RestPoseGrp
-    401204: r_Finger_01_03_CtrlGrp
-    401206: r_Finger_01_03_CtrlSdkGrp
-    401208: r_Finger_01_03Jnt
-    401210: r_Finger_01_03JntFk
-    401212: r_Finger_01_03JntIk
-    401214: r_Finger_01_03JntIkGuide
-    401216: r_Finger_01_03SHJnt
-    401218: r_Finger_01_04_Ctrl
-    401220: r_Finger_01_04_Ctrl_RestPoseGrp
-    401222: r_Finger_01_04_CtrlGrp
-    401224: r_Finger_01_04_CtrlSdkGrp
-    401226: r_Finger_01_04Jnt
-    401228: r_Finger_01_04JntFk
-    401230: r_Finger_01_04JntIk
-    401232: r_Finger_01_04JntIkGuide
-    401234: r_Finger_01_04SHJnt
-    401236: r_Finger_01_SplineCurve
-    401238: r_Finger_01_SplineCurve2Clstr
-    401240: r_Finger_01_SplineCurve3Clstr
-    401242: r_Finger_01_SplineCurveEndClstr
-    401244: r_Finger_01_SplineCurveStartClstr
-    401246: r_Finger_01JntFkGrp
-    401248: r_Finger_01JntFkGrp2
-    401250: r_Finger_01JntGrp
-    401252: r_Finger_01JntGrp2
-    401254: r_Finger_01JntIkGrp
-    401256: r_Finger_01JntIkGrp2
-    401258: r_Finger_02_01_Ctrl
-    401260: r_Finger_02_01_Ctrl_RestPoseGrp
-    401262: r_Finger_02_01_CtrlGrp
-    401264: r_Finger_02_01_CtrlOffsetGrp
-    401266: r_Finger_02_01_CtrlSdkGrp
-    401268: r_Finger_02_01_Spline_Ctrl
-    401270: r_Finger_02_01_Spline_Ctrl_RestPoseGrp
-    401272: r_Finger_02_01_Spline_CtrlGrp
-    401274: r_Finger_02_01_Spline_CtrlGrp2
-    401276: r_Finger_02_01_Spline_CtrlOffsetGrp
-    401278: r_Finger_02_01Jnt
-    401280: r_Finger_02_01JntFk
-    401282: r_Finger_02_01JntIk
-    401284: r_Finger_02_01JntIkGuide
-    401286: r_Finger_02_01SHJnt
-    401288: r_Finger_02_02_Ctrl
-    401290: r_Finger_02_02_Ctrl_RestPoseGrp
-    401292: r_Finger_02_02_CtrlGrp
-    401294: r_Finger_02_02_CtrlOffsetGrp
-    401296: r_Finger_02_02_CtrlSdkGrp
-    401298: r_Finger_02_02Jnt
-    401300: r_Finger_02_02JntFk
-    401302: r_Finger_02_02JntIk
-    401304: r_Finger_02_02JntIkGuide
-    401306: r_Finger_02_02SHJnt
-    401308: r_Finger_02_03_Ctrl
-    401310: r_Finger_02_03_Ctrl_RestPoseGrp
-    401312: r_Finger_02_03_CtrlGrp
-    401314: r_Finger_02_03_CtrlOffsetGrp
-    401316: r_Finger_02_03_CtrlSdkGrp
-    401318: r_Finger_02_03Jnt
-    401320: r_Finger_02_03JntFk
-    401322: r_Finger_02_03JntIk
-    401324: r_Finger_02_03JntIkGuide
-    401326: r_Finger_02_03SHJnt
-    401328: r_Finger_02_04_Ctrl
-    401330: r_Finger_02_04_Ctrl_RestPoseGrp
-    401332: r_Finger_02_04_CtrlGrp
-    401334: r_Finger_02_04_CtrlOffsetGrp
-    401336: r_Finger_02_04_CtrlSdkGrp
-    401338: r_Finger_02_04Jnt
-    401340: r_Finger_02_04JntFk
-    401342: r_Finger_02_04JntIk
-    401344: r_Finger_02_04JntIkGuide
-    401346: r_Finger_02_04SHJnt
-    401348: r_Finger_02_SplineCurve
-    401350: r_Finger_02_SplineCurve2Clstr
-    401352: r_Finger_02_SplineCurve3Clstr
-    401354: r_Finger_02_SplineCurveEndClstr
-    401356: r_Finger_02_SplineCurveStartClstr
-    401358: r_Finger_02JntFkGrp
-    401360: r_Finger_02JntFkGrp2
-    401362: r_Finger_02JntGrp
-    401364: r_Finger_02JntGrp2
-    401366: r_Finger_02JntIkGrp
-    401368: r_Finger_02JntIkGrp2
-    401370: r_Finger_03_01_Ctrl
-    401372: r_Finger_03_01_Ctrl_RestPoseGrp
-    401374: r_Finger_03_01_CtrlGrp
-    401376: r_Finger_03_01_CtrlOffsetGrp
-    401378: r_Finger_03_01_CtrlSdkGrp
-    401380: r_Finger_03_01_Spline_Ctrl
-    401382: r_Finger_03_01_Spline_Ctrl_RestPoseGrp
-    401384: r_Finger_03_01_Spline_CtrlGrp
-    401386: r_Finger_03_01_Spline_CtrlGrp2
-    401388: r_Finger_03_01_Spline_CtrlOffsetGrp
-    401390: r_Finger_03_01Jnt
-    401392: r_Finger_03_01JntFk
-    401394: r_Finger_03_01JntIk
-    401396: r_Finger_03_01JntIkGuide
-    401398: r_Finger_03_01SHJnt
-    401400: r_Finger_03_02_Ctrl
-    401402: r_Finger_03_02_Ctrl_RestPoseGrp
-    401404: r_Finger_03_02_CtrlGrp
-    401406: r_Finger_03_02_CtrlOffsetGrp
-    401408: r_Finger_03_02_CtrlSdkGrp
-    401410: r_Finger_03_02Jnt
-    401412: r_Finger_03_02JntFk
-    401414: r_Finger_03_02JntIk
-    401416: r_Finger_03_02JntIkGuide
-    401418: r_Finger_03_02SHJnt
-    401420: r_Finger_03_03_Ctrl
-    401422: r_Finger_03_03_Ctrl_RestPoseGrp
-    401424: r_Finger_03_03_CtrlGrp
-    401426: r_Finger_03_03_CtrlOffsetGrp
-    401428: r_Finger_03_03_CtrlSdkGrp
-    401430: r_Finger_03_03Jnt
-    401432: r_Finger_03_03JntFk
-    401434: r_Finger_03_03JntIk
-    401436: r_Finger_03_03JntIkGuide
-    401438: r_Finger_03_03SHJnt
-    401440: r_Finger_03_04_Ctrl
-    401442: r_Finger_03_04_Ctrl_RestPoseGrp
-    401444: r_Finger_03_04_CtrlGrp
-    401446: r_Finger_03_04_CtrlOffsetGrp
-    401448: r_Finger_03_04_CtrlSdkGrp
-    401450: r_Finger_03_04Jnt
-    401452: r_Finger_03_04JntFk
-    401454: r_Finger_03_04JntIk
-    401456: r_Finger_03_04JntIkGuide
-    401458: r_Finger_03_04SHJnt
-    401460: r_Finger_03_SplineCurve
-    401462: r_Finger_03_SplineCurve2Clstr
-    401464: r_Finger_03_SplineCurve3Clstr
-    401466: r_Finger_03_SplineCurveEndClstr
-    401468: r_Finger_03_SplineCurveStartClstr
-    401470: r_Finger_03JntFkGrp
-    401472: r_Finger_03JntFkGrp2
-    401474: r_Finger_03JntGrp
-    401476: r_Finger_03JntGrp2
-    401478: r_Finger_03JntIkGrp
-    401480: r_Finger_03JntIkGrp2
-    401482: r_Finger_04_01_Ctrl
-    401484: r_Finger_04_01_Ctrl_RestPoseGrp
-    401486: r_Finger_04_01_CtrlGrp
-    401488: r_Finger_04_01_CtrlSdkGrp
-    401490: r_Finger_04_01_Spline_Ctrl
-    401492: r_Finger_04_01_Spline_Ctrl_RestPoseGrp
-    401494: r_Finger_04_01_Spline_CtrlGrp
-    401496: r_Finger_04_01_Spline_CtrlGrp2
-    401498: r_Finger_04_01Jnt
-    401500: r_Finger_04_01JntFk
-    401502: r_Finger_04_01JntIk
-    401504: r_Finger_04_01JntIkGuide
-    401506: r_Finger_04_01SHJnt
-    401508: r_Finger_04_02_Ctrl
-    401510: r_Finger_04_02_Ctrl_RestPoseGrp
-    401512: r_Finger_04_02_CtrlGrp
-    401514: r_Finger_04_02_CtrlSdkGrp
-    401516: r_Finger_04_02Jnt
-    401518: r_Finger_04_02JntFk
-    401520: r_Finger_04_02JntIk
-    401522: r_Finger_04_02JntIkGuide
-    401524: r_Finger_04_02SHJnt
-    401526: r_Finger_04_03_Ctrl
-    401528: r_Finger_04_03_Ctrl_RestPoseGrp
-    401530: r_Finger_04_03_CtrlGrp
-    401532: r_Finger_04_03_CtrlSdkGrp
-    401534: r_Finger_04_03Jnt
-    401536: r_Finger_04_03JntFk
-    401538: r_Finger_04_03JntIk
-    401540: r_Finger_04_03JntIkGuide
-    401542: r_Finger_04_03SHJnt
-    401544: r_Finger_04_04_Ctrl
-    401546: r_Finger_04_04_Ctrl_RestPoseGrp
-    401548: r_Finger_04_04_CtrlGrp
-    401550: r_Finger_04_04_CtrlSdkGrp
-    401552: r_Finger_04_04Jnt
-    401554: r_Finger_04_04JntFk
-    401556: r_Finger_04_04JntIk
-    401558: r_Finger_04_04JntIkGuide
-    401560: r_Finger_04_04SHJnt
-    401562: r_Finger_04_SplineCurve
-    401564: r_Finger_04_SplineCurve2Clstr
-    401566: r_Finger_04_SplineCurve3Clstr
-    401568: r_Finger_04_SplineCurveEndClstr
-    401570: r_Finger_04_SplineCurveStartClstr
-    401572: r_Finger_04JntFkGrp
-    401574: r_Finger_04JntFkGrp2
-    401576: r_Finger_04JntGrp
-    401578: r_Finger_04JntGrp2
-    401580: r_Finger_04JntIkGrp
-    401582: r_Finger_04JntIkGrp2
-    401584: r_Finger_curveNodesGrp
-    401586: r_Finger_extraCurveNodesGrp
-    401588: r_Finger_MainChain_CtrlGrp
-    401590: r_Finger_Master_Ctrl
-    401592: r_Finger_Master_CtrlGrp
-    401594: r_Finger_ScaleGrp
-    401596: r_FingerGrp
-    401598: r_Leg_AnkleFk_Ctrl
-    401600: r_Leg_AnkleFk_Ctrl_RestPoseGrp
-    401602: r_Leg_AnkleFk_CtrlGrp
-    401604: r_Leg_AnkleIkLockLctr
-    401606: r_Leg_AnkleJnt
-    401608: r_Leg_AnkleJntFk
-    401610: r_Leg_AnkleJntFkGrp1
-    401612: r_Leg_AnkleJntFkGrp2
-    401614: r_Leg_AnkleJntIk
-    401616: r_Leg_AnkleSHJnt
-    401618: r_Leg_BallFk_Ctrl
-    401620: r_Leg_BallFk_Ctrl_RestPoseGrp
-    401622: r_Leg_BallFk_CtrlGrp
-    401624: r_Leg_BallIk_Ctrl
-    401626: r_Leg_BallIk_Ctrl_RestPoseGrp
-    401628: r_Leg_BallIk_CtrlGrp
-    401630: r_Leg_BallIk_CtrlSdkGrp
-    401632: r_Leg_BallJnt
-    401634: r_Leg_BallJntFk
-    401636: r_Leg_BallJntIk
-    401638: r_Leg_BallSHJnt
-    401640: r_Leg_FootIk_Ctrl
-    401642: r_Leg_FootIk_Ctrl_RestPoseGrp
-    401644: r_Leg_FootIk_CtrlGrp
-    401646: r_Leg_FootPivot_Ctrl
-    401648: r_Leg_FootPivot_Ctrl_RestPoseGrp
-    401650: r_Leg_FootPivot_CtrlGrp
-    401652: r_Leg_HeelIk_Ctrl
-    401654: r_Leg_HeelIk_Ctrl_RestPoseGrp
-    401656: r_Leg_HeelIk_CtrlGrp
-    401658: r_Leg_HeelIk_CtrlSdkGrp
-    401660: r_Leg_HipFk_Ctrl
-    401662: r_Leg_HipFk_Ctrl_RestPoseGrp
-    401664: r_Leg_HipFk_CtrlGrp
-    401666: r_Leg_HipIkLockLctr
-    401668: r_Leg_HipJnt
-    401670: r_Leg_HipJntFk
-    401672: r_Leg_HipJntIk
-    401674: r_Leg_HipSHJnt
-    401676: r_Leg_KneeFk_Ctrl
-    401678: r_Leg_KneeFk_Ctrl_RestPoseGrp
-    401680: r_Leg_KneeFk_CtrlGrp
-    401682: r_Leg_KneeIk_Ctrl
-    401684: r_Leg_KneeIk_Ctrl_AnkleLctr
-    401686: r_Leg_KneeIk_Ctrl_RestPoseGrp
-    401688: r_Leg_KneeIk_CtrlGrp
-    401690: r_Leg_KneeIkLockLctr
-    401692: r_Leg_KneeJnt
-    401694: r_Leg_KneeJntFk
-    401696: r_Leg_KneeJntFkGrp1
-    401698: r_Leg_KneeJntFkGrp2
-    401700: r_Leg_KneeJntIk
-    401702: r_Leg_KneeSHJnt
-    401704: r_Leg_LimbLengthEndLctr
-    401706: r_Leg_LimbLengthOriginLctr
-    401708: r_Leg_LimbLengthSoftLctr
-    401710: r_Leg_ScaleGrp
-    401712: r_Leg_Switch_Ctrl
-    401714: r_Leg_Switch_CtrlGrp
-    401716: r_Leg_ToeFk_Ctrl
-    401718: r_Leg_ToeFk_Ctrl_RestPoseGrp
-    401720: r_Leg_ToeFk_CtrlGrp
-    401722: r_Leg_ToeIk_Ctrl
-    401724: r_Leg_ToeIk_Ctrl_RestPoseGrp
-    401726: r_Leg_ToeIk_CtrlSdkGrp
-    401728: r_Leg_ToeJnt
-    401730: r_Leg_ToeJntFk
-    401732: r_Leg_ToeJntIk
-    401734: r_Leg_ToeSHJnt
-    401736: r_LegGrp
-    401738: r_LegToeIk_CtrlGrp
-    401740: r_Thumb_01_01_Ctrl
-    401742: r_Thumb_01_01_Ctrl_RestPoseGrp
-    401744: r_Thumb_01_01_CtrlGrp
-    401746: r_Thumb_01_01_CtrlSdkGrp
-    401748: r_Thumb_01_01_Spline_Ctrl
-    401750: r_Thumb_01_01_Spline_Ctrl_RestPoseGrp
-    401752: r_Thumb_01_01_Spline_CtrlGrp
-    401754: r_Thumb_01_01_Spline_CtrlGrp2
-    401756: r_Thumb_01_01Jnt
-    401758: r_Thumb_01_01JntFk
-    401760: r_Thumb_01_01JntIk
-    401762: r_Thumb_01_01JntIkGuide
-    401764: r_Thumb_01_01SHJnt
-    401766: r_Thumb_01_02_Ctrl
-    401768: r_Thumb_01_02_Ctrl_RestPoseGrp
-    401770: r_Thumb_01_02_CtrlGrp
-    401772: r_Thumb_01_02_CtrlSdkGrp
-    401774: r_Thumb_01_02Jnt
-    401776: r_Thumb_01_02JntFk
-    401778: r_Thumb_01_02JntIk
-    401780: r_Thumb_01_02JntIkGuide
-    401782: r_Thumb_01_02SHJnt
-    401784: r_Thumb_01_03_Ctrl
-    401786: r_Thumb_01_03_Ctrl_RestPoseGrp
-    401788: r_Thumb_01_03_CtrlGrp
-    401790: r_Thumb_01_03_CtrlSdkGrp
-    401792: r_Thumb_01_03Jnt
-    401794: r_Thumb_01_03JntFk
-    401796: r_Thumb_01_03JntIk
-    401798: r_Thumb_01_03JntIkGuide
-    401800: r_Thumb_01_03SHJnt
-    401802: r_Thumb_01_04_Ctrl
-    401804: r_Thumb_01_04_Ctrl_RestPoseGrp
-    401806: r_Thumb_01_04_CtrlGrp
-    401808: r_Thumb_01_04_CtrlSdkGrp
-    401810: r_Thumb_01_04Jnt
-    401812: r_Thumb_01_04JntFk
-    401814: r_Thumb_01_04JntIk
-    401816: r_Thumb_01_04JntIkGuide
-    401818: r_Thumb_01_04SHJnt
-    401820: r_Thumb_01_SplineCurve
-    401822: r_Thumb_01_SplineCurve2Clstr
-    401824: r_Thumb_01_SplineCurve3Clstr
-    401826: r_Thumb_01_SplineCurveEndClstr
-    401828: r_Thumb_01_SplineCurveStartClstr
-    401830: r_Thumb_01JntFkGrp
-    401832: r_Thumb_01JntFkGrp2
-    401834: r_Thumb_01JntGrp
-    401836: r_Thumb_01JntGrp2
-    401838: r_Thumb_01JntIkGrp
-    401840: r_Thumb_01JntIkGrp2
-    401842: r_Thumb_curveNodesGrp
-    401844: r_Thumb_extraCurveNodesGrp
-    401846: r_Thumb_MainChain_CtrlGrp
-    401848: r_Thumb_Master_Ctrl
-    401850: r_Thumb_Master_CtrlGrp
-    401852: r_Thumb_ScaleGrp
-    401854: r_ThumbGrp
-    401856: RightBrow
-    401858: RightEye
-    401860: RightShoe
-    401862: ROOT_Ctrl
-    401864: ROOT_Ctrl_RestPoseGrp
-    401866: ROOT_CtrlGrp
-    401868: ROOTGrp
-    401870: ROOTJnt
-    401872: ROOTParent_CtrlGrp2
-    401874: ROOTSecondary_Ctrl
-    401876: ROOTSecondary_Ctrl_RestPoseGrp
-    401878: ROOTSHJnt
-    401880: SHJntGrp
-    401882: Shoes
-    401884: Skin
-    401886: Spine_01Curve_Ctrl
-    401888: Spine_01Curve_Ctrl_RestPoseGrp
-    401890: Spine_01Curve_CtrlGrp
-    401892: Spine_01Jnt
-    401894: Spine_01SHJnt
-    401896: Spine_02Curve_Ctrl
-    401898: Spine_02Curve_Ctrl_RestPoseGrp
-    401900: Spine_02Curve_CtrlGrp
-    401902: Spine_02Jnt
-    401904: Spine_02SHJnt
-    401906: Spine_03Curve_Ctrl
-    401908: Spine_03Curve_Ctrl_RestPoseGrp
-    401910: Spine_03Curve_CtrlGrp
-    401912: Spine_03Jnt
-    401914: Spine_03SHJnt
-    401916: Spine_04Curve_Ctrl
-    401918: Spine_04Curve_Ctrl_RestPoseGrp
-    401920: Spine_04Curve_CtrlGrp
-    401922: Spine_04Jnt
-    401924: Spine_04SHJnt
-    401926: Spine_BtmAimLctr
-    401928: Spine_BtmTargetLctr
-    401930: Spine_MidIk_Ctrl
-    401932: Spine_MidIk_Ctrl_RestPoseGrp
-    401934: Spine_MidIk_CtrlGrp
-    401936: Spine_MidIk_CtrlGrp2
-    401938: Spine_Module
-    401940: Spine_ScaleGrp
-    401942: Spine_TopAimLctr
-    401944: Spine_TopIk_Ctrl
-    401946: Spine_TopIk_Ctrl_RestPoseGrp
-    401948: Spine_TopIk_CtrlGrp
-    401950: Spine_TopJnt
-    401952: Spine_TopSHJnt
-    401954: Spine_TopTargetLctr
-    401956: SpineGrp
-    401958: Sweater
-    401960: Tongue
-    401962: TopTeeth
-    401964: transform1
+    400012: EyeBrows
+    400014: Face
+    400016: FrontHair
+    400018: Glasses
+    400020: Head_JawEndSHJnt
+    400022: Head_JawSHJnt
+    400024: Head_TopSHJnt
+    400026: Hood
+    400028: Hoodie
+    400030: joint1
+    400032: joint10
+    400034: joint11
+    400036: joint12
+    400038: joint13
+    400040: joint14
+    400042: joint15
+    400044: joint16
+    400046: joint17
+    400048: joint18
+    400050: joint19
+    400052: joint2
+    400054: joint20
+    400056: joint21
+    400058: joint22
+    400060: joint23
+    400062: joint24
+    400064: joint25
+    400066: joint26
+    400068: joint27
+    400070: joint28
+    400072: joint29
+    400074: joint3
+    400076: joint30
+    400078: joint31
+    400080: joint32
+    400082: joint33
+    400084: joint34
+    400086: joint35
+    400088: joint36
+    400090: joint37
+    400092: joint38
+    400094: joint39
+    400096: joint4
+    400098: joint40
+    400100: joint41
+    400102: joint42
+    400104: joint43
+    400106: joint44
+    400108: joint45
+    400110: joint46
+    400112: joint47
+    400114: joint48
+    400116: joint49
+    400118: joint5
+    400120: joint50
+    400122: joint51
+    400124: joint52
+    400126: joint53
+    400128: joint54
+    400130: joint55
+    400132: joint56
+    400134: joint57
+    400136: joint58
+    400138: joint59
+    400140: joint6
+    400142: joint7
+    400144: joint8
+    400146: joint9
+    400148: l_Arm_ClavicleSHJnt
+    400150: l_Arm_ElbowSHJnt
+    400152: l_Arm_ShoulderSHJnt
+    400154: l_Arm_WristSHJnt
+    400156: l_Eye_01SHJnt
+    400158: l_Finger_01_01SHJnt
+    400160: l_Finger_01_02SHJnt
+    400162: l_Finger_01_03SHJnt
+    400164: l_Finger_01_04SHJnt
+    400166: l_Finger_02_01SHJnt
+    400168: l_Finger_02_02SHJnt
+    400170: l_Finger_02_03SHJnt
+    400172: l_Finger_02_04SHJnt
+    400174: l_Finger_03_01SHJnt
+    400176: l_Finger_03_02SHJnt
+    400178: l_Finger_03_03SHJnt
+    400180: l_Finger_03_04SHJnt
+    400182: l_Finger_04_01SHJnt
+    400184: l_Finger_04_02SHJnt
+    400186: l_Finger_04_03SHJnt
+    400188: l_Finger_04_04SHJnt
+    400190: l_Leg_AnkleSHJnt
+    400192: l_Leg_BallSHJnt
+    400194: l_Leg_HipSHJnt
+    400196: l_Leg_KneeSHJnt
+    400198: l_Leg_ToeSHJnt
+    400200: l_Thumb_01_01SHJnt
+    400202: l_Thumb_01_02SHJnt
+    400204: l_Thumb_01_03SHJnt
+    400206: l_Thumb_01_04SHJnt
+    400208: LeftBrow
+    400210: LeftEye
+    400212: LeftShoe
+    400214: Neck_02SHJnt
+    400216: Neck_TopSHJnt
+    400218: Pants
+    400220: r_Arm_ClavicleSHJnt
+    400222: r_Arm_ElbowSHJnt
+    400224: r_Arm_ShoulderSHJnt
+    400226: r_Arm_WristSHJnt
+    400228: r_Eye_01SHJnt
+    400230: r_Finger_01_01SHJnt
+    400232: r_Finger_01_02SHJnt
+    400234: r_Finger_01_03SHJnt
+    400236: r_Finger_01_04SHJnt
+    400238: r_Finger_02_01SHJnt
+    400240: r_Finger_02_02SHJnt
+    400242: r_Finger_02_03SHJnt
+    400244: r_Finger_02_04SHJnt
+    400246: r_Finger_03_01SHJnt
+    400248: r_Finger_03_02SHJnt
+    400250: r_Finger_03_03SHJnt
+    400252: r_Finger_03_04SHJnt
+    400254: r_Finger_04_01SHJnt
+    400256: r_Finger_04_02SHJnt
+    400258: r_Finger_04_03SHJnt
+    400260: r_Finger_04_04SHJnt
+    400262: r_Leg_AnkleSHJnt
+    400264: r_Leg_BallSHJnt
+    400266: r_Leg_HipSHJnt
+    400268: r_Leg_KneeSHJnt
+    400270: r_Leg_ToeSHJnt
+    400272: r_Thumb_01_01SHJnt
+    400274: r_Thumb_01_02SHJnt
+    400276: r_Thumb_01_03SHJnt
+    400278: r_Thumb_01_04SHJnt
+    400280: RightBrow
+    400282: RightEye
+    400284: RightShoe
+    400286: ROOTSHJnt
+    400288: SHJntGrp
+    400290: Shoes
+    400292: Skin
+    400294: Spine_01SHJnt
+    400296: Spine_02SHJnt
+    400298: Spine_03SHJnt
+    400300: Spine_04SHJnt
+    400302: Spine_TopSHJnt
+    400304: Sweater
+    400306: Tongue
+    400308: TopTeeth
     4300000: FrontHair
     4300002: BackHair
-    4300004: polySurface1
-    4300006: polySurface2
-    4300008: polySurface3
-    4300010: polySurface4
-    4300012: polySurface5
-    4300014: LeftEye
-    4300016: TopTeeth
-    4300018: RightEye
-    4300020: Tongue
-    4300022: BottomTeeth
-    4300024: LeftBrow
-    4300026: RightBrow
-    4300028: Hood
-    4300030: Sweater
-    4300032: Pants
-    4300034: RightShoe
-    4300036: LeftShoe
-    4300038: Glasses
-    4300040: Hairband
-    7400000: Take 001
+    4300004: Skin
+    4300006: LeftEye
+    4300008: TopTeeth
+    4300010: RightEye
+    4300012: Tongue
+    4300014: BottomTeeth
+    4300016: LeftBrow
+    4300018: RightBrow
+    4300020: Hood
+    4300022: Sweater
+    4300024: Pants
+    4300026: RightShoe
+    4300028: LeftShoe
+    4300030: Glasses
+    7400000: Idle
     9500000: //RootNode
     13700000: BackHair
     13700002: BottomTeeth
     13700004: FrontHair
     13700006: Glasses
-    13700008: Hairband 1
-    13700010: Hood
-    13700012: LeftBrow
-    13700014: LeftEye
-    13700016: LeftShoe
-    13700018: Pants
-    13700020: polySurface1
-    13700022: polySurface2
-    13700024: polySurface3
-    13700026: polySurface4
-    13700028: polySurface5
-    13700030: RightBrow
-    13700032: RightEye
-    13700034: RightShoe
-    13700036: Sweater
-    13700038: Tongue
-    13700040: TopTeeth
+    13700008: Hood
+    13700010: LeftBrow
+    13700012: LeftEye
+    13700014: LeftShoe
+    13700016: Pants
+    13700018: RightBrow
+    13700020: RightEye
+    13700022: RightShoe
+    13700024: Skin
+    13700026: Sweater
+    13700028: Tongue
+    13700030: TopTeeth
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Alyssa_Taylor_Textures
-    second: {fileID: 2100000, guid: f2d3ac10467d7784aa876935ef3a8da3, type: 2}
+    second: {fileID: 2100000, guid: ae9ef9993cb2d204db9cfc4b0f44c556, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -2035,18 +369,53 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Spine_01SHJnt' has translation animation that
+      will be discarded.\n\t'Spine_02SHJnt' has translation animation that will be
+      discarded.\n\t'Spine_03SHJnt' has translation animation that will be discarded.\n\t'Spine_04SHJnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Spine_TopSHJnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'r_Leg_BallSHJnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -2077,8 +446,1239 @@ ModelImporter:
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
-    human: []
-    skeleton: []
+    human:
+    - boneName: ROOTSHJnt
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Leg_HipSHJnt
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Leg_HipSHJnt
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Leg_KneeSHJnt
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Leg_KneeSHJnt
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Leg_AnkleSHJnt
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Leg_AnkleSHJnt
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine_01SHJnt
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine_02SHJnt
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck_02SHJnt
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck_TopSHJnt
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Arm_ClavicleSHJnt
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Arm_ClavicleSHJnt
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Arm_ShoulderSHJnt
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Arm_ShoulderSHJnt
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Arm_ElbowSHJnt
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Arm_ElbowSHJnt
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Arm_WristSHJnt
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Arm_WristSHJnt
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Leg_ToeSHJnt
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Leg_ToeSHJnt
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Eye_01SHJnt
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Eye_01SHJnt
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head_JawSHJnt
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Thumb_01_01SHJnt
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Thumb_01_02SHJnt
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Thumb_01_03SHJnt
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_01_01SHJnt
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_01_02SHJnt
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_01_03SHJnt
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_02_01SHJnt
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_02_02SHJnt
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_02_03SHJnt
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_03_01SHJnt
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_03_02SHJnt
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_03_03SHJnt
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_04_01SHJnt
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_04_02SHJnt
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: l_Finger_04_03SHJnt
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Thumb_01_01SHJnt
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Thumb_01_02SHJnt
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Thumb_01_03SHJnt
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_01_01SHJnt
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_01_02SHJnt
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_01_03SHJnt
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_02_01SHJnt
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_02_02SHJnt
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_02_03SHJnt
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_03_01SHJnt
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_03_02SHJnt
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_03_03SHJnt
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_04_01SHJnt
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_04_02SHJnt
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: r_Finger_04_03SHJnt
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine_03SHJnt
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: AlyssaTaylor@Idle(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Alyssa_Taylor1
+      parentName: AlyssaTaylor@Idle(Clone)
+      position: {x: 0.0000008654594, y: 0.057778776, z: -0.0046159998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 16.568947, y: 16.568947, z: 16.568947}
+    - name: Accessories
+      parentName: Alyssa_Taylor1
+      position: {x: -0.0000008654594, y: 0.088312015, z: 0.0046159998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Glasses
+      parentName: Accessories
+      position: {x: -1.3552527e-22, y: 0, z: 5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body
+      parentName: Alyssa_Taylor1
+      position: {x: -0.00000005223381, y: -0.0034871767, z: 0.0002785936}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.060353868, y: 0.060353868, z: 0.060353868}
+    - name: BackHair
+      parentName: Body
+      position: {x: -0.000013474291, y: 23.769228, z: 0.07186625}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 16.568947, y: 16.568947, z: 16.568947}
+    - name: FrontHair
+      parentName: Body
+      position: {x: -0.000013474291, y: 23.769228, z: 0.07186625}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 16.568947, y: 16.568947, z: 16.568947}
+    - name: Skin
+      parentName: Body
+      position: {x: -0.000013474291, y: 23.769228, z: 0.07186625}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 16.568947, y: 16.568947, z: 16.568947}
+    - name: EyeBrows
+      parentName: Alyssa_Taylor1
+      position: {x: -0.0000008654594, y: 0.088312015, z: 0.0046159998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftBrow
+      parentName: EyeBrows
+      position: {x: -1.3552527e-22, y: 0, z: 5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightBrow
+      parentName: EyeBrows
+      position: {x: -0.00011767593, y: 0, z: -0.00031572595}
+      rotation: {x: 0, y: -0.05048541, z: -0, w: 0.9987248}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Face
+      parentName: Alyssa_Taylor1
+      position: {x: -0.0000008654594, y: 0.088312015, z: 0.0046159998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BottomTeeth
+      parentName: Face
+      position: {x: -1.3552527e-22, y: 0, z: 5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftEye
+      parentName: Face
+      position: {x: -1.3552527e-22, y: 0, z: 5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightEye
+      parentName: Face
+      position: {x: -1.3552527e-22, y: 0, z: 5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tongue
+      parentName: Face
+      position: {x: -1.3552527e-22, y: 0, z: 5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: TopTeeth
+      parentName: Face
+      position: {x: -1.3552527e-22, y: 0, z: 5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hoodie
+      parentName: Alyssa_Taylor1
+      position: {x: -0.0000008654594, y: 0.088312015, z: 0.0046159998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hood
+      parentName: Hoodie
+      position: {x: -1.3552527e-22, y: 0, z: 5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sweater
+      parentName: Hoodie
+      position: {x: -1.3552527e-22, y: 0, z: 5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pants
+      parentName: Alyssa_Taylor1
+      position: {x: -0.0000008654594, y: 0.088312015, z: 0.0046159998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Shoes
+      parentName: Alyssa_Taylor1
+      position: {x: -0.0000008654594, y: 0.088312015, z: 0.0046159998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftShoe
+      parentName: Shoes
+      position: {x: -1.3552527e-22, y: 0, z: 5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightShoe
+      parentName: Shoes
+      position: {x: -1.3552527e-22, y: 0, z: 5.551115e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SHJntGrp
+      parentName: AlyssaTaylor@Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ROOTSHJnt
+      parentName: SHJntGrp
+      position: {x: -0, y: 0.78703374, z: 0.017128397}
+      rotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine_01SHJnt
+      parentName: ROOTSHJnt
+      position: {x: -0.103005, y: -0.013504026, z: 5.1740402e-17}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine_02SHJnt
+      parentName: Spine_01SHJnt
+      position: {x: -0.1030046, y: -0.0025290926, z: 4.686644e-17}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine_03SHJnt
+      parentName: Spine_02SHJnt
+      position: {x: -0.10300502, y: -0.0019908152, z: 4.663267e-17}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine_04SHJnt
+      parentName: Spine_03SHJnt
+      position: {x: -0.103004746, y: 0.018018948, z: 3.7750306e-17}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint44
+      parentName: Spine_04SHJnt
+      position: {x: 0.059811216, y: -0.07294276, z: -0.14186515}
+      rotation: {x: 0.07609966, y: -0.15288611, z: 0.86363614, w: 0.47430715}
+      scale: {x: 1.0000014, y: 1.0000006, z: 1.000001}
+    - name: joint45
+      parentName: joint44
+      position: {x: -0.12803197, y: -0.036782876, z: 0.052756295}
+      rotation: {x: -0.40094852, y: -0.7609144, z: -0.23781605, w: 0.45132363}
+      scale: {x: 1, y: 0.99999976, z: 0.9999998}
+    - name: joint46
+      parentName: Spine_04SHJnt
+      position: {x: 0.059809286, y: -0.0729428, z: 0.141865}
+      rotation: {x: 0.15288614, y: 0.07609967, z: 0.47430715, w: -0.8636362}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: joint47
+      parentName: joint46
+      position: {x: 0.1280339, y: 0.036785293, z: -0.05275584}
+      rotation: {x: -0.40094855, y: -0.7609145, z: -0.23781598, w: 0.45132366}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000011}
+    - name: Spine_TopSHJnt
+      parentName: Spine_04SHJnt
+      position: {x: -0.10300484, y: -0.0000015065023, z: 4.5751006e-17}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Neck_02SHJnt
+      parentName: Spine_TopSHJnt
+      position: {x: -0.009111997, y: 1.3322676e-17, z: 6.5453507e-18}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Neck_TopSHJnt
+      parentName: Neck_02SHJnt
+      position: {x: -0.04517077, y: 2.6645352e-17, z: 1.7565864e-17}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head_TopSHJnt
+      parentName: Neck_TopSHJnt
+      position: {x: -0.23086913, y: 1.398881e-16, z: 1.5381025e-16}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint48
+      parentName: Head_TopSHJnt
+      position: {x: 0.19351184, y: -0.17354563, z: -0.0017791706}
+      rotation: {x: 0.49995, y: -0.50005007, z: 0.49995, w: 0.50005007}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: r_Eye_01SHJnt
+      parentName: Head_TopSHJnt
+      position: {x: 0.09929141, y: -0.1320267, z: 0.04703847}
+      rotation: {x: -2.2570207e-15, y: 3.3354275e-16, z: 0.70703614, w: 0.7071775}
+      scale: {x: 1.000001, y: 1.0000002, z: 1.0000007}
+    - name: joint2
+      parentName: Head_TopSHJnt
+      position: {x: 0.19038673, y: -0.18808766, z: 0.00000084459197}
+      rotation: {x: 0.5901109, y: -0.64718384, z: 0.35662636, w: 0.32517672}
+      scale: {x: 1.0000002, y: 1.0000001, z: 0.9999999}
+    - name: joint4
+      parentName: Head_TopSHJnt
+      position: {x: 0.19353263, y: -0.16991153, z: 0.028767444}
+      rotation: {x: -0.5229878, y: 0.811798, z: 0.21835577, w: 0.14067215}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000001}
+    - name: joint3
+      parentName: Head_TopSHJnt
+      position: {x: 0.19353263, y: -0.16991153, z: -0.028765757}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint6
+      parentName: Head_TopSHJnt
+      position: {x: 0.19945854, y: -0.15862012, z: -0.035313778}
+      rotation: {x: -0.42413682, y: 0.5308762, z: 0.57320064, w: 0.45795137}
+      scale: {x: 1.0000007, y: 1, z: 1.0000002}
+    - name: joint5
+      parentName: Head_TopSHJnt
+      position: {x: 0.19945854, y: -0.15862012, z: 0.03531547}
+      rotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint1
+      parentName: Head_TopSHJnt
+      position: {x: 0.15809669, y: -0.20000976, z: 0.00000084459197}
+      rotation: {x: 0.17592625, y: -0.9844034, z: -0, w: 0}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1}
+    - name: joint11
+      parentName: Head_TopSHJnt
+      position: {x: 0.1712661, y: -0.14476381, z: 0.07156653}
+      rotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint10
+      parentName: Head_TopSHJnt
+      position: {x: 0.1712661, y: -0.14476381, z: -0.071564846}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint38
+      parentName: Head_TopSHJnt
+      position: {x: 0.07828956, y: -0.15929697, z: -0.05201599}
+      rotation: {x: 0.5963168, y: -0.66516554, z: 0.3346197, w: 0.2999845}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1}
+    - name: joint37
+      parentName: joint38
+      position: {x: 0.024570024, y: -0.018653769, z: -0.014272483}
+      rotation: {x: -0.045847446, y: 0.24053371, z: -0.28410995, w: 0.9269968}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1}
+    - name: joint39
+      parentName: joint38
+      position: {x: -0.028665142, y: 0, z: 1.0658141e-16}
+      rotation: {x: -0.08451191, y: -0.13524626, z: 0.42891985, w: 0.88915354}
+      scale: {x: 1.0000007, y: 1.0000004, z: 1.0000006}
+    - name: joint42
+      parentName: Head_TopSHJnt
+      position: {x: 0.11630226, y: -0.15789618, z: -0.05879582}
+      rotation: {x: -0.44037163, y: 0.45932746, z: 0.5568465, w: 0.53386617}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000001}
+    - name: joint43
+      parentName: joint42
+      position: {x: -0.021124203, y: 2.842171e-16, z: -3.5527136e-17}
+      rotation: {x: -0.020968074, y: -0.9952059, z: -0.0020122388, w: 0.09550679}
+      scale: {x: 0.9999999, y: 0.9999998, z: 1.0000001}
+    - name: joint36
+      parentName: joint43
+      position: {x: 0.019311812, y: 0.0055422974, z: -0.0011727333}
+      rotation: {x: -0.2058721, y: 0.26595998, z: -0.57645375, w: 0.74470335}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint41
+      parentName: joint42
+      position: {x: 0.014832024, y: 0.004179407, z: 0.006182401}
+      rotation: {x: -0.033124465, y: -0.19564396, z: 0.12276693, w: 0.9723963}
+      scale: {x: 0.9999995, y: 0.99999994, z: 0.99999976}
+    - name: joint40
+      parentName: joint41
+      position: {x: 0.018456569, y: 0.011157501, z: 0.00716898}
+      rotation: {x: -0.11694639, y: -0.19612108, z: 0.23556733, w: 0.9446523}
+      scale: {x: 1.0000007, y: 1.0000002, z: 1.0000007}
+    - name: joint34
+      parentName: Head_TopSHJnt
+      position: {x: 0.11630226, y: -0.15789618, z: 0.05879752}
+      rotation: {x: 0.44037166, y: -0.4593275, z: 0.5568465, w: 0.53386617}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: joint33
+      parentName: joint34
+      position: {x: 0.014832015, y: 0.0041794074, z: -0.0061824047}
+      rotation: {x: 0.03312452, y: 0.19564418, z: 0.12276699, w: 0.9723962}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint32
+      parentName: joint33
+      position: {x: 0.018456573, y: 0.011157497, z: -0.0071689747}
+      rotation: {x: 0.11694633, y: 0.19612102, z: 0.23556738, w: 0.9446524}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint35
+      parentName: joint34
+      position: {x: -0.021124212, y: 0, z: 7.105427e-17}
+      rotation: {x: 0.0029112648, y: -0.10574986, z: -0.06920782, w: 0.9919772}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint28
+      parentName: joint35
+      position: {x: -0.019778421, y: 0.0036404799, z: -0.0007741308}
+      rotation: {x: -0.61416495, y: 0.718425, z: -0.18713583, w: 0.26766995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint30
+      parentName: Head_TopSHJnt
+      position: {x: 0.07828956, y: -0.15929697, z: 0.052017678}
+      rotation: {x: -0.5963168, y: 0.6651656, z: 0.3346197, w: 0.2999845}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: joint31
+      parentName: joint30
+      position: {x: -0.028665142, y: -5.684342e-16, z: -3.5527136e-17}
+      rotation: {x: 0.08451192, y: 0.13524626, z: 0.42891985, w: 0.88915354}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000002}
+    - name: joint29
+      parentName: joint30
+      position: {x: 0.024570024, y: -0.018653769, z: 0.014272483}
+      rotation: {x: 0.045847442, y: -0.24053371, z: -0.28410995, w: 0.9269968}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000002}
+    - name: joint27
+      parentName: Head_TopSHJnt
+      position: {x: 0.112663426, y: -0.18288545, z: -0.0031184931}
+      rotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint58
+      parentName: Head_TopSHJnt
+      position: {x: -0.05294803, y: 0.03681587, z: 0.01277791}
+      rotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint49
+      parentName: joint58
+      position: {x: -0.009148718, y: -0.28423348, z: -0.033456024}
+      rotation: {x: 0.37956482, y: -0.6506079, z: -0.33145142, w: 0.5681372}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: joint50
+      parentName: joint49
+      position: {x: -0.096853115, y: 0, z: -6.661338e-18}
+      rotation: {x: -0.3478294, y: 0.11709875, z: 0.1755059, w: -0.9135099}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000006}
+    - name: joint51
+      parentName: joint50
+      position: {x: -0.08847997, y: -1.1657341e-17, z: 5.995204e-17}
+      rotation: {x: 0.979892, y: -0.18814576, z: 0.003636524, w: 0.06633009}
+      scale: {x: 0.99999994, y: 1.0000005, z: 1.0000001}
+    - name: joint59
+      parentName: joint51
+      position: {x: -0.080374725, y: -0.0026273665, z: -0.005782684}
+      rotation: {x: 0.24455176, y: -0.3130513, z: 0.5649552, w: 0.72320056}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: joint52
+      parentName: joint59
+      position: {x: -0.0063268677, y: 0.06141702, z: -0.042267036}
+      rotation: {x: 0.08277558, y: -0.73588336, z: -0.07511927, w: 0.6678181}
+      scale: {x: 1.0000015, y: 0.9999998, z: 1.0000014}
+    - name: joint53
+      parentName: joint52
+      position: {x: -0.04259821, y: 0.020061051, z: -0.008777976}
+      rotation: {x: 0.027682882, y: 0.069223225, z: 0.56673163, w: 0.8205225}
+      scale: {x: 1.0000011, y: 0.99999994, z: 0.99999994}
+    - name: joint54
+      parentName: joint53
+      position: {x: -0.10615941, y: 3.5527136e-17, z: -1.6653345e-18}
+      rotation: {x: 0.07450752, y: 0.025390178, z: 0.16578533, w: 0.9830154}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: joint55
+      parentName: joint54
+      position: {x: -0.122450076, y: 2.6867395e-16, z: -6.7723606e-17}
+      rotation: {x: -0.105038494, y: -0.013052791, z: 0.037499905, w: 0.99367523}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000008}
+    - name: joint56
+      parentName: joint55
+      position: {x: -0.12307126, y: 1.02140514e-16, z: 2.4251433e-17}
+      rotation: {x: 0.976418, y: 0.08921474, z: -0.00102292, w: 0.19658999}
+      scale: {x: 1.0000004, y: 1.0000005, z: 0.99999994}
+    - name: joint57
+      parentName: joint56
+      position: {x: -0.0487949, y: -1.1046719e-16, z: -1.5820678e-17}
+      rotation: {x: -0.3720197, y: -0.40969622, z: -0.55992484, w: 0.61663157}
+      scale: {x: 0.99999934, y: 0.9999991, z: 0.99999917}
+    - name: l_Eye_01SHJnt
+      parentName: Head_TopSHJnt
+      position: {x: 0.09929141, y: -0.1320267, z: -0.045525603}
+      rotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1.000001, y: 1.0000002, z: 1.0000007}
+    - name: joint12
+      parentName: Head_TopSHJnt
+      position: {x: 0.053993296, y: -0.16295895, z: -0.062917694}
+      rotation: {x: -0.3622024, y: 0.43785086, z: 0.6340372, w: 0.52449304}
+      scale: {x: 1.0000024, y: 1, z: 1.0000019}
+    - name: joint13
+      parentName: joint12
+      position: {x: -0.044473086, y: 9.436896e-18, z: 4.440892e-18}
+      rotation: {x: 0.087716445, y: 0.9934105, z: -0.0073993364, w: 0.0733937}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint14
+      parentName: joint12
+      position: {x: 0.02930489, y: -0.013155665, z: 0.017939072}
+      rotation: {x: 0.007712839, y: 0.11164267, z: -0.11853874, w: 0.98662305}
+      scale: {x: 1.0000004, y: 0.9999999, z: 1.0000004}
+    - name: joint15
+      parentName: Head_TopSHJnt
+      position: {x: 0.053993296, y: -0.16295895, z: 0.059537232}
+      rotation: {x: -0.609206, y: 0.73045695, z: 0.23707764, w: 0.19772431}
+      scale: {x: 1.0000018, y: 0.9999999, z: 1.0000018}
+    - name: joint16
+      parentName: joint15
+      position: {x: -0.032418475, y: 7.249756e-16, z: 2.6645352e-17}
+      rotation: {x: -0.105874136, y: -0.98012215, z: 0.012224106, w: -0.1673376}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000005}
+    - name: joint17
+      parentName: joint15
+      position: {x: 0.034424942, y: -0.014756395, z: 0.023979718}
+      rotation: {x: -0.08030213, y: -0.8872325, z: 0.040948816, w: -0.45243052}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: Head_JawSHJnt
+      parentName: Neck_TopSHJnt
+      position: {x: -0.011227422, y: -0.053803734, z: 4.72377e-16}
+      rotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1.0000013, y: 1.0000005, z: 1.0000011}
+    - name: joint18
+      parentName: Head_JawSHJnt
+      position: {x: 0.014738571, y: 0.029052718, z: -0.000013474291}
+      rotation: {x: -0.000000004163187, y: 0.00000004194073, z: 0.021276532, w: 0.9997737}
+      scale: {x: 1.0000005, y: 0.9999999, z: 1.0000004}
+    - name: joint19
+      parentName: joint18
+      position: {x: -0.0165003, y: -0.0032404251, z: 4.3599156e-18}
+      rotation: {x: -0.000000007450581, y: -0, z: 0.12926014, w: 0.99161077}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: joint20
+      parentName: joint19
+      position: {x: -0.016682213, y: -0.001795388, z: 8.091366e-18}
+      rotation: {x: -0.0000000037252903, y: -0.000000059604645, z: 0.042768374, w: 0.99908507}
+      scale: {x: 1.000001, y: 1.0000001, z: 1.0000008}
+    - name: joint21
+      parentName: joint20
+      position: {x: -0.01704571, y: -0.0006173813, z: 8.537328e-18}
+      rotation: {x: -0, y: -0, z: 0.049490646, w: 0.99877465}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: joint22
+      parentName: joint21
+      position: {x: -0.016844895, y: 0.0011353468, z: 8.3504545e-18}
+      rotation: {x: -0, y: -0, z: 0.00222227, w: 0.99999756}
+      scale: {x: 1.0000007, y: 0.9999997, z: 1.0000006}
+    - name: joint23
+      parentName: joint22
+      position: {x: -0.017424943, y: 0.001156987, z: 8.761256e-18}
+      rotation: {x: -0, y: -0, z: 0.0117649585, w: 0.99993086}
+      scale: {x: 0.9999997, y: 1, z: 0.99999946}
+    - name: joint24
+      parentName: joint23
+      position: {x: -0.018818373, y: 0.00031307383, z: 1.113717e-17}
+      rotation: {x: 0.000000007450581, y: 0.000000059604645, z: -0.013299994, w: 0.9999116}
+      scale: {x: 1, y: 1.0000005, z: 1}
+    - name: joint25
+      parentName: joint24
+      position: {x: -0.008634395, y: -0.00032497864, z: 5.400849e-18}
+      rotation: {x: -0.000000014901161, y: -0.000000029802322, z: 0.088164285, w: 0.996106}
+      scale: {x: 1.0000008, y: 1.0000004, z: 1.0000008}
+    - name: joint26
+      parentName: joint25
+      position: {x: -0.010009337, y: 0.00091731345, z: 6.8410488e-18}
+      rotation: {x: -0.1634204, y: -0.68796355, z: -0.1634204, w: 0.68796355}
+      scale: {x: 1, y: 1.0000002, z: 1.0000005}
+    - name: Head_JawEndSHJnt
+      parentName: Head_JawSHJnt
+      position: {x: -0.09981915, y: -0.027102463, z: 3.7716268e-18}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000005, y: 1, z: 1.0000005}
+    - name: joint8
+      parentName: Head_JawSHJnt
+      position: {x: -0.123770684, y: -0.004894635, z: 0.00000084459197}
+      rotation: {x: 0.13828592, y: -0.8393139, z: -0.08547311, w: 0.51877123}
+      scale: {x: 1.0000005, y: 0.99999994, z: 1.0000004}
+    - name: joint7
+      parentName: joint8
+      position: {x: 0.014476934, y: 0.016164698, z: -0.025188304}
+      rotation: {x: -0, y: 0.4471416, z: 0.286955, w: 0.8471843}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: joint9
+      parentName: joint8
+      position: {x: -0.0332465, y: 2.7755575e-19, z: 6.661338e-18}
+      rotation: {x: -0.03407954, y: 0.0571784, z: -0.2088776, w: 0.9756738}
+      scale: {x: 0.99999994, y: 1.0000004, z: 1.0000001}
+    - name: l_Arm_ClavicleSHJnt
+      parentName: Spine_TopSHJnt
+      position: {x: 0.057411917, y: -1.110223e-16, z: -0.16892974}
+      rotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_Arm_ShoulderSHJnt
+      parentName: l_Arm_ClavicleSHJnt
+      position: {x: -0.048855953, y: -0.009126963, z: 1.5543122e-17}
+      rotation: {x: -0.000000044703484, y: -0.000005915761, z: 0.039457873, w: 0.99922127}
+      scale: {x: 1.0000007, y: 1.0000005, z: 0.9999999}
+    - name: l_Arm_ElbowSHJnt
+      parentName: l_Arm_ShoulderSHJnt
+      position: {x: -0.21811546, y: -3.5527135e-16, z: 3.1086245e-17}
+      rotation: {x: 0.0000020731911, y: 0.00002485916, z: -0.000000014901161, w: 1}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1}
+    - name: l_Arm_WristSHJnt
+      parentName: l_Arm_ElbowSHJnt
+      position: {x: -0.21811546, y: -2.2489103e-11, z: 1.0658141e-16}
+      rotation: {x: -4.6574433e-10, y: -0.000012487584, z: -0.083183795, w: 0.9965342}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: l_Thumb_01_01SHJnt
+      parentName: l_Arm_WristSHJnt
+      position: {x: -0.054920938, y: -0.023084657, z: 0.058363464}
+      rotation: {x: 0.06028349, y: 0.43584, z: 0.101087414, w: 0.89229524}
+      scale: {x: 1.0000005, y: 0.9999999, z: 1}
+    - name: l_Thumb_01_02SHJnt
+      parentName: l_Thumb_01_01SHJnt
+      position: {x: -0.038891274, y: 2.0893082e-11, z: 6.3948843e-16}
+      rotation: {x: -0, y: -0, z: -0.0000000037252899, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: l_Thumb_01_03SHJnt
+      parentName: l_Thumb_01_02SHJnt
+      position: {x: -0.027903944, y: 1.4991883e-11, z: -3.5527136e-17}
+      rotation: {x: -0, y: -0, z: -0.0000000037252899, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: l_Thumb_01_04SHJnt
+      parentName: l_Thumb_01_03SHJnt
+      position: {x: -0.02002069, y: 1.0754561e-11, z: 6.0396133e-16}
+      rotation: {x: -0, y: -0, z: -0.0000000037252899, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: l_Finger_01_01SHJnt
+      parentName: l_Arm_WristSHJnt
+      position: {x: -0.1299356, y: -0.020011248, z: 0.044969704}
+      rotation: {x: -0.004641338, y: 0.029470423, z: 0.06668675, w: 0.99732786}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: l_Finger_01_02SHJnt
+      parentName: l_Finger_01_01SHJnt
+      position: {x: -0.04415307, y: 0.00070888427, z: -0.0003093372}
+      rotation: {x: 4.656613e-10, y: -0, z: -0.00000001792796, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000005}
+    - name: l_Finger_01_03SHJnt
+      parentName: l_Finger_01_02SHJnt
+      position: {x: -0.034302644, y: 0.0008620514, z: -0.00037617504}
+      rotation: {x: 0.000000005122274, y: -0.000000007450581, z: 0.000000011830707,
+        w: 1}
+      scale: {x: 1.0000001, y: 1.0000004, z: 0.99999976}
+    - name: l_Finger_01_04SHJnt
+      parentName: l_Finger_01_03SHJnt
+      position: {x: -0.02002069, y: -2.1316282e-16, z: 7.105427e-17}
+      rotation: {x: 0.0000000088475645, y: 0.0000000018626451, z: -0.000000033032848,
+        w: 1}
+      scale: {x: 0.99999976, y: 1.0000001, z: 0.9999997}
+    - name: l_Finger_02_01SHJnt
+      parentName: l_Arm_WristSHJnt
+      position: {x: -0.14108591, y: -0.020011248, z: 0.0043160114}
+      rotation: {x: -0.0045471564, y: 0.028293198, z: 0.07880457, w: 0.99647814}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: l_Finger_02_02SHJnt
+      parentName: l_Finger_02_01SHJnt
+      position: {x: -0.047872342, y: 0.008769991, z: -0.00048764428}
+      rotation: {x: 0.0004917029, y: 0.0007368474, z: -0.0007012828, w: 0.99999934}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: l_Finger_02_03SHJnt
+      parentName: l_Finger_02_02SHJnt
+      position: {x: -0.036438823, y: 0.0036475647, z: -0.0004975289}
+      rotation: {x: -0.000000005122274, y: -0.0000000055879354, z: 0.049292777, w: 0.9987844}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: l_Finger_02_04SHJnt
+      parentName: l_Finger_02_03SHJnt
+      position: {x: -0.028632408, y: 0.0046245223, z: -0.0004012436}
+      rotation: {x: -0.000000005820766, y: 0.000000024214387, z: -0.00000003079913,
+        w: 1}
+      scale: {x: 1.0000001, y: 0.99999976, z: 0.9999996}
+    - name: l_Finger_03_01SHJnt
+      parentName: l_Arm_WristSHJnt
+      position: {x: -0.14108591, y: -0.014292168, z: -0.03633768}
+      rotation: {x: 0.0022837494, y: -0.07305823, z: 0.06850498, w: 0.99496955}
+      scale: {x: 0.99999994, y: 1, z: 0.9999998}
+    - name: l_Finger_03_02SHJnt
+      parentName: l_Finger_03_01SHJnt
+      position: {x: -0.041666847, y: 0.00038008182, z: 0.00053193007}
+      rotation: {x: -0.000000004656613, y: -0.000000022351742, z: 0.000000006693881,
+        w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
+    - name: l_Finger_03_03SHJnt
+      parentName: l_Finger_03_02SHJnt
+      position: {x: -0.033475783, y: 0.00076299795, z: 0.0010678269}
+      rotation: {x: 0.0000000060535967, y: 0.000000014901161, z: -0.0000000011641532,
+        w: 1}
+      scale: {x: 1.0000007, y: 1.0000004, z: 1.0000001}
+    - name: l_Finger_03_04SHJnt
+      parentName: l_Finger_03_03SHJnt
+      position: {x: -0.028842842, y: 0.0012080902, z: 0.00169074}
+      rotation: {x: 0.0000000018626451, y: -0.000000007450581, z: 0.000000044034095,
+        w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: l_Finger_04_01SHJnt
+      parentName: l_Arm_WristSHJnt
+      position: {x: -0.14108591, y: -0.014292168, z: -0.07124012}
+      rotation: {x: -0.005215272, y: -0.049157735, z: 0.034230683, w: 0.9981907}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: l_Finger_04_02SHJnt
+      parentName: l_Finger_04_01SHJnt
+      position: {x: -0.023940912, y: -0.0020716856, z: -0.0006352965}
+      rotation: {x: -0.002182319, y: -0.0038329172, z: 0.09473758, w: 0.9954926}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: l_Finger_04_03SHJnt
+      parentName: l_Finger_04_02SHJnt
+      position: {x: -0.017706579, y: 0.0031760586, z: -0.00027939034}
+      rotation: {x: -0.004977212, y: 0.026697932, z: -0.026837116, w: 0.99927086}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.9999999}
+    - name: l_Finger_04_04SHJnt
+      parentName: l_Finger_04_03SHJnt
+      position: {x: -0.019876355, y: 0.0016035667, z: -0.000036226666}
+      rotation: {x: -0.000000013969839, y: -0.000000029802322, z: -0.00000008288771,
+        w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: r_Arm_ClavicleSHJnt
+      parentName: Spine_TopSHJnt
+      position: {x: 0.057580456, y: 2.2204459e-17, z: 0.15537906}
+      rotation: {x: 0.5, y: 0.5, z: 0.5, w: -0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r_Arm_ShoulderSHJnt
+      parentName: r_Arm_ClavicleSHJnt
+      position: {x: 0.057978112, y: 0.009126963, z: 0}
+      rotation: {x: 0.0000010430814, y: -0.000005871058, z: 0.039502833, w: 0.9992195}
+      scale: {x: 1.000001, y: 1.0000019, z: 1.0000023}
+    - name: r_Arm_ElbowSHJnt
+      parentName: r_Arm_ShoulderSHJnt
+      position: {x: 0.21995884, y: -1.4210854e-16, z: -3.9968027e-17}
+      rotation: {x: 0.000002036655, y: 0.000024642628, z: -0.000000014901159, w: 1}
+      scale: {x: 1.0000006, y: 1.000002, z: 1.0000027}
+    - name: r_Arm_WristSHJnt
+      parentName: r_Arm_ElbowSHJnt
+      position: {x: 0.21995884, y: 1.065814e-15, z: 0}
+      rotation: {x: -0.9966086, y: 0.082288325, z: -0.000012446805, w: -0.0000010158761}
+      scale: {x: 0.9999997, y: 1.0000004, z: 0.99999946}
+    - name: r_Thumb_01_01SHJnt
+      parentName: r_Arm_WristSHJnt
+      position: {x: 0.05446062, y: -0.015502841, z: 0.06388413}
+      rotation: {x: 0.90888506, y: -0.10613099, z: 0.40148768, w: -0.038365737}
+      scale: {x: 0.99999905, y: 1.0000011, z: 1.0000021}
+    - name: r_Thumb_01_02SHJnt
+      parentName: r_Thumb_01_01SHJnt
+      position: {x: 0.038891274, y: -5.9522165e-11, z: 8.171241e-16}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: r_Thumb_01_03SHJnt
+      parentName: r_Thumb_01_02SHJnt
+      position: {x: 0.027903944, y: -4.2706352e-11, z: -3.907985e-16}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: r_Thumb_01_04SHJnt
+      parentName: r_Thumb_01_03SHJnt
+      position: {x: 0.02002069, y: -3.0641302e-11, z: 1.3145041e-15}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: r_Finger_01_01SHJnt
+      parentName: r_Arm_WristSHJnt
+      position: {x: 0.14187297, y: -0.022126725, z: 0.04391069}
+      rotation: {x: 0.997521, y: -0.05968193, z: 0.037216768, w: -0.0022266908}
+      scale: {x: 1.0000001, y: 1.000002, z: 1.0000018}
+    - name: r_Finger_01_02SHJnt
+      parentName: r_Finger_01_01SHJnt
+      position: {x: 0.038891274, y: -3.5527136e-17, z: -1.0658141e-16}
+      rotation: {x: -0.0000000074505797, y: -0.0000000032887324, z: -0.0000000037252899,
+        w: 1}
+      scale: {x: 1.0000006, y: 1.0000008, z: 1.0000015}
+    - name: r_Finger_01_03SHJnt
+      parentName: r_Finger_01_02SHJnt
+      position: {x: 0.027903944, y: 4.063416e-16, z: -1.0658141e-16}
+      rotation: {x: 0.0000000025611369, y: 0.0000000035943226, z: 0.000000029802319,
+        w: 1}
+      scale: {x: 1.0000005, y: 0.99999946, z: 0.9999993}
+    - name: r_Finger_01_04SHJnt
+      parentName: r_Finger_01_03SHJnt
+      position: {x: 0.02002069, y: -2.1316282e-16, z: -1.4210854e-16}
+      rotation: {x: -4.6566123e-10, y: 2.9103827e-11, z: -0.00000001862645, w: 1}
+      scale: {x: 1.0000008, y: 1.0000001, z: 1.0000008}
+    - name: r_Finger_02_01SHJnt
+      parentName: r_Arm_WristSHJnt
+      position: {x: 0.13836226, y: -0.01507817, z: 0.0027367522}
+      rotation: {x: 0.997888, y: -0.059198547, z: 0.026586322, w: 0.0028693266}
+      scale: {x: 1.0000002, y: 1.0000021, z: 1.0000019}
+    - name: r_Finger_02_02SHJnt
+      parentName: r_Finger_02_01SHJnt
+      position: {x: 0.044489168, y: -0.0009775617, z: 1.4210854e-16}
+      rotation: {x: -0.000000004889443, y: -0.0000000015425028, z: -0.0000000074505797,
+        w: 1}
+      scale: {x: 1.0000004, y: 0.99999994, z: 0.99999964}
+    - name: r_Finger_02_03SHJnt
+      parentName: r_Finger_02_02SHJnt
+      position: {x: 0.039251566, y: -0.0017223896, z: 0.00092726736}
+      rotation: {x: -0.0000000013969838, y: -0.0000000018626449, z: 0.000000014901159,
+        w: 1}
+      scale: {x: 1.0000001, y: 0.9999995, z: 0.9999994}
+    - name: r_Finger_02_04SHJnt
+      parentName: r_Finger_02_03SHJnt
+      position: {x: 0.037461866, y: -0.0030457575, z: 4.2632563e-16}
+      rotation: {x: 0.000000008614733, y: -0.000000011496011, z: -0.000000052154057,
+        w: 1}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000001}
+    - name: r_Finger_03_01SHJnt
+      parentName: r_Arm_WristSHJnt
+      position: {x: 0.13457103, y: -0.014774079, z: -0.034011967}
+      rotation: {x: 0.99387056, y: -0.05902163, z: -0.093422264, w: 0.0031691385}
+      scale: {x: 1.0000002, y: 1.0000017, z: 1.0000019}
+    - name: r_Finger_03_02SHJnt
+      parentName: r_Finger_03_01SHJnt
+      position: {x: 0.04885958, y: -0.0011838049, z: -0.002019386}
+      rotation: {x: -0.0000000030267984, y: 0.00000003016612, z: 0.000000037252903,
+        w: 1}
+      scale: {x: 1.0000005, y: 0.99999887, z: 0.99999917}
+    - name: r_Finger_03_03SHJnt
+      parentName: r_Finger_03_02SHJnt
+      position: {x: 0.034448784, y: -0.00077724457, z: -0.0013258576}
+      rotation: {x: -0.000000003026798, y: 2.3283062e-10, z: 0.00000001862645, w: 1}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000011}
+    - name: r_Finger_03_04SHJnt
+      parentName: r_Finger_03_03SHJnt
+      position: {x: 0.02700961, y: -0.0008178486, z: 0.00068100565}
+      rotation: {x: 0.0000000023283064, y: -0.000000015366822, z: -0.00000010803342,
+        w: 1}
+      scale: {x: 1.0000006, y: 1.0000001, z: 1.0000004}
+    - name: r_Finger_04_01SHJnt
+      parentName: r_Arm_WristSHJnt
+      position: {x: 0.12346831, y: -0.00865152, z: -0.06484837}
+      rotation: {x: 0.9961182, y: -0.050895892, z: -0.069506764, w: 0.018080298}
+      scale: {x: 1.0000001, y: 1.0000008, z: 1.0000013}
+    - name: r_Finger_04_02SHJnt
+      parentName: r_Finger_04_01SHJnt
+      position: {x: 0.038891274, y: 3.1974422e-16, z: 7.771561e-17}
+      rotation: {x: 0.000000004656613, y: 0.000000029685907, z: -0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000011, z: 1.0000012}
+    - name: r_Finger_04_03SHJnt
+      parentName: r_Finger_04_02SHJnt
+      position: {x: 0.027903944, y: 5.2846613e-16, z: -1.5099033e-16}
+      rotation: {x: -0.000000006519258, y: 2.910383e-10, z: 0.0000000037252903, w: 1}
+      scale: {x: 1.0000005, y: 0.9999985, z: 0.99999875}
+    - name: r_Finger_04_04SHJnt
+      parentName: r_Finger_04_03SHJnt
+      position: {x: 0.02002069, y: 8.8817837e-17, z: 8.8817837e-17}
+      rotation: {x: -0.000000004656613, y: 2.910383e-10, z: -0.0000000037252903, w: 1}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.000001}
+    - name: r_Leg_HipSHJnt
+      parentName: ROOTSHJnt
+      position: {x: -0.000384303, y: 2.2204459e-17, z: 0.1316499}
+      rotation: {x: 0.7062934, y: -0.02527533, z: 0.058419608, w: -0.7050518}
+      scale: {x: 1.0000008, y: 1.0000011, z: 1.0000015}
+    - name: r_Leg_KneeSHJnt
+      parentName: r_Leg_HipSHJnt
+      position: {x: 0.37363943, y: -1.4210854e-16, z: 1.0658141e-16}
+      rotation: {x: -0.0000000037252903, y: -0.11839445, z: -0.000000059604645, w: 0.99296665}
+      scale: {x: 1.0000006, y: 1.0000008, z: 1.0000025}
+    - name: r_Leg_AnkleSHJnt
+      parentName: r_Leg_KneeSHJnt
+      position: {x: 0.3716756, y: 2.5579537e-15, z: 1.8762768e-16}
+      rotation: {x: -0.003646602, y: -0.05938921, z: -0.023167819, w: -0.9979594}
+      scale: {x: 1.0000019, y: 1.0000018, z: 1.0000035}
+    - name: r_Leg_BallSHJnt
+      parentName: r_Leg_AnkleSHJnt
+      position: {x: 0.025361395, y: -1.4210854e-16, z: -0.1355123}
+      rotation: {x: 0.000000059604638, y: -0.7071068, z: 0.000000119209275, w: -0.70710677}
+      scale: {x: 0.99999875, y: 0.9999996, z: 0.9999997}
+    - name: r_Leg_ToeSHJnt
+      parentName: r_Leg_BallSHJnt
+      position: {x: 0.08130739, y: -3.5527136e-17, z: 0.012094009}
+      rotation: {x: -0.000000029802319, y: 0.000000029802319, z: 0.0000001490116,
+        w: 1}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: l_Leg_HipSHJnt
+      parentName: ROOTSHJnt
+      position: {x: -0.000384303, y: -5.551115e-17, z: -0.124251775}
+      rotation: {x: -0.027629793, y: -0.70625746, z: 0.7051897, w: 0.05607575}
+      scale: {x: 1, y: 1, z: 1}
+    - name: l_Leg_KneeSHJnt
+      parentName: l_Leg_HipSHJnt
+      position: {x: -0.37353107, y: -1.0658141e-16, z: -1.7763567e-16}
+      rotation: {x: 0.0000000018626451, y: -0.11842772, z: -0.00000004575122, w: 0.9929627}
+      scale: {x: 1.000001, y: 1.0000007, z: 1.0000002}
+    - name: l_Leg_AnkleSHJnt
+      parentName: l_Leg_KneeSHJnt
+      position: {x: -0.37157282, y: -3.5527135e-16, z: 8.7707615e-17}
+      rotation: {x: 0.0031317882, y: 0.05942375, z: 0.019883396, w: 0.99802995}
+      scale: {x: 1.0000015, y: 1.0000019, z: 1.0000001}
+    - name: l_Leg_BallSHJnt
+      parentName: l_Leg_AnkleSHJnt
+      position: {x: -0.025361395, y: -1.2434498e-16, z: 0.1355123}
+      rotation: {x: -0.00000011769522, y: 0.70710695, z: -0.00000005809058, w: 0.7071067}
+      scale: {x: 1.0000012, y: 1, z: 1.0000002}
+    - name: l_Leg_ToeSHJnt
+      parentName: l_Leg_BallSHJnt
+      position: {x: -0.08130739, y: 1.7763568e-17, z: -0.012094009}
+      rotation: {x: 0.000000029802319, y: -0.000000029802319, z: 0.0000001490116,
+        w: 1}
+      scale: {x: 0.9999997, y: 0.99999994, z: 0.9999998}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -2089,10 +1689,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
