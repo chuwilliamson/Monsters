@@ -3,7 +3,7 @@ using System.Collections.Generic;
 [CreateAssetMenu(menuName = "ButtonSequenceContext")]
 public class ButtonPressContext : ScriptableObject, IContext
 {
-    public List<IState> buttons;
+    public List<IState> ButtonPressStates;
     IState currentState;
 
     public StringVariable Info;
@@ -17,16 +17,16 @@ public class ButtonPressContext : ScriptableObject, IContext
     public ButtonPressObject BState;
 
     public float passingScore = 3f;
-    public bool win = false;
-    int turncount = 0;
+    public bool win;
+    int turncount;
     public float stateTransitionInterval = 1;
 
     public float IntervalStart = 1;
 
     private void OnEnable()
     {
-        buttons = new List<IState>() { XState, YState, AState, BState };
-        currentState = buttons[0];
+        ButtonPressStates = new List<IState>() { XState, YState, AState, BState };
+        currentState = ButtonPressStates[0];
         currentState.OnEnter(this);
     }
 
@@ -61,14 +61,17 @@ public class ButtonPressContext : ScriptableObject, IContext
                 stateTransitionInterval = 0;
             Interval.Value = stateTransitionInterval.ToString();
         }
-
     }
 
     public bool PassOrFail()
     {
         var totalScore = 0;
-        foreach (ButtonPressObject b in buttons)
+        for (var index = 0; index < ButtonPressStates.Count; index++)
+        {
+            var state = ButtonPressStates[index];
+            var b = (ButtonPressObject) state;
             totalScore += b.Score;
+        }
         win = (totalScore >= passingScore);
 
         return win;
