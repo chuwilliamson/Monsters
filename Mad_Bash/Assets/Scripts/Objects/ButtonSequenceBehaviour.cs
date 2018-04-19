@@ -7,7 +7,12 @@
 public class ButtonSequenceBehaviour : MonoBehaviour
 {
     public ButtonPressContext context;
-    
+    public GameObject sphere;
+    private void Start()
+    {
+        context.onContextChange += () => { sphere.GetComponent<MeshRenderer>().material.color = Color.cyan; };
+    }
+
     private void Update()
     {
         if (context == null)
