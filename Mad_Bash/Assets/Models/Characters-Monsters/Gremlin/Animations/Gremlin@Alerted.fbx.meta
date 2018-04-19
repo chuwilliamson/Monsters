@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 50939f18d4dc88849b92a236b2b6a980
-timeCreated: 1524086945
+guid: 8cfa144f166ee384c95692bab25eae27
+timeCreated: 1524088510
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -236,7 +236,7 @@ ModelImporter:
     4300004: Gremlin_Tongue
     4300006: Gremlin_R_Eye
     4300008: Gremlin_L_Eye
-    7400000: Take 001
+    7400000: Alerted
     9500000: //RootNode
     13700000: Gremlin_Hair
     13700002: Gremlin_L_Eye
@@ -274,7 +274,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Alerted
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
