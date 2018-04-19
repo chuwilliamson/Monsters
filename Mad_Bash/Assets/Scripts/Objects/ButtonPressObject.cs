@@ -3,54 +3,67 @@
 [CreateAssetMenu(menuName = "ButtonPressObject")]
 public class ButtonPressObject : ScriptableObject, IState
 {
-    public string InputName;
-    public float TimeToLive = 1f;
-    public float TimeToPress = 0.5f;
+    public ConditionVariable ButtonCondition;
+    [Header("Info")]
     public int Score;
-    public bool ButtonPressed;
 
-    public bool RESULT { get; private set; }
+    [Header("TTL")]
+    public float TTL;
+    public FloatVariable TimeToLive;
+    [Header("TTP")]
+    public float TTP;
+    public FloatVariable TimeToPress;
 
+    public bool ButtonPressed
+    {
+        get
+        {
+            var result = (TimeToPress.Value > 0 && ButtonCondition.Result);
+            if(result) Score = 1;
+            return (result || Input.anyKey);
+        }
+    }
     public bool ButtonFinished
     {
         get
         {
-            RESULT = TimeToPress > 0 && Input.GetButtonDown(InputName);
-            TimeToLive -= Time.deltaTime;
-            TimeToPress -= Time.deltaTime;
-
-            if (TimeToPress < 0)
-                TimeToPress = 0;
-            if (TimeToLive < 0)
-                TimeToLive = 0;
-
-            return TimeToLive <= 0;
+            //if user pressed button within threshold
+            return TimeToLive.Value <= 0;
         }
     }
 
     public void OnEnter(IContext context)
     {
-        ((ButtonPressContext)context).Info.Value = this.ToString();
-
-        TimeToLive = 1f;
-        TimeToPress = 0.5f;
+        TimeToLive.Value = TTL;
+        TimeToPress.Value = TTP;
         Score = 0;
-        ButtonPressed = false;
-
-        Debug.Log("changestate " + this);
+        UpdateInfo(context);
     }
 
     public void OnExit(IContext context)
     {
+        UpdateInfo(context);
+        ((ButtonPressContext)context).TotalScore += Score;
     }
 
+    void UpdateInfo(IContext context)
+    {
+        ((ButtonPressContext)context).Timer.Value = TimeToLive.Value.ToString();
+        ((ButtonPressContext)context).TimerPressed.Value = TimeToPress.Value.ToString();
+        ((ButtonPressContext)context).Info.Value = name;
+
+    }
     public void UpdateState(IContext context)
     {
-        ((ButtonPressContext) context).Timer.Value = TimeToLive.ToString();
-        ((ButtonPressContext) context).TimerPressed.Value = TimeToPress.ToString();
-        if (!ButtonFinished) return;
-        Score = RESULT ? 1 : 0;
-        var randomstate = Random.Range(0, 3);
-        context.ChangeState(((ButtonPressContext) context).ButtonPressStates[randomstate]);
+        TimeToLive.Value -= Time.deltaTime;
+        TimeToPress.Value -= Time.deltaTime;
+        if (TimeToPress.Value < 0) TimeToPress.Value = 0f;
+        if (TimeToLive.Value < 0) TimeToLive.Value = 0f;
+        UpdateInfo(context);
+        if (ButtonPressed || ButtonFinished)
+        {
+            var randomstate = Random.Range(0, 3);
+            context.ChangeState(((ButtonPressContext)context).ButtonPressStates[randomstate]);
+        }
     }
 }
