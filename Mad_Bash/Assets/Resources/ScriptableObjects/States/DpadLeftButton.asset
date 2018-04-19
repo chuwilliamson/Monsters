@@ -9,9 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b38efb17e5089964bbd9081d947e9e09, type: 3}
-  m_Name: BButton
+  m_Name: DpadLeftButton
   m_EditorClassIdentifier: 
-  InputName: B Button
-  TimeToLive: {fileID: 11400000, guid: c486350ca91626442905771154bf745b, type: 2}
-  TimeToPress: {fileID: 11400000, guid: 5006509aca1b4874cac26f35c219589d, type: 2}
+  ButtonCondition: {fileID: 11400000, guid: 00022a3f81a6d504bb41a890f8877544, type: 2}
   Score: 0
+  TTL: 3
+  TimeToLive: {fileID: 11400000, guid: c486350ca91626442905771154bf745b, type: 2}
+  TTP: 2
+  TimeToPress: {fileID: 11400000, guid: 5006509aca1b4874cac26f35c219589d, type: 2}
