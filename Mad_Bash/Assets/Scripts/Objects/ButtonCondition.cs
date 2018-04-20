@@ -10,6 +10,8 @@ public class ButtonCondition : ConditionVariable
         get
         {
             _result = Input.GetButtonDown(ButtonName);
+            if (_result)
+                Debug.Log("WINNER");
             return _result;
         }
     }
