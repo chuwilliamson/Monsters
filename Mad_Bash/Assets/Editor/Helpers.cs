@@ -31,7 +31,7 @@ public class ScriptableObjectHelpers
             case PlayModeStateChange.ExitingPlayMode:
                 foreach (var so in objectsToUnload)
                     Resources.UnloadAsset(so);
-                objectsToUnload.Clear();
+                objectsToUnload = new List<ScriptableObject>();
                 AssetDatabase.Refresh();
                 break;
         }
