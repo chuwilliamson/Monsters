@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c453f32e70a4ddd46bbafd1b8748785e, type: 3}
-  m_Name: TestContextAllAButtons_FightTest
+  m_Name: FightSequenceContext
   m_EditorClassIdentifier: 
   ButtonPressStates:
-  - {fileID: 11400000, guid: 258340ace753bf74ba6a752bbd8861bb, type: 2}
-  - {fileID: 11400000, guid: 258340ace753bf74ba6a752bbd8861bb, type: 2}
-  - {fileID: 11400000, guid: 258340ace753bf74ba6a752bbd8861bb, type: 2}
-  - {fileID: 11400000, guid: 258340ace753bf74ba6a752bbd8861bb, type: 2}
+  - {fileID: 11400000, guid: bb95075ed69937345afb1ea86e15c7eb, type: 2}
+  - {fileID: 11400000, guid: 731592c827c472748b55cc08b4a3a7a4, type: 2}
+  - {fileID: 11400000, guid: bb95075ed69937345afb1ea86e15c7eb, type: 2}
+  - {fileID: 11400000, guid: 731592c827c472748b55cc08b4a3a7a4, type: 2}
   Info: {fileID: 11400000, guid: 67f0ff27ac044bc45a00d3af60c019f3, type: 2}
   Timer: {fileID: 11400000, guid: 5aac0d533ec5e354281d72031c643a16, type: 2}
   TimerPressed: {fileID: 11400000, guid: 497740cdcf156b34fb204ca61f02292f, type: 2}
@@ -23,11 +23,9 @@ MonoBehaviour:
   Score: {fileID: 11400000, guid: dbc2fdaab86cabf47a68e76017032162, type: 2}
   ScoreString: {fileID: 11400000, guid: dcc5266c89b2e2d428db75bec7a15963, type: 2}
   State_0: {fileID: 11400000, guid: 258340ace753bf74ba6a752bbd8861bb, type: 2}
-  State_1: {fileID: 11400000, guid: 258340ace753bf74ba6a752bbd8861bb, type: 2}
-  State_2: {fileID: 11400000, guid: 258340ace753bf74ba6a752bbd8861bb, type: 2}
-  State_3: {fileID: 11400000, guid: 258340ace753bf74ba6a752bbd8861bb, type: 2}
-  StateTimeToPress: {fileID: 11400000, guid: fda328ec6f2e73a4ca448fcef25f1cd7, type: 2}
-  StateTimeToLive: {fileID: 11400000, guid: 1172861f4a4cd3d43bc519920323bd65, type: 2}
+  State_1: {fileID: 11400000, guid: 265fe46059f595e49abf9ca7666a9999, type: 2}
+  State_2: {fileID: 11400000, guid: fc84b63d0d0e5174b9cfa4456077f509, type: 2}
+  State_3: {fileID: 11400000, guid: 8b8346e0d697b6542bd22f3d182a110b, type: 2}
   passingScore: 3
   MaxTurns: 4
   StateTransitionInterval: 1
