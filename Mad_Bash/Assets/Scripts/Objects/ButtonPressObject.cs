@@ -53,6 +53,7 @@ public class ButtonPressObject : ScriptableObject, IState
         ((ButtonPressContext)context).Info.Value = name;
 
     }
+
     public void UpdateState(IContext context)
     {
         TimeToLive.Value -= Time.deltaTime;
