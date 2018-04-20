@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38efb17e5089964bbd9081d947e9e09, type: 3}
   m_Name: Dpad Right Button
   m_EditorClassIdentifier: 
-  InputName: 
-  TimeToLive: 1
-  TimeToPress: 0.5
+  ButtonCondition: {fileID: 0}
   Score: 0
-  ButtonPressed: 0
+  TTL: 3
+  TimeToLive: {fileID: 11400000, guid: 1172861f4a4cd3d43bc519920323bd65, type: 2}
+  TTP: 2
+  TimeToPress: {fileID: 11400000, guid: fda328ec6f2e73a4ca448fcef25f1cd7, type: 2}

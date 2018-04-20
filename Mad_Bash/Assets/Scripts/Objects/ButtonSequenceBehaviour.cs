@@ -8,11 +8,11 @@ public class ButtonSequenceBehaviour : MonoBehaviour
 {
     public ButtonPressContext context;
     public GameObject sphere;
-    private void Start()
+    private void OnEnable()
     {
-        context.onContextChange += () => { sphere.GetComponent<MeshRenderer>().material.color = Color.cyan; };
+        context.TurnCount = 0;
     }
-
+ 
     private void Update()
     {
         if (context == null)
