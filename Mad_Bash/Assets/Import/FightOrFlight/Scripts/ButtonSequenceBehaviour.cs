@@ -6,13 +6,12 @@
 /// </summary>
 public class ButtonSequenceBehaviour : MonoBehaviour
 {
-    public ButtonPressContext context;
-    public GameObject sphere;
+    public ButtonPressContext context;//context
     private void OnEnable()
     {
         context.TurnCount = 0;
     }
- 
+
     private void Update()
     {
         if (context == null)
