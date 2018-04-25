@@ -337,7 +337,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114938556975104038}
-        m_MethodName: SetInteractor
+        m_MethodName: InteractionReponse
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d590a09daa76a594fa438e3ce70cf30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: c8872184dd428074b97c0d90b3a362b5, type: 2}
+  Event: {fileID: 0}
   Sender: {fileID: 1341228478382450}
   Response:
     m_PersistentCalls:
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d590a09daa76a594fa438e3ce70cf30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 8066f2747e13339498d8805ee7474439, type: 2}
+  Event: {fileID: 0}
   Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
@@ -667,14 +667,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d590a09daa76a594fa438e3ce70cf30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 8066f2747e13339498d8805ee7474439, type: 2}
+  Event: {fileID: 0}
   Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114938556975104038}
-        m_MethodName: OnContainerOpen
-        m_Mode: 1
+        m_MethodName: InteractionReponse
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d590a09daa76a594fa438e3ce70cf30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 3ac1c496fcf427c4bafbf19ca269277a, type: 2}
+  Event: {fileID: 0}
   Sender: {fileID: 1341228478382450}
   Response:
     m_PersistentCalls:
@@ -727,10 +727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container_config: {fileID: 11400000, guid: 415cd010986070344a6ace9101ace8ab, type: 2}
   container_runtime: {fileID: 0}
-  Interactor: {fileID: 0}
-  Interactor_Set: {fileID: 11400000, guid: c8872184dd428074b97c0d90b3a362b5, type: 2}
-  Interactor_Release: {fileID: 11400000, guid: 3ac1c496fcf427c4bafbf19ca269277a, type: 2}
-  containerOpen: {fileID: 11400000, guid: 8066f2747e13339498d8805ee7474439, type: 2}
+  Container_Open: {fileID: 0}
 --- !u!114 &114984423524887944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -748,7 +745,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114938556975104038}
-        m_MethodName: ReleaseInteractor
+        m_MethodName: InteractionReponse
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
