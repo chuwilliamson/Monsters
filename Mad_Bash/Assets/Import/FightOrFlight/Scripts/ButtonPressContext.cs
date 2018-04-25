@@ -15,7 +15,7 @@ public class ButtonPressContext : ScriptableObject, IContext
     public StringVariable Info;
     public StringVariable Timer;
     public StringVariable TimerPressed;
-    public StringVariable Interval;
+    public StringVariable Interval;//no more score
     public StringVariable ScoreString;
 
     [Header("States")]

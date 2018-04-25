@@ -4,7 +4,7 @@
 public class ButtonPressObject : ScriptableObject, IState
 {
     public ConditionVariable ButtonCondition;
-    [Header("Scoring")]
+    [Header("Scoring")]//scoring
     public float ButtonScoreValue = 1;
 
     [Header("TTL")]

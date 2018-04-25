@@ -6,7 +6,7 @@
 /// </summary>
 public class ButtonSequenceBehaviour : MonoBehaviour
 {
-    public ButtonPressContext context;
+    public ButtonPressContext context;//context
     private void OnEnable()
     {
         context.TurnCount = 0;
