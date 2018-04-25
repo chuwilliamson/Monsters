@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c453f32e70a4ddd46bbafd1b8748785e, type: 3}
+  m_Name: _FightSequenceContext
+  m_EditorClassIdentifier: 
+  ButtonPressStates:
+  - {fileID: 11400000, guid: 48aa2b02dfb9da446bddb3bfbc4ab80f, type: 2}
+  - {fileID: 11400000, guid: e44aff553aaab3b429db0876eff2d790, type: 2}
+  - {fileID: 11400000, guid: 0b7fe0c5d5b5ac3468ec19cba48e46ca, type: 2}
+  - {fileID: 11400000, guid: 0f561d45bec535742a8ac7b00e999975, type: 2}
+  Info: {fileID: 11400000, guid: 67f0ff27ac044bc45a00d3af60c019f3, type: 2}
+  Timer: {fileID: 11400000, guid: 5aac0d533ec5e354281d72031c643a16, type: 2}
+  TimerPressed: {fileID: 11400000, guid: 497740cdcf156b34fb204ca61f02292f, type: 2}
+  Interval: {fileID: 11400000, guid: 11ded7dbb48cdfc40b0d6b0d49b0ec52, type: 2}
+  ScoreString: {fileID: 11400000, guid: dcc5266c89b2e2d428db75bec7a15963, type: 2}
+  State_0: {fileID: 11400000, guid: 48aa2b02dfb9da446bddb3bfbc4ab80f, type: 2}
+  State_1: {fileID: 11400000, guid: e44aff553aaab3b429db0876eff2d790, type: 2}
+  State_2: {fileID: 11400000, guid: 0b7fe0c5d5b5ac3468ec19cba48e46ca, type: 2}
+  State_3: {fileID: 11400000, guid: 0f561d45bec535742a8ac7b00e999975, type: 2}
+  passingScore: 3
+  MaxTurns: 4
+  StateTransitionInterval: 1
