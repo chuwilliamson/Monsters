@@ -4,8 +4,8 @@
 public class ButtonPressObject : ScriptableObject, IState
 {
     public ConditionVariable ButtonCondition;
-    [Header("Scoring")]
-    public float ButtonScoreValue = 1;
+    [Header("Info")]
+    public int Score;
 
     [Header("TTL")]
     public float TTL;
@@ -19,7 +19,7 @@ public class ButtonPressObject : ScriptableObject, IState
         get
         {
             var result = (TimeToPress.Value > 0 && ButtonCondition.Result);
-            if(result) ButtonScoreValue = 1;
+            if(result) Score = 1;
             return (result || Input.anyKey);
         }
     }
@@ -33,18 +33,17 @@ public class ButtonPressObject : ScriptableObject, IState
     }
 
     public void OnEnter(IContext context)
-    { 
+    {
         TimeToLive.Value = TTL;
         TimeToPress.Value = TTP;
-        ButtonScoreValue = 0;
+        Score = 0;
         UpdateInfo(context);
     }
-     
 
     public void OnExit(IContext context)
-    { 
+    {
         UpdateInfo(context);
-        ((ButtonPressContext)context).TotalScore += ButtonScoreValue;
+        ((ButtonPressContext)context).TotalScore += Score;
     }
 
     void UpdateInfo(IContext context)
@@ -52,6 +51,7 @@ public class ButtonPressObject : ScriptableObject, IState
         ((ButtonPressContext)context).Timer.Value = TimeToLive.Value.ToString();
         ((ButtonPressContext)context).TimerPressed.Value = TimeToPress.Value.ToString();
         ((ButtonPressContext)context).Info.Value = name;
+
     }
 
     public void UpdateState(IContext context)
