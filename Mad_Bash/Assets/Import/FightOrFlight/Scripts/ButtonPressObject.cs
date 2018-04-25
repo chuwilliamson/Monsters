@@ -3,24 +3,28 @@
 [CreateAssetMenu(menuName = "ButtonPressObject")]
 public class ButtonPressObject : ScriptableObject, IState
 {
+    [SerializeField]
+    private GameEventArgs OnButtonStateEnter;
+    [SerializeField]
+    private GameEventArgs OnButtonStateExit;
     public ConditionVariable ButtonCondition;
     [Header("Scoring")]//scoring
     public float ButtonScoreValue = 1;
-
+    
     [Header("TTL")]
     public float TTL;
     public FloatVariable TimeToLive;
     [Header("TTP")]
     public float TTP;
     public FloatVariable TimeToPress;
-
+    public bool result;
     public bool ButtonPressed
     {
         get
         {
-            var result = (TimeToPress.Value > 0 && ButtonCondition.Result);
-            if(result) ButtonScoreValue = 1;
-            return (result || Input.anyKey);
+            result = (TimeToPress.Value > 0 && ButtonCondition.Result);
+            if (result) ButtonScoreValue = 1;
+            return (result);
         }
     }
     public bool ButtonFinished
@@ -33,18 +37,22 @@ public class ButtonPressObject : ScriptableObject, IState
     }
 
     public void OnEnter(IContext context)
-    { 
+    {
+        OnButtonStateEnter.Raise(this);
         TimeToLive.Value = TTL;
         TimeToPress.Value = TTP;
-        ButtonScoreValue = 0;
+        ButtonScoreValue = 0;        
         UpdateInfo(context);
     }
-     
+
 
     public void OnExit(IContext context)
-    { 
+    {
+        
         UpdateInfo(context);
+        
         ((ButtonPressContext)context).TotalScore += ButtonScoreValue;
+        OnButtonStateExit.Raise(this);
     }
 
     void UpdateInfo(IContext context)
