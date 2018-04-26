@@ -8,6 +8,7 @@ public class ButtonPressObject : ScriptableObject, IState
     [SerializeField]
     private GameEventArgs OnButtonStateExit;
     public ConditionVariable ButtonCondition;
+    public bool RANDOM;
     [Header("Scoring")]//scoring
     public float ButtonScoreValue = 1;
     
@@ -24,7 +25,7 @@ public class ButtonPressObject : ScriptableObject, IState
         {
             result = (TimeToPress.Value > 0 && ButtonCondition.Result);
             if (result) ButtonScoreValue = 1;
-            return (result);
+            return (result || Input.anyKey);
         }
     }
     public bool ButtonFinished
@@ -71,8 +72,8 @@ public class ButtonPressObject : ScriptableObject, IState
         UpdateInfo(context);
         if (ButtonPressed || ButtonFinished)
         {
-            var randomstate = Random.Range(0, 3);
-            context.ChangeState(((ButtonPressContext)context).ButtonPressStates[randomstate]);
+            var stateindex = RANDOM ? Random.Range(0, 4) : ((ButtonPressContext)context).TurnCount;
+            context.ChangeState(((ButtonPressContext)context).ButtonPressStates[stateindex]);
         }
     }
 }

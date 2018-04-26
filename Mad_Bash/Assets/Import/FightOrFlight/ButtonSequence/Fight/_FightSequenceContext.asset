@@ -26,5 +26,10 @@ MonoBehaviour:
   State_2: {fileID: 11400000, guid: 5dc6414f7443a204fa69eddd8838ce44, type: 2}
   State_3: {fileID: 11400000, guid: dbd00b16614803241bf53e81daa26432, type: 2}
   passingScore: 3
-  MaxTurns: 4
-  StateTransitionInterval: 1
+  MaxTurns: 25
+  StateTransitionInterval: 0.2
+  OnContextChanged: {fileID: 11400000, guid: 649227a0f60968f49b49dca1b220b72e, type: 2}
+  OnContextFinished: {fileID: 11400000, guid: 539e668f110d9f248a04884a499a6a88, type: 2}
+  OnContextTimerEnd: {fileID: 11400000, guid: 92da2b08d8be72f4ead5fc4a14771307, type: 2}
+  OnContextTimerStart: {fileID: 11400000, guid: 104e9f58a93fb884798667a398ef6a53,
+    type: 2}
