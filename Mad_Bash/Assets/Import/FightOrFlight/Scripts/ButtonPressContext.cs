@@ -36,6 +36,7 @@ public class ButtonPressContext : ScriptableObject, IContext
     [Tooltip("How many sequences")]
     public int MaxTurns = 4;
 
+
     [Tooltip("Adjust how long before the next state will execute")]
     public float StateTransitionInterval = 1;
     private float stateTransitionInterval;
@@ -54,6 +55,7 @@ public class ButtonPressContext : ScriptableObject, IContext
         TotalScore = 0;
         Interval.Value = StateTransitionInterval.ToString();
     }
+
 
     public void UpdateContext()
     {
