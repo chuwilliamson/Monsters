@@ -11,9 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38efb17e5089964bbd9081d947e9e09, type: 3}
   m_Name: AButtonObject
   m_EditorClassIdentifier: 
+  OnButtonStateEnter: {fileID: 11400000, guid: d5a0ee026068d5343ab217ccac829a89, type: 2}
+  OnButtonStateExit: {fileID: 11400000, guid: 2c8c0390163a83f45adb84f9b31001ad, type: 2}
   ButtonCondition: {fileID: 11400000, guid: b0d9a38b64082ea4e8ec28838c38d48c, type: 2}
-  ButtonScoreValue: 1
+  ButtonScoreValue: 0
   TTL: 3
-  TimeToLive: {fileID: 11400000, guid: 1172861f4a4cd3d43bc519920323bd65, type: 2}
+  TimeToLive: {fileID: 11400000, guid: 28dec70e1322b964290b7982a87fb57e, type: 2}
   TTP: 2
-  TimeToPress: {fileID: 11400000, guid: 1cbf1ee1517371e459ba51c33eb543a1, type: 2}
+  TimeToPress: {fileID: 11400000, guid: 5a0ae85c40e01b4479c55bced66d8bf6, type: 2}
+  result: 0
