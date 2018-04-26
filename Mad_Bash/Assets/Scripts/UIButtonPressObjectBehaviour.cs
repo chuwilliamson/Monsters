@@ -7,10 +7,17 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
 {
     [SerializeField]
     private ButtonPressObject ButtonState;
+
+    public UnityEvent StartResponse;
+
     public UnityEvent ContextChangedResponse;
     public UnityEvent ContextFinishedResponse;
     public UnityEvent ContextTimerEndResponse;
     public UnityEvent ContextTimerStartResponse;
+    private void Start()
+    {
+        StartResponse.Invoke();
+    }
 
     public void onContextChanged(Object[] args)
     {
