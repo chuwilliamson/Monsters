@@ -36,11 +36,14 @@ public class ButtonPressContext : ScriptableObject, IContext
     [Tooltip("How many sequences")]
     public int MaxTurns = 4;
 
-
     [Tooltip("Adjust how long before the next state will execute")]
     public float StateTransitionInterval = 1;
     private float stateTransitionInterval;
 
+    [SerializeField]
+    public GameEventArgs OnTimerStart;
+    [SerializeField]
+    public GameEventArgs OnTimerEnd;
 
     private void OnEnable()
     {
@@ -51,9 +54,14 @@ public class ButtonPressContext : ScriptableObject, IContext
         TotalScore = 0;
         Interval.Value = StateTransitionInterval.ToString();
     }
-    
+
     public void UpdateContext()
     {
+        if (stateTransitionInterval == 0)
+            OnTimerEnd.Raise();
+        if (stateTransitionInterval == 1)
+            OnTimerStart.Raise();
+
         if (TurnCount >= MaxTurns)
         {
             Info.Value = "Finished with score of " + TotalScore;
