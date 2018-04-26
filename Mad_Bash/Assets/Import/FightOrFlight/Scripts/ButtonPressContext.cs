@@ -28,17 +28,26 @@ public class ButtonPressContext : ScriptableObject, IContext
 
     [Header("Scores")]
     public float passingScore = 3f;
-
+    private int _turnCount;
     /// <summary>
     /// use this to set the turncount back to zero and the sequence will restart
     /// </summary>
     public int TurnCount
-    { get; set; }
+    {
+        get { return _turnCount; }
+        set
+        {
+            
+            _turnCount = value;
+            if (_turnCount == MaxTurns)
+                OnContextFinished.Raise(this);
+        }
+    }
 
     [Tooltip("How many sequences")]
     public int MaxTurns = 4;
 
-    
+
     [Tooltip("Adjust how long before the next state will execute")]
     public float StateTransitionInterval = 1;
     private float stateTransitionInterval;
@@ -51,12 +60,10 @@ public class ButtonPressContext : ScriptableObject, IContext
     private GameEventArgs OnContextTimerEnd;
     [SerializeField]
     private GameEventArgs OnContextTimerStart;
-    
-    
 
-    private void OnEnable()
-    {
-        ButtonPressStates = new List<ButtonPressObject> { State_0, State_1, State_2, State_3 };
+
+    public void ResetContext()
+    {        
         currentState = ButtonPressStates[0];
         currentState.OnEnter(this);
         TurnCount = 0;
@@ -64,8 +71,14 @@ public class ButtonPressContext : ScriptableObject, IContext
         Interval.Value = StateTransitionInterval.ToString();
     }
 
+    private void OnEnable()
+    {
+        ButtonPressStates = new List<ButtonPressObject> { State_0, State_1, State_2, State_3 };
+        ResetContext();
+    }
+
     public void UpdateContext()
-    { 
+    {
         if (TurnCount >= MaxTurns)
         {
             Info.Value = "Finished with score of " + TotalScore;

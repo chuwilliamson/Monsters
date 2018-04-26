@@ -9,7 +9,7 @@ public class ButtonSequenceBehaviour : MonoBehaviour
     public ButtonPressContext context;//context
     private void OnEnable()
     {
-        context.TurnCount = 0;
+        context.ResetContext();
     }
 
     private void Update()
