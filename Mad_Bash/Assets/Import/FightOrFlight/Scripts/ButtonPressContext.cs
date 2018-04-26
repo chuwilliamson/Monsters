@@ -4,9 +4,6 @@ using System.Collections.Generic;
 [CreateAssetMenu(menuName = "ButtonSequenceContext")]
 public class ButtonPressContext : ScriptableObject, IContext
 {
-    public delegate void OnContextChange();
-
-    public OnContextChange onContextChange;
     [HideInInspector]
     public List<ButtonPressObject> ButtonPressStates;
     private IState currentState;
@@ -41,9 +38,13 @@ public class ButtonPressContext : ScriptableObject, IContext
     private float stateTransitionInterval;
 
     [SerializeField]
-    private GameEventArgs OnTimerStart;
+    private GameEventArgs OnContextTimerStart;
     [SerializeField]
-    private GameEventArgs OnTimerEnd;
+    private GameEventArgs OnContextTimerEnd;
+    [SerializeField]
+    private GameEventArgs OnContextFinished;
+    [SerializeField]
+    private GameEventArgs OnContextChanged;
 
     private void OnEnable()
     {
@@ -56,14 +57,7 @@ public class ButtonPressContext : ScriptableObject, IContext
     }
 
     public void UpdateContext()
-    {
-        // this happens only at the frame that the timer is started or reset
-        if (stateTransitionInterval == StateTransitionInterval)
-            OnTimerStart.Raise();
-        // this happens only at the frame that the timer ends
-        if (stateTransitionInterval == 0)
-            OnTimerEnd.Raise();       
-
+    { 
         if (TurnCount >= MaxTurns)
         {
             Info.Value = "Finished with score of " + TotalScore;
@@ -76,7 +70,11 @@ public class ButtonPressContext : ScriptableObject, IContext
         else // this happens only on frames the timer is counting down
         {
             stateTransitionInterval -= Time.deltaTime;
-            if (stateTransitionInterval < 0) stateTransitionInterval = 0;
+            if (stateTransitionInterval < 0)
+            {
+                stateTransitionInterval = 0;
+                OnContextTimerEnd.Raise(this);
+            }
             Info.Value = "Waiting...";
             Interval.Value = stateTransitionInterval.ToString();
         }
@@ -88,7 +86,9 @@ public class ButtonPressContext : ScriptableObject, IContext
         currentState = next;
         currentState.OnEnter(this);
         TurnCount++;
+        OnContextChanged.Raise(this);
         stateTransitionInterval = StateTransitionInterval;
+        OnContextTimerStart.Raise(this);
     }
 
     private float totalScore;
@@ -98,9 +98,8 @@ public class ButtonPressContext : ScriptableObject, IContext
         get { return totalScore; }
         set
         {
-            if (onContextChange != null)
-                onContextChange.Invoke();
             totalScore = value;
+            OnContextChanged.Raise(this);
             ScoreString.Value = totalScore.ToString();
         }
     }
