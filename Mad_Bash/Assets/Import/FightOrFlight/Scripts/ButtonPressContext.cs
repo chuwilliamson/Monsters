@@ -60,7 +60,7 @@ public class ButtonPressContext : ScriptableObject, IContext
         // this happens only at the frame that the timer is started or reset
         if (stateTransitionInterval == StateTransitionInterval)
             OnTimerStart.Raise();
-        // this happens only at the exact frame that the timer ends
+        // this happens only at the frame that the timer ends
         if (stateTransitionInterval == 0)
             OnTimerEnd.Raise();       
 
@@ -69,7 +69,7 @@ public class ButtonPressContext : ScriptableObject, IContext
             Info.Value = "Finished with score of " + TotalScore;
             return;
         }
-        if (stateTransitionInterval <= 0) // this happens only on frames after the timer has ended
+        if (stateTransitionInterval <= 0) // this happens only on frames the timer is not counting down.
         {
             currentState.UpdateState(this);
         }
