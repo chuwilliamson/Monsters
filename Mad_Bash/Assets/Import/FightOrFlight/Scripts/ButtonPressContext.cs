@@ -6,6 +6,11 @@ public class ButtonPressContext : ScriptableObject, IContext
 {
     [HideInInspector]
     public List<ButtonPressObject> ButtonPressStates;
+    public IState CurrentState
+    {
+        get { return currentState; }
+    }
+
     private IState currentState;
 
     [Header("Info")]
