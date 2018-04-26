@@ -44,13 +44,15 @@ public class ButtonPressContext : ScriptableObject, IContext
     private float stateTransitionInterval;
 
     [SerializeField]
-    private GameEventArgs OnContextTimerStart;
-    [SerializeField]
-    private GameEventArgs OnContextTimerEnd;
+    private GameEventArgs OnContextChanged;
     [SerializeField]
     private GameEventArgs OnContextFinished;
     [SerializeField]
-    private GameEventArgs OnContextChanged;
+    private GameEventArgs OnContextTimerEnd;
+    [SerializeField]
+    private GameEventArgs OnContextTimerStart;
+    
+    
 
     private void OnEnable()
     {
