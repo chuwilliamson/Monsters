@@ -7,7 +7,8 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
 {
     [SerializeField]
     private ButtonPressObject ButtonState;
-
+    [SerializeField]
+    private ButtonPressContext ButtonPressContext;
     public UnityEvent StartResponse;
 
     public UnityEvent ContextChangedResponse;
@@ -17,8 +18,19 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     private void Start()
     {
         StartResponse.Invoke();
+        
     }
-
+    [ContextMenu("Set Contexts")]
+    public void SetContext()
+    {
+        var listeners = GetComponents<GameEventArgsListener>();
+        foreach (var l in listeners)
+        {
+            l.Sender = ButtonPressContext;
+        }
+        
+        
+    }
     public void onContextChanged(Object[] args)
     {
         var sender = args[0] as ButtonPressContext;

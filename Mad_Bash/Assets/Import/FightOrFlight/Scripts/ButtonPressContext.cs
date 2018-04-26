@@ -39,6 +39,7 @@ public class ButtonPressContext : ScriptableObject, IContext
         {
             
             _turnCount = value;
+            OnContextChanged.Raise(this);
             if (_turnCount == MaxTurns)
                 OnContextFinished.Raise(this);
         }
@@ -52,6 +53,7 @@ public class ButtonPressContext : ScriptableObject, IContext
     public float StateTransitionInterval = 1;
     private float stateTransitionInterval;
 
+    [Header("Events")]
     [SerializeField]
     private GameEventArgs OnContextChanged;
     [SerializeField]
@@ -60,6 +62,8 @@ public class ButtonPressContext : ScriptableObject, IContext
     private GameEventArgs OnContextTimerEnd;
     [SerializeField]
     private GameEventArgs OnContextTimerStart;
+    [SerializeField]
+    private GameEventArgs OnContextReset;
 
 
     public void ResetContext()
@@ -69,6 +73,7 @@ public class ButtonPressContext : ScriptableObject, IContext
         TurnCount = 0;
         TotalScore = 0;
         Interval.Value = StateTransitionInterval.ToString();
+        OnContextReset.Raise(this);
     }
 
     private void OnEnable()
