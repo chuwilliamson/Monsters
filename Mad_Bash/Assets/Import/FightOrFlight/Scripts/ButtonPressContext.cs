@@ -57,21 +57,23 @@ public class ButtonPressContext : ScriptableObject, IContext
 
     public void UpdateContext()
     {
-        if (stateTransitionInterval == 0)
-            OnTimerEnd.Raise();
-        if (stateTransitionInterval == 1)
+        // this happens only at the frame that the timer is started or reset
+        if (stateTransitionInterval == StateTransitionInterval)
             OnTimerStart.Raise();
+        // this happens only at the exact frame that the timer ends
+        if (stateTransitionInterval == 0)
+            OnTimerEnd.Raise();       
 
         if (TurnCount >= MaxTurns)
         {
             Info.Value = "Finished with score of " + TotalScore;
             return;
         }
-        if (stateTransitionInterval <= 0)
+        if (stateTransitionInterval <= 0) // this happens only on frames after the timer has ended
         {
             currentState.UpdateState(this);
         }
-        else
+        else // this happens only on frames the timer is counting down
         {
             stateTransitionInterval -= Time.deltaTime;
             if (stateTransitionInterval < 0) stateTransitionInterval = 0;
