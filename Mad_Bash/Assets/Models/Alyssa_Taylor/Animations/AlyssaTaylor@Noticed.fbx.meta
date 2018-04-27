@@ -356,7 +356,7 @@ ModelImporter:
     4300036: LeftShoe
     4300038: Glasses
     4300040: Hairband
-    7400000: Take 001
+    7400000: AlyssaTaylor@Noticed
     9500000: //RootNode
     13700000: BackHair
     13700002: BottomTeeth
@@ -386,7 +386,7 @@ ModelImporter:
       name: Alyssa_Taylor_Textures
     second: {fileID: 2100000, guid: f9c142e6f794ca546a0efe44e9f504d2, type: 2}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -395,11 +395,24 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: <Root Transform>
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Spine_01SHJnt' has translation animation that
+      will be discarded.\n\t'Spine_02SHJnt' has translation animation that will be
+      discarded.\n\t'Spine_03SHJnt' has translation animation that will be discarded.\n\t'Spine_04SHJnt'
+      has translation animation that will be discarded.\n\t'Spine_04SHJnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Spine_TopSHJnt'
+      has translation animation that will be discarded.\n\t'Spine_TopSHJnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Head_JawSHJnt'
+      has translation animation that will be discarded.\n\t'Head_TopSHJnt' has translation
+      animation that will be discarded.\n\t'Head_TopSHJnt' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'l_Leg_BallSHJnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'r_Leg_BallSHJnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -410,7 +423,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: AlyssaTaylor@Noticed
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
