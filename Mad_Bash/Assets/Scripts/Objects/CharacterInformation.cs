@@ -13,6 +13,7 @@ public class CharacterInformation : ScriptableObject
 
     public FloatVariable Strength;
     public FloatVariable Speed;
+    public FloatVariable CurrentSpeed;
     public FloatVariable Sneak;
     public FloatVariable Health;
     public FloatVariable Fear;

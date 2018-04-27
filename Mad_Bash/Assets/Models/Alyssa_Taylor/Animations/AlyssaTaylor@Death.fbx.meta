@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5f6ee9bc72c648b4481370213d2fceed
-timeCreated: 1524695307
+guid: 24f64df24195e4d42b1359dfd2564f75
+timeCreated: 1524695306
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -356,7 +356,7 @@ ModelImporter:
     4300036: LeftShoe
     4300038: Glasses
     4300040: Hairband
-    7400000: AlyssaTaylor@Noticed
+    7400000: AlyssaTaylor@Death
     9500000: //RootNode
     13700000: BackHair
     13700002: BottomTeeth
@@ -425,25 +425,25 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: AlyssaTaylor@Noticed
+      name: AlyssaTaylor@Death
       takeName: Take 001
-      firstFrame: 1
-      lastFrame: 20
+      firstFrame: 20
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 0
+      keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
-      heightFromFeet: 1
+      heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
@@ -924,13 +924,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: AlyssaTaylor@Noticed(Clone)
+    - name: AlyssaTaylor@Death(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Alyssa_Taylor1
-      parentName: AlyssaTaylor@Noticed(Clone)
+      parentName: AlyssaTaylor@Death(Clone)
       position: {x: 0.0000008654594, y: 0.057778776, z: -0.0046159998}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 16.568947, y: 16.568947, z: 16.568947}
@@ -1085,7 +1085,7 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: SHJntGrp
-      parentName: AlyssaTaylor@Noticed(Clone)
+      parentName: AlyssaTaylor@Death(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}

@@ -1476,6 +1476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4265551423758588}
   - component: {fileID: 95178388304271554}
+  - component: {fileID: 114239810294761946}
   m_Layer: 0
   m_Name: AlyssaTaylor
   m_TagString: Untagged
@@ -18544,7 +18545,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100318137206584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5941004, y: -0.21244596, z: -0.8797035}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4184115310319570}
@@ -28553,7 +28554,7 @@ Animator:
   m_GameObject: {fileID: 1100318137206584}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 13cf9d87de552fc45935e2bf87f9690c, type: 3}
-  m_Controller: {fileID: 9100000, guid: df9fcf2ce27d3f94a93c67440b52517a, type: 2}
+  m_Controller: {fileID: 9100000, guid: e39ab5b398a4a684793ce09981b0b814, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -28561,6 +28562,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114239810294761946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100318137206584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 596f03dac3cc3a643a957750e35aea52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anim: {fileID: 95178388304271554}
+  _Speed: {fileID: 11400000, guid: 99688285f33eab646a1c1e8c5a4c2c5f, type: 2}
+  _CurrentSpeed: {fileID: 11400000, guid: afc43d6e64d4b774db5495cdc6cccd4b, type: 2}
+  _Health: {fileID: 11400000, guid: 72e92f9b12ff93949b74c942c1b4d4f7, type: 2}
 --- !u!137 &137054183055122058
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -46,5 +46,6 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.SimpleMove(moveDirection * character.Speed.Value * speedModifer);
+        character.CurrentSpeed.Value = controller.velocity.magnitude;
     }
 }
