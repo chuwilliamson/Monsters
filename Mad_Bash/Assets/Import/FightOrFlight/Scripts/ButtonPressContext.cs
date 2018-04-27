@@ -1,97 +1,129 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [CreateAssetMenu(menuName = "ButtonSequenceContext")]
 public class ButtonPressContext : ScriptableObject, IContext
-{
-    public delegate void OnContextChange();
+{ 
+    public SequenceInfo SequenceInfo;
 
-    public OnContextChange onContextChange;
-    [HideInInspector]
-    public List<ButtonPressObject> ButtonPressStates;
-    private IState currentState;
+    [Header("Events")]
+    [SerializeField] private GameEventArgs _onContextChanged;
+    [SerializeField] private GameEventArgs _onContextFinished;
+    [SerializeField] private GameEventArgs _onContextReset;
+    [SerializeField] private GameEventArgs _onContextTimerEnd;
+    [SerializeField] private GameEventArgs _onContextTimerStart;
 
-    [Header("Info")]
-    public StringVariable Info;
-    public StringVariable Timer;
-    public StringVariable TimerPressed;
-    public StringVariable Interval;//no more score
-    public StringVariable ScoreString;
+    [Header("Inspector Variables")]
+    [SerializeField] private float _timeToLive;
+    [SerializeField] private float _timeToPress;
+    [SerializeField] private int _maxTurns;
+    [SerializeField] private float _transitionDuration;
+    [SerializeField] private bool _random;
 
-    [Header("States")]
-    public ButtonPressObject State_0;
-    public ButtonPressObject State_1;
-    public ButtonPressObject State_2;
-    public ButtonPressObject State_3;
+    [Header(("Display"))]
+    [SerializeField] private float _totalScore;
+    [SerializeField] private float _currentTransitionTime;
+    [SerializeField] private int _turnCount;
 
-    [Header("Scores")]
-    public float passingScore = 3f;
-
-    /// <summary>
-    /// use this to set the turncount back to zero and the sequence will restart
-    /// </summary>
-    public int TurnCount
-    { get; set; }
-
-    [Tooltip("How many sequences")]
-    public int MaxTurns = 4;
-
-
-    [Tooltip("Adjust how long before the next state will execute")]
-    public float StateTransitionInterval = 1;
-    private float stateTransitionInterval;
-
+    [SerializeField]
+    public List<ButtonPressObject> ButtonPressStates = new List<ButtonPressObject>();
 
     private void OnEnable()
     {
-        ButtonPressStates = new List<ButtonPressObject> { State_0, State_1, State_2, State_3 };
-        currentState = ButtonPressStates[0];
-        currentState.OnEnter(this);
+        if (ButtonPressStates.Count <= 0)
+            return;
+       
+        ResetContext();
+    }
+ 
+    public IState CurrentState
+    { get; private set; }
+
+    public float TransitionDuration
+    {
+        get { return _transitionDuration; }
+        set { _transitionDuration = value; }
+    }
+    public int TurnCount
+    {
+        get { return _turnCount; }
+        set
+        {
+            _turnCount = value;
+            _onContextChanged.Raise(this);
+            if (_turnCount == _maxTurns)
+                _onContextFinished.Raise(this);
+        }
+    }
+
+    public float TotalScore
+    {
+        get { return _totalScore; }
+        set
+        {
+            _totalScore = value; 
+            SequenceInfo.ScoreStringVariable.Value = _totalScore.ToString();
+        }
+    }
+
+    public bool Random
+    {
+        get { return _random; }
+        set { _random = value; }
+    }
+    public void ResetContext()
+    {
+      
+
+        CurrentState = ButtonPressStates[0];
         TurnCount = 0;
         TotalScore = 0;
-        Interval.Value = StateTransitionInterval.ToString();
+        _currentTransitionTime = _transitionDuration;
+        CurrentState.OnEnter(this);
+        SequenceInfo.IntervalStringVariable.Value = _currentTransitionTime.ToString();
+        _onContextReset.Raise(this);
     }
-    
+
     public void UpdateContext()
     {
-        if (TurnCount >= MaxTurns)
+        ButtonPressStates.ForEach(x => x.TTL = _timeToLive);
+        ButtonPressStates.ForEach(x => x.Random = _random);
+        ButtonPressStates.ForEach(x => x.TTP = _timeToPress);
+
+        if (TurnCount >= _maxTurns)
         {
-            Info.Value = "Finished with score of " + TotalScore;
+            SequenceInfo.InfoStringVariable.Value = "Finished with score of " + TotalScore;
             return;
         }
-        if (stateTransitionInterval <= 0)
+        if (_currentTransitionTime <= 0) // this happens only on frames the timer is not counting down.
         {
-            currentState.UpdateState(this);
+            CurrentState.UpdateState(this);
         }
-        else
+        else // this happens only on frames the timer is counting down
         {
-            stateTransitionInterval -= Time.deltaTime;
-            if (stateTransitionInterval < 0) stateTransitionInterval = 0;
-            Info.Value = "Waiting...";
-            Interval.Value = stateTransitionInterval.ToString();
+            var newInterval = _currentTransitionTime - Time.deltaTime;
+            if (newInterval < 0)
+            {
+                _currentTransitionTime = _transitionDuration;
+                newInterval = 0;
+                _onContextTimerEnd.Raise(this);
+            }
+            _currentTransitionTime = newInterval;
+            SequenceInfo.InfoStringVariable.Value = "Waiting...";
+            SequenceInfo.IntervalStringVariable.Value = _currentTransitionTime.ToString();
         }
     }
 
     public void ChangeState(IState next)
     {
-        currentState.OnExit(this);
-        currentState = next;
-        currentState.OnEnter(this);
+        CurrentState.OnExit(this);
+
         TurnCount++;
-        stateTransitionInterval = StateTransitionInterval;
+        CurrentState = next;
+        CurrentState.OnEnter(this); 
+        _currentTransitionTime = _transitionDuration;
+        _onContextTimerStart.Raise(this);
     }
 
-    private float totalScore;
-
-    public float TotalScore
-    {
-        get { return totalScore; }
-        set
-        {
-            if (onContextChange != null)
-                onContextChange.Invoke();
-            totalScore = value;
-            ScoreString.Value = totalScore.ToString();
-        }
-    }
+    
 }
