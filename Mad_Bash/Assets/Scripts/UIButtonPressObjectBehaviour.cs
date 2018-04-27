@@ -10,13 +10,14 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     public RectTransform ButtonTransform;
 
     public void onContextChanged(Object[] args)
-    {
+    { 
         var sender = args[0] as ButtonPressContext;
         if (sender == null)
             return;
         var currentState = sender.CurrentState as ButtonPressObject;
         if (currentState == _buttonState)
             ContextChangedResponse.Invoke();
+      
     }
 
     public void onContextFinished(Object[] args)

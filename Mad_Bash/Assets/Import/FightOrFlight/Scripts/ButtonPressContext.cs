@@ -58,8 +58,7 @@ public class ButtonPressContext : ScriptableObject, IContext
         get { return _totalScore; }
         set
         {
-            _totalScore = value;
-            _onContextChanged.Raise(this);
+            _totalScore = value; 
             SequenceInfo.ScoreStringVariable.Value = _totalScore.ToString();
         }
     }
@@ -92,6 +91,7 @@ public class ButtonPressContext : ScriptableObject, IContext
             if (newInterval < 0)
             {
                 _currentTransitionTime = _transitionDuration;
+                newInterval = 0;
                 _onContextTimerEnd.Raise(this);
             }
             _currentTransitionTime = newInterval;
@@ -103,10 +103,10 @@ public class ButtonPressContext : ScriptableObject, IContext
     public void ChangeState(IState next)
     {
         CurrentState.OnExit(this);
+
         TurnCount++;
         CurrentState = next;
-        CurrentState.OnEnter(this);
-        _onContextChanged.Raise(this);
+        CurrentState.OnEnter(this); 
         _currentTransitionTime = _transitionDuration;
         _onContextTimerStart.Raise(this);
     }
