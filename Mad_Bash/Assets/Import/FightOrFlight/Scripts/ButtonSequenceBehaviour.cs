@@ -1,22 +1,22 @@
 ﻿using UnityEngine;
 
-
 /// <summary>
-/// MonoBehaviour for executing the Button Sequence for Fight or Flight
+///     MonoBehaviour for executing the Button Sequence for Fight or Flight
 /// </summary>
 public class ButtonSequenceBehaviour : MonoBehaviour
 {
-    public ButtonPressContext context;//context
+    public ButtonPressContext Context; //context
+
     private void OnEnable()
     {
-        context.TurnCount = 0;
+        Context.ResetContext();
     }
 
     private void Update()
     {
-        if (context == null)
+        if (Context == null)
             return;
 
-        context.UpdateContext();
+        Context.UpdateContext();
     }
 }

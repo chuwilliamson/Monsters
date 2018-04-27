@@ -12,8 +12,17 @@ MonoBehaviour:
   m_Name: BButtonObject
   m_EditorClassIdentifier: 
   ButtonCondition: {fileID: 11400000, guid: 5ef3c2152fd67ac4c99fa11ac92afd30, type: 2}
-  ButtonScoreValue: 1
-  TTL: 3
-  TimeToLive: {fileID: 11400000, guid: 1172861f4a4cd3d43bc519920323bd65, type: 2}
-  TTP: 2
-  TimeToPress: {fileID: 11400000, guid: 1cbf1ee1517371e459ba51c33eb543a1, type: 2}
+  ButtonScoreValue: 0
+  _onButtonStateEnter: {fileID: 11400000, guid: d5a0ee026068d5343ab217ccac829a89,
+    type: 2}
+  _onButtonStateExit: {fileID: 11400000, guid: 2c8c0390163a83f45adb84f9b31001ad, type: 2}
+  _onButtonStateSuccess: {fileID: 11400000, guid: 217782bba54b0864db75f445a0187d84,
+    type: 2}
+  _onButtonStateFailure: {fileID: 11400000, guid: 90863b89fba54d64c997ecfefcdc0103,
+    type: 2}
+  Random: 0
+  Result: 0
+  TTL: 2
+  TimeToLive: {fileID: 11400000, guid: 28dec70e1322b964290b7982a87fb57e, type: 2}
+  TTP: 1
+  TimeToPress: {fileID: 11400000, guid: 5a0ae85c40e01b4479c55bced66d8bf6, type: 2}
