@@ -8,4 +8,9 @@ public class GlobalGameManager : ScriptableObject {
     {
         Debug.Log(go.name);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

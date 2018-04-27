@@ -32,15 +32,18 @@ public class ButtonPressContext : ScriptableObject, IContext
     {
         if (ButtonPressStates.Count <= 0)
             return;
-        ButtonPressStates.ForEach(x => x.TTL = _timeToLive);
-        ButtonPressStates.ForEach(x => x.Random = _random);
-        ButtonPressStates.ForEach(x => x.TTP = _timeToPress);
+       
         ResetContext();
     }
  
     public IState CurrentState
     { get; private set; }
 
+    public float TransitionDuration
+    {
+        get { return _transitionDuration; }
+        set { _transitionDuration = value; }
+    }
     public int TurnCount
     {
         get { return _turnCount; }
@@ -63,8 +66,15 @@ public class ButtonPressContext : ScriptableObject, IContext
         }
     }
 
+    public bool Random
+    {
+        get { return _random; }
+        set { _random = value; }
+    }
     public void ResetContext()
     {
+      
+
         CurrentState = ButtonPressStates[0];
         TurnCount = 0;
         TotalScore = 0;
@@ -76,6 +86,10 @@ public class ButtonPressContext : ScriptableObject, IContext
 
     public void UpdateContext()
     {
+        ButtonPressStates.ForEach(x => x.TTL = _timeToLive);
+        ButtonPressStates.ForEach(x => x.Random = _random);
+        ButtonPressStates.ForEach(x => x.TTP = _timeToPress);
+
         if (TurnCount >= _maxTurns)
         {
             SequenceInfo.InfoStringVariable.Value = "Finished with score of " + TotalScore;

@@ -91,7 +91,7 @@ public class ButtonPressObject : ScriptableObject, IState
             int numstates = ((ButtonPressContext)context).ButtonPressStates.Count;
             int turncount = ((ButtonPressContext)context).TurnCount;
             int nextCount = (turncount + 1) % numstates;
-            var stateindex = Random ? UnityEngine.Random.Range(0, numstates) : nextCount;
+            var stateindex = Random ? UnityEngine.Random.Range(0, 4) : nextCount;
 
             context.ChangeState(((ButtonPressContext)context).ButtonPressStates[stateindex]);
         }
