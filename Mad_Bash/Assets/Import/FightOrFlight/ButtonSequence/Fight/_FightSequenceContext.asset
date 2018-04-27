@@ -11,20 +11,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c453f32e70a4ddd46bbafd1b8748785e, type: 3}
   m_Name: _FightSequenceContext
   m_EditorClassIdentifier: 
+  SequenceInfo: {fileID: 11400000, guid: e8c8ab9044e3407438b822a3c1cd6aff, type: 2}
+  _onContextChanged: {fileID: 11400000, guid: 649227a0f60968f49b49dca1b220b72e, type: 2}
+  _onContextFinished: {fileID: 11400000, guid: 539e668f110d9f248a04884a499a6a88, type: 2}
+  _onContextReset: {fileID: 11400000, guid: 5a9e32e09e6704a4e82faa3d41aab477, type: 2}
+  _onContextTimerEnd: {fileID: 11400000, guid: 92da2b08d8be72f4ead5fc4a14771307, type: 2}
+  _onContextTimerStart: {fileID: 11400000, guid: 104e9f58a93fb884798667a398ef6a53,
+    type: 2}
+  _timeToLive: 2
+  _timeToPress: 1
+  _maxTurns: 15
+  _transitionDuration: 1
+  _random: 0
+  _totalScore: 0
+  _currentTransitionTime: 0.96000004
+  _turnCount: 0
   ButtonPressStates:
   - {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
   - {fileID: 11400000, guid: e7e2b6c95d5d28d4f9e79c731883d803, type: 2}
   - {fileID: 11400000, guid: 5dc6414f7443a204fa69eddd8838ce44, type: 2}
   - {fileID: 11400000, guid: dbd00b16614803241bf53e81daa26432, type: 2}
-  Info: {fileID: 11400000, guid: 327ff02e933b4804cab1aa87cf444ed0, type: 2}
-  Timer: {fileID: 11400000, guid: ece431f5a8f306542b16293eb4dcda9a, type: 2}
-  TimerPressed: {fileID: 11400000, guid: 3c9ab902618a9e949bab370b743d2fb4, type: 2}
-  Interval: {fileID: 11400000, guid: 7edc3518f7edd2448aab869b8a6ae9df, type: 2}
-  ScoreString: {fileID: 11400000, guid: 3da22c0e600268e4c95a4608810eba51, type: 2}
-  State_0: {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
-  State_1: {fileID: 11400000, guid: e7e2b6c95d5d28d4f9e79c731883d803, type: 2}
-  State_2: {fileID: 11400000, guid: 5dc6414f7443a204fa69eddd8838ce44, type: 2}
-  State_3: {fileID: 11400000, guid: dbd00b16614803241bf53e81daa26432, type: 2}
-  passingScore: 3
-  MaxTurns: 4
-  StateTransitionInterval: 1

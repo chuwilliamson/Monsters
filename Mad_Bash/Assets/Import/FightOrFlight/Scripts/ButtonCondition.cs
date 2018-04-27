@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName ="Conditions/Button")]
+[CreateAssetMenu(menuName = "Conditions/Button")]
 public class ButtonCondition : ConditionVariable
 {
+    [SerializeField]
+    private bool _result;
     public string ButtonName;
-    public bool _result;
+
     public override bool Result
     {
         get
