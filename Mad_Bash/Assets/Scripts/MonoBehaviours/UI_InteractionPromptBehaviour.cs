@@ -76,4 +76,9 @@ public class UI_InteractionPromptBehaviour : MonoBehaviour, IInteractionSetHandl
         HidePrompt();
 
     }
+
+    public void OnButtonClick()
+    {
+        SubmitButtonClicked.Raise(this);
+    }
 }
