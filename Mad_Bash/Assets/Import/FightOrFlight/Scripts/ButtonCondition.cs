@@ -3,7 +3,8 @@
 [CreateAssetMenu(menuName = "Conditions/Button")]
 public class ButtonCondition : ConditionVariable
 {
-    public bool _result;
+    [SerializeField]
+    private bool _result;
     public string ButtonName;
 
     public override bool Result

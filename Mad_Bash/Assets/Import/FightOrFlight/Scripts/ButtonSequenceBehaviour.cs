@@ -5,18 +5,18 @@
 /// </summary>
 public class ButtonSequenceBehaviour : MonoBehaviour
 {
-    public ButtonPressContext context; //context
+    public ButtonPressContext Context; //context
 
     private void OnEnable()
     {
-        context.ResetContext();
+        Context.ResetContext();
     }
 
     private void Update()
     {
-        if (context == null)
+        if (Context == null)
             return;
 
-        context.UpdateContext();
+        Context.UpdateContext();
     }
 }
