@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName ="Conditions/Button")]
+[CreateAssetMenu(menuName = "Conditions/Button")]
 public class ButtonCondition : ConditionVariable
 {
-    public string ButtonName;
     public bool _result;
+    public string ButtonName;
+
     public override bool Result
     {
         get

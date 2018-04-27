@@ -6,6 +6,7 @@ public class AxisCondition : ConditionVariable
     public string AxisName;
     public bool Greater;
     public float Value;
+
     public override bool Result
     {
         get
