@@ -41,9 +41,9 @@ public class ButtonPressObject : ScriptableObject, IState
         get
         {
             var maxcheck = CurrentTimeToLive < TTL - PressBufferMax;
-            var mincheck = CurrentTimeToPress > 0;
+            var mincheck = CurrentTimeToPress >0;
             Result = mincheck && maxcheck && ButtonCondition.Result;
-            return Result || Input.anyKey;
+            return Result || Input.anyKeyDown;
         }
     }
 
@@ -71,9 +71,14 @@ public class ButtonPressObject : ScriptableObject, IState
     public void UpdateState(IContext context)
     {
         CurrentTimeToLive -= Time.deltaTime;
+
         if(CurrentTimeToLive < TTL - PressBufferMax)
             CurrentTimeToPress -= Time.deltaTime;
-        ShouldPress.Value = CurrentTimeToLive < TTL - PressBufferMax ? "yes" : "no"; 
+
+        var maxcheck = CurrentTimeToLive < TTL - PressBufferMax;
+        var mincheck = CurrentTimeToPress > 0;
+
+        ShouldPress.Value = maxcheck && mincheck ? "yes" : "no"; 
 
         if (ButtonPressed || ButtonFinished)
         {

@@ -6,8 +6,9 @@ public class ButtonPressContext : ScriptableObject, IContext
 {
     [SerializeField] public List<int> ButtonPressStateIndices = new List<int>();
     [SerializeField] public List<ButtonPressObject> ButtonPressStates = new List<ButtonPressObject>();
-    
-    [Header("Events")] [SerializeField]
+
+    [Header("Events")]
+    [SerializeField]
     private GameEventArgs _onContextChanged;
     [SerializeField] private GameEventArgs _onContextFinished;
     [SerializeField] private GameEventArgs _onContextReset;
@@ -15,9 +16,9 @@ public class ButtonPressContext : ScriptableObject, IContext
     [SerializeField] private GameEventArgs _onContextTimerStart;
 
     [Header("Inspector Variables")]
-    [SerializeField] private float _timeToLive;
-    [SerializeField] private float _timeToPress;
-    [SerializeField] private float _timeToTransition;
+    [SerializeField] [Range(0.1f, 5.0f)] private float _timeToLive;
+    [SerializeField] [Range(0.1f, 5.0f)] private float _timeToPress;
+    [SerializeField] [Range(0.1f, 5.0f)] private float _timeToTransition;
     [SerializeField] private bool _random;
     [SerializeField] private float _pressBufferMax = 1f;
     [SerializeField] private int _maxTurns;
@@ -25,12 +26,13 @@ public class ButtonPressContext : ScriptableObject, IContext
     [Header("Display")]
     [SerializeField] private float _totalScore;
     [SerializeField] private int _turnCount;
+
     [SerializeField] private float _currentTransitionTime;
 
     public SequenceInfo SequenceInfo;
 
     public IState CurrentState
-    { get; private set; } 
+    { get; private set; }
 
     public float TimeToTransition
     {
@@ -83,11 +85,12 @@ public class ButtonPressContext : ScriptableObject, IContext
         ButtonPressStates.ForEach(x => x.PressBufferMax = _pressBufferMax);
 
         CurrentState.OnExit(this);
+        _currentTransitionTime = _timeToTransition;
+        _onContextTimerStart.Raise(this);
         TurnCount++;
         CurrentState = next;
         CurrentState.OnEnter(this);
-        _currentTransitionTime = _timeToTransition;
-        _onContextTimerStart.Raise(this);
+
     }
 
     private void OnEnable()
@@ -108,9 +111,9 @@ public class ButtonPressContext : ScriptableObject, IContext
             ButtonPressStateIndices.Add(UnityEngine.Random.Range(0, ButtonPressStates.Count));
 
         CurrentState = ButtonPressStates[ButtonPressStateIndices[TurnCount]];
+        CurrentState.OnEnter(this);
 
         _currentTransitionTime = _timeToTransition;
-        CurrentState.OnEnter(this);
         SequenceInfo.IntervalStringVariable.Value = _currentTransitionTime.ToString();
         _onContextReset.Raise(this);
     }
@@ -119,7 +122,7 @@ public class ButtonPressContext : ScriptableObject, IContext
     {
         SequenceInfo.TimeToLiveStringVariable.Value = ((ButtonPressObject)CurrentState).CurrentTimeToLive.ToString();
         SequenceInfo.TimeToPressStringVariable.Value = ((ButtonPressObject)CurrentState).CurrentTimeToPress.ToString();
-        SequenceInfo.CurrentStateName.Value = ((ButtonPressObject)CurrentState).name; 
+        SequenceInfo.CurrentStateName.Value = ((ButtonPressObject)CurrentState).name;
 
         if (TurnCount >= _maxTurns)
         {
@@ -127,11 +130,9 @@ public class ButtonPressContext : ScriptableObject, IContext
             return;
         }
 
-        if (_currentTransitionTime <= 0)
-        {
-            CurrentState.UpdateState(this);
-        }
-        else
+        //we do not update the current state when the transition is counting down
+        //should look for a better way to do this since we can not have a 0 interval transition
+        if (_currentTransitionTime > 0)
         {
             var newInterval = _currentTransitionTime - Time.deltaTime;
             if (newInterval < 0)
@@ -143,6 +144,9 @@ public class ButtonPressContext : ScriptableObject, IContext
             _currentTransitionTime = newInterval;
             SequenceInfo.CurrentStateName.Value = "Waiting...";
             SequenceInfo.IntervalStringVariable.Value = _currentTransitionTime.ToString();
+            return;
         }
+
+        CurrentState.UpdateState(this);
     }
 }
