@@ -4,44 +4,38 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ButtonSequenceContext")]
 public class ButtonPressContext : ScriptableObject, IContext
 {
-    [SerializeField] private float _currentTransitionTime;
-
-    [SerializeField] private int _maxTurns;
-
-    [Header("Events")] [SerializeField] private GameEventArgs _onContextChanged;
-
-    [SerializeField] private GameEventArgs _onContextFinished;
-
-    [SerializeField] private GameEventArgs _onContextReset;
-
-    [SerializeField] private GameEventArgs _onContextTimerEnd;
-
-    [SerializeField] private GameEventArgs _onContextTimerStart;
-    [SerializeField] private float _pressBufferMax = 1f;
-
-    [SerializeField] private bool _random;
-
-    [Header("Inspector Variables")] [SerializeField] private float _timeToLive;
-
-    [SerializeField] private float _timeToPress;
-
-    [Header("Display")] [SerializeField] private float _totalScore;
-
-    [SerializeField] private float _transitionDuration;
-
-    [SerializeField] private int _turnCount;
     [SerializeField] public List<int> ButtonPressStateIndices = new List<int>();
     [SerializeField] public List<ButtonPressObject> ButtonPressStates = new List<ButtonPressObject>();
+    
+    [Header("Events")] [SerializeField]
+    private GameEventArgs _onContextChanged;
+    [SerializeField] private GameEventArgs _onContextFinished;
+    [SerializeField] private GameEventArgs _onContextReset;
+    [SerializeField] private GameEventArgs _onContextTimerEnd;
+    [SerializeField] private GameEventArgs _onContextTimerStart;
+
+    [Header("Inspector Variables")]
+    [SerializeField] private float _timeToLive;
+    [SerializeField] private float _timeToPress;
+    [SerializeField] private float _timeToTransition;
+    [SerializeField] private bool _random;
+    [SerializeField] private float _pressBufferMax = 1f;
+    [SerializeField] private int _maxTurns;
+
+    [Header("Display")]
+    [SerializeField] private float _totalScore;
+    [SerializeField] private int _turnCount;
+    [SerializeField] private float _currentTransitionTime;
 
     public SequenceInfo SequenceInfo;
 
     public IState CurrentState
     { get; private set; } 
 
-    public float TransitionDuration
+    public float TimeToTransition
     {
-        get { return _transitionDuration; }
-        set { _transitionDuration = value; }
+        get { return _timeToTransition; }
+        set { _timeToTransition = value; }
     }
 
     public int TurnCount
@@ -92,7 +86,7 @@ public class ButtonPressContext : ScriptableObject, IContext
         TurnCount++;
         CurrentState = next;
         CurrentState.OnEnter(this);
-        _currentTransitionTime = _transitionDuration;
+        _currentTransitionTime = _timeToTransition;
         _onContextTimerStart.Raise(this);
     }
 
@@ -115,7 +109,7 @@ public class ButtonPressContext : ScriptableObject, IContext
 
         CurrentState = ButtonPressStates[ButtonPressStateIndices[TurnCount]];
 
-        _currentTransitionTime = _transitionDuration;
+        _currentTransitionTime = _timeToTransition;
         CurrentState.OnEnter(this);
         SequenceInfo.IntervalStringVariable.Value = _currentTransitionTime.ToString();
         _onContextReset.Raise(this);
@@ -142,7 +136,7 @@ public class ButtonPressContext : ScriptableObject, IContext
             var newInterval = _currentTransitionTime - Time.deltaTime;
             if (newInterval < 0)
             {
-                _currentTransitionTime = _transitionDuration;
+                _currentTransitionTime = _timeToTransition;
                 newInterval = 0;
                 _onContextTimerEnd.Raise(this);
             }

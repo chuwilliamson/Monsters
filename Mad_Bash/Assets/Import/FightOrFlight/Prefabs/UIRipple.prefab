@@ -54,15 +54,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07604567adb7b456a8f1e2f00c29977c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShapeSprite: {fileID: 21300000, guid: 78eda95d8ce954115ade4582b842896f, type: 3}
-  Speed: 5
   AutomaticMaxSize: 1
+  EndColor: {r: 1, g: 0, b: 0.7241378, a: 0.016}
   MaxSize: 1
-  StartColor: {r: 0.1764706, g: 0.853, b: 0.1764706, a: 1}
-  EndColor: {r: 0.36551726, g: 1, b: 0, a: 1}
   OnUIOnly: 0
   RenderOnTop: 1
+  ShapeSprite: {fileID: 21300000, guid: 78eda95d8ce954115ade4582b842896f, type: 3}
+  Speed: 5
   StartAtCenter: 1
+  StartColor: {r: 0.61932963, g: 0.3458045, b: 0.9044118, a: 1}
 --- !u!114 &114525780215668486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,7 +123,7 @@ RectTransform:
   m_GameObject: {fileID: 1951489060828240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0645384, y: 1.0645384, z: 1.0645384}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
