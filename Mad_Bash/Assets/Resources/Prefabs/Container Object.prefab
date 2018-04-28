@@ -162,7 +162,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4912994162600568}
-  - component: {fileID: 114236072294018762}
   - component: {fileID: 114676789438320152}
   - component: {fileID: 114863728412356652}
   - component: {fileID: 114269806314473506}
@@ -370,21 +369,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114236072294018762
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1968271069323598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe166d2c928b88b478e142d8afc173ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 1341228478382450}
-  UI_InteractionPrompt: {fileID: 1730636950156604}
-  UI_InteractionMenu: {fileID: 1961004190226406}
-  containerContents: []
 --- !u!114 &114269806314473506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -401,7 +385,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114236072294018762}
+      - m_Target: {fileID: 0}
         m_MethodName: OnInteractionStart
         m_Mode: 0
         m_Arguments:
@@ -457,7 +441,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114236072294018762}
+      - m_Target: {fileID: 0}
         m_MethodName: OnInteractionEnd
         m_Mode: 0
         m_Arguments:
@@ -593,7 +577,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114236072294018762}
+      - m_Target: {fileID: 0}
         m_MethodName: OnInteractorSet
         m_Mode: 0
         m_Arguments:
@@ -643,7 +627,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114236072294018762}
+      - m_Target: {fileID: 0}
         m_MethodName: OnContainerOpen
         m_Mode: 0
         m_Arguments:
@@ -701,7 +685,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114236072294018762}
+      - m_Target: {fileID: 0}
         m_MethodName: OnInteractorRelease
         m_Mode: 0
         m_Arguments:

@@ -105,7 +105,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4879682593297996}
-  - component: {fileID: 114204595174767924}
   - component: {fileID: 114033637236219376}
   - component: {fileID: 114835491760034224}
   - component: {fileID: 114661269972467290}
@@ -304,7 +303,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114204595174767924}
+      - m_Target: {fileID: 0}
         m_MethodName: OnInteractionBegin
         m_Mode: 0
         m_Arguments:
@@ -367,21 +366,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114204595174767924
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1755645732158342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6c8fd6a06e2ff54e9b46447376d368d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SubmitButtonClicked: {fileID: 11400000, guid: 5475d7f010730544eb02cc0a24573a89,
-    type: 2}
-  UI_InteractionPrompt: {fileID: 1911674975604034}
-  SubmitButton: {fileID: 114762452656742464}
 --- !u!114 &114211305614479922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,7 +382,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114204595174767924}
+      - m_Target: {fileID: 0}
         m_MethodName: OnInteractionRelease
         m_Mode: 0
         m_Arguments:
@@ -516,7 +500,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114204595174767924}
+      - m_Target: {fileID: 0}
         m_MethodName: OnInteractionSet
         m_Mode: 0
         m_Arguments:
@@ -601,7 +585,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114204595174767924}
+      - m_Target: {fileID: 0}
         m_MethodName: OnSubmitButtonClicked
         m_Mode: 1
         m_Arguments:
@@ -646,7 +630,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114204595174767924}
+      - m_Target: {fileID: 0}
         m_MethodName: OnInteractionEnd
         m_Mode: 0
         m_Arguments:
