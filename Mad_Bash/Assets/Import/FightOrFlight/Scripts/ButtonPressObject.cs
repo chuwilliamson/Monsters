@@ -22,8 +22,10 @@ public class ButtonPressObject : ScriptableObject, IState
 
     public bool Random;
     public bool Result;
-    public FloatVariable TimeToLive;
-    public FloatVariable TimeToPress;
+ 
+    public float CurrentTimeToLive { get; set; }
+
+    public float CurrentTimeToPress { get; set; }
 
     [Header("TTL")]
     public float TTL;
@@ -38,8 +40,8 @@ public class ButtonPressObject : ScriptableObject, IState
     {
         get
         {
-            var maxcheck = TimeToLive.Value < TTL - PressBufferMax;
-            var mincheck = TimeToPress.Value > 0;
+            var maxcheck = CurrentTimeToLive < TTL - PressBufferMax;
+            var mincheck = CurrentTimeToPress > 0;
             Result = mincheck && maxcheck && ButtonCondition.Result;
             return Result || Input.anyKey;
         }
@@ -47,35 +49,31 @@ public class ButtonPressObject : ScriptableObject, IState
 
     public bool ButtonFinished
     {
-        get { return TimeToLive.Value <= 0; }
+        get { return CurrentTimeToLive <= 0; }
     }
 
     public void OnEnter(IContext context)
     {
         _onButtonStateEnter.Raise(this);
-        TimeToLive.Value = TTL;
-        TimeToPress.Value = TTP;
-        ButtonScoreValue = 0;
-        SetContextInfo((ButtonPressContext)context);
+        CurrentTimeToLive = TTL;
+        CurrentTimeToPress = TTP;
+        ButtonScoreValue = 0; 
     }
 
 
     public void OnExit(IContext context)
     {
         ((ButtonPressContext)context).TotalScore += ButtonScoreValue;
-        SetContextInfo((ButtonPressContext)context);
-
+ 
         _onButtonStateExit.Raise(this);
     }
 
     public void UpdateState(IContext context)
     {
-        TimeToLive.Value -= Time.deltaTime;
-        if(TimeToLive.Value < TTL - PressBufferMax)
-            TimeToPress.Value -= Time.deltaTime;
-        ShouldPress.Value = TimeToLive.Value < TTL - PressBufferMax ? "yes" : "no";
-
-        SetContextInfo((ButtonPressContext)context);
+        CurrentTimeToLive -= Time.deltaTime;
+        if(CurrentTimeToLive < TTL - PressBufferMax)
+            CurrentTimeToPress -= Time.deltaTime;
+        ShouldPress.Value = CurrentTimeToLive < TTL - PressBufferMax ? "yes" : "no"; 
 
         if (ButtonPressed || ButtonFinished)
         {
@@ -89,19 +87,12 @@ public class ButtonPressObject : ScriptableObject, IState
                 _onButtonStateFailure.Raise(this);
             }
 
-            var numstates = ((ButtonPressContext)context).ButtonPressStates.Count;
-            var turncount = ((ButtonPressContext)context).TurnCount;
-            var nextCount = (turncount + 1) % numstates;
-            var stateindex = Random ? UnityEngine.Random.Range(0, 4) : nextCount;
+//            var numstates = ((ButtonPressContext)context).ButtonPressStates.Count;
+//            var turncount = ((ButtonPressContext)context).TurnCount;
+//            var nextCount = (turncount + 1) % numstates;
+//            var stateindex = Random ? UnityEngine.Random.Range(0, 4) : nextCount;
 
-            context.ChangeState(((ButtonPressContext)context).ButtonPressStates[stateindex]);
+            context.ChangeState(((ButtonPressContext)context).NextState);
         }
-    }
-
-    private void SetContextInfo(ButtonPressContext context)
-    {
-        context.SequenceInfo.TimerStringVariable.Value = TimeToLive.Value.ToString();
-        context.SequenceInfo.TimerPressedStringVariable.Value = TimeToPress.Value.ToString();
-        context.SequenceInfo.InfoStringVariable.Value = name;
-    }
+    } 
 }
