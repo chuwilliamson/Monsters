@@ -11,18 +11,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38efb17e5089964bbd9081d947e9e09, type: 3}
   m_Name: DpadLeftObject
   m_EditorClassIdentifier: 
-  ButtonCondition: {fileID: 11400000, guid: d363566a3919d8a4d816eda3d5b0edb6, type: 2}
-  ButtonScoreValue: 1
   _onButtonStateEnter: {fileID: 11400000, guid: d5a0ee026068d5343ab217ccac829a89,
     type: 2}
   _onButtonStateExit: {fileID: 11400000, guid: 2c8c0390163a83f45adb84f9b31001ad, type: 2}
-  _onButtonStateSuccess: {fileID: 11400000, guid: 217782bba54b0864db75f445a0187d84,
-    type: 2}
   _onButtonStateFailure: {fileID: 11400000, guid: 90863b89fba54d64c997ecfefcdc0103,
     type: 2}
+  _onButtonStateSuccess: {fileID: 11400000, guid: 217782bba54b0864db75f445a0187d84,
+    type: 2}
+  ButtonCondition: {fileID: 11400000, guid: d363566a3919d8a4d816eda3d5b0edb6, type: 2}
+  ButtonScoreValue: 1
   Random: 0
   Result: 0
-  TTL: 0.5
   TimeToLive: {fileID: 11400000, guid: 851967a059ed99841a88f7e5e461c408, type: 2}
-  TTP: 0.5
   TimeToPress: {fileID: 11400000, guid: 87b6b352292fed14eb0aa64796956eb5, type: 2}
+  TTL: 0.5
+  TTP: 0.5
+  PressBufferMax: 1
+  PressBufferMin: 1
+  ShouldPress: {fileID: 11400000, guid: bf49099ab4deda44185af745653b4c53, type: 2}
