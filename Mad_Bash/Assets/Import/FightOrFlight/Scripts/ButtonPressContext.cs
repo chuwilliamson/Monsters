@@ -3,47 +3,45 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "ButtonSequenceContext")]
 public class ButtonPressContext : ScriptableObject, IContext
-{ 
-    public SequenceInfo SequenceInfo;
+{
+    [SerializeField] private float _currentTransitionTime;
 
-    [Header("Events")]
-    [SerializeField] private GameEventArgs _onContextChanged;
+    [SerializeField] private int _maxTurns;
+
+    [Header("Events")] [SerializeField] private GameEventArgs _onContextChanged;
+
     [SerializeField] private GameEventArgs _onContextFinished;
+
     [SerializeField] private GameEventArgs _onContextReset;
+
     [SerializeField] private GameEventArgs _onContextTimerEnd;
+
     [SerializeField] private GameEventArgs _onContextTimerStart;
 
-    [Header("Inspector Variables")]
-    [SerializeField] private float _timeToLive;
-    [SerializeField] private float _timeToPress;
-    [SerializeField] private int _maxTurns;
-    [SerializeField] private float _transitionDuration;
     [SerializeField] private bool _random;
 
-    [Header(("Display"))]
-    [SerializeField] private float _totalScore;
-    [SerializeField] private float _currentTransitionTime;
+    [Header("Inspector Variables")] [SerializeField] private float _timeToLive;
+
+    [SerializeField] private float _timeToPress;
+
+    [Header("Display")] [SerializeField] private float _totalScore;
+
+    [SerializeField] private float _transitionDuration;
+
     [SerializeField] private int _turnCount;
 
-    [SerializeField]
-    public List<ButtonPressObject> ButtonPressStates = new List<ButtonPressObject>();
+    [SerializeField] public List<ButtonPressObject> ButtonPressStates = new List<ButtonPressObject>();
 
-    private void OnEnable()
-    {
-        if (ButtonPressStates.Count <= 0)
-            return;
-       
-        ResetContext();
-    }
- 
-    public IState CurrentState
-    { get; private set; }
+    public SequenceInfo SequenceInfo;
+
+    public IState CurrentState { get; private set; }
 
     public float TransitionDuration
     {
         get { return _transitionDuration; }
         set { _transitionDuration = value; }
     }
+
     public int TurnCount
     {
         get { return _turnCount; }
@@ -61,7 +59,7 @@ public class ButtonPressContext : ScriptableObject, IContext
         get { return _totalScore; }
         set
         {
-            _totalScore = value; 
+            _totalScore = value;
             SequenceInfo.ScoreStringVariable.Value = _totalScore.ToString();
         }
     }
@@ -71,10 +69,27 @@ public class ButtonPressContext : ScriptableObject, IContext
         get { return _random; }
         set { _random = value; }
     }
+
+    public void ChangeState(IState next)
+    {
+        CurrentState.OnExit(this);
+        TurnCount++;
+        CurrentState = next;
+        CurrentState.OnEnter(this);
+        _currentTransitionTime = _transitionDuration;
+        _onContextTimerStart.Raise(this);
+    }
+
+    private void OnEnable()
+    {
+        if (ButtonPressStates.Count <= 0)
+            return;
+
+        ResetContext();
+    }
+
     public void ResetContext()
     {
-      
-
         CurrentState = ButtonPressStates[0];
         TurnCount = 0;
         TotalScore = 0;
@@ -95,6 +110,7 @@ public class ButtonPressContext : ScriptableObject, IContext
             SequenceInfo.InfoStringVariable.Value = "Finished with score of " + TotalScore;
             return;
         }
+
         if (_currentTransitionTime <= 0) // this happens only on frames the timer is not counting down.
         {
             CurrentState.UpdateState(this);
@@ -113,17 +129,4 @@ public class ButtonPressContext : ScriptableObject, IContext
             SequenceInfo.IntervalStringVariable.Value = _currentTransitionTime.ToString();
         }
     }
-
-    public void ChangeState(IState next)
-    {
-        CurrentState.OnExit(this);
-
-        TurnCount++;
-        CurrentState = next;
-        CurrentState.OnEnter(this); 
-        _currentTransitionTime = _transitionDuration;
-        _onContextTimerStart.Raise(this);
-    }
-
-    
 }
