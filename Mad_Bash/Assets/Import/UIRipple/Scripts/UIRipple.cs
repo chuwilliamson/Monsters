@@ -90,7 +90,7 @@ public class UIRipple : MonoBehaviour
     }
 
     //this will create the Ripple
-    public void CreateRipple(Vector2 Position)
+    public void CreateRipple(Vector3 Position)
     {
         //create the GameObject and add components
         var ThisRipple = new GameObject();
@@ -108,7 +108,7 @@ public class UIRipple : MonoBehaviour
 
         //set the Ripple at the correct location
         if (StartAtCenter)
-            ThisRipple.transform.localPosition = new Vector2(0f, 0f);
+            ThisRipple.transform.localPosition = new Vector3(0f, 0f, 0f);
         else
             ThisRipple.transform.position = Position;
 

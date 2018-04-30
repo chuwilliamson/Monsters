@@ -11,13 +11,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private CharacterInformation character;
-    [SerializeField]
-    private float speedModifer = 1;
+     
 
     public float gravity = 20.0F;
 
     private Vector3 moveDirection;
     private CharacterController controller;
+    [ReadOnly]
     public Vector3 targetDir;
 
     void Start()
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
             moveDirection = targetDir;
         }
 
-        controller.SimpleMove(moveDirection * character.Speed.Value * speedModifer);
+        controller.SimpleMove(moveDirection * character.Speed.Value);
         character.CurrentSpeed.Value = controller.velocity.magnitude;
     }
 }

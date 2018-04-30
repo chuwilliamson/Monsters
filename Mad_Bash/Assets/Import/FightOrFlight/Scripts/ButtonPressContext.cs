@@ -14,7 +14,7 @@ public class ButtonPressContext : ScriptableObject, IContext
     [SerializeField] private GameEventArgs _onContextReset;
     [SerializeField] private GameEventArgs _onContextTimerEnd;
     [SerializeField] private GameEventArgs _onContextTimerStart;
-
+    [SerializeField]  bool COMPLETE;
     [Header("Inspector Variables")]
     [SerializeField] [Range(0.1f, 5.0f)] private float _timeToLive;
     [SerializeField] [Range(0.1f, 5.0f)] private float _timeToPress;
@@ -105,6 +105,7 @@ public class ButtonPressContext : ScriptableObject, IContext
     {
         TurnCount = 0;
         TotalScore = 0;
+        COMPLETE = false;
         ButtonPressStateIndices = new List<int>();
 
         for (var i = 0; i < _maxTurns; ++i)
@@ -118,6 +119,7 @@ public class ButtonPressContext : ScriptableObject, IContext
         _onContextReset.Raise(this);
     }
 
+    
     public void UpdateContext()
     {
         SequenceInfo.TimeToLiveStringVariable.Value = ((ButtonPressObject)CurrentState).CurrentTimeToLive.ToString();
@@ -126,8 +128,14 @@ public class ButtonPressContext : ScriptableObject, IContext
 
         if (TurnCount >= _maxTurns)
         {
+            if (COMPLETE)
+                return;
+
+            COMPLETE = true;
             SequenceInfo.CurrentStateName.Value = "Finished with score of " + TotalScore;
+            _onContextFinished.Raise(this);
             return;
+
         }
 
         //we do not update the current state when the transition is counting down

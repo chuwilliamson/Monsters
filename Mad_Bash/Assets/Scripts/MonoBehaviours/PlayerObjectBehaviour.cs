@@ -1,36 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
 {
     // fields 
     public CharacterInformation characterInfo_config;
-    [SerializeField]
-    private CharacterInformation characterInfo_runtime;
-    [SerializeField]
-    private GameEventArgs Interaction_Start;
-    [SerializeField]
-    private GameEventArgs Interaction_End;
-    [SerializeField]
+
+    [SerializeField] [ReadOnly] private CharacterInformation characterInfo_runtime;
+
     public IInteractable currentInteractable;
-    public GameObject currentInteractable_GO;
+
+    [ReadOnly] public GameObject currentInteractable_GO;
+
+    [SerializeField] private GameEventArgs Interaction_End;
+
+    [SerializeField] private GameEventArgs Interaction_Start;
 
     // properties
     public CharacterInformation CharacterInfo
     {
         get { return characterInfo_runtime; }
-    }        
-
-    // Unity methods
-    private void Start()
-    {
-        if (characterInfo_config == null)
-        {
-            characterInfo_config = Resources.Load("ScriptableObjects/Characters/PlayerConfig") as CharacterInformation;
-        }
-
-        characterInfo_runtime = Instantiate(characterInfo_config);
     }
 
     // methods
@@ -38,19 +26,28 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
     {
         if (currentInteractable != null)
             return;
-       
+
         currentInteractable = interactable;
     }
 
     public void Interaction_Release(IInteractable interactable)
     {
         if (interactable != currentInteractable)
-            return;        
-        
+            return;
+
         currentInteractable_GO = null;
         currentInteractable = null;
-        
+
         Interaction_End.Raise(this, currentInteractable_GO);
+    }
+
+    // Unity methods
+    private void Start()
+    {
+        if (characterInfo_config == null)
+            characterInfo_config = Resources.Load("ScriptableObjects/Characters/PlayerConfig") as CharacterInformation;
+
+        characterInfo_runtime = Instantiate(characterInfo_config);
     }
 
     public void OnInteractionSet(Object[] args)

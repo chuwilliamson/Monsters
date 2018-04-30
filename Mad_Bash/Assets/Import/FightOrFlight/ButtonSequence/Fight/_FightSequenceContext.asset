@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c453f32e70a4ddd46bbafd1b8748785e, type: 3}
   m_Name: _FightSequenceContext
   m_EditorClassIdentifier: 
-  ButtonPressStateIndices: 0300000003000000020000000100000001000000020000000000000002000000010000000100000002000000020000000000000000000000000000000100000002000000020000000100000001000000
+  ButtonPressStateIndices: 03000000020000000000000001000000
   ButtonPressStates:
   - {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
   - {fileID: 11400000, guid: e7e2b6c95d5d28d4f9e79c731883d803, type: 2}
@@ -23,13 +23,14 @@ MonoBehaviour:
   _onContextTimerEnd: {fileID: 11400000, guid: 92da2b08d8be72f4ead5fc4a14771307, type: 2}
   _onContextTimerStart: {fileID: 11400000, guid: 104e9f58a93fb884798667a398ef6a53,
     type: 2}
-  _timeToLive: 2
-  _timeToPress: 0.25
-  _timeToTransition: 0.24
+  COMPLETE: 0
+  _timeToLive: 3
+  _timeToPress: 1
+  _timeToTransition: 1
   _random: 0
   _pressBufferMax: 1
-  _maxTurns: 20
+  _maxTurns: 4
   _totalScore: 0
   _turnCount: 0
-  _currentTransitionTime: 0.2
+  _currentTransitionTime: 1
   SequenceInfo: {fileID: 11400000, guid: e8c8ab9044e3407438b822a3c1cd6aff, type: 2}

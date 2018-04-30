@@ -48,8 +48,8 @@ public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTrigg
 
     public void InteractableBeginInteraction(Object token)
     {
-        InteractionBegin.Raise(token);
-        Response.Invoke(new Object[] { this, interactorGameObject, token });
+        InteractionBegin.Raise(gameObject);
+        Response.Invoke(new Object[] { gameObject, interactorGameObject, token });
     }
 
     public void InteractableEndInteraction()

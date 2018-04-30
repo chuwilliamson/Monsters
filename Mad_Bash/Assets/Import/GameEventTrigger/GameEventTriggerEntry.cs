@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
+
 [System.Serializable]
 public class GameEventTriggerEntry : IListener
 {
     public GameEventArgs Event;
+    public GameEventArgsResponse Response;
     public Object Sender;
-    public GameEventArgsResponse Callback;
     public string Name;
-    public int EnumIndex;
+    public int EventID;
+    public bool RequiresSender;
 
     public void OnEventRaised(Object[] args)
     {
-        Callback.Invoke(args);
+        if (Sender == null || Sender == args[0])
+            Response.Invoke(args);
     }
 
     public void Subscribe()
