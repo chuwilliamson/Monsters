@@ -4,17 +4,16 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ButtonSequenceContext")]
 public class ButtonPressContext : ScriptableObject, IContext
 {
-    [SerializeField] public List<int> ButtonPressStateIndices = new List<int>();
-    [SerializeField] public List<ButtonPressObject> ButtonPressStates = new List<ButtonPressObject>();
+    [SerializeField] private List<int> ButtonPressStateIndices = new List<int>();
+    [SerializeField] private List<ButtonPressObject> ButtonPressStates = new List<ButtonPressObject>();
 
     [Header("Events")]
-    [SerializeField]
-    private GameEventArgs _onContextChanged;
+    [SerializeField] private GameEventArgs _onContextChanged;
     [SerializeField] private GameEventArgs _onContextFinished;
     [SerializeField] private GameEventArgs _onContextReset;
     [SerializeField] private GameEventArgs _onContextTimerEnd;
     [SerializeField] private GameEventArgs _onContextTimerStart;
-    [SerializeField]  bool COMPLETE;
+    
     [Header("Inspector Variables")]
     [SerializeField] [Range(0.1f, 5.0f)] private float _timeToLive;
     [SerializeField] [Range(0.1f, 5.0f)] private float _timeToPress;
@@ -24,11 +23,14 @@ public class ButtonPressContext : ScriptableObject, IContext
     [SerializeField] private int _maxTurns;
 
     [Header("Display")]
+    [ReadOnly]
     [SerializeField] private float _totalScore;
+    [ReadOnly]
     [SerializeField] private int _turnCount;
-
+    [ReadOnly]
     [SerializeField] private float _currentTransitionTime;
-
+    [ReadOnly]
+    [SerializeField] bool COMPLETE;
     public SequenceInfo SequenceInfo;
 
     public IState CurrentState
