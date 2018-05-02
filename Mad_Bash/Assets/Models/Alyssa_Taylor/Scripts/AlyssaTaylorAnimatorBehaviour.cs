@@ -18,7 +18,7 @@ public class AlyssaTaylorAnimatorBehaviour : MonoBehaviour, IInteractionBeginHan
 
     private void Start()
     {
-        _anim = GetComponent<Animator>();
+        _anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
