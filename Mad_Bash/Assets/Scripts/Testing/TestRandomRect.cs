@@ -10,7 +10,7 @@ public class TestRandomRect : MonoBehaviour
     private void Update()
     {
         counter++;
-        if (counter > 10)
+        if (counter > 20)
         {
             var width = rectTransform.rect.width;
             var height = rectTransform.rect.height;
