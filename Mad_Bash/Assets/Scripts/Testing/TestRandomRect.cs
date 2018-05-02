@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class TestRandomRect : MonoBehaviour
 {
-    public Canvas canvas;
-
-    private void OnEnable()
-    {
-        //canvas = GetComponentInParent<Canvas>();
-    }
+    public RectTransform rectTransform;
 
     int counter;
     private void Update()
@@ -17,8 +12,8 @@ public class TestRandomRect : MonoBehaviour
         counter++;
         if (counter > 10)
         {
-            var width = canvas.GetComponent<RectTransform>().rect.width;
-            var height = canvas.GetComponent<RectTransform>().rect.height;
+            var width = rectTransform.rect.width;
+            var height = rectTransform.rect.height;
 
             MoveObject(width, height);
             counter = 0;
