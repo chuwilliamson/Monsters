@@ -6,21 +6,26 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class DoorBehaviour : MonoBehaviour
 {
+    [SerializeField]
     ButtonPressContext _buttonPressContext;
-    public string DoorOpen = "open";
-    private Animator doorAnim;
+    public string DoorOpen = "opneing";
+    public string DoorClosed = "Naw Son";
+    private Animator _Anim;
 
     public void OnContextFinished(Object[] args)
     {
-        if (_buttonPressContext.TotalScore > 3)
+        if (_buttonPressContext.TotalScore >= 3)
         {
-            doorAnim.SetTrigger(DoorOpen);
+            _Anim.SetTrigger("Interact");
+            Debug.Log(DoorOpen);
         }
+        else
+            Debug.Log(DoorClosed);
     }
     
     // Use this for initialization
     void Start()
     {
-        doorAnim = GetComponent<Animator>();
+        _Anim = GetComponent<Animator>();
     }
 }
