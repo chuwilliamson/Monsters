@@ -60,6 +60,13 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
         CurrentInteractable_GO = null;
         CurrentInteractable = null;
     }
+
+    public void OnGremlinInteractionSet(Object[] args)
+    {
+        //THIS IS SO BAD... we have to do this because
+        //the interaction system needs to fire when we enter the gremlin trigger
+        Context.ChangeState(new PlayerInteractState());
+    }
  
     #endregion
 }
