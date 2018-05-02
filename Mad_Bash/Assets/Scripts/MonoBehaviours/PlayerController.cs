@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Matthew
-
+[DisallowMultipleComponent]
 public class PlayerController : MonoBehaviour
 {
     public StringVariable Horizontal;
@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private CharacterInformation character;
-     
 
     public float gravity = 20.0F;
 
