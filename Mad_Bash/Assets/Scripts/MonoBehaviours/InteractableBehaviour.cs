@@ -31,6 +31,7 @@ public interface IPhysicsTriggerExitHandler
 }
 
 [RequireComponent(typeof(PhysicsTriggerListener))]
+[DisallowMultipleComponent]
 public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTriggerEnterHandler, IPhysicsTriggerExitHandler
 {
     public IInteractor interactor;
@@ -70,7 +71,7 @@ public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTrigg
             return;
 
         interactorGameObject = actor;
-        interactor = interactorGameObject.GetComponent<IInteractor>();
+        if (interactorGameObject != null) interactor = interactorGameObject.GetComponent<IInteractor>();
         interactor.Interaction_Set(this);
         InteractionSet.Raise(gameObject, actor);
     }

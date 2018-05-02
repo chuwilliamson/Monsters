@@ -1,19 +1,21 @@
 ﻿using UnityEngine;
 
+[DisallowMultipleComponent]
 public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
 {
     // fields 
     public CharacterInformation characterInfo_config;
 
-    [SerializeField] [ReadOnly] private CharacterInformation characterInfo_runtime;
+    [SerializeField]
+    [ReadOnly]
+    CharacterInformation characterInfo_runtime;
 
-    public IInteractable currentInteractable;
+    private IContext Context;
 
-    [ReadOnly] public GameObject currentInteractable_GO;
+    public IInteractable CurrentInteractable;
 
-    [SerializeField] private GameEventArgs Interaction_End;
-
-    [SerializeField] private GameEventArgs Interaction_Start;
+    [ReadOnly]
+    public GameObject CurrentInteractable_GO;
 
     // properties
     public CharacterInformation CharacterInfo
@@ -21,62 +23,43 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
         get { return characterInfo_runtime; }
     }
 
+    // Unity methods
+    void Start()
+    {
+        characterInfo_runtime = characterInfo_config == null
+            ? Instantiate(original: characterInfo_config)
+            : Resources.Load<CharacterInformation>("ScriptableObjects/Characters/PlayerConfig");
+
+        Context = new PlayerContext(new PlayerIdleState())
+        {
+            PlayerController = GetComponent<PlayerController>(),
+            PlayerObjectBehaviour = this,            
+        };
+    }
+
+    void Update()
+    {
+        Context.UpdateContext();
+    }
+
+    #region INTERACTION
+
     // methods
     public void Interaction_Set(IInteractable interactable)
     {
-        if (currentInteractable != null)
+        if (CurrentInteractable != null)
             return;
-
-        currentInteractable = interactable;
+        CurrentInteractable = interactable;
     }
 
     public void Interaction_Release(IInteractable interactable)
     {
-        if (interactable != currentInteractable)
+        if (interactable != CurrentInteractable)
             return;
 
-        currentInteractable_GO = null;
-        currentInteractable = null;
-
-        Interaction_End.Raise(this, currentInteractable_GO);
+        CurrentInteractable_GO = null;
+        CurrentInteractable = null;
     }
-
-    // Unity methods
-    private void Start()
-    {
-        if (characterInfo_config == null)
-            characterInfo_config = Resources.Load("ScriptableObjects/Characters/PlayerConfig") as CharacterInformation;
-
-        characterInfo_runtime = Instantiate(characterInfo_config);
-    }
-
-    public void OnInteractionSet(Object[] args)
-    {
-        var sender = args[0] as GameObject;
-        if (sender == null)
-            return;
-
-        currentInteractable_GO = args[0] as GameObject;
-    }
-
-    public void OnInteractionReleased(Object[] args)
-    {
-        var sender = args[0] as GameObject;
-        if (sender != currentInteractable_GO)
-            return;
-
-        currentInteractable_GO = null;
-        currentInteractable = null;
-
-        Interaction_End.Raise(this, currentInteractable_GO);
-    }
-
-    public void OnSubmitButtonClicked(Object[] args)
-    {
-        var sender = args[0] as UI_InteractionPromptBehaviour;
-        if (sender == null)
-            return;
-
-        currentInteractable.Interact(null);
-    }
+ 
+    #endregion
 }
