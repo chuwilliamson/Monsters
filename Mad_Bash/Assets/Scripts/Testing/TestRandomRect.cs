@@ -8,7 +8,7 @@ public class TestRandomRect : MonoBehaviour
 
     private void OnEnable()
     {
-        canvas = GetComponentInParent<Canvas>();
+        //canvas = GetComponentInParent<Canvas>();
     }
 
     int counter;
@@ -28,6 +28,6 @@ public class TestRandomRect : MonoBehaviour
     public void MoveObject(float width, float height)
     {
         var newPos = RandomRectPos.RandomOnRect(width, height);
-        gameObject.transform.position = newPos;
+        gameObject.transform.localPosition = newPos;
     }      
 }
