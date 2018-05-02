@@ -4,25 +4,21 @@ using UnityEngine;
 
 public class TestRandomRect : MonoBehaviour
 {
+    [SerializeField] private ButtonPressContext _buttonPressContext;
+    [SerializeField] private ButtonPressObject _buttonState;
     public RectTransform rectTransform;
-
-    int counter;
-    private void Update()
-    {
-        counter++;
-        if (counter > 20)
-        {
-            var width = rectTransform.rect.width;
-            var height = rectTransform.rect.height;
-
-            MoveObject(width, height);
-            counter = 0;
-        }        
-    }
 
     public void MoveObject(float width, float height)
     {
         var newPos = RandomRectPos.RandomOnRect(width, height);
-        gameObject.transform.localPosition = newPos;
-    }      
+        gameObject.transform.localPosition = newPos;        
+    }
+
+    public void OnContextChange(Object[] args)
+    {
+        if (_buttonState != _buttonPressContext.CurrentState as ButtonPressObject)
+            return;
+
+        MoveObject(width: rectTransform.rect.width, height: rectTransform.rect.height);        
+    }
 }
