@@ -9,6 +9,13 @@ public class GameContext : ScriptableObject, IContext
 
     public bool PauseButtonClicked { get; set; }
 
+    public void ResetContext()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public IState CurrentState { get; private set; }
+
     /// <summary>
     ///     this should not be called by anyone but the states that funnel through here
     /// </summary>

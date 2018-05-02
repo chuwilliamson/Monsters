@@ -15,7 +15,7 @@
             var buttonPressContext = context as ButtonPressContext;
             CurrentTime -= Time.deltaTime;
             if(CurrentTime <= 0)
-                context.ChangeState(buttonPressContext.ButtonPressStates[buttonPressContext.TurnCount]);
+                context.ChangeState(buttonPressContext.NextState);
         }
 
         public void OnExit(IContext context)
