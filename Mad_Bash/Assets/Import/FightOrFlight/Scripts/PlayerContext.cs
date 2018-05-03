@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
  
 public class PlayerContext : IContext
-{
+{    
     public PlayerContext(IState initialState)
     {
         CurrentState = initialState;
