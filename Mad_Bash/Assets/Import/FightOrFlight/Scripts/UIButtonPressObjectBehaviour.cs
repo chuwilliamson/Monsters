@@ -20,7 +20,8 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     public UnityEvent ContextFinishedResponse;
     public UnityEvent ContextTimerEndResponse;
     public UnityEvent ContextTimerStartResponse;
-     
+    
+    
 
     public float Ttp;
     #region IContextEventHandler
@@ -52,6 +53,10 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
         var currentState = sender.CurrentState as ButtonPressObject;
         if (currentState == _buttonState)
             ContextTimerEndResponse.Invoke();
+
+        var canvas = GetComponentInParent<Canvas>();
+        var rectTransform = canvas.GetComponent<RectTransform>();
+        gameObject.MoveObject(width: rectTransform.rect.width, height: rectTransform.rect.height);
     }
 
     public void onContextTimerStart(Object[] args)

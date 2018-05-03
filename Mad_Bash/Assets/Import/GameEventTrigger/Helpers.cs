@@ -18,5 +18,12 @@ public static class ExtensionMethods
         }
 
         return result.ToString();
+
+
+    }
+    public static void MoveObject(this GameObject gameObject, float width, float height)
+    {        
+
+        gameObject.transform.localPosition = RandomRectPos.RandomOnRect(width, height);
     }
 }
