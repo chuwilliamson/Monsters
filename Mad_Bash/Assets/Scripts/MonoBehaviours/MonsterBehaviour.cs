@@ -4,11 +4,27 @@ using UnityEngine;
 
 public class MonsterBehaviour : MonoBehaviour
 {
-    public GameObject character;
+    GameObject character;
+    [SerializeField]
+    ButtonPressContext _buttonPressContext;
+    private Animator _Anim;
 
-    public float speed;
-    public float strength;
+    public void OnContextFinished(Object[] args)
+    {
+        if (_buttonPressContext.TotalScore >= 3)
+        {
+            Debug.Log("You Defeated The Monster, Plays Final Fantasy Music");
+        }
+        else
+        {
+            Debug.Log("You Dead Sorry");
+        }
+    }
 
+	void Start ()
+    {
+        _Anim = GetComponent<Animator>();
+	}
 
     void FindCharacter()
     {
@@ -19,15 +35,4 @@ public class MonsterBehaviour : MonoBehaviour
     {
 
     }
-
-	void Start ()
-    {
-        speed = GetComponent<MonsterInformation>().Speed.Value;
-        strength = GetComponent<MonsterInformation>().Strength.Value;
-	}
-	
-	void Update ()
-    {
-		
-	}
 }
