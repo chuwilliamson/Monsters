@@ -15,7 +15,7 @@ public class CabinentBehaviour : MonoBehaviour
 	{
 		if (_buttonPressContext.TotalScore >= 3)
 		{
-			_Anim.SetTrigger("Interact");
+			_Anim.SetTrigger("Open");
 		}
 	}
 
