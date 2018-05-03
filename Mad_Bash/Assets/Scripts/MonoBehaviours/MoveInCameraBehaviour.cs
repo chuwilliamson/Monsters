@@ -11,7 +11,7 @@ public class MoveInCameraBehaviour: MonoBehaviour
         float newX = Random.Range(0, cam.pixelWidth);
         float newY = Random.Range(0, cam.pixelHeight);
         
-        return cam.ScreenToWorldPoint(new Vector3(newX, newY, 15));
+        return cam.ScreenToWorldPoint(new Vector3(newX, newY, 5));
     }
 
     int counter;
@@ -19,7 +19,7 @@ public class MoveInCameraBehaviour: MonoBehaviour
     {
         counter++;
         if (counter > 10)
-        {
+        {            
             gameObject.transform.SetPositionAndRotation(MoveInCamera(), cam.transform.rotation);
             counter = 0;
         }
