@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 [RequireComponent(typeof(Animator), typeof(GameEventArgsListener))]
 [DisallowMultipleComponent]
-public class CabinentBehaviour : MonoBehaviour 
+public class CabinetBehaviour : MonoBehaviour 
 {
 	[SerializeField]
 	ButtonPressContext _buttonPressContext;
