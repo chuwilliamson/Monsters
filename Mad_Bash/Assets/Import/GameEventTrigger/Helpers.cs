@@ -18,5 +18,14 @@ public static class ExtensionMethods
         }
 
         return result.ToString();
+
+
+    }
+    public static void MoveObject(this GameObject gameObject, float width, float height, bool screenSpace = false)
+    {
+
+        gameObject.transform.localPosition = screenSpace ?
+            Camera.main.WorldToScreenPoint(RandomRectPos.RandomOnRect(width, height)) :
+            RandomRectPos.RandomOnRect(width, height);
     }
 }
