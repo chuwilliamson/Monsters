@@ -21,23 +21,22 @@ public static class ExtensionMethods
 
 
     }
-    public static void MoveObject(this GameObject gameObject, float width, float height)
-    {        
 
+    public static void MoveObject(this GameObject gameObject, float width, float height)
+    {
         gameObject.transform.localPosition = RandomRectPos.RandomOnRect(width, height);
     }
 
+    /// <summary>
+    /// Only use float values between 0.0 and 1.0 for the X and Y values.
+    /// You may use any number for the Z value.
+    /// </summary>
     public static void MoveInCamera(this GameObject gameObject, Vector3 newPos)
     {
-        gameObject.transform.position = newPos;
-        var pos = Camera.main.WorldToViewportPoint(gameObject.transform.position);
-        pos.x = Mathf.Clamp(pos.x, 0.2f, 0.8f);
-        pos.y = Mathf.Clamp(pos.y, 0.2f, 0.8f);
+        var pos = newPos;
+        pos.x = Mathf.Clamp(pos.x, 0.2f, .8f);
+        pos.y = Mathf.Clamp(pos.y, 0.2f, .8f);
         pos.z = Mathf.Clamp(pos.z, 4, 7);
         gameObject.transform.position = Camera.main.ViewportToWorldPoint(pos);
-
-        //var viewport = Camera.main.WorldToViewportPoint(gameObject.transform.position);
-        //var worldpoint = Camera.main.ViewportToWorldPoint(viewport);        
-        //gameObject.transform.position = worldpoint;
     }
 }
