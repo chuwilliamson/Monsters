@@ -26,4 +26,18 @@ public static class ExtensionMethods
 
         gameObject.transform.localPosition = RandomRectPos.RandomOnRect(width, height);
     }
+
+    public static void MoveInCamera(this GameObject gameObject, Vector3 newPos, bool local = false)
+    {
+        var screenSpace = Camera.main.WorldToScreenPoint(newPos);
+        if (local)
+        {
+            gameObject.transform.localPosition = Camera.main.ScreenToViewportPoint(screenSpace);
+        }
+        else
+        {
+            gameObject.transform.position = Camera.main.ScreenToViewportPoint(screenSpace);
+        }
+        
+    }
 }

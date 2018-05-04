@@ -7,12 +7,13 @@ public class PlayerInteractState : IState, IListener
 
     public void OnEnter(IContext context)
     {
-        Debug.Log("Enter" + GetType().Name);
+       // Debug.Log("Enter" + GetType().Name);
         _playerContext = context as PlayerContext;
         InteractionEnd = Resources.Load<GameEventArgs>("ScriptableObjects/Events/InteractionEnd");
         Subscribe();
         _playerContext.PlayerController.enabled = false;
-        
+        _playerContext.PlayerController.character.CurrentSpeed.Value = 0.0f;
+
     }
 
     bool Finished = false;
@@ -27,7 +28,7 @@ public class PlayerInteractState : IState, IListener
 
     public void OnExit(IContext context)
     {
-        Debug.Log("Exit" + GetType().Name);
+      //  Debug.Log("Exit" + GetType().Name);
         Unsubscribe();
         Finished = false;
         _playerContext.PlayerController.enabled = true;

@@ -26,6 +26,7 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
     // Unity methods
     void Start()
     {
+        Cursor.visible = !Cursor.visible;
         characterInfo_runtime = characterInfo_config == null
             ? Instantiate(original: characterInfo_config)
             : Resources.Load<CharacterInformation>("ScriptableObjects/Characters/PlayerConfig");
