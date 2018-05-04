@@ -40,16 +40,24 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
             ContextChangedResponse.Invoke();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="args">args[0] is sender</param>
     public void onContextFinished(Object[] args)
     {
         var sender = args[0] as ButtonPressContext;
         if (sender == null)
             return;
+        
         var currentState = sender.CurrentState as ButtonPressObject;
         if (currentState == _buttonState)
             ContextFinishedResponse.Invoke();
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="args"></param>
     public void onContextTimerEnd(Object[] args)
     {
         var sender = args[0] as ButtonPressContext;
@@ -74,10 +82,14 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     }
     #endregion  
 
-    public void OnButtonSuccess()
+    public void OnButtonSuccess(Object[] args)
     {
-        if (_buttonState != _buttonPressContext.CurrentState as ButtonPressObject)
+        var sender = args[0] as ButtonPressObject;
+        if (sender == null)
             return;
+        if (sender != _buttonState)
+            return;
+
         var go = Instantiate(UIRipplePrefab, transform);
         var ripple = go.GetComponent<UIRipple>();
         ripple.CreateRipple(go.transform.localPosition);
