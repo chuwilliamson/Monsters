@@ -58,9 +58,15 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
         var currentState = sender.CurrentState as ButtonPressObject;
         if (currentState == _buttonState)
             ContextTimerEndResponse.Invoke();
-        
-        if(MoveInCamera)
-            gameObject.MoveInCamera(newPos: Vector3.one);
+
+        if (MoveInCamera)
+        {
+            var x = Random.Range(0, 10);
+            var y = Random.Range(0, 10);
+            var z = Random.Range(4, 7);
+            var newPos = new Vector3(x, y, z);
+            gameObject.MoveInCamera(newPos: newPos);
+        }
     }
 
     public void onContextTimerStart(Object[] args)
