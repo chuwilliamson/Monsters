@@ -27,12 +27,9 @@ public static class ExtensionMethods
         gameObject.transform.localPosition = RandomRectPos.RandomOnRect(width, height);
     }
 
-    public static void MoveInCamera(this GameObject gameObject, float distance=5.0f)
+    public static void MoveInCamera(this GameObject gameObject, Vector3 newPos)
     {
-        float newX = Random.Range(0, Camera.main.pixelWidth);
-        float newY = Random.Range(0, Camera.main.pixelHeight);
-
-        gameObject.transform.position  = 
-            Camera.main.ScreenToWorldPoint(new Vector3(newX, newY, distance));
+        var screenSpace = Camera.main.WorldToScreenPoint(newPos);
+        gameObject.transform.localPosition = Camera.main.ScreenToViewportPoint(screenSpace);
     }
 }
