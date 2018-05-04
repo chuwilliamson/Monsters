@@ -3,10 +3,14 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler 
+public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
 {
-    [SerializeField] private ButtonPressContext _buttonPressContext;
-    [SerializeField] private ButtonPressObject _buttonState;
+    [SerializeField]
+    private ButtonPressContext _buttonPressContext;
+    [SerializeField]
+    private ButtonPressObject _buttonState;
+
+    public bool ScreenSpace = true;
     public RectTransform ButtonTransform;
     public float Frac;
     public Vector3 OverlayEndscale;
@@ -20,8 +24,8 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     public UnityEvent ContextFinishedResponse;
     public UnityEvent ContextTimerEndResponse;
     public UnityEvent ContextTimerStartResponse;
-    
-    
+
+
 
     public float Ttp;
     #region IContextEventHandler
@@ -56,7 +60,7 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
 
         var canvas = GetComponentInParent<Canvas>();
         var rectTransform = canvas.GetComponent<RectTransform>();
-        gameObject.MoveObject(width: rectTransform.rect.width, height: rectTransform.rect.height);
+        gameObject.MoveInCamera();
     }
 
     public void onContextTimerStart(Object[] args)
