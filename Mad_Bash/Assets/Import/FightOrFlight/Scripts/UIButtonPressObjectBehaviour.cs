@@ -63,7 +63,7 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
         {
             var x = Random.Range(0f, 1f);
             var y = Random.Range(0f, 1f);
-            var z = Random.Range(4f, 7f);
+            var z = Random.Range(3f, 5f);
             var newPos = new Vector3(x, y, z);
             gameObject.MoveInCamera(newPos: newPos);            
         }

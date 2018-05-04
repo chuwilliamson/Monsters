@@ -36,7 +36,7 @@ public static class ExtensionMethods
         var pos = newPos;
         pos.x = Mathf.Clamp(pos.x, 0.2f, .8f);
         pos.y = Mathf.Clamp(pos.y, 0.2f, .8f);
-        pos.z = Mathf.Clamp(pos.z, 4, 7);
+        pos.z = Mathf.Clamp(pos.z, 3f, 5f);
         gameObject.transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 }
