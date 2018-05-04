@@ -6,6 +6,8 @@ public class GameEventArgsListener : MonoBehaviour, IListener
     public GameEventArgs Event;
     public Object Sender;
     public GameEventArgsResponse Response;
+    [TextArea(3,5)]
+    public string Notes;
     
     private void OnEnable()
     {
