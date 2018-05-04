@@ -10,9 +10,10 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     [SerializeField]
     private ButtonPressObject _buttonState;
 
-    public bool ScreenSpace = true;
+    public bool MoveInCamera;
     public RectTransform ButtonTransform;
     public float Frac;
+    public float Ttp;
     public Vector3 OverlayEndscale;
     public Vector3 OverlayNewScale;
     public Vector3 OverlayStartScale;
@@ -25,9 +26,9 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     public UnityEvent ContextTimerEndResponse;
     public UnityEvent ContextTimerStartResponse;
 
+    
 
-
-    public float Ttp;
+    
     #region IContextEventHandler
     public void onContextChanged(Object[] args)
     {
@@ -57,10 +58,9 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
         var currentState = sender.CurrentState as ButtonPressObject;
         if (currentState == _buttonState)
             ContextTimerEndResponse.Invoke();
-
-        var canvas = GetComponentInParent<Canvas>();
-        var rectTransform = canvas.GetComponent<RectTransform>();
-        gameObject.MoveInCamera();
+        
+        if(MoveInCamera)
+            gameObject.MoveInCamera(newPos: Vector3.one);
     }
 
     public void onContextTimerStart(Object[] args)
@@ -83,7 +83,6 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
         ripple.CreateRipple(go.transform.localPosition);
         go.transform.SetAsLastSibling();
         Destroy(go, 3);
-        //StartCoroutine(TweenScale(.25f, transform));
     }
 
     [ContextMenu("Set Contexts")]
