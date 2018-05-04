@@ -27,17 +27,22 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        character.CurrentSpeed.Value = controller.velocity.magnitude;
+
+        var h = Input.GetAxisRaw(Horizontal.Value);
+        var v = Input.GetAxisRaw(Vertical.Value);
+
+
         if (controller.isGrounded)
         {
-            var h = Input.GetAxis(Horizontal.Value);
-            var v = Input.GetAxis(Vertical.Value);
+     
             var forward = Camera.main.transform.TransformDirection(Vector3.forward);
             forward.y = 0;
             forward = forward.normalized;
             ///such copy paste but it works
             var right = new Vector3(forward.z, 0, -forward.x);
             targetDir = h * right + v * forward;
-            if (targetDir.magnitude > 0)
+            if (targetDir.magnitude > Mathf.Epsilon)
                 transform.rotation = Quaternion.LookRotation(targetDir);
 
             moveDirection = targetDir;
