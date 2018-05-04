@@ -33,7 +33,7 @@ public static class ExtensionMethods
         var pos = Camera.main.WorldToViewportPoint(gameObject.transform.position);
         pos.x = Mathf.Clamp(pos.x, 0.2f, 0.8f);
         pos.y = Mathf.Clamp(pos.y, 0.2f, 0.8f);
-        pos.z = Mathf.Clamp(pos.z, 3, 6);
+        pos.z = Mathf.Clamp(pos.z, 4, 7);
         gameObject.transform.position = Camera.main.ViewportToWorldPoint(pos);
 
         //var viewport = Camera.main.WorldToViewportPoint(gameObject.transform.position);
