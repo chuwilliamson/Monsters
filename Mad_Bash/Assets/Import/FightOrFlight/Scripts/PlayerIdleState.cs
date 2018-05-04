@@ -8,7 +8,7 @@ public class PlayerIdleState : IState
     {
         Cursor.lockState = CursorLockMode.Locked;
         _playerContext = context as PlayerContext;
-        Debug.Log("Enter" + GetType().Name);
+      //  Debug.Log("Enter" + GetType().Name);
     }
     
     public void UpdateState(IContext context)
@@ -27,6 +27,6 @@ public class PlayerIdleState : IState
 
     public void OnExit(IContext context)
     {
-        Debug.Log("Exit" + GetType().Name);
+       // Debug.Log("Exit" + GetType().Name);
     }
 }
