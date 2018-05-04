@@ -60,7 +60,7 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
 
         var canvas = GetComponentInParent<Canvas>();
         var rectTransform = canvas.GetComponent<RectTransform>();
-        gameObject.MoveInCamera();
+        gameObject.MoveInCamera(newPos: Vector3.zero);
     }
 
     public void onContextTimerStart(Object[] args)
