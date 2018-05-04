@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public StringVariable Vertical;
 
     [SerializeField]
-    private CharacterInformation character;
+    public CharacterInformation character;
 
     public float gravity = 20.0F;
 
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [ReadOnly]
     public Vector3 targetDir;
 
+    
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -26,8 +27,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        character = GetComponent<PlayerObjectBehaviour>().CharacterInfo;
-
         if (controller.isGrounded)
         {
             var h = Input.GetAxis(Horizontal.Value);

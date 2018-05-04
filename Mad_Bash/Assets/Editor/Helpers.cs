@@ -11,7 +11,7 @@ using System.Linq;
 [InitializeOnLoad]
 public class ScriptableObjectHelpers
 {
-    static List<ScriptableObject> objectsToUnload;
+    public static List<ScriptableObject> objectsToUnload;
 
     static ScriptableObjectHelpers()
     {
@@ -24,7 +24,7 @@ public class ScriptableObjectHelpers
         switch (obj)
         {
             case PlayModeStateChange.EnteredPlayMode:
-                objectsToUnload = Resources.LoadAll<ScriptableObject>("").ToList();
+                objectsToUnload = Resources.LoadAll<ScriptableObject>("ScriptableObjects").ToList();
                 AssetDatabase.SaveAssets();
                 break;
 

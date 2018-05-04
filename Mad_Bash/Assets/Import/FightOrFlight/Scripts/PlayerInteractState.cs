@@ -12,7 +12,8 @@ public class PlayerInteractState : IState, IListener
         InteractionEnd = Resources.Load<GameEventArgs>("ScriptableObjects/Events/InteractionEnd");
         Subscribe();
         _playerContext.PlayerController.enabled = false;
-        
+        _playerContext.PlayerController.character.CurrentSpeed.Value = 0.0f;
+
     }
 
     bool Finished = false;
