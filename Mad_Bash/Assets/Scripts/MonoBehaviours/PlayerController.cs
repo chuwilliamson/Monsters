@@ -12,43 +12,72 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public CharacterInformation character;
 
-    public float gravity = 20.0F;
+    public float moveSpeed = 0.0f;
 
-    private Vector3 moveDirection;
+    public Vector3 moveDirection;
+    public Vector3 targetDirection;
+
     private CharacterController controller;
-    [ReadOnly]
-    public Vector3 targetDir;
-
-    
+    public float rotateSpeed = 250.0f;
     void Start()
     {
         controller = GetComponent<CharacterController>();
     }
 
-    private float accel;
+    public bool turning = false;
+    public float dot;
+
     void Update()
-    { 
+    {
+    
+        var forward = Camera.main.transform.TransformDirection(Vector3.forward);
+        forward.y = 0;
+        forward = forward.normalized;
+
+        /*such copy paste but it works*/
+        var right = new Vector3(forward.z, 0, -forward.x);
+
         var h = Input.GetAxis(Horizontal.Value);
-        var v = Input.GetAxis(Vertical.Value); 
-        var move = new Vector2(h,v);
-        accel = move.magnitude > 0 ? accel + Time.deltaTime : accel - Time.deltaTime;
-        accel = Mathf.Clamp(accel, 0, 1);
+        var v = Input.GetAxis(Vertical.Value);
+        var input = new Vector2(h, v);
+ 
+        targetDirection = h * right + v * forward; 
+
         if (controller.isGrounded)
         {
-     
-            var forward = Camera.main.transform.TransformDirection(Vector3.forward);
-            forward.y = 0;
-            forward = forward.normalized;
-            /*such copy paste but it works*/
-            var right = new Vector3(forward.z, 0, -forward.x);
-            targetDir = h * right + v * forward;
-            if (targetDir.magnitude > Mathf.Epsilon)
-                transform.rotation = Quaternion.LookRotation(targetDir);
+            if (targetDirection.magnitude >= Mathf.Epsilon)
+            {
+                moveDirection = Vector3.RotateTowards(
+                    moveDirection,
+                    targetDirection,
+                    rotateSpeed * Mathf.Deg2Rad * Time.deltaTime,
+                    1000);
 
-            moveDirection = targetDir.normalized;
+                dot = Vector3.Dot(moveDirection.normalized, targetDirection.normalized);
+
+                turning = dot < .95;
+
+                moveDirection = moveDirection.normalized;  
+                 
+                transform.rotation = Quaternion.LookRotation(moveDirection);
+ 
+
+            }
         }
-
-        controller.SimpleMove(moveDirection * (character.Speed.Value * accel));
-        character.CurrentSpeed.Value = controller.velocity.magnitude;
+        
+        if (input.magnitude > Mathf.Epsilon && !turning)
+        {
+            
+            controller.SimpleMove(moveDirection * character.Speed.Value);
+            character.CurrentSpeed.Value = controller.velocity.magnitude; 
+          
+        }
+        else
+        {
+        
+            character.CurrentSpeed.Value = 0;
+        } 
     }
+
+    public CollisionFlags flags;
 }
