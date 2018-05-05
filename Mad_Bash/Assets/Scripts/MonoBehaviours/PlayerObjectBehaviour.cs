@@ -6,16 +6,13 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
     // fields 
     public CharacterInformation characterInfo_config;
 
-    [SerializeField]
-    [ReadOnly]
-    CharacterInformation characterInfo_runtime;
+    [SerializeField] [ReadOnly] private CharacterInformation characterInfo_runtime;
 
     private IContext Context;
 
     public IInteractable CurrentInteractable;
 
-    [ReadOnly]
-    public GameObject CurrentInteractable_GO;
+    [ReadOnly] public GameObject CurrentInteractable_GO;
 
     // properties
     public CharacterInformation CharacterInfo
@@ -24,21 +21,21 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
     }
 
     // Unity methods
-    void Start()
+    private void Start()
     {
-        Cursor.visible = !Cursor.visible;
-        characterInfo_runtime = characterInfo_config == null
-            ? Instantiate(original: characterInfo_config)
-            : Resources.Load<CharacterInformation>("ScriptableObjects/Characters/PlayerConfig");
+        characterInfo_config = characterInfo_config == null
+            ? Resources.Load<CharacterInformation>("ScriptableObjects/Characters/PlayerConfig")
+            : characterInfo_config;
+        characterInfo_runtime = Instantiate(characterInfo_config);
 
         Context = new PlayerContext(new PlayerIdleState())
         {
             PlayerController = GetComponent<PlayerController>(),
-            PlayerObjectBehaviour = this,            
+            PlayerObjectBehaviour = this
         };
     }
 
-    void Update()
+    private void Update()
     {
         Context.UpdateContext();
     }
@@ -46,16 +43,16 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
     #region INTERACTION
 
     // methods
-    public void Interaction_Set(IInteractable interactable)
+    public void SetInteraction(IInteractable interactable)
     {
         if (CurrentInteractable != null)
             return;
         CurrentInteractable = interactable;
     }
 
-    public void Interaction_Release(IInteractable interactable)
+    public void ReleaseInteraction(IInteractable interactable)
     {
-        if (interactable != CurrentInteractable)
+        if (interactable == null || interactable != CurrentInteractable)
             return;
 
         CurrentInteractable_GO = null;
@@ -68,6 +65,6 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
         //the interaction system needs to fire when we enter the gremlin trigger
         Context.ChangeState(new PlayerInteractState());
     }
- 
+
     #endregion
 }

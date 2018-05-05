@@ -1,11 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
-[CreateAssetMenu(menuName ="GlobalGameManager")]
-public class GlobalGameManager : ScriptableObject {
 
-	public void PrintGameObject(GameObject go)
+[CreateAssetMenu(menuName = "GlobalGameManager")]
+public class GlobalGameManager : ScriptableObject
+{
+    private static GlobalGameManager _instance; 
+    public static GlobalGameManager Instance
+    {
+        get { return _instance ?? (_instance = Resources.FindObjectsOfTypeAll<GlobalGameManager>().FirstOrDefault()); }
+    }
+
+    public void PrintGameObject(GameObject go)
     {
         Debug.Log(go.name);
     }
@@ -17,13 +24,12 @@ public class GlobalGameManager : ScriptableObject {
             Debug.LogError("EventSystem can not be found...");
             return;
         }
-            
+
         EventSystem.current.SetSelectedGameObject(go);
-        
     }
-    
+
     public void QuitGame()
     {
         Application.Quit();
-    }
+    } 
 }

@@ -19,8 +19,8 @@ public interface IExecutable
 
 public interface IInteractor
 {
-    void Interaction_Set(IInteractable interactable);
-    void Interaction_Release(IInteractable interactable);
+    void SetInteraction(IInteractable interactable);
+    void ReleaseInteraction(IInteractable interactable);
 }
 
 public interface IInteractable

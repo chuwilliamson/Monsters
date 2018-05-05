@@ -84,28 +84,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b2af2bfee12674f9b8b639bd30ef91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactorGameObject: {fileID: 0}
-  Response:
+  EventInteraction_Begin: {fileID: 11400000, guid: 78739640df0e9cc4ba70069d14a0ca91,
+    type: 2}
+  EventInteraction_End: {fileID: 11400000, guid: 7e5caafb76601ad4e8871a708a6bbe00,
+    type: 2}
+  EventInteraction_Released: {fileID: 11400000, guid: 33f1849e4701b7c49bfdc6040a5cd3bd,
+    type: 2}
+  EventInteraction_Set: {fileID: 11400000, guid: 6027bcceabccb4c428199ef25d02c66e,
+    type: 2}
+  InteractorGameObject: {fileID: 0}
+  BeginResponse:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114202567740187392}
-        m_MethodName: Interact
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  InteractionSet: {fileID: 11400000, guid: 6027bcceabccb4c428199ef25d02c66e, type: 2}
-  InteractionBegin: {fileID: 11400000, guid: 78739640df0e9cc4ba70069d14a0ca91, type: 2}
-  InteractionEnd: {fileID: 11400000, guid: 7e5caafb76601ad4e8871a708a6bbe00, type: 2}
-  InteractionReleased: {fileID: 11400000, guid: 33f1849e4701b7c49bfdc6040a5cd3bd,
-    type: 2}
 --- !u!114 &114307224061434324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,6 +127,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114596695162305818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,6 +172,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114875356889438326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,3 +202,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 'Turn on SubmitButton
+
+    Set the EventSystems current object to the submit button'

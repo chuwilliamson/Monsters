@@ -2,50 +2,49 @@
 
 public class PlayerInteractState : IState, IListener
 {
-    private GameEventArgs InteractionEnd;
     private PlayerContext _playerContext;
+    private bool _finished;
+    private GameEventArgs _interactionEnd;
+
+    public void OnEventRaised(Object[] args)
+    {
+        _finished = true;
+    }
+
+    public void Subscribe()
+    {
+        _interactionEnd.RegisterListener(this);
+    }
+
+    public void Unsubscribe()
+    {
+        _interactionEnd.UnregisterListener(this);
+    }
 
     public void OnEnter(IContext context)
     {
-       // Debug.Log("Enter" + GetType().Name);
+        // Debug.Log("Enter" + GetType().Name);
         _playerContext = context as PlayerContext;
-        InteractionEnd = Resources.Load<GameEventArgs>("ScriptableObjects/Events/InteractionEnd");
+        _interactionEnd = Resources.Load<GameEventArgs>("ScriptableObjects/Events/InteractionEnd");
         Subscribe();
         _playerContext.PlayerController.enabled = false;
         _playerContext.PlayerController.character.CurrentSpeed.Value = 0.0f;
-
     }
 
-    bool Finished = false;
 
     public void UpdateState(IContext context)
     {
         //we subscribe to the event to determine if we should change to the next state
         //because we do not poll input nor do we care
-        if (Finished)
+        if (_finished)
             context.ChangeState(new PlayerIdleState());
     }
 
     public void OnExit(IContext context)
     {
-      //  Debug.Log("Exit" + GetType().Name);
+        //  Debug.Log("Exit" + GetType().Name);
         Unsubscribe();
-        Finished = false;
+        _finished = false;
         _playerContext.PlayerController.enabled = true;
-    }
-
-    public void OnEventRaised(Object[] args)
-    {
-        Finished = true;
-    }
-
-    public void Subscribe()
-    {
-        InteractionEnd.RegisterListener(this);
-    }
-
-    public void Unsubscribe()
-    {
-        InteractionEnd.UnregisterListener(this);
     }
 }

@@ -8,7 +8,8 @@ public class MonsterBehaviour : MonoBehaviour
     [SerializeField]
     ButtonPressContext _buttonPressContext;
 
-    public GameEventArgsResponse Response;
+    public GameEventArgsResponse WinResponse;
+    public GameEventArgsResponse LoseResponse;
     private Animator _anim;
 
     public void Start()
@@ -18,7 +19,11 @@ public class MonsterBehaviour : MonoBehaviour
     public void OnContextFinished(Object[] args)
     {
         if (_buttonPressContext.TotalScore >= 3)
-            Response.Invoke(args);
+            WinResponse.Invoke(args);
+        else
+        {
+            LoseResponse.Invoke(args);
+        }
     }
 
     

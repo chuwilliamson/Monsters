@@ -715,6 +715,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114020483483616194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -762,8 +763,10 @@ MonoBehaviour:
   _buttonPressContext: {fileID: 11400000, guid: b0d7f4b50fb33f940a3aabf45c11c80d,
     type: 2}
   _buttonState: {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
+  MoveInCamera: 0
   ButtonTransform: {fileID: 224460987280316398}
   Frac: 0
+  Ttp: 0
   OverlayEndscale: {x: 0, y: 0, z: 0}
   OverlayNewScale: {x: 0, y: 0, z: 0}
   OverlayStartScale: {x: 0, y: 0, z: 0}
@@ -850,7 +853,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  Ttp: 0
+  DistanceFromCamera: 0
+  OnButtonGameObjectPositionChange: {fileID: 0}
 --- !u!114 &114053602270449830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -907,6 +911,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114075970913900960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -969,6 +974,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114102728304381314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1025,6 +1031,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114130582099867710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1082,6 +1089,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114175513920902154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1096,8 +1104,10 @@ MonoBehaviour:
   _buttonPressContext: {fileID: 11400000, guid: b0d7f4b50fb33f940a3aabf45c11c80d,
     type: 2}
   _buttonState: {fileID: 11400000, guid: e7e2b6c95d5d28d4f9e79c731883d803, type: 2}
+  MoveInCamera: 0
   ButtonTransform: {fileID: 224217192710136748}
   Frac: 0
+  Ttp: 0
   OverlayEndscale: {x: 0, y: 0, z: 0}
   OverlayNewScale: {x: 0, y: 0, z: 0}
   OverlayStartScale: {x: 0, y: 0, z: 0}
@@ -1184,7 +1194,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  Ttp: 0
+  DistanceFromCamera: 0
+  OnButtonGameObjectPositionChange: {fileID: 0}
 --- !u!114 &114215131614551710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1253,6 +1264,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114234869045731858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1306,6 +1318,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114295016853621754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1368,6 +1381,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114307935141658738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1382,8 +1396,10 @@ MonoBehaviour:
   _buttonPressContext: {fileID: 11400000, guid: b0d7f4b50fb33f940a3aabf45c11c80d,
     type: 2}
   _buttonState: {fileID: 11400000, guid: 5dc6414f7443a204fa69eddd8838ce44, type: 2}
+  MoveInCamera: 0
   ButtonTransform: {fileID: 224673542797289362}
   Frac: 0
+  Ttp: 0
   OverlayEndscale: {x: 0, y: 0, z: 0}
   OverlayNewScale: {x: 0, y: 0, z: 0}
   OverlayStartScale: {x: 0, y: 0, z: 0}
@@ -1470,7 +1486,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  Ttp: 0
+  DistanceFromCamera: 0
+  OnButtonGameObjectPositionChange: {fileID: 0}
 --- !u!114 &114331048771109006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1533,6 +1550,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114342348014568602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1562,6 +1580,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114347748385251620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1591,6 +1610,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114352659517546160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1700,6 +1720,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114388672513670570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1946,8 +1967,10 @@ MonoBehaviour:
   _buttonPressContext: {fileID: 11400000, guid: b0d7f4b50fb33f940a3aabf45c11c80d,
     type: 2}
   _buttonState: {fileID: 11400000, guid: dbd00b16614803241bf53e81daa26432, type: 2}
+  MoveInCamera: 0
   ButtonTransform: {fileID: 224723438453977480}
   Frac: 0
+  Ttp: 0
   OverlayEndscale: {x: 0, y: 0, z: 0}
   OverlayNewScale: {x: 0, y: 0, z: 0}
   OverlayStartScale: {x: 0, y: 0, z: 0}
@@ -2034,7 +2057,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  Ttp: 0
+  DistanceFromCamera: 0
+  OnButtonGameObjectPositionChange: {fileID: 0}
 --- !u!114 &114572214101826134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2091,6 +2115,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114645594772067668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2120,6 +2145,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114655770054873970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2149,6 +2175,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114657014294147454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2178,6 +2205,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114658576636490622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2294,6 +2322,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114721746346118898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2433,6 +2462,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114744864548615396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2489,6 +2519,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114815254220993172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2518,6 +2549,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114846624085708784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2688,6 +2720,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114956454807170372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2717,6 +2750,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114999804953844208
 MonoBehaviour:
   m_ObjectHideFlags: 1

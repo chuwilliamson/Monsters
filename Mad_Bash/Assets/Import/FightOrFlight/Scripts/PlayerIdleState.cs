@@ -6,9 +6,9 @@ public class PlayerIdleState : IState
 
     public void OnEnter(IContext context)
     {
-        Cursor.lockState = CursorLockMode.Locked;
         _playerContext = context as PlayerContext;
-      //  Debug.Log("Enter" + GetType().Name);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     
     public void UpdateState(IContext context)
@@ -20,13 +20,15 @@ public class PlayerIdleState : IState
         }
         if (Input.GetButtonDown("Cancel"))
         {
-            //interact
+            //pause game
             context.ChangeState(new PlayerPausedState());
         }
     }
 
     public void OnExit(IContext context)
     {
-       // Debug.Log("Exit" + GetType().Name);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
     }
 }

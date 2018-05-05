@@ -12,7 +12,7 @@ public interface IInteractionReleaseHandler
 
 public interface IInteractionBeginHandler
 {
-    void OnInteractionBegin(Object[] args);  
+    void OnInteractionBegin(Object[] args);
 }
 
 public interface IInteractionEndHandler
@@ -32,60 +32,68 @@ public interface IPhysicsTriggerExitHandler
 
 [RequireComponent(typeof(PhysicsTriggerListener))]
 [DisallowMultipleComponent]
-public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTriggerEnterHandler, IPhysicsTriggerExitHandler
+public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTriggerEnterHandler,
+    IPhysicsTriggerExitHandler
 {
-    public IInteractor interactor;
-    public GameObject interactorGameObject;
-    public GameEventArgsResponse Response;
-    public GameEventArgs InteractionSet;
-    public GameEventArgs InteractionBegin;
-    public GameEventArgs InteractionEnd;
-    public GameEventArgs InteractionReleased;
+    public GameEventArgs EventInteraction_Begin;
+    public GameEventArgs EventInteraction_End;
+    public GameEventArgs EventInteraction_Released;
+    public GameEventArgs EventInteraction_Set;
+    public IInteractor Interactor;
+    public GameObject InteractorGameObject;
+    public GameEventArgsResponse BeginResponse;
 
     public void Interact(object token)
     {
-        InteractableBeginInteraction(token as GameObject);          
+        InteractionBegin(token as GameObject);
     }
-
-    public void InteractableBeginInteraction(Object token)
-    {
-        InteractionBegin.Raise(gameObject);
-        Response.Invoke(new Object[] { gameObject, interactorGameObject, token });
-    }
-
-    public void InteractableEndInteraction()
-    {
-        InteractionEnd.Raise(gameObject, interactorGameObject);
-    }
-
-    public void InteractableReleaseInteraction()
-    {
-        InteractionReleased.Raise(gameObject, interactorGameObject);
-    }
-
+    #region callbacks
     public void OnPhysicsTriggerEnter(Object[] args)
     {
         var sender = args[0] as GameObject;
         var actor = args[1] as GameObject;
         if (sender == null)
             return;
-
-        interactorGameObject = actor;
-        if (interactorGameObject != null) interactor = interactorGameObject.GetComponent<IInteractor>();
-        interactor.Interaction_Set(this);
-        InteractionSet.Raise(gameObject, actor);
+        InteractionSet(actor);
     }
-    
+
     public void OnPhysicsTriggerExit(Object[] args)
     {
         var sender = args[0] as GameObject;
         var actor = args[1] as GameObject;
-        if (sender == null)
+        if (sender == null||actor==null)
             return;
-        
-        interactor.Interaction_Release(this);
-        interactorGameObject = null;
-        interactor = null;
-        InteractionReleased.Raise(gameObject, actor);
+        InteractionRelease();
+    }
+    #endregion
+
+    public void InteractionSet(Object actor)
+    {
+        InteractorGameObject = actor as GameObject;
+        Interactor = (InteractorGameObject != null) ? InteractorGameObject.GetComponent<IInteractor>() : null;
+        Interactor.SetInteraction(this);
+
+        EventInteraction_Set.Raise(gameObject, actor);
+    }
+
+    public void InteractionBegin(Object token)
+    {
+        EventInteraction_Begin.Raise(gameObject);
+        BeginResponse.Invoke(new[] {gameObject, InteractorGameObject, token});
+    }
+
+    public void InteractionEnd(Object actor)
+    {
+        EventInteraction_End.Raise(gameObject, InteractorGameObject);
+     
+    } 
+    
+    public void InteractionRelease()
+    {
+        if(Interactor != null)
+        Interactor.ReleaseInteraction(this);
+        InteractorGameObject = null;
+        Interactor = null;
+        EventInteraction_Released.Raise(gameObject, InteractorGameObject);
     }
 }

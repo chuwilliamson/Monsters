@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1194715311563956
 GameObject:
   m_ObjectHideFlags: 1
@@ -316,6 +316,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114088306591976818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -366,6 +367,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114211305614479922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -395,6 +397,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114306294563459514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -406,28 +409,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b2af2bfee12674f9b8b639bd30ef91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactorGameObject: {fileID: 0}
-  Response:
+  EventInteraction_Begin: {fileID: 0}
+  EventInteraction_End: {fileID: 0}
+  EventInteraction_Released: {fileID: 0}
+  EventInteraction_Set: {fileID: 0}
+  InteractorGameObject: {fileID: 0}
+  BeginResponse:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114956472039845218}
-        m_MethodName: InteractionResponse
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  InteractionSet: {fileID: 11400000, guid: 6027bcceabccb4c428199ef25d02c66e, type: 2}
-  InteractionBegin: {fileID: 11400000, guid: 78739640df0e9cc4ba70069d14a0ca91, type: 2}
-  InteractionEnd: {fileID: 11400000, guid: 7e5caafb76601ad4e8871a708a6bbe00, type: 2}
-  InteractionReleased: {fileID: 11400000, guid: 33f1849e4701b7c49bfdc6040a5cd3bd,
-    type: 2}
 --- !u!114 &114487815238828168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -457,6 +448,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114555966157659520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -513,6 +505,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114706848446419736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -643,6 +636,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114956472039845218
 MonoBehaviour:
   m_ObjectHideFlags: 1

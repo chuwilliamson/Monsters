@@ -1239,7 +1239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1222294200012260
 GameObject:
   m_ObjectHideFlags: 1
@@ -1931,13 +1931,14 @@ GameObject:
   - component: {fileID: 4213048600838734}
   - component: {fileID: 114635566330231936}
   - component: {fileID: 95813766692557034}
+  - component: {fileID: 114194328416120618}
   m_Layer: 0
   m_Name: FuseModelAsh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1356569978965736
 GameObject:
   m_ObjectHideFlags: 1
@@ -9365,6 +9366,36 @@ MonoBehaviour:
   Item_Added: {fileID: 11400000, guid: c127020043a2a5f4cba8ad7da388c589, type: 2}
   Item_Removed: {fileID: 11400000, guid: 60c0b004b3c59d24dbfee97bf2c41838, type: 2}
   opened: 0
+--- !u!114 &114194328416120618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353381611328330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d590a09daa76a594fa438e3ce70cf30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 18e7f1599d2de194d808dbe69259ef71, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114635566330231936}
+        m_MethodName: OnButtonGameObjectPositionChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  Notes: Snap the head when the ui button moves
 --- !u!114 &114300480187189750
 MonoBehaviour:
   m_ObjectHideFlags: 1
