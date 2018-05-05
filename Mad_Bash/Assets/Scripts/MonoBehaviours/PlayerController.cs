@@ -27,10 +27,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        character.CurrentSpeed.Value = controller.velocity.magnitude;
+    
 
-        var h = Input.GetAxisRaw(Horizontal.Value);
-        var v = Input.GetAxisRaw(Vertical.Value);
+        var h = Input.GetAxis(Horizontal.Value);
+        var v = Input.GetAxis(Vertical.Value);
 
 
         if (controller.isGrounded)

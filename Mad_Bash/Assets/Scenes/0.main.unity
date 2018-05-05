@@ -721,7 +721,7 @@ Prefab:
     - target: {fileID: 114173023892696386, guid: 96cb38027e131044181388be5a25bf4b,
         type: 2}
       propertyPath: MoveInCamera
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224563484358475556, guid: 96cb38027e131044181388be5a25bf4b,
         type: 2}
@@ -870,18 +870,35 @@ Prefab:
     - target: {fileID: 114897346839968140, guid: 96cb38027e131044181388be5a25bf4b,
         type: 2}
       propertyPath: MoveInCamera
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114495685845237906, guid: 96cb38027e131044181388be5a25bf4b,
         type: 2}
       propertyPath: MoveInCamera
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114291224027412208, guid: 96cb38027e131044181388be5a25bf4b,
         type: 2}
       propertyPath: MoveInCamera
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1283800132786184, guid: 96cb38027e131044181388be5a25bf4b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721195603365140, guid: 96cb38027e131044181388be5a25bf4b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431093051044510, guid: 96cb38027e131044181388be5a25bf4b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114450472936122936, guid: 96cb38027e131044181388be5a25bf4b,
+        type: 2}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 672975193}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96cb38027e131044181388be5a25bf4b, type: 2}
   m_IsPrefabParent: 0
@@ -1200,6 +1217,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  DistanceFromCamera: 0
   OnButtonGameObjectPositionChange: {fileID: 0}
 --- !u!1 &420529823
 GameObject:
@@ -1579,6 +1597,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224550138097052458, guid: 96cb38027e131044181388be5a25bf4b,
     type: 2}
   m_PrefabInternal: {fileID: 543951586}
+--- !u!1 &672975193 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1360381906052562, guid: 96cb38027e131044181388be5a25bf4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 341436350}
 --- !u!1 &705847811
 GameObject:
   m_ObjectHideFlags: 3
@@ -1943,7 +1966,7 @@ Prefab:
     - target: {fileID: 114635566330231936, guid: 11f226f8e32237d4c8e716dc547f8db3,
         type: 2}
       propertyPath: lookAtWeight
-      value: 0.168
+      value: 0.941
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f226f8e32237d4c8e716dc547f8db3, type: 2}
@@ -2273,19 +2296,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4915246284985586, guid: 17a39aace33e5bf408e5fc54f89bbaa7, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.03451061
+      value: 0.034511
       objectReference: {fileID: 0}
     - target: {fileID: 4915246284985586, guid: 17a39aace33e5bf408e5fc54f89bbaa7, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.9566897
+      value: 0.95668936
       objectReference: {fileID: 0}
     - target: {fileID: 4915246284985586, guid: 17a39aace33e5bf408e5fc54f89bbaa7, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.12765898
+      value: -0.12765904
       objectReference: {fileID: 0}
     - target: {fileID: 4915246284985586, guid: 17a39aace33e5bf408e5fc54f89bbaa7, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.2593396
+      value: 0.25934082
       objectReference: {fileID: 0}
     - target: {fileID: 4421377485781734, guid: 17a39aace33e5bf408e5fc54f89bbaa7, type: 2}
       propertyPath: m_LocalRotation.x
