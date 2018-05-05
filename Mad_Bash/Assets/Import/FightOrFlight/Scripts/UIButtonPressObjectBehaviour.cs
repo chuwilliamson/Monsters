@@ -25,9 +25,9 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     public UnityEvent ContextFinishedResponse;
     public UnityEvent ContextTimerEndResponse;
     public UnityEvent ContextTimerStartResponse;
-
     
-
+    public float DistanceFromCamera;
+    public GameEventArgs OnButtonGameObjectPositionChange;
     
     #region IContextEventHandler
     public void onContextChanged(Object[] args)
@@ -64,11 +64,27 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
         if (sender == null)
             return;
         var currentState = sender.CurrentState as ButtonPressObject;
-        if (currentState == _buttonState)
-            ContextTimerEndResponse.Invoke();
+        if (currentState != _buttonState)
+            return;
         
-        if(MoveInCamera)
-            gameObject.MoveInCamera(newPos: Vector3.one);
+        ContextTimerEndResponse.Invoke();
+
+        if (MoveInCamera)
+        {
+            var x = Random.Range(0f, 1f);
+            var y = Random.Range(0f, 1f);
+            var z = Random.Range(3f, DistanceFromCamera);
+            var newPos = new Vector3(x, y, z);
+            gameObject.MoveInCamera(newPos: newPos);
+        }
+        else
+        {
+            var canvas = GetComponentInParent<Canvas>();
+            var rect = canvas.GetComponent<RectTransform>().rect;
+            gameObject.MoveObject(rect.width, rect.height);
+        }
+ 
+        OnButtonGameObjectPositionChange.Raise(ButtonTransform.gameObject);
     }
 
     public void onContextTimerStart(Object[] args)
