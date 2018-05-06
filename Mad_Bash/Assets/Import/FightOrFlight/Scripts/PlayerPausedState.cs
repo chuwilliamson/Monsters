@@ -21,7 +21,7 @@ public class PlayerPausedState : IState
         //lock cursor
 
         //disableplayermovement
-        _playerContext.PlayerController.enabled = false;
+        _playerContext.CharacterMovement.Disable(sender:this);
     }
 
     public void UpdateState(IContext context)
@@ -37,6 +37,6 @@ public class PlayerPausedState : IState
         Time.timeScale = _oldTimeScale;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        _playerContext.PlayerController.enabled = true;
+        _playerContext.CharacterMovement.Enable(this);
     }
 }

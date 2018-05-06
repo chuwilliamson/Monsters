@@ -13,12 +13,12 @@ public class PlayerInteractState : IState, IListener
 
     public void Subscribe()
     {
-        _interactionEnd.RegisterListener(this);
+        _interactionEnd.RegisterListener(listener: this);
     }
 
     public void Unsubscribe()
     {
-        _interactionEnd.UnregisterListener(this);
+        _interactionEnd.UnregisterListener(listener: this);
     }
 
     public void OnEnter(IContext context)
@@ -27,8 +27,8 @@ public class PlayerInteractState : IState, IListener
         _playerContext = context as PlayerContext;
         _interactionEnd = Resources.Load<GameEventArgs>("ScriptableObjects/Events/InteractionEnd");
         Subscribe();
-        _playerContext.PlayerController.enabled = false;
-        _playerContext.PlayerController.character.CurrentSpeed.Value = 0.0f;
+        _playerContext.CharacterMovement.Disable(sender: this);
+
     }
 
 
@@ -45,6 +45,6 @@ public class PlayerInteractState : IState, IListener
         //  Debug.Log("Exit" + GetType().Name);
         Unsubscribe();
         _finished = false;
-        _playerContext.PlayerController.enabled = true;
+        _playerContext.CharacterMovement.Enable(sender: this);
     }
 }
