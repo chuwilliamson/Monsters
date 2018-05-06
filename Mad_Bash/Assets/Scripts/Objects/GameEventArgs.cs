@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class GameEventArgs : ScriptableObject
+public class GameEventArgs : ScriptableObject, ISubscribeable
 {
     public void Raise()
     {

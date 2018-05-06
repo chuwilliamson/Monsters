@@ -19,7 +19,7 @@ public class GameEventArgsListener : MonoBehaviour, IListener
         Event.UnregisterListener(this);
     }
 
-    public void OnEventRaised(Object[] args)
+    public virtual void OnEventRaised(Object[] args)
     {
         if (Sender == null || Sender == args[0])
             Response.Invoke(args);

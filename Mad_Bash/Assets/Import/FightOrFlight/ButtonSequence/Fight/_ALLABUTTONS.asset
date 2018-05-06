@@ -11,23 +11,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c453f32e70a4ddd46bbafd1b8748785e, type: 3}
   m_Name: _ALLABUTTONS
   m_EditorClassIdentifier: 
-  _currentTransitionTime: 1
-  _maxTurns: 25
+  ButtonPressStateIndices: 00000000010000000000000001000000010000000000000003000000020000000100000003000000000000000100000002000000000000000100000000000000010000000100000001000000000000000000000000000000000000000100000003000000
+  ButtonPressStates:
+  - {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
+  - {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
+  - {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
+  - {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
   _onContextChanged: {fileID: 11400000, guid: 649227a0f60968f49b49dca1b220b72e, type: 2}
   _onContextFinished: {fileID: 11400000, guid: 539e668f110d9f248a04884a499a6a88, type: 2}
   _onContextReset: {fileID: 11400000, guid: 5a9e32e09e6704a4e82faa3d41aab477, type: 2}
   _onContextTimerEnd: {fileID: 11400000, guid: 92da2b08d8be72f4ead5fc4a14771307, type: 2}
   _onContextTimerStart: {fileID: 11400000, guid: 104e9f58a93fb884798667a398ef6a53,
     type: 2}
-  _random: 1
   _timeToLive: 3
   _timeToPress: 2
+  _timeToTransition: 0
+  _random: 1
+  _pressBufferMax: 1
+  _maxTurns: 25
   _totalScore: 0
-  _transitionDuration: 1
   _turnCount: 0
-  ButtonPressStates:
-  - {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
-  - {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
-  - {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
-  - {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
+  _currentTransitionTime: 0
+  COMPLETE: 0
   SequenceInfo: {fileID: 11400000, guid: e8c8ab9044e3407438b822a3c1cd6aff, type: 2}

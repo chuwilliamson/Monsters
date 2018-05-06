@@ -23,13 +23,12 @@ namespace Cinemachine.Examples
 
         public void Disable(object sender)
         {
-            _anim.applyRootMotion = false;
+            paused = true;
         }
 
         public void Enable(object sender)
         {
-            _anim.applyRootMotion = true;
-
+            paused = false;
         }
 
         // Use this for initialization
@@ -39,12 +38,8 @@ namespace Cinemachine.Examples
             _mainCamera = Camera.main;
         }
 
-        // Update is called once per frame
-        private void FixedUpdate()
-        {
-            _input.x = Input.GetAxis("Horizontal");
-            _input.y = Input.GetAxis("Vertical");
-
+        private void Move(Vector2 _input)
+        { 
             // set speed to both vertical and horizontal inputs
             if (KeepDirection) _speed = Mathf.Abs(_input.x) + _input.y;
             else _speed = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
@@ -82,6 +77,16 @@ namespace Cinemachine.Examples
                 transform.rotation = Quaternion.Slerp(transform.rotation, b: Quaternion.Euler(euler),
                     t: TurnSpeed * _turnSpeedMultiplier * Time.deltaTime);
             }
+        }
+
+        private bool paused;
+        // Update is called once per frame
+        private void FixedUpdate()
+        {
+            _input.x = Input.GetAxis("Horizontal");
+            _input.y = Input.GetAxis("Vertical");
+            if(!paused)
+            Move(_input);
         }
 
         public virtual void UpdateTargetDirection()
