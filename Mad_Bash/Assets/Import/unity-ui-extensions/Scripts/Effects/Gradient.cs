@@ -88,19 +88,5 @@ namespace UnityEngine.UI.Extensions
         }
     }
 
-    public enum GradientMode
-    {
-        Global,
-        Local
-    }
-
-    public enum GradientDir
-    {
-        Vertical,
-        Horizontal,
-        DiagonalLeftToRight,
-        DiagonalRightToLeft
-        //Free
-    }
     //enum color mode Additive, Multiply, Overwrite
 }

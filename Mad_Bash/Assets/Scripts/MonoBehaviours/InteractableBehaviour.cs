@@ -1,35 +1,5 @@
 ﻿using UnityEngine;
 
-public interface IInteractionSetHandler
-{
-    void OnInteractionSet(Object[] args);
-}
-
-public interface IInteractionReleaseHandler
-{
-    void OnInteractionRelease(Object[] args);
-}
-
-public interface IInteractionBeginHandler
-{
-    void OnInteractionBegin(Object[] args);
-}
-
-public interface IInteractionEndHandler
-{
-    void OnInteractionEnd(Object[] args);
-}
-
-public interface IPhysicsTriggerEnterHandler
-{
-    void OnPhysicsTriggerEnter(Object[] args);
-}
-
-public interface IPhysicsTriggerExitHandler
-{
-    void OnPhysicsTriggerExit(Object[] args);
-}
-
 [RequireComponent(typeof(PhysicsTriggerListener))]
 [DisallowMultipleComponent]
 public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTriggerEnterHandler,

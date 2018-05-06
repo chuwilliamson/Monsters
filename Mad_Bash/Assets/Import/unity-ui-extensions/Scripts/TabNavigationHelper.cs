@@ -10,7 +10,6 @@ using UnityEngine.EventSystems;
 
 namespace UnityEngine.UI.Extensions
 {
-    public enum NavigationMode { Auto = 0, Manual = 1};
     [RequireComponent(typeof(EventSystem))]
     [AddComponentMenu("Event/Extensions/Tab Navigation Helper")]
     public class TabNavigationHelper : MonoBehaviour

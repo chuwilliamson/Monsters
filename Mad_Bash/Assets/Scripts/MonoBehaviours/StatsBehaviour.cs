@@ -9,7 +9,7 @@ public class StatsBehaviour : MonoBehaviour
     public CharacterInformation character;
     public Button speedButton;
     public Button sneakButton;
-    public Button strengthButton;
+    public Button StrengthButton;
 
     private int xp = 0;
     private int brave = 1;
@@ -54,14 +54,14 @@ public class StatsBehaviour : MonoBehaviour
         {
             Instantiate(speedButton);
             Instantiate(sneakButton);
-            Instantiate(strengthButton);
+            Instantiate(StrengthButton);
         }
 
         if (speedButton)
             character.Speed.Value++;
         if (sneakButton)
             character.Sneak.Value++;
-        if (strengthButton)
+        if (StrengthButton)
             character.Strength.Value++;
 
     }

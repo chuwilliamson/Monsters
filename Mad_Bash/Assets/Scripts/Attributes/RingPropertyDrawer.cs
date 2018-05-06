@@ -1,29 +1,6 @@
-﻿
-using ChuTools;
-#if UNITY_EDITOR
+﻿using ChuTools;
 using UnityEditor;
-#endif
 using UnityEngine;
-
-namespace ChuTools
-{
-    [System.Serializable]
-    public class Ring
-    {
-        public float minVal;
-        public float maxVal;
-        public float minLimit;
-        public float maxLimit;
-    }
-}
-
-/// <summary>
-/// Does not go inside the Editor Folder
-/// </summary>
-public class ReadOnlyAttribute : PropertyAttribute { }
-
-#if UNITY_EDITOR
-
 
 [CustomPropertyDrawer(typeof(Ring))]
 public class RingPropertyDrawer : PropertyDrawer
@@ -67,20 +44,3 @@ public class RingPropertyDrawer : PropertyDrawer
 
     }
 }
-
-
-/// <summary>
-/// Readonly Property Drawer for the Readonly Attribute
-/// Makes inspector fields non modifiable
-/// </summary>
-[CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
-public class ReadOnlyPropertyDrawer : PropertyDrawer
-{
-    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-    {
-        GUI.enabled = false;
-        EditorGUI.PropertyField(position, property);
-        GUI.enabled = true;
-    }
-}
-#endif

@@ -34,10 +34,10 @@ public class UI_ButtonBehaviour : MonoBehaviour
         //PlayerItems.Capacity = (int)character.Strength.Value;
     }
 
-    public void ChangeSceneEvent(string name)
+    public void ChangeSceneEvent(string sceneName)
     {
         ButtonCLickEvent.Raise();
-        SceneManager.LoadScene(name);
+        SceneManager.LoadScene(sceneName);
     }
 
     private void Paused()
