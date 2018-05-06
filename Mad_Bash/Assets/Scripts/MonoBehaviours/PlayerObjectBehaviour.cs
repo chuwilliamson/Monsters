@@ -30,7 +30,7 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
 
         Context = new PlayerContext(new PlayerIdleState())
         {
-            PlayerController = GetComponent<PlayerController>(),
+            CharacterMovement = GetComponent<ICharacterMovement>(),
             PlayerObjectBehaviour = this
         };
     }
