@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
+[DisallowMultipleComponent]
 public class DisableOnStartBehaviour : MonoBehaviour
 {
     public GameEventArgsResponse START_RESPONSE;

@@ -568,6 +568,7 @@ GameObject:
   - component: {fileID: 143351948627988056}
   - component: {fileID: 114300480187189750}
   - component: {fileID: 114083411230894158}
+  - component: {fileID: 114262519010475042}
   m_Layer: 0
   m_Name: Player Object
   m_TagString: Player
@@ -1255,7 +1256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1222294200012260
 GameObject:
   m_ObjectHideFlags: 1
@@ -1971,7 +1972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1356569978965736
 GameObject:
   m_ObjectHideFlags: 1
@@ -5089,7 +5090,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217187809767402}
-  m_LocalRotation: {x: 0.0060692998, y: 0.93021053, z: -0.3666532, w: 0.01539766}
+  m_LocalRotation: {x: -0.05775398, y: 0.92714804, z: -0.36362335, w: -0.06956328}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5513,7 +5514,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760309120595932}
-  m_LocalRotation: {x: 0.0074017085, y: 0.8943048, z: -0.44715214, w: 0.014803469}
+  m_LocalRotation: {x: -0.07302585, y: 0.8902539, z: -0.4430345, w: -0.0763917}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7465,7 +7466,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1758345048772896}
-  m_LocalRotation: {x: 0.0060692998, y: 0.93021053, z: -0.3666532, w: 0.01539766}
+  m_LocalRotation: {x: -0.05775398, y: 0.92714804, z: -0.36362335, w: -0.06956328}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7624,8 +7625,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100538198187748}
-  m_LocalRotation: {x: -0, y: 0.9954958, z: -0, w: 0.094806}
-  m_LocalPosition: {x: -2.97, y: -0.387, z: 11.34}
+  m_LocalRotation: {x: 0.0000001899898, y: 0.7071069, z: -0.0000001816079, w: 0.7071067}
+  m_LocalPosition: {x: 21.09, y: -0.533, z: -4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4864530392920014}
@@ -9046,7 +9047,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300112075838122}
   m_LocalRotation: {x: -0, y: -0.9954958, z: -0, w: 0.094806}
-  m_LocalPosition: {x: -0.23422971, y: 3, z: -1.4815991}
+  m_LocalPosition: {x: -0.45632216, y: 2.999999, z: -1.4289072}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4150958642213698}
@@ -9742,6 +9743,36 @@ MonoBehaviour:
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   Notes: Snap the head when the ui button moves
+--- !u!114 &114262519010475042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100538198187748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d590a09daa76a594fa438e3ce70cf30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6027bcceabccb4c428199ef25d02c66e, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: OnGremlinInteractionSet
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  Notes: 
 --- !u!114 &114300480187189750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9753,15 +9784,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f01cf49bd7549543be0f411996a292f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Horizontal: {fileID: 11400000, guid: 2d364afa6e09d9648b81d550f4c3d195, type: 2}
-  Vertical: {fileID: 11400000, guid: 6c83051c2de8240489ab114fbce76dab, type: 2}
   character: {fileID: 11400000, guid: 7b86c6ddf3c8ffd4cb7fa7ba44ed5df5, type: 2}
-  moveSpeed: 0
-  moveDirection: {x: 0, y: 0, z: 0}
-  targetDirection: {x: 0, y: 0, z: 0}
-  rotateSpeed: 250
-  turning: 0
   dot: 0
+  Horizontal: {fileID: 11400000, guid: 2d364afa6e09d9648b81d550f4c3d195, type: 2}
+  moveDirection: {x: 0, y: 0, z: 0}
+  moveSpeed: 0
+  rotateSpeed: 250
+  targetDirection: {x: 0, y: 0, z: 0}
+  turning: 0
+  Vertical: {fileID: 11400000, guid: 6c83051c2de8240489ab114fbce76dab, type: 2}
 --- !u!114 &114325460624852200
 MonoBehaviour:
   m_ObjectHideFlags: 1

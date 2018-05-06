@@ -3875,22 +3875,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Gremlin_Texture
-    second: {fileID: 2100000, guid: e7e5d09a13bbb2f4c98154eb8de34c17, type: 2}
+    second: {fileID: 2100000, guid: 0d15d584c64aa7047aecce0af54ca17a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__Alyssa_Taylor_Textures
-    second: {fileID: 2100000, guid: a274b0b34f573844ab48a9e8e05ca841, type: 2}
+    second: {fileID: 2100000, guid: f9c142e6f794ca546a0efe44e9f504d2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
-    optimizeGameObjects: 0
+    optimizeGameObjects: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -3898,13 +3898,15 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
+    importAnimatedCustomProperties: 1
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - Gremlin
+    - pasted__Alyssa_Taylor1
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
@@ -4026,11 +4028,11 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
-    importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
