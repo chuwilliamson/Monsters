@@ -24,11 +24,13 @@ namespace Cinemachine.Examples
         public void Disable(object sender)
         {
             paused = true;
+            _anim.applyRootMotion = false;
         }
 
         public void Enable(object sender)
         {
             paused = false;
+            _anim.applyRootMotion = true;
         }
 
         // Use this for initialization
@@ -39,7 +41,7 @@ namespace Cinemachine.Examples
         }
 
         private void Move(Vector2 _input)
-        { 
+        {
             // set speed to both vertical and horizontal inputs
             if (KeepDirection) _speed = Mathf.Abs(_input.x) + _input.y;
             else _speed = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
@@ -83,9 +85,11 @@ namespace Cinemachine.Examples
         // Update is called once per frame
         private void FixedUpdate()
         {
+            if (paused)
+                return;
             _input.x = Input.GetAxis("Horizontal");
             _input.y = Input.GetAxis("Vertical");
-            if(!paused)
+
             Move(_input);
         }
 
