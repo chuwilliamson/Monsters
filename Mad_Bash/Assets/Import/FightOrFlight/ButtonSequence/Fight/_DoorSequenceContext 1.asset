@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c453f32e70a4ddd46bbafd1b8748785e, type: 3}
   m_Name: _DoorSequenceContext 1
   m_EditorClassIdentifier: 
-  ButtonPressStateIndices: 0100000002000000
+  ButtonPressStateIndices: 0300000003000000
   ButtonPressStates:
   - {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
   - {fileID: 11400000, guid: e7e2b6c95d5d28d4f9e79c731883d803, type: 2}
@@ -28,9 +28,9 @@ MonoBehaviour:
   _timeToTransition: 1
   _random: 0
   _pressBufferMax: 1.2
-  _maxTurns: 2
+  _maxTurns: 4
   _totalScore: 0
-  _turnCount: 0
+  _turnCount: 2
   _currentTransitionTime: 1
-  COMPLETE: 0
+  COMPLETE: 1
   SequenceInfo: {fileID: 11400000, guid: e8c8ab9044e3407438b822a3c1cd6aff, type: 2}

@@ -35,6 +35,6 @@ public class GameEventArgsWaitListener : GameEventArgsListener
             yield return current -= Time.deltaTime;
         }
         yield return new WaitForSeconds(WaitTime);
-        Response.Invoke(args);
+        base.OnEventRaised(args);
     }
 }

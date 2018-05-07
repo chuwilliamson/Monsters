@@ -11,16 +11,17 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     [SerializeField] private ButtonPressObject _buttonState;
 
 
-
+    [Range(0, 6)]
     public float DistanceFromCamera;
     public float Frac;
 
     public bool MoveInCamera;
     public GameEventArgs OnButtonGameObjectPositionChange;
-    private Vector3 OverlayEndscale;
-    private Vector3 OverlayNewScale;
-    private Vector3 OverlayStartScale;
     
+    private Vector3 OverlayEndscale;
+    
+    private Vector3 OverlayStartScale;
+
     [ReadOnly]
     public float Ttp;
     public GameObject UIRipplePrefab;
@@ -36,24 +37,18 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     public void OnButtonSuccess(Object[] args)
     {
         var sender = args[0] as ButtonPressObject;
-        if (sender == null)
-            return;
-        if (sender != _buttonState)
-            return;
+        var activecontext = args[1] as ButtonPressContext;
 
+        if (sender == null)
+
+            return;
+        if (sender != _buttonState || activecontext  != _buttonPressContext)
+            return;
         var go = Instantiate(UIRipplePrefab, transform);
         var ripple = go.GetComponent<UIRipple>();
         ripple.CreateRipple(go.transform.localPosition);
         go.transform.SetAsLastSibling();
-        Destroy(go, 3);
-    }
-
-    [ContextMenu("Set Contexts")]
-    public void SetContext()
-    {
-        var listeners = GetComponents<GameEventArgsListener>();
-        foreach (var l in listeners)
-            l.Sender = _buttonPressContext;
+        Destroy(go, t: _buttonPressContext.TimeToTransition/2.0f);
     }
 
     private void Start()
@@ -62,10 +57,14 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
         StartResponse.Invoke();
         OverlayStartScale = Vector3.one * (_buttonState.TTL + _buttonState.PressBufferMax) / _buttonState.TTL;
         OverlayEndscale = Vector3.one * .7f;
-        var listeners = GetComponents<GameEventArgsListener>().Where(l => l.Event.name.Contains("Context")).ToList();
-        listeners.ForEach(l=> l.Sender = _buttonPressContext);
-    }
 
+    }
+    [ContextMenu("SetContextsForListeners")]
+    public void SetContextsForListeners()
+    {
+        var listeners = GetComponents<GameEventArgsListener>().Where(l => l.Event.name.Contains("Context")).ToList();
+        listeners.ForEach(l => l.Sender = _buttonPressContext);
+    }
     private void Update()
     {
         Frac = _buttonState.CurrentTimeToLive / _buttonState.TTL;
@@ -137,7 +136,7 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
             var x = Random.Range(0f, 1f);
             var y = Random.Range(0f, 1f);
             var z = Random.Range(3f, DistanceFromCamera);
-            var newPos = new Vector3(x, y, z);
+            var newPos = new Vector3(x, y, 3);
             gameObject.MoveInCamera(newPos);
         }
         else

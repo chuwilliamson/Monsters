@@ -48,8 +48,9 @@ public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTrigg
 
     public void InteractionBegin(Object token)
     {
+        UnityEngine.Assertions.Assert.IsNotNull(Interactor);
+        BeginResponse.Invoke(new[] { gameObject, InteractorGameObject, token });
         EventInteraction_Begin.Raise(gameObject);
-        BeginResponse.Invoke(new[] {gameObject, InteractorGameObject, token});
     }
 
     public void InteractionEnd(Object actor)

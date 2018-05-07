@@ -3,6 +3,7 @@
 [DisallowMultipleComponent]
 public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
 {
+    public GameObject VCAM_FREELOOK;
     // fields 
     public CharacterInformation characterInfo_config;
 
@@ -49,7 +50,7 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
             return;
         CurrentInteractable = interactable;
     }
-
+    
     public void ReleaseInteraction(IInteractable interactable)
     {
         if (interactable == null || interactable != CurrentInteractable)
