@@ -4,13 +4,19 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Container")]
 public class Container : ScriptableObject, IContainer
-{       
+{
     public List<Object> contents;
-    public int sizeLimit;
-
+    public int SizeLimit = 25;
+    private void OnEnable()
+    {
+        contents = new List<Object>();
+    }
     public bool AddContent(Object obj)
     {
-        if (contents.Count < sizeLimit)
+        if (obj == null)
+            return false;
+        
+        if (contents.Count < SizeLimit)
         {
             contents.Add(obj);
             return true;
@@ -24,6 +30,8 @@ public class Container : ScriptableObject, IContainer
 
     public bool RemoveContent(Object obj)
     {
+        if (contents == null)
+            return false;
         if (contents.Contains(obj))
         {
             contents.Remove(obj);
