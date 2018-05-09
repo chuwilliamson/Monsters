@@ -24,6 +24,10 @@ namespace Cinemachine.Examples
         public void Disable(object sender)
         {
             paused = true;
+            _speed = 0;
+            _isSprinting = false;
+            _anim.SetBool("isSprinting", _isSprinting);
+            _anim.SetFloat("Speed", _speed);
             _anim.applyRootMotion = false;
         }
 
@@ -86,7 +90,11 @@ namespace Cinemachine.Examples
         private void FixedUpdate()
         {
             if (paused)
+            {
+                _anim.SetFloat("Speed", 0);
                 return;
+            }
+                
             _input.x = Input.GetAxis("Horizontal");
             _input.y = Input.GetAxis("Vertical");
 
