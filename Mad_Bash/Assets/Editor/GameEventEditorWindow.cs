@@ -36,13 +36,15 @@ public class GameEventEditorWindow : EditorWindow
         Repaint();
     }
 
+    private Vector2 scrollPosition;
     private void OnGUI()
     {
         EditorGUILayout.Space();
 
         EditorGUILayout.TextField("GameEventArgs");
+        scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
         DrawObjectsView();
-
+        EditorGUILayout.EndScrollView();
         if (GUI.changed)
             Repaint();
     }
@@ -53,6 +55,8 @@ public class GameEventEditorWindow : EditorWindow
 
         foreach (var Event in GameEvents)
         {
+            if (Event.listeners.Count <= 0)
+                continue;
             EditorGUILayout.BeginHorizontal();
             var listeners = Event.listeners.Select(x => ((MonoBehaviour)x).gameObject).ToList();
             EditorGUILayout.ObjectField(Event, typeof(GameEventArgs), false, GUILayout.Width(250));

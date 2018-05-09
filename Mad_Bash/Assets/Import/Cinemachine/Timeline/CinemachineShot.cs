@@ -4,11 +4,6 @@ using UnityEngine.Timeline;
 
 namespace Cinemachine.Timeline
 {
-    internal sealed class CinemachineShotPlayable : PlayableBehaviour
-    {
-        public CinemachineVirtualCameraBase VirtualCamera;
-    }
-
     public sealed class CinemachineShot : PlayableAsset, IPropertyPreview
     {
         public ExposedReference<CinemachineVirtualCameraBase> VirtualCamera;

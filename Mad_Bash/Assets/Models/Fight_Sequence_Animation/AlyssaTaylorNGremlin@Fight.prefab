@@ -539,7 +539,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1011534304936432
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -12486,7 +12486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1442086153881344
 GameObject:
   m_ObjectHideFlags: 1
@@ -22281,6 +22281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4553637442098840}
   - component: {fileID: 95521282145739636}
+  - component: {fileID: 114084045171873190}
   m_Layer: 0
   m_Name: AlyssaTaylorNGremlin@Fight
   m_TagString: Untagged
@@ -30441,7 +30442,7 @@ Transform:
   - {fileID: 4959627968278914}
   - {fileID: 4992271049453096}
   m_Father: {fileID: 4553637442098840}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4069317135104336
 Transform:
@@ -30808,7 +30809,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1045583609831670}
-  m_LocalRotation: {x: -0.013330785, y: 0.70054454, z: -0.69445854, w: -0.16366766}
+  m_LocalRotation: {x: -0.013330782, y: 0.70054454, z: -0.69445854, w: -0.16366766}
   m_LocalPosition: {x: 0.12370758, y: 0.06379381, z: 1.2332675}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -37774,7 +37775,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1862487829445866}
-  m_LocalRotation: {x: -0.013330784, y: 0.70054454, z: -0.69445854, w: -0.16366766}
+  m_LocalRotation: {x: -0.013330781, y: 0.70054454, z: -0.69445854, w: -0.16366766}
   m_LocalPosition: {x: 0.43883052, y: -0.046152137, z: -0.08583782}
   m_LocalScale: {x: 6.2318707, y: 6.2318707, z: 6.2318707}
   m_Children:
@@ -39486,13 +39487,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1011534304936432}
-  m_LocalRotation: {x: 0.01446824, y: -0, z: -0, w: 0.99989533}
-  m_LocalPosition: {x: -0, y: 1.6462268, z: -0.09007723}
-  m_LocalScale: {x: 0.9223275, y: 0.9223275, z: 0.9223275}
+  m_LocalRotation: {x: 0.0144682415, y: -0, z: 4.656613e-10, w: 0.9998954}
+  m_LocalPosition: {x: 0, y: 0.09586898, z: -0.0051579117}
+  m_LocalScale: {x: 0.055666048, y: 0.055666037, z: 0.055666048}
   m_Children:
   - {fileID: 4402279051212884}
-  m_Father: {fileID: 4553637442098840}
-  m_RootOrder: 4
+  m_Father: {fileID: 4817706334334600}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4401737880026238
 Transform:
@@ -40831,7 +40832,7 @@ Transform:
   - {fileID: 4553387902118686}
   - {fileID: 4969682872660756}
   m_Father: {fileID: 4553637442098840}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4458258941349868
 Transform:
@@ -43412,15 +43413,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1783361653633762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.484, z: 0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4614525567697150}
   - {fileID: 4411815837159260}
   - {fileID: 4817706334334600}
   - {fileID: 4082409175863176}
-  - {fileID: 4401453734268490}
   - {fileID: 4068939048882848}
   - {fileID: 4456622563465876}
   m_Father: {fileID: 0}
@@ -50423,6 +50423,7 @@ Transform:
   - {fileID: 4684652423808224}
   - {fileID: 4492426253937396}
   - {fileID: 4477545527481932}
+  - {fileID: 4401453734268490}
   m_Father: {fileID: 4553637442098840}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55392,6 +55393,36 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114084045171873190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1783361653633762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d590a09daa76a594fa438e3ce70cf30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 104e9f58a93fb884798667a398ef6a53, type: 2}
+  Sender: {fileID: 11400000, guid: f266bc0741f05b44585635b9f0bbf0b1, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 95521282145739636}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: attack
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  Notes: 
 --- !u!137 &137108214238354696
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -84,12 +84,12 @@ public class ButtonPressObject : ScriptableObject, IState
         {
             if (Result)
             {
-                _onButtonStateSuccess.Raise(this);
+                _onButtonStateSuccess.Raise(this, context as ButtonPressContext);
                 ButtonScoreValue = 1;
             }
             else
             {
-                _onButtonStateFailure.Raise(this);
+                _onButtonStateFailure.Raise(this, context as ButtonPressContext);
             }
 
 //            var numstates = ((ButtonPressContext)context).ButtonPressStates.Count;

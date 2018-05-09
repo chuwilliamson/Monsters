@@ -35,8 +35,8 @@ public class ItemBehaviour : MonoBehaviour
     {
         if (args[0] != gameObject)
             return;
-        GetComponentInChildren<InteractableBehaviour>().InteractableEndInteraction();
-        GetComponentInChildren<InteractableBehaviour>().InteractableReleaseInteraction();
+        GetComponentInChildren<InteractableBehaviour>().InteractionEnd(null);
+        GetComponentInChildren<InteractableBehaviour>().InteractionRelease();
         DestroyObject(gameObject);
     }
 

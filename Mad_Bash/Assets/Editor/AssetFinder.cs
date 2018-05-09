@@ -16,7 +16,7 @@ public class AssetFinder : EditorWindow
     Vector2 pos;
     Editor GOEditor;
 
-    [MenuItem("JeremyTools/AssetFinder")]
+    [MenuItem("Tools/Jeremy/AssetFinder")]
     static void Init()
     {
         var w = EditorWindow.CreateInstance<AssetFinder>();

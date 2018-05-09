@@ -1,91 +1,70 @@
 ﻿using UnityEngine;
 
-public interface IInteractionSetHandler
-{
-    void OnInteractionSet(Object[] args);
-}
-
-public interface IInteractionReleaseHandler
-{
-    void OnInteractionRelease(Object[] args);
-}
-
-public interface IInteractionBeginHandler
-{
-    void OnInteractionBegin(Object[] args);  
-}
-
-public interface IInteractionEndHandler
-{
-    void OnInteractionEnd(Object[] args);
-}
-
-public interface IPhysicsTriggerEnterHandler
-{
-    void OnPhysicsTriggerEnter(Object[] args);
-}
-
-public interface IPhysicsTriggerExitHandler
-{
-    void OnPhysicsTriggerExit(Object[] args);
-}
-
 [RequireComponent(typeof(PhysicsTriggerListener))]
 [DisallowMultipleComponent]
-public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTriggerEnterHandler, IPhysicsTriggerExitHandler
+public class InteractableBehaviour : MonoBehaviour, IInteractable, IPhysicsTriggerEnterHandler,
+    IPhysicsTriggerExitHandler
 {
-    public IInteractor interactor;
-    public GameObject interactorGameObject;
-    public GameEventArgsResponse Response;
-    public GameEventArgs InteractionSet;
-    public GameEventArgs InteractionBegin;
-    public GameEventArgs InteractionEnd;
-    public GameEventArgs InteractionReleased;
+    public GameEventArgs EventInteraction_Begin;
+    public GameEventArgs EventInteraction_End;
+    public GameEventArgs EventInteraction_Released;
+    public GameEventArgs EventInteraction_Set;
+    public IInteractor Interactor;
+    public GameObject InteractorGameObject;
+    public GameEventArgsResponse BeginResponse;
 
     public void Interact(object token)
     {
-        InteractableBeginInteraction(token as GameObject);          
+        InteractionBegin(token as GameObject);
     }
-
-    public void InteractableBeginInteraction(Object token)
-    {
-        InteractionBegin.Raise(gameObject);
-        Response.Invoke(new Object[] { gameObject, interactorGameObject, token });
-    }
-
-    public void InteractableEndInteraction()
-    {
-        InteractionEnd.Raise(gameObject, interactorGameObject);
-    }
-
-    public void InteractableReleaseInteraction()
-    {
-        InteractionReleased.Raise(gameObject, interactorGameObject);
-    }
-
+    #region callbacks
     public void OnPhysicsTriggerEnter(Object[] args)
     {
         var sender = args[0] as GameObject;
         var actor = args[1] as GameObject;
         if (sender == null)
             return;
-
-        interactorGameObject = actor;
-        if (interactorGameObject != null) interactor = interactorGameObject.GetComponent<IInteractor>();
-        interactor.Interaction_Set(this);
-        InteractionSet.Raise(gameObject, actor);
+        InteractionSet(actor);
     }
-    
+
     public void OnPhysicsTriggerExit(Object[] args)
     {
         var sender = args[0] as GameObject;
         var actor = args[1] as GameObject;
-        if (sender == null)
+        if (sender == null||actor==null)
             return;
-        
-        interactor.Interaction_Release(this);
-        interactorGameObject = null;
-        interactor = null;
-        InteractionReleased.Raise(gameObject, actor);
+        InteractionRelease();
+    }
+    #endregion
+
+    public void InteractionSet(Object actor)
+    {
+        InteractorGameObject = actor as GameObject;
+        Interactor = (InteractorGameObject != null) ? InteractorGameObject.GetComponent<IInteractor>() : null;
+        Interactor.SetInteraction(this);
+
+        EventInteraction_Set.Raise(gameObject, actor);
+    }
+
+    public void InteractionBegin(Object token)
+    {
+        UnityEngine.Assertions.Assert.IsNotNull(Interactor);
+        BeginResponse.Invoke(new[] { gameObject, InteractorGameObject, token });
+        EventInteraction_Begin.Raise(gameObject);
+    }
+
+    public void InteractionEnd(Object actor)
+    {
+        EventInteraction_End.Raise(gameObject, InteractorGameObject);
+     
+    } 
+    
+    public void InteractionRelease()
+    {
+        if(Interactor != null)
+        Interactor.ReleaseInteraction(this);
+        InteractorGameObject = null;
+        Interactor = null;
+        EventInteraction_Released.Raise(gameObject, InteractorGameObject);
     }
 }

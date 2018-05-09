@@ -14,7 +14,7 @@ public class PlayerContext : IContext
     //the states. EX: Interacting state will disable the playercontroller
 
     public PlayerObjectBehaviour PlayerObjectBehaviour { get; set; }
-    public PlayerController PlayerController { get; set; }
+    public ICharacterMovement CharacterMovement { get; set; }
     public IState CurrentState { get; private set; }
 
     public void UpdateContext()

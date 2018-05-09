@@ -1,7 +1,6 @@
 ﻿/// Credit Tomasz Schelenz 
 /// Sourced from - https://bitbucket.org/ddreaper/unity-ui-extensions/issues/46/feature-uiknob#comment-29243988
 
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 /// <summary>
@@ -180,8 +179,4 @@ namespace UnityEngine.UI.Extensions
             OnValueChanged.Invoke(value);
         }
     }
-
-    [System.Serializable]
-    public class KnobFloatValueEvent : UnityEvent<float> { }
-
 }
