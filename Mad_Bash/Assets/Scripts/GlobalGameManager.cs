@@ -35,5 +35,10 @@ public class GlobalGameManager : ScriptableObject
     public void QuitGame()
     {
         Application.Quit();
-    } 
+    }
+
+    public void LoadScene(int scene)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+    }
 }
