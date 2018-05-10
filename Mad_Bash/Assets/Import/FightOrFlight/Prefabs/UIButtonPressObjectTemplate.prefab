@@ -41,6 +41,8 @@ GameObject:
   - component: {fileID: 114462877737163296}
   - component: {fileID: 114847637462529978}
   - component: {fileID: 114267571322608584}
+  - component: {fileID: 114433016076117946}
+  - component: {fileID: 114489663422620970}
   m_Layer: 5
   m_Name: UIButtonPressObjectTemplate
   m_TagString: Untagged
@@ -76,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 2a0cf10cd09ccb14c97aec13fea53342, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -104,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: 539e668f110d9f248a04884a499a6a88, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 11400000, guid: f266bc0741f05b44585635b9f0bbf0b1, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -121,6 +123,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114298160033788118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: 104e9f58a93fb884798667a398ef6a53, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 11400000, guid: f266bc0741f05b44585635b9f0bbf0b1, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -150,6 +153,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114318464407484290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,10 +165,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e1b7f4b3db74241a7c185e17fc3a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonPressContext: {fileID: 11400000, guid: b0d7f4b50fb33f940a3aabf45c11c80d, type: 2}
-  ButtonState: {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
-  OverlayTransform: {fileID: 224843841621712680}
-  ButtonTransform: {fileID: 224365690728386584}
+  _buttonPressContext: {fileID: 11400000, guid: f266bc0741f05b44585635b9f0bbf0b1,
+    type: 2}
+  _buttonState: {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
+  DistanceFromCamera: 5
+  RandomPosition: 0
+  MoveInCamera: 1
+  OnButtonGameObjectPositionChange: {fileID: 11400000, guid: 18e7f1599d2de194d808dbe69259ef71,
+    type: 2}
+  Ttp: 0
+  Frac: 0
+  UIRipplePrefab: {fileID: 1951489060828240, guid: e19c846d97f88034d8995fbe538ce40d,
+    type: 2}
+  ButtonTransform: {fileID: 224843841621712680}
+  OverlayTransform: {fileID: 224365690728386584}
+  StartResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1433303487201974}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   ContextChangedResponse:
     m_PersistentCalls:
       m_Calls:
@@ -229,12 +259,25 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  StartResponse:
+--- !u!114 &114433016076117946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524437481112638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d590a09daa76a594fa438e3ce70cf30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 217782bba54b0864db75f445a0187d84, type: 2}
+  Sender: {fileID: 11400000, guid: cbd7b83c9aeb69f41a6191144c42600f, type: 2}
+  Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1433303487201974}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 114318464407484290}
+        m_MethodName: OnButtonSuccess
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -243,8 +286,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  Notes: 
 --- !u!114 &114462877737163296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -257,7 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: 92da2b08d8be72f4ead5fc4a14771307, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 11400000, guid: f266bc0741f05b44585635b9f0bbf0b1, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -274,6 +318,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
+--- !u!114 &114489663422620970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524437481112638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9ef23c25951e4498afa3867d8d3678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114847637462529978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: 649227a0f60968f49b49dca1b220b72e, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 11400000, guid: f266bc0741f05b44585635b9f0bbf0b1, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -303,6 +359,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  Notes: 
 --- !u!114 &114961659938837920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -315,14 +372,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0.091, a: 0.278}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300006, guid: 6d02f87d878fe9547925b55944f3a329, type: 3}
+  m_Sprite: {fileID: 21300020, guid: 0464b2b598c264846a110ea943d60112, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -348,17 +405,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1918500513935330}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224843841621712680}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224648856592523042
 RectTransform:
@@ -367,7 +424,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1524437481112638}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -72.6, y: -244.84903, z: 0}
+  m_LocalPosition: {x: 0, y: -0.080989, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224843841621712680}
@@ -376,8 +433,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72.6, y: -244.84903}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: -0.080989}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224843841621712680
 RectTransform:
@@ -396,5 +453,5 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
