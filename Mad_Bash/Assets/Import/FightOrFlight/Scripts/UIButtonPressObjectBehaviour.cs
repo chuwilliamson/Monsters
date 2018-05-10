@@ -41,8 +41,24 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     public UnityEvent ContextTimerEndResponse;
     public UnityEvent ContextTimerStartResponse;
 
-    public void OnButtonSuccess(Object[] args)
+    IEnumerator StartVibrate()
     {
+        float start = 1;
+        while (start > 0)
+        {
+            start -= Time.deltaTime;
+            XInputDotNetPure.GamePad.SetVibration(0, start, start);
+            yield return null;
+        }
+
+        
+    }
+    private void OnDisable()
+    { 
+        StopAllCoroutines();
+    }
+    public void OnButtonSuccess(Object[] args)
+    { 
         var sender = args[0] as ButtonPressObject;
         var activecontext = args[1] as ButtonPressContext;
 
