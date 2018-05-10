@@ -27,6 +27,11 @@ public class GlobalGameManager : ScriptableObject
         EventSystem.current.SetSelectedGameObject(go);
     }
 
+    public void VibrateController(int value)
+    {
+        XInputDotNetPure.GamePad.SetVibration(0, value, value);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
