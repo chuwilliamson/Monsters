@@ -169,6 +169,11 @@ ModelImporter:
     100322: Tongue
     100324: TopTeeth
     100326: transform1
+    100328: Head
+    100330: Left_Foot
+    100332: Left_Hand
+    100334: Right_Foot
+    100336: Right_Hand
     400000: Accessories
     400002: Alyssa_Taylor1
     400004: //RootNode
@@ -333,6 +338,11 @@ ModelImporter:
     400322: Tongue
     400324: TopTeeth
     400326: transform1
+    400328: Head
+    400330: Left_Foot
+    400332: Left_Hand
+    400334: Right_Foot
+    400336: Right_Hand
     4300000: FrontHair
     4300002: BackHair
     4300004: polySurface1
@@ -354,6 +364,11 @@ ModelImporter:
     4300036: LeftShoe
     4300038: Glasses
     4300040: Hairband
+    4300042: Head
+    4300044: Left_Hand
+    4300046: Right_Foot
+    4300048: Left_Foot
+    4300050: Right_Hand
     7400000: Take 001
     9500000: //RootNode
     13700000: BackHair
@@ -377,6 +392,11 @@ ModelImporter:
     13700036: Sweater
     13700038: Tongue
     13700040: TopTeeth
+    13700042: Head
+    13700044: Left_Foot
+    13700046: Left_Hand
+    13700048: Right_Foot
+    13700050: Right_Hand
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -394,7 +414,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Avatar creation failed:\n\tTransform 'Neck_02SHJnt' for human
+      bone 'Neck' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
