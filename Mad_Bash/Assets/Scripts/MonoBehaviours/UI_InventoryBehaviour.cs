@@ -2,55 +2,23 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Linq;
 
 public class UI_InventoryBehaviour : MonoBehaviour
 {
-    public Canvas inventory;
-    public GameEventArgs ButtonCLickEvent;
+    TMPro.TMP_Dropdown dropdown;
 
-    List<Item> PlayerList = new List<Item>();
-
-    private void Start()
+    public Container PlayerContainer
     {
-        inventory.enabled = false;
-        Time.timeScale = 1.0f;
+        get { return Resources.Load<PlayerContainer>("PlayerContainer"); }
     }
 
-    public void OnInvetoryOpened(params Object[] args)
+    private void OnEnable()
     {
-        PlayerList = new List<Item>();
-
-        var data = args[0] as ContainerEventData;
-
-        foreach (Item i in data.Data)
-            PlayerList.Add(i);
-
-      
-    }
-    
-    public void Equip(params Object[] args)
-    {
-
-
-    }
-
-    private void Update()
-    {
-        if (Input.GetButtonDown("ViewButton") && inventory.enabled == false)
-        {
-            inventory.enabled = true;
-
-            var button = Resources.Load("Prefabs/ItemButton") as GameObject;
-            var pic = Resources.Load("Prefabs/ItemPic") as GameObject;
-
-            for (int i = PlayerList.Capacity; i < PlayerList.Capacity; i++)
-                ;
-
-
-            EventSystem.current.SetSelectedGameObject(GameObject.FindGameObjectWithTag("Equipped"));
-
-            Instantiate(pic, new Vector3(inventory.transform.position.x + 33, inventory.transform.position.y + 30, inventory.transform.position.z), inventory.transform.rotation, inventory.transform);
-        }
-
+        dropdown = GetComponent<TMPro.TMP_Dropdown>();
+        dropdown.ClearOptions();
+        var names = new List<string>();
+        PlayerContainer.contents.ForEach(item => names.Add(item.name));
+        dropdown.AddOptions(names);
     }
 }

@@ -2,43 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemBehaviour : MonoBehaviour
-{   
+public class ItemBehaviour : MonoBehaviour, IPhysicsTriggerEnterHandler
+{
     // fields
-    public Item item_config;
-    [SerializeField]
-    private Item item_runtime;
+    public Item Item;
+
+    public Container Container
+    {
+        get { return Resources.Load("PlayerContainer") as Container; }
+    }
 
     [SerializeField]
     private GameEventArgs ItemPickedUp;
 
-    // properties
-    public Item Item
+    public void OnPhysicsTriggerEnter(Object[] args)
     {
-        get { return item_runtime; }
+        Container.AddContent(obj: Item);
+        ItemPickedUp.Raise(Item);
+        Destroy(obj: gameObject);
     }
-
-    // Unity methods
-    private void Start()
-    {
-        item_runtime = Instantiate(item_config);
-    }
-
-    // methods    
-    public void InteractionResponse(Object[] args)
-    {
-        var item = Instantiate(item_runtime);
-        ItemPickedUp.Raise(gameObject, item);        
-    }
-
-    public void AddedToInventory(Object[] args)
-    {
-        if (args[0] != gameObject)
-            return;
-        GetComponentInChildren<InteractableBehaviour>().InteractionEnd(null);
-        GetComponentInChildren<InteractableBehaviour>().InteractionRelease();
-        DestroyObject(gameObject);
-    }
-
-    
 }

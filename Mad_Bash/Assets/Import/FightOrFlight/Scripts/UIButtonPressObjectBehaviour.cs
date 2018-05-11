@@ -6,24 +6,31 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
 {
-    [SerializeField] private ButtonPressContext _buttonPressContext;
+    [SerializeField]
+    private ButtonPressContext _buttonPressContext;
 
-    [SerializeField] private ButtonPressObject _buttonState;
+    [SerializeField]
+    private ButtonPressObject _buttonState;
 
 
     [Range(0, 6)]
     public float DistanceFromCamera;
-    public float Frac;
+
+    [SerializeField]
+    private bool RandomPosition = false;
 
     public bool MoveInCamera;
     public GameEventArgs OnButtonGameObjectPositionChange;
-    
+
     private Vector3 OverlayEndscale;
-    
+
     private Vector3 OverlayStartScale;
 
     [ReadOnly]
     public float Ttp;
+    [ReadOnly]
+    public float Frac;
+
     public GameObject UIRipplePrefab;
     public RectTransform ButtonTransform;
     public RectTransform OverlayTransform;
@@ -34,21 +41,37 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
     public UnityEvent ContextTimerEndResponse;
     public UnityEvent ContextTimerStartResponse;
 
-    public void OnButtonSuccess(Object[] args)
+    IEnumerator StartVibrate()
     {
+        float start = 1;
+        while (start > 0)
+        {
+            start -= Time.deltaTime;
+            XInputDotNetPure.GamePad.SetVibration(0, start, start);
+            yield return null;
+        }
+
+        
+    }
+    private void OnDisable()
+    { 
+        StopAllCoroutines();
+    }
+    public void OnButtonSuccess(Object[] args)
+    { 
         var sender = args[0] as ButtonPressObject;
         var activecontext = args[1] as ButtonPressContext;
 
         if (sender == null)
 
             return;
-        if (sender != _buttonState || activecontext  != _buttonPressContext)
+        if (sender != _buttonState || activecontext != _buttonPressContext)
             return;
         var go = Instantiate(UIRipplePrefab, transform);
         var ripple = go.GetComponent<UIRipple>();
         ripple.CreateRipple(go.transform.localPosition);
         go.transform.SetAsLastSibling();
-        Destroy(go, t: _buttonPressContext.TimeToTransition/2.0f);
+        Destroy(go, t: _buttonPressContext.TimeToTransition / 2.0f);
     }
 
     private void Start()
@@ -131,19 +154,22 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
 
         ContextTimerEndResponse.Invoke();
 
-        if (MoveInCamera)
+        if (RandomPosition)
         {
-            var x = Random.Range(0f, 1f);
-            var y = Random.Range(0f, 1f);
-            var z = Random.Range(3f, DistanceFromCamera);
-            var newPos = new Vector3(x, y, 3);
-            gameObject.MoveInCamera(newPos);
-        }
-        else
-        {
-            var canvas = GetComponentInParent<Canvas>();
-            var rect = canvas.GetComponent<RectTransform>().rect;
-            gameObject.MoveObject(rect.width, rect.height);
+            if (MoveInCamera)
+            {
+                var x = Random.Range(0f, 1f);
+                var y = Random.Range(0f, 1f);
+                var z = Random.Range(3f, DistanceFromCamera);
+                var newPos = new Vector3(x, y, 3);
+                gameObject.MoveInCamera(newPos);
+            }
+            else
+            {
+                var canvas = GetComponentInParent<Canvas>();
+                var rect = canvas.GetComponent<RectTransform>().rect;
+                gameObject.MoveObject(rect.width, rect.height);
+            }
         }
 
         OnButtonGameObjectPositionChange.Raise(ButtonTransform.gameObject);
