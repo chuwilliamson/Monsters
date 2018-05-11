@@ -60,7 +60,7 @@ public class PlayerObjectBehaviour : MonoBehaviour, IInteractor
         CurrentInteractable = null;
     }
 
-    public void OnGremlinInteractionSet(Object[] args)
+    public void ChangeToInteractState(Object[] args)
     {
         //THIS IS SO BAD... we have to do this because
         //the interaction system needs to fire when we enter the gremlin trigger
