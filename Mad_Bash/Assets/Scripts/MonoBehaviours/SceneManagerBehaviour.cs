@@ -7,13 +7,14 @@ public class SceneManagerBehaviour : MonoBehaviour
     public Camera mainCam;
 
     public float fadeTime = 1.0f;
-    public float alpha = 0f; // color of the screen
+
+    Color alpha; 
 
     public GameObject plane;
 
     public void ChangeScene()
     {
-        Instantiate<GameObject>(plane, mainCam.transform.position, mainCam.transform.rotation, mainCam.transform);
+        Instantiate<GameObject>(plane, mainCam.transform.position + new Vector3(0f,.5f,-.75f), mainCam.transform.rotation * new Quaternion(0f,-100f,90f,0f), mainCam.transform);
 
         this.StartCoroutine(WaitAndLoad());
     }
