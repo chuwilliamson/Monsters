@@ -39,6 +39,12 @@ public class GlobalGameManager : ScriptableObject
 
     public void LoadScene(int scene)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+        
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene, UnityEngine.SceneManagement.LoadSceneMode.Single);
+    }
+    public void LoadSceneAdditive(int scene)
+    {
+        
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(scene, UnityEngine.SceneManagement.LoadSceneMode.Additive);
     }
 }
