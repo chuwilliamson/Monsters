@@ -47,18 +47,20 @@ public class UIButtonPressObjectBehaviour : MonoBehaviour, IContextEventHandler
         while (start > 0)
         {
             start -= Time.deltaTime;
+#if USEVIBRATION
             XInputDotNetPure.GamePad.SetVibration(0, start, start);
+#endif
             yield return null;
         }
 
-        
+
     }
     private void OnDisable()
-    { 
+    {
         StopAllCoroutines();
     }
     public void OnButtonSuccess(Object[] args)
-    { 
+    {
         var sender = args[0] as ButtonPressObject;
         var activecontext = args[1] as ButtonPressContext;
 
